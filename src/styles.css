@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body{
+    @apply font-sans box-border font-bold text-base text-blackLow
+}
+
+.animateBouce {
+    display: inline-block;
+    margin: 0 0.5rem;
+    animation: pulse; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 0.25s; /* don't forget to set a duration! */
+}
+
+.imagenFondo{
+    background-image: url("/FondoPortada.png");
+}

@@ -14,7 +14,6 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
 export class HeroComponent {
 
   constructor(private utils: UtilitiesService) {
-    // This service can now make HTTP requests via `this.http`.
   }
 
   _countries: Country[] = [];
@@ -46,6 +45,7 @@ export class HeroComponent {
   elementSelect(codePhoneSelect:string,flagSelect:string){
     this.codePhone = codePhoneSelect;
     this.flag = flagSelect;
+    this.select = false;
   }
 
  

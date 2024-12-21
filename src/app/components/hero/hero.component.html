@@ -1,0 +1,113 @@
+<section>
+    <article class='hero w-full rounded-[2.3rem] px-4 pt-4 bg-indigox imagenFondo lg:px-3 lg:grid xl:px-8 lg:grid-cols-2 lg:pb-14 xl:py-0'>
+      <div class="text-center flex flex-col mt-10 lg:justify-start lg:relative lg:top-[16%]">
+        <h1 class="text-[40px] md:text-6xl leading-tight lg:text-6xl lg:text-start">
+          Localiza cualquier teléfono, en cualquier lugar, en cualquier momento
+        </h1>
+
+        <div class="flex flex-col lg:flex-row lg:border lg:rounded-full lg:border-gray-300 lg:items-center lg:bg-white lg:mt-10 lg:px-3 lg:py-2">
+          <div class="flex items-center w-full rounded-3xl border border-gray-300 lg:border-none bg-white mt-10 lg:mt-0">
+            <span class="relative top-0">
+              <button id="states-button" (click)="selectShow()"
+                class="text-lg font-bold flex-shrink-0 flex items-center py-2.5 px-4 text-center outline-none lg:pl-1"
+                type="button">
+                <div class="h-7 w-7 rounded-full">
+                  <img [src]="urlFlagBase + flag + '.svg'" class="object-cover object-center w-full h-full rounded-full" alt="">
+                </div>
+                <p class="pl-2">{{codePhone}}</p>   
+                <svg [class]="select?'rotate-180':'rotate-0'" class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                  viewBox="0 0 10 6"> <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
+                </svg>
+              </button>
+
+              <div [class]="select?'block':'hidden'" class="z-10 absolute rounded-lg shadow top-16 p-2 bg-white">
+                  <div class="flex mb-2">
+                      <div class="relative w-full flex">
+                        <button type="button" class="top-0 start-0 grid place-content-center h-5 w-7 outline-none p-2.5 text-sm font-medium text-white ">
+                          <svg class="w-3 h-3 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                          </svg>
+                        </button>
+                          <input [(ngModel)]="searchCountry"  (input)="filterItems()" type="search" id="search-dropdown" 
+                          autocomplete="off" class="outline-none h-5 py-[2px] block w-full font-medium text-sm text-gray-800 rounded-e-lg"/>
+                      </div>
+                  </div>
+                <div id="dropdown-states" class="w-60 max-h-44 overflow-auto">
+                  <ul class="pt-2 text-sm" aria-labelledby="states-button">
+                    @if(searchCountry){
+                      @for (item of _countriesFilter; track item.code) {
+                        <li (click)="elementSelect(item.dial_code,item.code.toLowerCase())">
+                          <button type="button" class="inline-flex w-full p-2 text-sm hover:bg-gray-100" >
+                            <div class="inline-flex items-center">
+                              <div>
+                                <div  class="h-5 w-5 rounded-full">
+                                  <img [lazyLoad]="urlFlagBase + item.code.toLowerCase() + '.svg'" loading="lazy"  class="object-cover object-center w-full h-full rounded-full" alt="">
+                                </div>
+                              </div>
+                              <p class="pl-2 font-medium text-xs text-start">{{item.dial_code + ' ' + item.name}}</p>
+                            </div>
+                          </button>
+                        </li>
+                        } @empty {
+                        <li>No se encontraron paises</li>
+                        } 
+                    }@else {
+                      @for (item of _countries; track item.code) {
+                        <li (click)="elementSelect(item.dial_code,item.code.toLowerCase())">
+                          <button type="button" class="inline-flex w-full p-2 text-sm hover:bg-gray-100" >
+                            <div class="inline-flex items-center">
+                              <div>
+                                <div  class="h-5 w-5 rounded-full">
+                                  <img [lazyLoad]="urlFlagBase + item.code.toLowerCase() + '.svg'" loading="lazy"  class="object-cover object-center w-full h-full rounded-full" alt="">
+                                </div>
+                              </div>
+                              <p class="pl-2 font-medium text-xs text-start">{{item.dial_code + ' ' + item.name}}</p>
+                            </div>
+                          </button>
+                        </li>
+                        } @empty {
+                        <li>No se encontraron paises</li>
+                        } 
+                    }
+                  </ul>
+                </div>
+              </div>
+              <!-- Select -->
+            </span>
+            <input type="text" class="h-16 w-full border-0 outline-none rounded-full text-xl font-normal lg:h-14 pr-3" placeholder="Ingrese el número de teléfono">
+          </div>
+          <button class="w-full font-semibold mt-5 shadow-lg text-white bg-purpura hover:bg-indigo-400 rounded-full px-5 py-2.5 text-center lg:m-0 lg:w-60 lg:py-3 lg:px-3">Localizar teléfono</button>
+        </div>
+      </div>
+      <div class="mt-32 lg:pl-7">
+        <img src="Telefono.webp" class="w-full" alt="">
+      </div>
+    </article>
+    <article class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-5 gap-7">
+      <div class="bg-indigox  flex flex-col items-center px-7 py-11 rounded-[2.3rem] gap-3 text-center">
+        <img src="world.png" class="h-20" alt="">
+        <h4 class="text-[34px] leading-tight">En cualquier lugar<br> del planeta</h4>
+        <p class="font-normal text-basex text-lg">Y también funciona con cualquier <br> operador y teléfono móvil</p>
+      </div>
+      <div class="bg-indigox  flex flex-col items-center px-7 py-11 rounded-[2.3rem] gap-3 text-center">
+        <img src="confidential.png" class="h-20" alt="">
+        <h4 class="text-[34px] leading-tight">Puedes permanecer  <br>anónimo</h4>
+        <p class="font-normal text-basex text-lg">El destinatario nunca sabrá que <br>proviene de ti</p>
+      </div>
+      <div class="bg-indigox  flex flex-col items-center px-7 py-11 rounded-[2.3rem] gap-3 text-center">
+        <img src="accurate.png" class="h-20" alt="">
+        <h4 class="text-[34px] leading-tight">Tan preciso como el GPS</h4>
+        <p class="font-normal text-basex text-lg">Te mostraremos la ubicación <br>exacta en un mapa en línea</p>
+      </div>
+    </article>
+
+    <article class="bg-indigox flex flex-col items-center px-5 pt-9 pb-1 md:px-24 md:pb-10 md:pt-20 rounded-[2.3rem]">
+      <div class="w-full text-center grid gap-5 pb-10">
+        <h3 class="text-[45px] leading-tight">Un lugar para localizarlos a todos</h3>
+        <p class="font-normal text-basex">Una vez suscrito, puedes utilizar nuestra interfaz para ubicar la ubicación de tantos teléfonos como desees.</p>
+      </div>
+      <div class="w-full">
+        <img src="screens-map.webp" alt="">
+      </div>
+    </article>
+  </section>

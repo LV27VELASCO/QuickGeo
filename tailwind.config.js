@@ -7,7 +7,7 @@ module.exports = {
     extend: {
       colors:{
         purpura:"#454EFC",
-        indigox:"#EEF2FF",
+        indigox:"rgb(245, 246, 255)",
         basex:"#525587",
         blackLow:"#00054F"
       }

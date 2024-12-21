@@ -1,0 +1,48 @@
+<header>
+    <nav class="mb-4 bg-white border-gray-200 lg:flex lg:justify-around lg:m-0 lg:p-4 m-auto">
+      <div class="flex flex-wrap items-center justify-between py-4 lg:p-0 xl:flex-grow">
+        <!-- Logo -->
+        <div class="justify-between navbar-start lg:justify-start">
+          <img src="Logo.png" class="h-6" alt="Logo" />
+        </div>
+
+        <!-- localiza -->
+        <a href="#" [class]="menu?'hidden':'block'" class="text-purpura lg:hidden">Localizar teléfono</a>
+
+        <!-- menu hamburguesa -->
+        <button data-collapse-toggle="navbar-default" type="button" (click)="menuActivate()"
+          class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg lg:hidden hover:bg-gray-100"
+          aria-controls="navbar-default" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M1 1h15M1 7h15M1 13h15" />
+          </svg>
+        </button>
+      </div>
+
+      <div [class]="menu?'block':'hidden'" class="px-7 py-2 flex lg:flex lg:items-center lg:p-0">
+        <div
+          class="flex flex-col p-5 text-center w-full rounded-3xl text-basex font-medium bg-indigo-50 gap-6 xl:gap-7 xl:after:content-['|'] lg:flex-row lg:p-0 lg:bg-transparent">
+          <a href="">¿Cómo funciona?</a>
+          <a href="">Preguntas frecuentes</a>
+          <a href="">Precio</a>
+          <a href="">Contacto</a>
+        </div>
+
+      </div>
+
+      <div [class]="menu?'block':'hidden'" class="px-7 py-2 lg:p-0 xl:pl-5 lg:block">
+        <div
+          class="flex flex-col mt-3 p-5 text-center w-full rounded-3xl text-basex font-bold bg-indigo-50 gap-6 xl:gap-5 lg:mt-0 lg:flex-row lg:p-0 lg:items-center lg:bg-transparent">
+          <a href="" class="flex justify-center text-purpura">
+            <i class='bx bx-user text-xl'></i>
+            <p class="pl-3 mt-1">Iniciar sesión</p>
+          </a>
+          <button [class]="menu?'animateBouce':''" type="button"
+            class="text-white bg-purpura shadow-lg hover:text-opacity-70 rounded-full px-5 py-2.5 text-center lg:bg-white lg:text-purpura lg:border-2 lg:border-purpura">Localizar
+            teléfono</button>
+        </div>
+      </div>
+    </nav>
+  </header>

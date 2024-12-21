@@ -1,182 +1,243 @@
 <main class="max-w-screen-xl mx-auto px-4">
-  <header>
-    <nav class="mb-4 bg-white border-gray-200 lg:flex lg:justify-around lg:m-0 lg:p-4 m-auto">
-      <div class="flex flex-wrap items-center justify-between py-4 lg:p-0 xl:flex-grow">
-        <!-- Logo -->
-        <div class="justify-between navbar-start lg:justify-start">
-          <img src="Logo.png" class="h-6" alt="Logo" />
-        </div>
+  <app-header/>
+  <app-hero/>
 
-        <!-- localiza -->
-        <a href="#" [class]="menu?'hidden':'block'" class="text-purpura lg:hidden">Localizar teléfono</a>
+  <section class="mt-5 flex flex-col gap-7">
 
-        <!-- menu hamburguesa -->
-        <button data-collapse-toggle="navbar-default" type="button" (click)="menuActivate()"
-          class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg lg:hidden hover:bg-gray-100"
-          aria-controls="navbar-default" aria-expanded="false">
-          <span class="sr-only">Open main menu</span>
-          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M1 1h15M1 7h15M1 13h15" />
-          </svg>
-        </button>
+    <article class="bg-indigox flex flex-col items-center p-4 rounded-[1.8rem] border border-gray-200 shadow-lg shadow-slate-200 md:p-12">
+      <div class="rounded-2xl w-full px-10 py-6 bg-white mb-8 md:mb-10">
+        <h4 class="text-[30px] text-center leading-tight md:text-start lg:text-[42px]">¿Perdiste tu teléfono?</h4>
+        <p class="text-basex  mt-2 md:mt-4  text-lg">Habilita la ubicación exacta de tu teléfono con un solo toque</p>
       </div>
-
-      <div [class]="menu?'block':'hidden'" class="px-7 py-2 flex lg:flex lg:items-center lg:p-0">
-        <div
-          class="flex flex-col p-5 text-center w-full rounded-3xl text-basex font-medium bg-indigo-50 gap-6 xl:gap-7 xl:after:content-['|'] lg:flex-row lg:p-0 lg:bg-transparent">
-          <a href="">¿Cómo funciona?</a>
-          <a href="">Preguntas frecuentes</a>
-          <a href="">Precio</a>
-          <a href="">Contacto</a>
+      <div class="flex flex-col gap-6  md:gap-10 lg:flex-row">
+        <div class="flex flex-col gap-6  md:gap-10 w-full">
+          <div>
+            <img src="comilla.png" class="h-20" alt="">
+          </div> 
+          <h4 class="text-2xl text-basex">”Olvidé mi teléfono en el metro. Fullgeo permitió a la persona que lo encontró enviarme su ubicación sin desbloquearlo y pude recuperarlo de manera segura.”</h4>
         </div>
-
-      </div>
-
-      <div [class]="menu?'block':'hidden'" class="px-7 py-2 lg:p-0 xl:pl-5 lg:block">
-        <div
-          class="flex flex-col mt-3 p-5 text-center w-full rounded-3xl text-basex font-bold bg-indigo-50 gap-6 xl:gap-5 lg:mt-0 lg:flex-row lg:p-0 lg:items-center lg:bg-transparent">
-          <a href="" class="flex justify-center text-purpura">
-            <i class='bx bx-user text-xl'></i>
-            <p class="pl-3 mt-1">Iniciar sesión</p>
-          </a>
-          <button [class]="menu?'animateBouce':''" type="button"
-            class="text-white bg-purpura shadow-lg hover:bg-indigo-400 rounded-full px-5 py-2.5 text-center lg:bg-white lg:text-purpura lg:border-2 lg:border-purpura">Localizar
-            teléfono</button>
+        <div class="card h-80 w-full rounded-2xl flex flex-col justify-end" style="background-image: url('https://d2xyc7ypmnrz56.cloudfront.net/9d0f540f-19ee-4365-a4f4-e25dabff95cd/img/woman-using-smartphone-in-tube.webp'); background-position: center; background-size: cover; background-repeat: no-repeat;">
+        <div class="text-white h-24 w-full border-t border-gray-200 backdrop-blur-sm rounded-b-2xl">
+           <div class="flex justify-between items-center px-5 pt-5">
+            <h4 class="text-2xl">Marie</h4>
+            <div class="flex gap-1">
+              <svg width="14" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_209_20)">
+                  <path d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z" fill="white"></path>
+                </g>
+                <defs>
+                  <clipPath id="clip0_209_20">
+                    <rect width="20" height="20" fill="white" transform="translate(0 0.150146)"></rect>
+                  </clipPath>
+                </defs>
+              </svg>
+              <svg width="14" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_209_20)">
+                  <path d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z" fill="white"></path>
+                </g>
+                <defs>
+                  <clipPath id="clip0_209_20">
+                    <rect width="20" height="20" fill="white" transform="translate(0 0.150146)"></rect>
+                  </clipPath>
+                </defs>
+              </svg>
+              <svg width="14" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_209_20)">
+                  <path d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z" fill="white"></path>
+                </g>
+                <defs>
+                  <clipPath id="clip0_209_20">
+                    <rect width="20" height="20" fill="white" transform="translate(0 0.150146)"></rect>
+                  </clipPath>
+                </defs>
+              </svg>
+              <svg width="14" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_209_20)">
+                  <path d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z" fill="white"></path>
+                </g>
+                <defs>
+                  <clipPath id="clip0_209_20">
+                    <rect width="20" height="20" fill="white" transform="translate(0 0.150146)"></rect>
+                  </clipPath>
+                </defs>
+              </svg>
+              <svg width="14" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_209_20)">
+                  <path d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z" fill="white"></path>
+                </g>
+                <defs>
+                  <clipPath id="clip0_209_20">
+                    <rect width="20" height="20" fill="white" transform="translate(0 0.150146)"></rect>
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
+           </div>
+           <p class="px-5 text-sm font-normal"> Usuario de Fullgeo </p>
         </div>
-      </div>
-    </nav>
-  </header>
-  <section>
-    <article class='hero w-full rounded-3xl px-4 pt-4 bg-indigox imagenFondo lg:px-3 lg:grid xl:px-8 lg:grid-cols-2 lg:pb-14 xl:py-0'>
-      <div class="text-center flex flex-col mt-10 lg:justify-start lg:relative lg:top-[16%]">
-        <h1 class="text-[40px] md:text-6xl leading-tight lg:text-6xl lg:text-start">
-          Localiza cualquier teléfono, en cualquier lugar, en cualquier momento
-        </h1>
-
-        <div class="flex flex-col lg:flex-row lg:border lg:rounded-full lg:border-gray-300 lg:items-center lg:bg-white lg:mt-10 lg:px-3 lg:py-2">
-          <div class="flex items-center w-full rounded-3xl border border-gray-300 lg:border-none bg-white mt-10 lg:mt-0">
-            <span class="relative top-0 pr-3">
-              <button id="states-button" (click)="selectShow()"
-                class="text-lg font-bold flex-shrink-0 flex items-center py-2.5 px-4 text-center"
-                type="button">
-                <div class="h-7 w-7 rounded-full bg-[url('https://flagcdn.com/us.svg')] bg-cover bg-center bg-no-repeat">
-                </div>
-                <p class="pl-2">+1</p>   
-                <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                  viewBox="0 0 10 6">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="m1 1 4 4 4-4" />
-                </svg>
-              </button>
-              <div id="dropdown-states" [class]="select?'block':'hidden'" class="z-10 absolute top-16 bg-white divide-y divide-gray-100 rounded-lg shadow w-80 h-44 overflow-auto">
-                <ul class="py-2 text-sm" aria-labelledby="states-button">
-                  <li>
-                    <button type="button" class="inline-flex w-full px-4 py-2 text-sm hover:bg-gray-100">
-                      <div class="inline-flex items-center">
-                        <div>
-                          <div
-                            class="h-7 w-7 rounded-full bg-[url('https://flagcdn.com/us.svg')] bg-cover bg-center bg-no-repeat">
-                          </div>
-                        </div>
-                        <p class="pl-2 text-start">+1 United States</p>
-                      </div>
-                    </button>
-                  </li>
-                  <li>
-                    <button type="button" class="inline-flex w-full px-4 py-2 text-sm hover:bg-gray-100">
-                      <div class="inline-flex items-center">
-                        <div>
-                          <div
-                            class="h-7 w-7 rounded-full bg-[url('https://flagcdn.com/de.svg')] bg-cover bg-center bg-no-repeat">
-                          </div>
-                        </div>
-
-                        <p class="pl-2 text-start">+2 Germany</p>
-                      </div>
-                    </button>
-                  </li>
-                  <li>
-                    <button type="button" class="inline-flex w-full px-4 py-2 text-sm hover:bg-gray-100">
-                      <div class="inline-flex items-center">
-                        <div>
-                          <div
-                            class="h-7 w-7 rounded-full bg-[url('https://flagcdn.com/co.svg')] bg-cover bg-center bg-no-repeat">
-                          </div>
-                        </div>
-                        <p class="pl-2 text-start">+57 Colombia</p>
-                      </div>
-                    </button>
-                  </li>
-                  <li>
-                    <button type="button" class="inline-flex w-full px-4 py-2 text-sm hover:bg-gray-100">
-                      <div class="inline-flex items-center">
-                        <div>
-                          <div
-                            class="h-7 w-7 rounded-full bg-[url('https://flagcdn.com/br.svg')] bg-cover bg-center bg-no-repeat">
-                          </div>
-                        </div>
-                        <p class="pl-2 text-start">+55 Brasil</p>
-                      </div>
-                    </button>
-                  </li>
-                  <li>
-                    <button type="button" class="inline-flex w-full px-4 py-2 text-sm hover:bg-gray-100">
-                      <div class="inline-flex items-center">
-                        <div>
-                          <div
-                            class="h-7 w-7 rounded-full bg-[url('https://flagcdn.com/io.svg')] bg-cover bg-center bg-no-repeat">
-                          </div>
-                        </div>
-                        <p class="pl-2 text-start">+246 British Indian Ocean Territory</p>
-                      </div>
-                    </button>
-                  </li>
-                  <li>
-                    <button type="button" class="inline-flex w-full px-4 py-2 text-sm hover:bg-gray-100">
-                      <div class="inline-flex items-center">
-                        <div>
-                          <div
-                            class="h-7 w-7 rounded-full bg-[url('https://flagcdn.com/ve.svg')] bg-cover bg-center bg-no-repeat">
-
-                          </div>
-                        </div>
-                        <p class="pl-2 text-start">+58 Venezuela, Bolivarian Republic of Venezuela</p>
-                      </div>
-                    </button>
-                  </li>
-                </ul>
-              </div>
-              <!-- Select -->
-            </span>
-            <input type="text" class="h-16 w-full border-0 outline-none rounded-full text-xl font-normal lg:h-14" placeholder="Ingrese el número de teléfono">
-          </div>
-          <button class="w-full font-semibold mt-5 shadow-lg text-white bg-purpura hover:bg-indigo-400 rounded-full px-5 py-2.5 text-center lg:m-0 lg:w-60 lg:py-3 lg:px-3">Localizar teléfono</button>
         </div>
       </div>
-      <div class="mt-32 lg:pl-7">
-        <img src="Telefono.webp" class="w-full" alt="">
+    <div>
+
       </div>
     </article>
-    <article class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-5 gap-7">
-      <div class="bg-indigox  flex flex-col items-center px-7 py-11 rounded-[2.3rem] gap-3 text-center">
-        <img src="world.png" class="h-20" alt="">
-        <h4 class="text-[34px] leading-tight">En cualquier lugar<br> del planeta</h4>
-        <p class="font-normal text-basex text-lg">Y también funciona con cualquier <br> operador y teléfono móvil</p>
-      </div>
-      <div class="bg-indigox  flex flex-col items-center px-7 py-11 rounded-[2.3rem] gap-3 text-center">
-        <img src="confidential.png" class="h-20" alt="">
-        <h4 class="text-[34px] leading-tight">Puedes permanecer  <br>anónimo</h4>
-        <p class="font-normal text-basex text-lg">El destinatario nunca sabrá que <br>proviene de ti</p>
-      </div>
-      <div class="bg-indigox  flex flex-col items-center px-7 py-11 rounded-[2.3rem] gap-3 text-center">
-        <img src="accurate.png" class="h-20" alt="">
-        <h4 class="text-[34px] leading-tight">Tan preciso como el GPS</h4>
-        <p class="font-normal text-basex text-lg">Te mostraremos la ubicación <br>exacta en un mapa en línea</p>
-      </div>
-    </article>
-    <article class="bg-indigox flex flex-col items-center px-7 py-11 rounded-[2.3rem]">
 
+    <article class="bg-indigox flex flex-col items-center p-4 rounded-[1.8rem] border border-gray-200 shadow-lg shadow-slate-200 md:p-12">
+      <div class="rounded-2xl w-full px-10 py-6 bg-white mb-8 md:mb-10">
+        <h4 class="text-[30px] text-center leading-tight md:text-start lg:text-[42px]">¿Buscas a un pariente?</h4>
+        <p class="text-basex mt-2 md:mt-4 text-lg">Mostrar instantáneamente su posición precisa en un mapa</p>
+      </div>
+      <div class="flex flex-col lg:flex-row gap-6  md:gap-10">
+        <div class="flex flex-col w-full gap-6  md:gap-10">
+          <div>
+            <img src="comilla.png" class="h-20" alt="">
+          </div> 
+          <h4 class="text-2xl text-basex">”Simple y práctico para localizar a nuestra hija de 12 años cuando sale con sus amigos. Todo lo que tiene que hacer es hacer clic en un enlace y podemos estar tranquilos.”</h4>
+        </div>
+        <div class="card h-80 w-full rounded-2xl flex flex-col justify-end" style="background-image: url('https://d2xyc7ypmnrz56.cloudfront.net/9d0f540f-19ee-4365-a4f4-e25dabff95cd/img/daughter-demonstrating-photos-on-cellphone-to-her.webp'); background-position: center; background-size: cover; background-repeat: no-repeat;">
+        <div class="text-white h-24 w-full border-t border-gray-200 backdrop-blur-sm rounded-b-2xl">
+           <div class="flex justify-between items-center px-5 pt-5">
+            <h4 class="text-2xl">Darren y Julie</h4>
+            <div class="flex gap-1">
+              <svg width="14" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_209_20)">
+                  <path d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z" fill="white"></path>
+                </g>
+                <defs>
+                  <clipPath id="clip0_209_20">
+                    <rect width="20" height="20" fill="white" transform="translate(0 0.150146)"></rect>
+                  </clipPath>
+                </defs>
+              </svg>
+              <svg width="14" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_209_20)">
+                  <path d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z" fill="white"></path>
+                </g>
+                <defs>
+                  <clipPath id="clip0_209_20">
+                    <rect width="20" height="20" fill="white" transform="translate(0 0.150146)"></rect>
+                  </clipPath>
+                </defs>
+              </svg>
+              <svg width="14" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_209_20)">
+                  <path d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z" fill="white"></path>
+                </g>
+                <defs>
+                  <clipPath id="clip0_209_20">
+                    <rect width="20" height="20" fill="white" transform="translate(0 0.150146)"></rect>
+                  </clipPath>
+                </defs>
+              </svg>
+              <svg width="14" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_209_20)">
+                  <path d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z" fill="white"></path>
+                </g>
+                <defs>
+                  <clipPath id="clip0_209_20">
+                    <rect width="20" height="20" fill="white" transform="translate(0 0.150146)"></rect>
+                  </clipPath>
+                </defs>
+              </svg>
+              <svg width="14" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_209_20)">
+                  <path d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z" fill="white"></path>
+                </g>
+                <defs>
+                  <clipPath id="clip0_209_20">
+                    <rect width="20" height="20" fill="white" transform="translate(0 0.150146)"></rect>
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
+           </div>
+           <p class="px-5 text-sm font-normal"> Usuario de Fullgeo </p>
+        </div>
+        </div>
+      </div>
+    <div>
+
+      </div>
     </article>
+
+
+    <article class="bg-indigox flex flex-col items-center p-4 rounded-[1.8rem] border border-gray-200 shadow-lg shadow-slate-200 md:p-12">
+      <div class="rounded-2xl w-full px-10 py-6 bg-white mb-8 md:mb-10">
+        <h4 class="text-[30px] text-center leading-tight md:text-start lg:text-[42px]">¿Sospechoso de un comprador/vendedor en línea?</h4>
+        <p class="text-basex mt-2 md:mt-4 text-lg">Pídeles que se localicen antes de proceder con la transacción</p>
+      </div>
+      <div class="flex flex-col gap-6  md:gap-10 lg:flex-row">
+        <div class="flex flex-col gap-6  md:gap-10 w-full">
+          <div>
+            <img src="comilla.png" class="h-20" alt="">
+          </div> 
+          <h4 class="text-2xl text-basex">“Pude verificar el paradero de un vendedor después de pagar un depósito por un scooter. ¡Gracias a Fullgeo, nuestra reunión fue sin problemas y todo salió bien!”</h4>
+        </div>
+        <div class="card h-80 w-full rounded-2xl flex flex-col justify-end" style="background-image: url('https://d2xyc7ypmnrz56.cloudfront.net/9d0f540f-19ee-4365-a4f4-e25dabff95cd/img/close-up-young-man-looking-at-phone.webp'); background-position: center; background-size: cover; background-repeat: no-repeat;">
+        <div class="text-white h-24 w-full border-t border-gray-200 backdrop-blur-sm rounded-b-2xl">
+           <div class="flex justify-between items-center px-5 pt-5">
+            <h4 class="text-2xl">Mark</h4>
+            <div class="flex gap-1">
+              <svg width="14" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_209_20)">
+                  <path d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z" fill="white"></path>
+                </g>
+                <defs>
+                  <clipPath id="clip0_209_20">
+                    <rect width="20" height="20" fill="white" transform="translate(0 0.150146)"></rect>
+                  </clipPath>
+                </defs>
+              </svg>
+              <svg width="14" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_209_20)">
+                  <path d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z" fill="white"></path>
+                </g>
+                <defs>
+                  <clipPath id="clip0_209_20">
+                    <rect width="20" height="20" fill="white" transform="translate(0 0.150146)"></rect>
+                  </clipPath>
+                </defs>
+              </svg>
+              <svg width="14" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_209_20)">
+                  <path d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z" fill="white"></path>
+                </g>
+                <defs>
+                  <clipPath id="clip0_209_20">
+                    <rect width="20" height="20" fill="white" transform="translate(0 0.150146)"></rect>
+                  </clipPath>
+                </defs>
+              </svg>
+              <svg width="14" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_209_20)">
+                  <path d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z" fill="white"></path>
+                </g>
+                <defs>
+                  <clipPath id="clip0_209_20">
+                    <rect width="20" height="20" fill="white" transform="translate(0 0.150146)"></rect>
+                  </clipPath>
+                </defs>
+              </svg>
+              <svg width="14" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_209_20)">
+                  <path d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z" fill="white"></path>
+                </g>
+                <defs>
+                  <clipPath id="clip0_209_20">
+                    <rect width="20" height="20" fill="white" transform="translate(0 0.150146)"></rect>
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
+           </div>
+           <p class="px-5 text-sm font-normal"> Usuario de Fullgeo </p>
+        </div>
+        </div>
+      </div>
+    <div>
+
+      </div>
+    </article>
+
   </section>
 </main>

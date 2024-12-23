@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 import { HeaderComponent } from './components/header/header.component';
 import { HeroComponent } from './components/hero/hero.component';
-import { UtilitiesService } from './services/utilities.service';
 
 
 
@@ -13,5 +12,5 @@ import { UtilitiesService } from './services/utilities.service';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
- 
+
 }

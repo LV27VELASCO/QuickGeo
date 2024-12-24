@@ -1,6 +1,6 @@
 .imagenFondo{
     background-image: url("/FondoPortada.png");
-    background-size:unset;
+    background-size:cover;
     background-position: center;
     background-repeat: no-repeat;
 }

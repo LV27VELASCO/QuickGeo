@@ -15,4 +15,10 @@ import { HowItWorksComponent } from './components/how-it-works/how-it-works.comp
 })
 export class AppComponent {
 
+  acordions:boolean[]=[false,false,false,false,false,false,false,false];
+
+  setAccordeon(index:number){
+    this.acordions[index]=!this.acordions[index];
+  }
+
 }

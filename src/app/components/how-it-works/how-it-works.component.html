@@ -1,12 +1,11 @@
 <section class="mt-5">
-    <article class='w-full rounded-[2.3rem] pt-4 bg-indigox imagenFondo lg:grid  lg:grid-cols-2 xl:py-0'>
+    <article class='w-full rounded-[2.3rem] pt-4 pb-1 bg-indigox imagenFondo lg:grid  lg:grid-cols-2 xl:py-0'>
       <div class="text-center flex flex-col mt-10 lg:justify-start">
         <h3 class="text-[40px] pl-7 leading-tight text-start">
           ¿Como Funciona?
         </h3>
-
         <ul class="mt-10">
-          <li [class]="currentIndex<=0?'border-l-2':'border-0 opacity-55'" class="flex flex-col sm:grid sm:grid-cols-10 border-blue-600 pl-9">
+          <li (click)="setCurrenIndex(0)" [class]="currentIndex<=0?'border-l-2':'border-0 opacity-55'" class="cursor-pointer flex flex-col sm:grid sm:grid-cols-10 border-blue-600 pl-9 transition-all delay-75 duration-200 ease-in-out hover:border-l-2 hover:opacity-100">
             <div class="w-[4.5rem] mt-3 sm:col-span-1 lg:col-span-2">
               <img src="number-1.png" alt="">
             </div>
@@ -15,7 +14,7 @@
               <p class="font-semibold text-basex">Nuestra tecnología comienza a localizar e identificar el teléfono asociado.</p>
             </div>
           </li>
-          <li [class]="currentIndex==1?'border-l-2':'border-0 opacity-55'" class="mt-7 flex flex-col sm:grid sm:grid-cols-10 border-blue-600 pl-9">
+          <li (click)="setCurrenIndex(1)" [class]="currentIndex==1?'border-l-2':'border-0 opacity-55'" class="mt-7 cursor-pointer flex flex-col sm:grid sm:grid-cols-10 border-blue-600 pl-9 transition-all delay-75 duration-200 ease-in-out hover:border-l-2 hover:opacity-100">
             <div class="w-[4.5rem] mt-3 sm:col-span-1 lg:col-span-2">
               <img  src="number-2.png" alt="">
             </div>
@@ -24,7 +23,7 @@
               <p class="font-semibold text-basex">Enviamos un mensaje de texto al teléfono objetivo para localizarlo. Este mensaje es anónimo por defecto, pero puede ser personalizado para aumentar las posibilidades de éxito.</p>
             </div>
           </li>
-          <li [class]="currentIndex==2?'border-l-2':'border-0 opacity-55'" class="mt-7 flex flex-col sm:grid sm:grid-cols-10 border-blue-600 pl-9">
+          <li (click)="setCurrenIndex(2)" [class]="currentIndex==2?'border-l-2':'border-0 opacity-55'" class="mt-7 cursor-pointer flex flex-col sm:grid sm:grid-cols-10 border-blue-600 pl-9 transition-all delay-75 duration-200 ease-in-out hover:border-l-2 hover:opacity-100">
             <div class="w-[4.5rem] mt-3 sm:col-span-1 lg:col-span-2">
               <img src="number-3.png" alt="">
             </div>
@@ -36,9 +35,9 @@
         </ul>
       </div>
       <div class="mt-16  px-4 lg:pl-7 max-w-md m-auto">
-        <img src="home_0.webp" class="w-full " alt="">
-        <img src="home_1.webp" class="w-full hidden" alt="">
-        <img src="home_2.webp" class="w-full hidden" alt="">
+        <img [class]="currentIndex<=0?'':'hidden'" src="home_0.webp" class="w-full" alt="">
+        <img [class]="currentIndex==1?'':'hidden'" src="home_1.webp" class="w-full" alt="">
+        <img [class]="currentIndex==2?'':'hidden'" src="home_2.webp" class="w-full" alt="">
       </div>
     </article>
   </section>

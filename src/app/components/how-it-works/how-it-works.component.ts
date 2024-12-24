@@ -12,9 +12,6 @@ export class HowItWorksComponent implements OnInit, OnDestroy{
 
   constructor(@Inject(PLATFORM_ID) private platformId: object,private appRef: ApplicationRef) {}
 
-  
-
-  items = 3; // Tres elementos
   currentIndex = -1; // Índice del elemento activo
   intervalId!: any; // ID del intervalo
   private ngZone = inject(NgZone); 
@@ -33,8 +30,10 @@ export class HowItWorksComponent implements OnInit, OnDestroy{
 
   startCycle() {
     this.intervalId = setInterval(() => {
-      this.currentIndex = (this.currentIndex + 1) % this.items; // Cambia el índice activo
-    }, 4000); // Cambia cada 4 segundos
+      this.ngZone.run(() => { // Se vuelve acceder a la zona de angular para que renderice el documento al cambiar el valor
+        this.currentIndex = (this.currentIndex + 1) % 3; // Cambia el índice activo
+      });
+    }, 5000); // Cambia cada 4 segundos
     
   }
 
@@ -42,5 +41,9 @@ export class HowItWorksComponent implements OnInit, OnDestroy{
     if (this.intervalId) {
       clearInterval(this.intervalId); // Limpia el intervalo al destruir el componente
     }
+  }
+
+  setCurrenIndex(num:number){
+    this.currentIndex = num;
   }
 }

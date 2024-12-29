@@ -1,0 +1,134 @@
+<footer class="bg-indigox flex flex-col px-5 py-5 mt-5 rounded-[2.3rem] md:flex-row">
+    <div class="p-2 w-full md:w-[80%] lg:flex">
+      <div class="w-full md:w-fit flex flex-col gap-4">
+        <div class="bg-white p-6 rounded-2xl flex flex-col text-center md:text-left">
+          <div class="m-auto md:m-0">
+            <img src="Logo.png" class="h-6" alt="">
+          </div>
+          <p class="font-semibold text-[16px] leading-normal pt-3">Localiza cualquier teléfono, <br>en cualquier lugar, en cualquier momento.</p>
+        </div>
+        <div class="relative bg-white px-4 py-2 rounded-full w-full">
+            <button (click)="selectShow()" id="leaguage-button" class="text-base font-normal flex items-center justify-between w-full px-4 text-center outline-none lg:pl-1"
+              type="button">
+              <p class="pl-2">Español</p>   
+              <svg [class]="select?'rotate-180':'rotate-0'" class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 10 6"> <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
+              </svg>
+            </button>
+            <div [class]="select?'block':'hidden'" class="z-10 absolute rounded-2xl shadow left-0 bottom-11 p-2 bg-white">
+              <div id="dropdown-states" class="w-56 max-h-36 overflow-auto">
+                <ul class="text-sm" aria-labelledby="states-button">
+                  <li>
+                    <button type="button" class="px-2 py-[6px] inline-flex w-full text-sm hover:bg-gray-100" >
+                      <div class="inline-flex items-center">
+                        <div>
+                          <div  class="h-5 w-5 rounded-full">
+                            <img src="https://flagcdn.com/fr.svg" loading="lazy"  class="object-cover object-center w-full h-full rounded-full" alt="">
+                          </div>
+                        </div>
+                        <p class="pl-2 font-medium text-xs text-start">FR</p>
+                      </div>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="px-2 py-[6px] inline-flex  w-full text-sm hover:bg-gray-100" >
+                      <div class="inline-flex items-center">
+                        <div>
+                          <div  class="h-5 w-5 rounded-full">
+                            <img src="https://flagcdn.com/it.svg" loading="lazy"  class="object-cover object-center w-full h-full rounded-full" alt="">
+                          </div>
+                        </div>
+                        <p class="pl-2 font-medium text-xs text-start">IT</p>
+                      </div>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="px-2 py-[6px] inline-flex w-full text-sm hover:bg-gray-100" >
+                      <div class="inline-flex items-center">
+                        <div>
+                          <div  class="h-5 w-5 rounded-full">
+                            <img src="https://flagcdn.com/es.svg" loading="lazy"  class="object-cover object-center w-full h-full rounded-full" alt="">
+                          </div>
+                        </div>
+                        <p class="pl-2 font-medium text-xs text-start">ES</p>
+                      </div>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="px-2 py-[6px] inline-flex w-full text-sm hover:bg-gray-100" >
+                      <div class="inline-flex items-center">
+                        <div>
+                          <div  class="h-5 w-5 rounded-full">
+                            <img src="https://flagcdn.com/pt.svg" loading="lazy"  class="object-cover object-center w-full h-full rounded-full" alt="">
+                          </div>
+                        </div>
+                        <p class="pl-2 font-medium text-xs text-start">PT</p>
+                      </div>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="px-2 py-[6px] inline-flex w-full text-sm hover:bg-gray-100" >
+                      <div class="inline-flex items-center">
+                        <div>
+                          <div  class="h-5 w-5 rounded-full">
+                            <img src="https://flagcdn.com/gb.svg" loading="lazy"  class="object-cover object-center w-full h-full rounded-full" alt="">
+                          </div>
+                        </div>
+                        <p class="pl-2 font-medium text-xs text-start">EN</p>
+                      </div>
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="w-full md:w-fit">
+        <ul class="p-6 flex flex-col gap-3 items-center [&>li]:font-normal md:min-w-80 lg:py-0 lg:px-10 lg:items-start">
+          <h4 class="pb-2">Enlaces rápidos</h4>
+          <li>Precios</li>
+          <li>¿Cómo funciona?</li>
+          <li>Preguntas frecuentes</li>
+          <li>Contacto</li>
+        </ul>
+      </div>
+    </div>
+    <div class="py-2 w-full md:w-[20%] flex justify-center md:justify-end">
+      <div class="px-5 rounded-2xl w-fit">
+        <ol class="[&>li]:font-normal [&>li>a]:text-base flex flex-col gap-3 text-center md:text-start">
+          <h4 class="md:mb-2 md:mr-7">Cuenta</h4>
+          <li><a href="">Iniciar sesión</a></li>
+          <li><a href="">Darse de baja</a></li>
+        </ol>
+      </div>
+    </div>
+</footer>
+<section class="text-base p-4 font-normal flex justify-center flex-wrap gap-5">
+  <div class="px-4">
+    <ul class="flex gap-5 flex-wrap justify-center items-center">
+      <li><a href="">Aviso legal</a></li>
+      <li><a href="">Política de privacidad</a></li>
+      <li><a href="">Términos y condiciones generales</a></li>
+      <li class="flex gap-3 items-center">
+        <div>
+          Pagos seguros
+        </div>
+        <div class="flex gap-3">
+          <!-- Visa -->
+          <svg width="34" height="25" viewBox="0 0 34 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0.5" y="0.917969" width="33" height="23" rx="3.5" fill="white"></rect><path fill-rule="evenodd" clip-rule="evenodd" d="M10.7503 16.2762H8.69056L7.146 10.2103C7.07269 9.93129 6.91703 9.68461 6.68806 9.56835C6.11664 9.27617 5.48696 9.04365 4.80005 8.92638V8.69284H8.11813C8.57607 8.69284 8.91953 9.04365 8.97677 9.45107L9.77817 13.8266L11.8369 8.69284H13.8394L10.7503 16.2762ZM14.9843 16.2762H13.039L14.6408 8.69284H16.5861L14.9843 16.2762ZM19.1028 10.7937C19.16 10.3852 19.5035 10.1517 19.9042 10.1517C20.5338 10.093 21.2197 10.2103 21.7922 10.5015L22.1356 8.86875C21.5632 8.63522 20.9335 8.51794 20.3621 8.51794C18.4741 8.51794 17.1003 9.56835 17.1003 11.0262C17.1003 12.1352 18.0734 12.7176 18.7603 13.0684C19.5035 13.4182 19.7897 13.6517 19.7324 14.0015C19.7324 14.5262 19.16 14.7597 18.5886 14.7597C17.9017 14.7597 17.2147 14.5848 16.5861 14.2927L16.2426 15.9264C16.9295 16.2176 17.6727 16.3348 18.3596 16.3348C20.4766 16.3925 21.7922 15.3431 21.7922 13.768C21.7922 11.7844 19.1028 11.6682 19.1028 10.7937V10.7937ZM28.6001 16.2762L27.0555 8.69284H25.3965C25.053 8.69284 24.7095 8.92638 24.5951 9.27617L21.7349 16.2762H23.7374L24.1371 15.1682H26.5976L26.8265 16.2762H28.6001ZM25.6827 10.735L26.2541 13.5931H24.6523L25.6827 10.735Z" fill="#172B85"></path><rect x="0.5" y="0.917969" width="33" height="23" rx="3.5" stroke="#484848"> </rect>
+          </svg>
+
+          <!-- Master card -->
+          <svg width="34" height="25" viewBox="0 0 34 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0.5" y="0.917969" width="33" height="23" rx="3.5" fill="white"> </rect> <path fill-rule="evenodd" clip-rule="evenodd" d="M17.179 17.2474C15.9949 18.2454 14.459 18.8479 12.7807 18.8479C9.03582 18.8479 6 15.8482 6 12.1479C6 8.44763 9.03582 5.44794 12.7807 5.44794C14.459 5.44794 15.9949 6.05044 17.179 7.04848C18.363 6.05044 19.8989 5.44794 21.5773 5.44794C25.3221 5.44794 28.358 8.44763 28.358 12.1479C28.358 15.8482 25.3221 18.8479 21.5773 18.8479C19.8989 18.8479 18.363 18.2454 17.179 17.2474Z" fill="#ED0006"></path>  <path fill-rule="evenodd" clip-rule="evenodd" d="M17.179 17.2474C18.6369 16.0185 19.5614 14.1899 19.5614 12.1479C19.5614 10.106 18.6369 8.27738 17.179 7.04848C18.363 6.05043 19.8989 5.44794 21.5772 5.44794C25.3221 5.44794 28.3579 8.44763 28.3579 12.1479C28.3579 15.8482 25.3221 18.8479 21.5772 18.8479C19.8989 18.8479 18.363 18.2454 17.179 17.2474Z" fill="#F9A000"></path>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M17.179 17.2474C18.6369 16.0185 19.5614 14.1899 19.5614 12.148C19.5614 10.106 18.6369 8.27743 17.179 7.04852C15.7211 8.27743 14.7966 10.106 14.7966 12.148C14.7966 14.1899 15.7211 16.0185 17.179 17.2474Z" fill="#FF5E00"></path><rect x="0.5" y="0.917969" width="33" height="23" rx="3.5" stroke="#484848"> </rect>
+          </svg>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="text-center">
+    <p>© 2024 Luis Velasco. Todos los derechos reservados.</p>
+  </div>
+</section>

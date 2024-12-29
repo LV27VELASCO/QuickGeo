@@ -5,8 +5,7 @@ import { isPlatformBrowser } from '@angular/common';
   selector: 'app-how-it-works',
   standalone: true,
   imports: [],
-  templateUrl: './how-it-works.component.html',
-  styleUrl: './how-it-works.component.css'
+  templateUrl: './how-it-works.component.html'
 })
 export class HowItWorksComponent implements OnInit, OnDestroy{
 

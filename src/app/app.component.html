@@ -1,9 +1,13 @@
-<main class="max-w-screen-xl mx-auto px-4">
-  <app-header/>
-  <app-hero [_countries]="_countries" [_urlFlagBase]="urlFlagBase" [_flag]="flag" [_codePhone]="codePhone"/>
-  <app-testimonial/>
-  <app-how-it-works/>
-  <app-questions/>
-  <app-locate-card [_countries]="_countries" [_urlFlagBase]="urlFlagBase" [_flag]="flag" [_codePhone]="codePhone"/>
-  <app-footer/>
-</main>
+ <main class="max-w-screen-xl mx-auto px-4">
+  @if(showHeader){
+    <app-header />
+  }
+  <router-outlet/> 
+</main>  
+  <!-- <app-home [_countries]="_countries" [_urlFlagBase]="urlFlagBase" [_flag]="flag" [_codePhone]="codePhone"/> -->
+  <!-- <app-pricing [_countries]="_countries" [_urlFlagBase]="urlFlagBase" [_flag]="flag" [_codePhone]="codePhone"/> -->
+  <!-- <app-requently-asked-questions [_countries]="_countries" [_urlFlagBase]="urlFlagBase" [_flag]="flag" [_codePhone]="codePhone"/> -->
+  <!-- <app-contact [_countries]="_countries" [_urlFlagBase]="urlFlagBase" [_flag]="flag" [_codePhone]="codePhone"/> -->
+   
+  <!-- <app-login/> -->
+  

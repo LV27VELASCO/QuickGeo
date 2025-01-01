@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-questions',
@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
   templateUrl: './questions.component.html'
 })
 export class QuestionsComponent {
+  @Input() _ishome: boolean = true;
 
   acordions:boolean[]=[false,false,false,false,false,false,false,false];
 

@@ -1,0 +1,35 @@
+<div>
+    <article class='w-full rounded-[2.3rem] px-6 py-20 gap-5 grid grid-cols-1 bg-indigox imagenFondo lg:px-3 xl:px-8 lg:grid-cols-2 lg:items-center'>
+        <div class="text-left lg:text-center px-4 md:px-12 flex flex-col lg:justify-start">
+          <h1 class="text-[40px] text-center md:text-6xl leading-tight lg:text-6xl lg:text-start lg:mb-4">
+            Contacto
+          </h1>
+          <div class="text-center  mt-10 text-2xl w-full md:text-left ">
+            <p>Póngase en contacto con nuestro equipo dedicado. Estaremos encantados de ayudarlo.</p>
+          </div>
+        </div>
+        <div class="py-5 px-10 bg-white rounded-3xl flex flex-col items-start  gap-10">
+             <div class="flex flex-col items-center md:flex-row  gap-4">
+              <div class="w-[72px] h-[72px]">
+                <img src="unlimited.png" class="w-full h-full" alt="">
+              </div>
+              <div class="flex text-center md:text-start flex-col w-full">
+                <h5 class="text-lg sm:text-2xl text-purpura">¡Chatea con nosotros!</h5>
+                <p class="text-sm font-semibold">Nuestro equipo está aquí para responder tus preguntas, abre la burbuja de chat en la parte inferior de esta página.</p>
+              </div>
+             </div>
+             <div class="flex flex-col items-center md:flex-row gap-4">
+              <div class="w-[72px] h-[72px]">
+                <img src="chatbot.png" class="w-full h-full" alt="">
+              </div>
+              <div class="flex text-center md:text-start flex-col w-full">
+                <h5 class="text-lg sm:text-2xl text-purpura">contact&#64;fullgeo.mobi</h5>
+                <p class="text-sm font-semibold">Estaremos encantados de ayudarte y generalmente respondemos en menos de 24 horas.</p>
+              </div>
+             </div>
+        </div>
+    </article>
+    <app-questions [_ishome]="false"/>
+    <app-locate-card />
+    <app-footer/>
+</div>

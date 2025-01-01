@@ -1,11 +1,11 @@
-<section>
-    <article class='hero w-full rounded-[2.3rem] px-4 pt-4 bg-indigox imagenFondo lg:px-3 lg:grid xl:px-8 lg:grid-cols-2 lg:pb-14 xl:py-0'>
+<section id="hero">
+    <article class='w-full rounded-[2.3rem] px-4 pt-4 bg-indigox imagenFondo lg:px-3 lg:grid xl:px-8 lg:grid-cols-2 lg:pb-14 xl:py-0'>
       <div class="text-center flex flex-col mt-10 lg:justify-start lg:relative lg:top-[16%]">
         <h1 class="text-[40px] md:text-6xl mb-10 leading-tight lg:text-6xl lg:text-start lg:mb-4">
           Localiza cualquier teléfono, en cualquier lugar, en cualquier momento
         </h1>
         <div class="lg:mt-10">
-          <app-select-country [_countries]="_countries" [_urlFlagBase]="_urlFlagBase" [_flag]="_flag" [_codePhone]="_codePhone"/>
+          <app-select-country  />
         </div>
       </div>
       <div class="mt-32 lg:pl-7">

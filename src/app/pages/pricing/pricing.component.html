@@ -1,0 +1,63 @@
+<div> 
+    <article class='w-full rounded-[2.3rem] px-4 py-20 gap-10 grid grid-cols-1 bg-indigox imagenFondo lg:px-3 xl:px-8 lg:grid-cols-2 lg:items-center'>
+        <div class="text-left lg:text-center px-6 md:px-12 flex flex-col lg:justify-start">
+          <h1 class="text-[40px] text-center md:text-6xl leading-tight lg:text-6xl lg:text-start lg:mb-4">
+            Precios
+          </h1>
+          <div class="text-center  mt-10 text-2xl w-full md:text-left md:w-[70%]">
+            <p>Aprovecha nuestra oferta de prueba de 24 horas para descubrir nuestro servicio.</p>
+          </div>
+        </div>
+        <div>
+          <div class="py-5 px-10 bg-white rounded-3xl flex flex-col items-center gap-5">
+            <div class="text-center">
+              <h4 class="text-2xl md:text-3xl p-5 text-purpura">Oferta de prueba</h4>
+              <div class="flex items-start justify-center">
+                <h3 class="text-6xl md:text-8xl text-gray-800">€0.50</h3>
+                <span class="text-lg text-gray-800">/24h</span>
+              </div>
+              <span class="text-lg font-semibold mt-5 inline-block">Luego €47.90 /mes</span>
+            </div>
+            <button class="w-full mt-5 shadow-lg text-white bg-purpura hover:bg-indigo-700 rounded-full px-5 py-2.5 lg:m-0  lg:py-3 lg:px-3">
+              <div  role="status" class="text-center font-semibold flex items-center justify-center gap-1">
+                <div>
+                  <svg class="w-4 h-4 ms-2.5 -rotate-90" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 10 6"> <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
+                  </svg>
+                </div>
+                <p class="text-base">Prueba ahora</p>
+              </div>
+            </button>
+          </div>
+        </div>
+    </article>
+    <article class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-5 gap-7">
+      <div class="bg-indigox  flex flex-col items-center px-7 py-11 rounded-[2.3rem] gap-3 text-center">
+        <img src="unlimited.png" class="h-20" alt="">
+        <h4 class="text-[34px] leading-tight">Geolocalización <br>ilimitada</h4>
+      </div>
+      <div class="bg-indigox  flex flex-col items-center px-7 py-11 rounded-[2.3rem] gap-3 text-center">
+        <img src="phone.png" class="h-20" alt="">
+        <h4 class="text-[34px] leading-tight">Todos los tipos de <br>teléfonos</h4>
+      </div>
+      <div class="bg-indigox  flex flex-col items-center px-7 py-11 rounded-[2.3rem] gap-3 text-center">
+        <img src="world.png" class="h-20" alt="">
+        <h4 class="text-[34px] leading-tight">Cobertura mundial</h4>
+      </div>
+      <div class="bg-indigox  flex flex-col items-center px-7 py-11 rounded-[2.3rem] gap-3 text-center">
+        <img src="network.png" class="h-20" alt="">
+        <h4 class="text-[34px] leading-tight">Todos las redes</h4>
+      </div>
+      <div class="bg-indigox  flex flex-col items-center px-7 py-11 rounded-[2.3rem] gap-3 text-center">
+        <img src="location.png" class="h-20" alt="">
+        <h4 class="text-[34px] leading-tight">Ubicación exacta</h4>
+      </div>
+      <div class="bg-indigox  flex flex-col items-center px-7 py-11 rounded-[2.3rem] gap-3 text-center">
+        <img src="confidential.png" class="h-20" alt="">
+        <h4 class="text-[34px] leading-tight">Mantén la <br>confidencialidad</h4>
+      </div>
+    </article>
+    <app-questions [_ishome]="false"/>
+    <app-locate-card  />
+    <app-footer/>
+</div>

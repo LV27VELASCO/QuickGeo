@@ -1,36 +1,45 @@
 import { Component} from '@angular/core';
-import { HeaderComponent } from './components/header/header.component';
-import { HeroComponent } from './components/hero/hero.component';
-import { TestimonialComponent } from './components/testimonial/testimonial.component';
-import { HowItWorksComponent } from './components/how-it-works/how-it-works.component';
-import { QuestionsComponent } from './components/questions/questions.component';
-import { Country } from '../Interface/Country';
+import { HomeComponent } from './pages/home/home.component';
 import { UtilitiesService } from './services/utilities.service';
-import { SelectCountryComponent } from './components/select-country/select-country.component';
-import { LocateCardComponent } from './components/locate-card/locate-card.component';
-import { FooterComponent } from './components/footer/footer.component';
+import { Country } from '../Interface/Country';
+import { PricingComponent } from './pages/pricing/pricing.component';
+import { RequentlyAskedQuestionsComponent } from './pages/requently-asked-questions/requently-asked-questions.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { LoginComponent } from './pages/login/login.component';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
+import { HeaderComponent } from './components/header/header.component';
 
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HeaderComponent,HeroComponent,TestimonialComponent,HowItWorksComponent,QuestionsComponent,SelectCountryComponent,LocateCardComponent,FooterComponent],
+  imports: [RouterOutlet,HeaderComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
 
-   constructor(private utils: UtilitiesService) { }
+   constructor(private utils: UtilitiesService,private router: Router) { }
 
     _countries: Country[] = [];
     urlFlagBase="https://flagcdn.com/"; 
     flag:string="co";
     codePhone:string="+57";
+    showHeader = true;
+
     ngOnInit() {
+      this.router.events.subscribe((event) => {
+        if (event instanceof NavigationEnd) {
+          // Oculta el Header solo en la ruta '/login'
+          this.showHeader = event.url !== '/login';
+        }
+      });
+
       this.utils.getCountries().subscribe((data) => {
         this._countries = data.sort((a:any)=> a.name);
       });
+      this.utils.setCountries(this._countries);
     }
 
 }

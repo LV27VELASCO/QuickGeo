@@ -1,11 +1,6 @@
 import { Component} from '@angular/core';
-import { HomeComponent } from './pages/home/home.component';
 import { UtilitiesService } from './services/utilities.service';
 import { Country } from '../Interface/Country';
-import { PricingComponent } from './pages/pricing/pricing.component';
-import { RequentlyAskedQuestionsComponent } from './pages/requently-asked-questions/requently-asked-questions.component';
-import { ContactComponent } from './pages/contact/contact.component';
-import { LoginComponent } from './pages/login/login.component';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 
@@ -15,8 +10,7 @@ import { HeaderComponent } from './components/header/header.component';
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet,HeaderComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  templateUrl: './app.component.html'
 })
 export class AppComponent {
 

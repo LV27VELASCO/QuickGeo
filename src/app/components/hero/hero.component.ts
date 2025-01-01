@@ -1,4 +1,4 @@
-import { Component, Input} from '@angular/core';
+import { Component} from '@angular/core';
 import { Country } from '../../../Interface/Country';
 import { SelectCountryComponent } from '../select-country/select-country.component';
 import { UtilitiesService } from '../../services/utilities.service';

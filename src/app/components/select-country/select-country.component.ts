@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component} from '@angular/core';
 import { Country } from '../../../Interface/Country';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import {FormsModule} from '@angular/forms';

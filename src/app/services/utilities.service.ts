@@ -1,5 +1,4 @@
-import { inject, Injectable } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Country } from '../../Interface/Country';

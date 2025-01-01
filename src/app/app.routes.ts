@@ -1,15 +1,10 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
-import { PricingComponent } from './pages/pricing/pricing.component';
-import { LoginComponent } from './pages/login/login.component';
-import { RequentlyAskedQuestionsComponent } from './pages/requently-asked-questions/requently-asked-questions.component';
-import { ContactComponent } from './pages/contact/contact.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent},
-  { path: 'pricing', component: PricingComponent},
-  { path: 'requentlyAskedQuestions', component: RequentlyAskedQuestionsComponent},
-  { path: 'contact', component: ContactComponent},
-  { path: 'login', component: LoginComponent},
+  { path: 'pricing', loadComponent: () => import(`./pages/pricing/pricing.component`).then(mod => mod.PricingComponent)},
+  { path: 'requentlyAskedQuestions', loadComponent: () => import(`./pages/requently-asked-questions/requently-asked-questions.component`).then(mod => mod.RequentlyAskedQuestionsComponent)},
+  { path: 'contact', loadComponent: () => import(`./pages/contact/contact.component`).then(mod => mod.ContactComponent)},
+  { path: 'login', loadComponent: () => import(`./pages/login/login.component`).then(mod => mod.LoginComponent)},
 ];

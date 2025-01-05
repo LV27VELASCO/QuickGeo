@@ -3,89 +3,57 @@
     <article class='w-full rounded-[2.3rem] pt-4 pb-1 bg-indigox imagenFondo lg:grid  lg:grid-cols-2 xl:py-0'>
       <div class="text-center flex flex-col mt-10 lg:justify-start">
         <h3 class="text-[40px] pl-7 leading-tight text-start">
-          ¿Como Funciona?
+          {{'funciones.titulo' | translate}}
         </h3>
         <ul class="mt-10">
-          <li (click)="setCurrenIndex(0)" [class]="currentIndex<=0?'border-l-2':'border-0 opacity-55'" class="cursor-pointer flex flex-col sm:grid sm:grid-cols-10 border-blue-600 pl-9 transition-all delay-75 duration-200 ease-in-out hover:border-l-2 hover:opacity-100">
-            <div class="w-[4.5rem] mt-3 sm:col-span-1 lg:col-span-2">
-              <img src="number-1.png" alt="">
-            </div>
-            <div class="text-left mt-2 sm:mt-0 px-3 lg:pl-0 col-span-8">
-              <h4 class="text-2xl">Realizar una búsqueda en un número</h4>
-              <p class="font-semibold text-basex">Nuestra tecnología comienza a localizar e identificar el teléfono asociado.</p>
-            </div>
-          </li>
-          <li (click)="setCurrenIndex(1)" [class]="currentIndex==1?'border-l-2':'border-0 opacity-55'" class="mt-7 cursor-pointer flex flex-col sm:grid sm:grid-cols-10 border-blue-600 pl-9 transition-all delay-75 duration-200 ease-in-out hover:border-l-2 hover:opacity-100">
-            <div class="w-[4.5rem] mt-3 sm:col-span-1 lg:col-span-2">
-              <img  src="number-2.png" alt="">
-            </div>
-            <div class="text-left mt-2 sm:mt-0 px-3 lg:pl-0 col-span-8">
-              <h4 class="text-2xl">Solicitar una ubicación precisa</h4>
-              <p class="font-semibold text-basex">Enviamos un mensaje de texto al teléfono objetivo para localizarlo. Este mensaje es anónimo por defecto, pero puede ser personalizado para aumentar las posibilidades de éxito.</p>
-            </div>
-          </li>
-          <li (click)="setCurrenIndex(2)" [class]="currentIndex==2?'border-l-2':'border-0 opacity-55'" class="mt-7 cursor-pointer flex flex-col sm:grid sm:grid-cols-10 border-blue-600 pl-9 transition-all delay-75 duration-200 ease-in-out hover:border-l-2 hover:opacity-100">
-            <div class="w-[4.5rem] mt-3 sm:col-span-1 lg:col-span-2">
-              <img src="number-3.png" alt="">
-            </div>
-            <div class="text-left mt-2 sm:mt-0 px-3 lg:pl-0 col-span-8">
-              <h4 class="text-2xl">Obtén tus resultados</h4>
-              <p class="font-semibold text-basex">Serás informado automáticamente con la dirección tan pronto como el destinatario confirme su ubicación.</p>
-            </div>
-          </li>
+          @for (item of 'funciones.funcionalidad'| translate; track $index) {
+            <li (click)="setCurrenIndex($index)" [class]="currentIndex!=$index?'border-0 opacity-55':'border-l-2'" class="cursor-pointer flex flex-col sm:grid sm:grid-cols-10 border-blue-600 pl-9 transition-all delay-75 duration-200 ease-in-out hover:border-l-2 hover:opacity-100">
+              <div class="w-[4.5rem] mt-3 sm:col-span-1 lg:col-span-2">
+                <img src="assets/icons/number-{{$index+1}}.png" alt="">
+              </div>
+              <div class="text-left mt-2 sm:mt-0 px-3 lg:pl-0 col-span-8">
+                <h4 class="text-2xl">{{item.titulo}}</h4>
+                <p class="font-semibold text-basex">{{item.parrafo}}</p>
+              </div>
+            </li>
+          }
         </ul>
       </div>
       <div class="mt-16  px-4 lg:pl-7 max-w-md m-auto">
-        <img [class]="currentIndex<=0?'':'hidden'" src="home_0.webp" class="w-full" alt="">
-        <img [class]="currentIndex==1?'':'hidden'" src="home_1.webp" class="w-full" alt="">
-        <img [class]="currentIndex==2?'':'hidden'" src="home_2.webp" class="w-full" alt="">
+        <img [class]="currentIndex<=0?'':'hidden'" src="assets/img/home_0.webp" class="w-full" alt="">
+        <img [class]="currentIndex==1?'':'hidden'" src="assets/img/home_1.webp" class="w-full" alt="">
+        <img [class]="currentIndex==2?'':'hidden'" src="assets/img/home_2.webp" class="w-full" alt="">
       </div>
     </article>
 </section>
 <section class="backGround rounded-[2.3rem] w-full mt-5 p-[5%] text-white lg:grid lg:grid-cols-12 lg:py-6 lg:px-[2%]">
   <div class="max-w-96 w-full rounded-[1.5rem]  m-auto lg:col-span-5 lg:w-[390px] lg:h-[390px]">
-    <img class="w-full lg:w-full lg:h-full lg:object-cover rounded-[1.5rem]" src="woman-phone.webp" alt="">
+    <img class="w-full lg:w-full lg:h-full lg:object-cover rounded-[1.5rem]" src="assets/img/woman-phone.webp" alt="">
   </div>
   <div class="lg:col-span-7 lg:px-5">
     <div class="text-center my-7 flex flex-col gap-7 items-center lg:flex-row ">
       <div>
         <div class="w-full max-w-3xl m-auto lg:h-40 lg:w-40 lg:rounded-[1.2rem]">
-          <img class="object-cover object-center w-full h-full rounded-[1.5rem]" src="locate-mobile.png" alt="">
+          <img class="object-cover object-center w-full h-full rounded-[1.5rem]" src="assets/img/locate-mobile.png" alt="">
         </div>
       </div>
-      <h3 class="text-4xl lg:text-5xl text-start lg:mt-2 ">Localiza cualquier teléfono hoy por solo 0.50€</h3>
+      <h3 class="text-4xl lg:text-5xl text-start lg:mt-2 ">{{'funciones.titulo2' | translate}}</h3>
     </div>
     <div class="bg-blueTurqui rounded-[1.6rem] p-4 lg:grid lg:grid-cols-2 lg:items-center">
       <ul class="grid gap-2 [&>li]:flex [&>li]:items-center [&>li]:gap-2 [&>li>p]:font-semibold [&>li>p]:text-lg">
-        <li>
-          <div class="h-8 w-8">
-            <img class="w-full" src="check.png" alt="">
-          </div>
-          <p>Sin obligación</p>
-        </li>
-        <li>
-          <div class="h-8 w-8">
-            <img class="w-full" src="check.png" alt="">
-          </div>
-          <p>Sin compromiso</p>
-        </li>
-        <li>
-          <div class="h-8 w-8">
-            <img class="w-full" src="check.png" alt="">
-          </div>
-          <p>Acceso completo</p>
-        </li>
-        <li>
-          <div class="h-8 w-8">
-            <img class="w-full" src="check.png" alt="">
-          </div>
-          <p>Búsquedas ilimitadas</p>
-        </li>
+        @for (ventajas of 'funciones.prueba.ventajas' | translate; track $index) {
+          <li>
+            <div class="h-8 w-8">
+              <img class="w-full" src="assets/icons/check.png" alt="icono check">
+            </div>
+            <p>{{ventajas.item}}</p>
+          </li>
+        }
       </ul>
       <div>
-        <p class="text-lg font-normal mt-6 text-left lg:mt-0">Prueba nuestra solución durante un período ilimitado de 24 horas por solo 0,50€. Al final de tu período de prueba, puedes elegir permanecer suscrito por €47.90 al mes.</p>
+        <p class="text-lg font-normal mt-6 text-left lg:mt-0">{{'funciones.prueba.parrafo' | translate}}</p>
         <div class="w-full mt-5">
-          <button type="button" class="text-white w-full bg-purpura shadow-lg hover:text-opacity-70 rounded-full px-5 py-2.5 text-center">Comenzar prueba</button>
+          <button type="button" class="text-white w-full bg-purpura shadow-lg hover:text-opacity-70 rounded-full px-5 py-2.5 text-center">{{'funciones.prueba.textoBoton' | translate}}</button>
         </div>
       </div>
     </div>

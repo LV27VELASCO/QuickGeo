@@ -1,10 +1,11 @@
 import { Component, Inject, inject ,NgZone,OnInit,OnDestroy, PLATFORM_ID,ApplicationRef } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-how-it-works',
   standalone: true,
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './how-it-works.component.html'
 })
 export class HowItWorksComponent implements OnInit, OnDestroy{

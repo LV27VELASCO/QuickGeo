@@ -2,11 +2,12 @@ import { Component} from '@angular/core';
 import { SelectCountryComponent } from '../select-country/select-country.component';
 import { Country } from '../../../Interface/Country';
 import { UtilitiesService } from '../../services/utilities.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-locate-card',
   standalone: true,
-  imports: [SelectCountryComponent],
+  imports: [SelectCountryComponent,TranslateModule],
   templateUrl: './locate-card.component.html'
 })
 export class LocateCardComponent {

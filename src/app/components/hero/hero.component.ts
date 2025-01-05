@@ -2,11 +2,12 @@ import { Component} from '@angular/core';
 import { Country } from '../../../Interface/Country';
 import { SelectCountryComponent } from '../select-country/select-country.component';
 import { UtilitiesService } from '../../services/utilities.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [SelectCountryComponent],
+  imports: [SelectCountryComponent,TranslateModule],
   templateUrl: './hero.component.html'
 })
 export class HeroComponent {

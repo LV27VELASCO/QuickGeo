@@ -1,9 +1,11 @@
 import { Component, Input } from '@angular/core';
+import { RouterLink} from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-questions',
   standalone: true,
-  imports: [],
+  imports: [RouterLink,TranslateModule],
   templateUrl: './questions.component.html'
 })
 export class QuestionsComponent {

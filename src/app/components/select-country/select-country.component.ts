@@ -3,11 +3,12 @@ import { Country } from '../../../Interface/Country';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import {FormsModule} from '@angular/forms';
 import { UtilitiesService } from '../../services/utilities.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-select-country',
   standalone: true,
-  imports: [FormsModule,LazyLoadImageModule],
+  imports: [FormsModule,LazyLoadImageModule,TranslateModule],
   templateUrl: './select-country.component.html'
 })
 export class SelectCountryComponent {

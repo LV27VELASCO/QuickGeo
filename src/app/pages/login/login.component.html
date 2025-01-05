@@ -2,47 +2,48 @@
     <article class="bg-white w-full flex flex-col justify-between h-screen px-5 sm:px-16 py-8">
         <div class="justify-between navbar-start lg:justify-start">
           <a  [routerLink]="['/']">
-            <img src="Logo.png" class="h-6" alt="Logo" />
+            <img src="assets/img/Logo.png" class="h-6" alt="Logo" />
           </a>
         </div>
         <div>
             <div class="py-10 px-5 flex flex-col gap-5 border-b-2 border-gray-50">
-                <h2 class="text-center text-4xl mb-5">Iniciar sesión</h2>
+                <h2 class="text-center text-4xl mb-5">{{'rutas.loguearse.titulo'| translate }}</h2>
                 <div class="flex flex-col gap-2">
-                    <span class="text-sm font-semibold pl-2">Correo electrónico</span>
+                    <span class="text-sm font-semibold pl-2">{{'rutas.loguearse.label1'| translate }}</span>
                     <div class="border-2 rounded-full hover:shadow-sm flex gap-2 items-center py-2 px-3">
                         <div class="h-5 w-5">
-                            <img src="input-email.png" class="w-full h-full" alt="">
+                            <img src="assets/icons/input-email.png" class="w-full h-full" alt="">
                         </div>
-                        <input placeholder="Ingresa tu correo electrónico" class="w-full placeholder:font-normal outline-none font-semibold text-base" type="text">
+                        <input placeholder="{{'rutas.loguearse.placeholder1'| translate }}" class="w-full placeholder:font-normal outline-none font-semibold text-base" type="text">
                     </div>
                 </div>
                 <div class="flex flex-col gap-2">
-                    <span class="text-sm font-semibold pl-2">Contraseña</span>
+                    <span class="text-sm font-semibold pl-2">{{'rutas.loguearse.label2'| translate }}</span>
                     <div class="border-2 rounded-full hover:shadow-sm flex gap-2 items-center py-2 px-3">
-                        <input type="password" placeholder="Contraseña" class="w-full placeholder:font-normal outline-none font-semibold text-base" type="password">
+                        <input type="password" placeholder="{{'rutas.loguearse.label2'| translate }}" class="w-full placeholder:font-normal outline-none font-semibold text-base" type="password">
                     </div>
                 </div>
                 <button class="w-full mt-5 shadow-lg text-white bg-purpura hover:bg-indigo-700 rounded-full px-5 py-2.5 lg:m-0 lg:px-3">
                     <div  role="status" class="text-center font-semibold flex items-center justify-center gap-1">
-                      <p class="text-base">Iniciar sesión</p>
+                      <p class="text-base">{{'rutas.loguearse.titulo'| translate }}</p>
                     </div>
                   </button>
             </div> 
-            <a class="font-normal mt-5 text-sm underline text-center inline-block w-full" href="">¿Olvidaste tu contraseña?</a>
+            <a class="font-normal mt-5 text-sm underline text-center inline-block w-full" href="">{{'rutas.loguearse.textoSpan'| translate }}</a>
         </div>
         <div class="w-full text-center pt-10">
-            <span class="text-sm font-normal">© 2024 Luis Velasco. Todos los derechos reservados.</span>
+            <span class="text-sm font-normal">© 2024 Luis Velasco. {{'piePagina.terminos.derechos'| translate }}</span>
         </div>
     </article>
     <article class="bg-indigox w-full md:h-screen imagenFondo px-5 sm:px-16 py-8 flex justify-center items-center">
         <div class="px-5 p-8 rounded-3xl bg-white w-full">
             <div class="flex justify-center">
-                <img src="comilla.png" alt="">
+                <img src="assets/icons/comilla.png" alt="icono comilla">
             </div>
-            <div class="hidden" id="content-carrousel">
+            @for (card of 'testimonios' | translate ; track $index) {
+              <div  [class]="$index==0?'':'hidden'" id="content-carrousel">
                 <div class="w-full text-center my-6">
-                    <p class="text-2xl">“Olvidé mi teléfono en el metro. Fullgeo permitió a la persona que lo encontró enviarme su ubicación sin desbloquearlo, y pude recuperarlo de manera segura”</p>
+                    <p class="text-2xl">{{card.relato}}</p>
                     <div class="text-purpura flex justify-center mt-5">
                         <svg width="22" height="28" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_209_20)">
@@ -100,135 +101,10 @@
                     <div class="w-16 h-16 rounded-full">
                         <img class="w-full h-full rounded-full object-cover object-center" src="https://d2xyc7ypmnrz56.cloudfront.net/9d0f540f-19ee-4365-a4f4-e25dabff95cd/img/woman-using-smartphone-in-tube.webp" alt="">
                     </div>
-                    <p class="text-xl font-semibold">Marie</p>
+                    <p class="text-xl font-semibold">{{card.nombre}}</p>
                 </div>
             </div>
-            <div class="hidden" id="content-carrousel">
-                <div class="w-full text-center my-6">
-                    <p class="text-2xl">“Simple y práctico para localizar a nuestra hija de 12 años cuando sale con sus amigos. Todo lo que tiene que hacer es hacer clic en un enlace y podemos estar tranquilos.”</p>
-                    <div class="text-purpura flex justify-center mt-5">
-                        <svg width="22" height="28" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_209_20)">
-                              <path d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z" fill="currentColor"></path>
-                            </g>
-                            <defs>
-                              <clipPath id="clip0_209_20">
-                                <rect width="20" height="20" fill="white" transform="translate(0 0.150146)"></rect>
-                              </clipPath>
-                            </defs>
-                          </svg>
-                          <svg width="22" height="28" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_209_20)">
-                              <path d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z" fill="currentColor"></path>
-                            </g>
-                            <defs>
-                              <clipPath id="clip0_209_20">
-                                <rect width="20" height="20" fill="white" transform="translate(0 0.150146)"></rect>
-                              </clipPath>
-                            </defs>
-                          </svg>
-                          <svg width="22" height="28" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_209_20)">
-                              <path d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z" fill="currentColor"></path>
-                            </g>
-                            <defs>
-                              <clipPath id="clip0_209_20">
-                                <rect width="20" height="20" fill="white" transform="translate(0 0.150146)"></rect>
-                              </clipPath>
-                            </defs>
-                          </svg>
-                          <svg width="22" height="28" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_209_20)">
-                              <path d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z" fill="currentColor"></path>
-                            </g>
-                            <defs>
-                              <clipPath id="clip0_209_20">
-                                <rect width="20" height="20" fill="white" transform="translate(0 0.150146)"></rect>
-                              </clipPath>
-                            </defs>
-                          </svg>
-                          <svg width="22" height="28" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_209_20)">
-                              <path d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z" fill="currentColor"></path>
-                            </g>
-                            <defs>
-                              <clipPath id="clip0_209_20">
-                                <rect width="20" height="20" fill="white" transform="translate(0 0.150146)"></rect>
-                              </clipPath>
-                            </defs>
-                          </svg>
-                    </div>
-                </div>
-                <div class="flex justify-center items-center gap-4">
-                    <div class="w-16 h-16 rounded-full">
-                        <img class="w-full h-full rounded-full object-cover object-center" src="https://d2xyc7ypmnrz56.cloudfront.net/9d0f540f-19ee-4365-a4f4-e25dabff95cd/img/daughter-demonstrating-photos-on-cellphone-to-her.webp" alt="">
-                    </div>
-                    <p class="text-xl font-semibold">Darren y Julie</p>
-                </div>
-            </div>
-            <div id="content-carrousel">
-                <div class="w-full text-center my-6">
-                    <p class="text-2xl">“Pude verificar el paradero de un vendedor después de pagar un depósito por un scooter. ¡Gracias a Fullgeo, nuestra reunión fue sin problemas y todo salió bien!”</p>
-                    <div class="text-purpura flex justify-center mt-5">
-                        <svg width="22" height="28" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_209_20)">
-                              <path d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z" fill="currentColor"></path>
-                            </g>
-                            <defs>
-                              <clipPath id="clip0_209_20">
-                                <rect width="20" height="20" fill="white" transform="translate(0 0.150146)"></rect>
-                              </clipPath>
-                            </defs>
-                          </svg>
-                          <svg width="22" height="28" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_209_20)">
-                              <path d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z" fill="currentColor"></path>
-                            </g>
-                            <defs>
-                              <clipPath id="clip0_209_20">
-                                <rect width="20" height="20" fill="white" transform="translate(0 0.150146)"></rect>
-                              </clipPath>
-                            </defs>
-                          </svg>
-                          <svg width="22" height="28" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_209_20)">
-                              <path d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z" fill="currentColor"></path>
-                            </g>
-                            <defs>
-                              <clipPath id="clip0_209_20">
-                                <rect width="20" height="20" fill="white" transform="translate(0 0.150146)"></rect>
-                              </clipPath>
-                            </defs>
-                          </svg>
-                          <svg width="22" height="28" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_209_20)">
-                              <path d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z" fill="currentColor"></path>
-                            </g>
-                            <defs>
-                              <clipPath id="clip0_209_20">
-                                <rect width="20" height="20" fill="white" transform="translate(0 0.150146)"></rect>
-                              </clipPath>
-                            </defs>
-                          </svg>
-                          <svg width="22" height="28" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_209_20)">
-                              <path d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z" fill="currentColor"></path>
-                            </g>
-                            <defs>
-                              <clipPath id="clip0_209_20">
-                                <rect width="20" height="20" fill="white" transform="translate(0 0.150146)"></rect>
-                              </clipPath>
-                            </defs>
-                          </svg>
-                    </div>
-                </div>
-                <div class="flex justify-center items-center gap-4">
-                    <div class="w-16 h-16 rounded-full">
-                        <img class="w-full h-full rounded-full object-cover object-center" src="https://d2xyc7ypmnrz56.cloudfront.net/9d0f540f-19ee-4365-a4f4-e25dabff95cd/img/close-up-young-man-looking-at-phone.webp" alt="">
-                    </div>
-                    <p class="text-xl font-semibold">Mark</p>
-                </div>
-            </div>
+            }
             <div class="w-full flex justify-between px-10 mt-12">
                 <div class="w-14 h-14 flex justify-center items-center">
                     <button class="rounded-full ease-in-out hover:scale-110 transition duration-150 hover:border-2 border-purpura p-3 bg-indigox text-purpura">

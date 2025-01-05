@@ -1,0 +1,130 @@
+{
+    "navegacion": {
+      "funcion": "How does it work?",
+      "preguntas": "FAQ",
+      "precios": "Pricing",
+      "contacto": "Contact",
+      "loguearse": "Login",
+      "localizar": "Locate phone"
+    },
+    "portada": {
+      "titulo": "Locate any phone, anywhere, anytime",
+      "inputTelefono": "Enter phone number",
+      "localizar": "Locate phone",
+      "cards":[
+        {"titulo":"Anywhere on the planet","parrafo":"And it also works with any carrier and mobile phone","png":"world.png"},
+        {"titulo":"You can remain anonymous","parrafo":"The recipient will never know it comes from you","png":"confidential.png"},
+        {"titulo":"As accurate as GPS","parrafo":"We'll show you the exact location on an online map","png":"accurate.png"}
+      ],
+      "screenLocalizar": {
+        "titulo":"One place to locate them all",
+        "parrafo":"Once subscribed, you can use our interface to locate as many phones as you wish."
+      }
+    },
+    "testimonios": [
+        {"titulo":"Lost your phone?","parrafo":"Enable the exact location of your phone with a single tap", "nombre":"Marie","relato":"”I forgot my phone on the subway. Fullgeo allowed the person who found it to send me its location without unlocking it and I was able to recover it safely.”","png":"woman-smartphone.webp"},
+        {"titulo":"Looking for a relative?","parrafo":"Instantly show their precise position on a map", "nombre":"Darren and Julie","relato":"”Simple and practical to locate our 12-year-old daughter when she goes out with her friends. All she has to do is click a link and we can be at ease.”","png":"daughter-demonstrating.webp"},
+        {"titulo":"Suspicious of an online buyer or seller?","parrafo":"Ask them to locate themselves before proceeding with the transaction", "nombre":"Mark","relato":"”I was able to verify the whereabouts of a seller after paying a deposit for a scooter. Thanks to Fullgeo, our meeting was smooth and everything went well!”","png":"man-phone.webp"}
+    ],
+    "funciones": {
+        "titulo":"How does it work?",
+        "funcionalidad":[
+            {"titulo":"Perform a search on a number","parrafo":"Our technology starts locating and identifying the associated phone."},
+            {"titulo":"Request a precise location","parrafo":"We send a text message to the target phone to locate it. This message is anonymous by default but can be customized to increase chances of success."},
+            {"titulo":"Get your results","parrafo":"You will be automatically informed with the address as soon as the recipient confirms their location."}
+        ],
+        "titulo2":"Locate any phone today for just €0.50",
+        "prueba":{
+            "parrafo":"Try our solution for an unlimited 24-hour period for just €0.50. At the end of your trial period, you can choose to remain subscribed for €47.90 per month.",
+            "ventajas":[
+                {"item":"No obligation"},
+                {"item":"No commitment"},
+                {"item":"Full access"},
+                {"item":"Unlimited searches"}
+            ],
+            "textoBoton":"Start Trial"
+        }
+    },
+    "preguntas": {
+      "titulo":"FAQs",
+      "subtitulo":"Still have questions?",
+      "parrafo":"Our team is here to help, ask us anything.",
+      "texto":"Get in touch",
+      "acordeon1":[
+        {"titulo":"Is it illegal to locate a third party?","parrafo":"Fullgeo is completely legal and complies with CNIL recommendations. Fullgeo cannot work without third-party consent for geolocation."},
+        {"titulo":"What types of phones are compatible?","parrafo":"Fullgeo works on all phones with internet connection."},
+        {"titulo":"How accurate is Fullgeo?","parrafo":"Our service provides you with the exact location with an accuracy between 1 and 6 meters."},
+        {"titulo":"How long does it take?","parrafo":"The third party will receive a text message within 2 minutes, and you will receive a notification immediately after the third party has given consent to be geolocated."}
+      ],
+      "acordeon2":[
+        {"titulo":"Does Fullgeo work if the third party's phone is turned off?","parrafo":"The third party's phone must be turned on for tracking to work. However, as soon as it's turned on, geolocation messages will be received."},
+        {"titulo":"How much does mobile phone geolocation cost?","parrafo":"The third party's phone must be turned on for tracking to work. However, as soon as it's turned on, geolocation messages will be received."},
+        {"titulo":"Is my information secure?","parrafo":"Your anonymity is important to us. The third party's geographical location is sent through a secure TLS (Transport Layer Security) protocol and is not visible to others. Your personal information and identity are not shared with anyone."},
+        {"titulo":"How can I cancel my subscription?","parrafo":"The subscription is without commitment and can be canceled at any time by clicking the button below and following the on-screen instructions."}
+      ]
+    },
+    "bannerLocalizar":{
+      "titulo": "Locate any phone now",
+      "inputTelefono": "Enter phone number",
+      "localizar": "Locate phone"
+    },
+    "piePagina":{
+      "parrafo":"Locate any phone, anywhere, anytime",
+      "titulo":"Quick links",
+      "cuenta":{
+        "titulo":"Account",
+        "texto":"Unsubscribe"
+      },
+      "terminos":{
+        "legal":"Legal notice",
+        "politicas":"Privacy policy",
+        "condiciones":"Terms and conditions",
+        "pagos":"Secure payments",
+        "derechos":"All rights reserved."
+      }
+    },
+    "rutas": {
+      "precios": {
+        "titulo": "Pricing",
+        "texto": "Take advantage of our 24-hour trial offer to discover our service.",
+        "subtitulo": "Trial Offer",
+        "text2": "Then €47.90 /month",
+        "textoBoton": "Try now",
+        "cards": [
+          { "titulo": "Unlimited geolocation", "png": "unlimited.png" },
+          { "titulo": "All types of phones", "png": "phone.png" },
+          { "titulo": "Worldwide coverage", "png": "world.png" },
+          { "titulo": "All networks", "png": "network.png" },
+          { "titulo": "Precise location", "png": "location.png" },
+          { "titulo": "Keep confidentiality", "png": "confidential.png" }
+        ]
+      },
+      "contacto": {
+        "titulo": "Contact",
+        "texto": "Get in touch with our dedicated team. We’ll be happy to assist you.",
+        "cards": [
+          { 
+            "titulo": "Chat with us!", 
+            "texto": "Our team is here to answer your questions; open the chat bubble at the bottom of this page.", 
+            "png": "unlimited.png" 
+          },
+          { 
+            "titulo": "contact@fullgeo.mobi", 
+            "texto": "We’ll be happy to assist you and usually reply within 24 hours.", 
+            "png": "chatbot.png" 
+          }
+        ]
+      },
+      "faqs": {
+        "titulo": "Frequently Asked Questions",
+        "texto": "Quickly get the answers you need with our FAQs."
+      },
+      "loguearse": {
+        "titulo": "Login",
+        "label1": "Email",
+        "placeholder1": "Enter your email",
+        "label2": "Password",
+        "textoSpan": "Forgot your password?"
+      }
+  }
+}

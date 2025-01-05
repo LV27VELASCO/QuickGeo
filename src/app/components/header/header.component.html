@@ -3,11 +3,11 @@
       <div class="flex flex-wrap items-center justify-between py-4 lg:p-0 xl:flex-grow">
         <!-- Logo -->
         <div class="justify-between navbar-start lg:justify-start">
-          <img src="Logo.png" class="h-6" alt="Logo" />
+          <a [routerLink]="['/']"><img src="assets/img/Logo.png" class="h-6" alt="Logo" /></a>
         </div>
 
         <!-- localiza -->
-        <a href="#" [class]="menu?'hidden':'block'" class="text-purpura lg:hidden">Localizar teléfono</a>
+        <a href="#" [class]="menu?'hidden':'block'" class="text-purpura lg:hidden">{{'navegacion.localizar' | translate}}</a>
 
         <!-- menu hamburguesa -->
         <button data-collapse-toggle="navbar-default" type="button" (click)="menuActivate()"
@@ -22,11 +22,11 @@
 
       <div [class]="menu?'block':'hidden'" class="px-7 py-2 flex lg:flex lg:items-center lg:p-0">
         <div
-          class="flex flex-col p-5 text-center w-full rounded-3xl text-basex font-medium bg-indigo-50 gap-6 xl:gap-7 xl:after:content-['|'] lg:flex-row lg:p-0 lg:bg-transparent">
-          <a href="#how-does-it-work">¿Cómo funciona?</a>
-          <a [routerLink]="['/requentlyAskedQuestions']">Preguntas frecuentes</a>
-          <a [routerLink]="['/pricing']" >Precios</a>
-          <a [routerLink]="['/contact']">Contacto</a>
+          class="flex flex-col p-5 text-center w-full [&>a]:cursor-pointer rounded-3xl text-basex font-medium bg-indigo-50 gap-6 xl:gap-7 xl:after:content-['|'] lg:flex-row lg:p-0 lg:bg-transparent">
+          <a href="#how-does-it-work">{{'navegacion.funcion' | translate}}</a><!-- Como funciona -->
+          <a (click)="navegar('/requentlyAskedQuestions')">{{'navegacion.preguntas' | translate}}</a><!-- preguntas frecuentes -->
+          <a (click)="navegar('/pricing')">{{'navegacion.precios' | translate}}</a><!-- Precios -->
+          <a (click)="navegar('/contact')">{{'navegacion.contacto' | translate}}</a><!-- Contacto -->
         </div>
 
       </div>
@@ -34,14 +34,13 @@
       <div [class]="menu?'block':'hidden'" class="px-7 py-2 lg:p-0 xl:pl-5 lg:block">
         <div
           class="flex flex-col mt-3 p-5 text-center w-full rounded-3xl text-basex font-bold bg-indigo-50 gap-6 xl:gap-5 lg:mt-0 lg:flex-row lg:p-0 lg:items-center lg:bg-transparent">
-          <a [routerLink]="['/login']" class="flex justify-center text-purpura">
+          <a (click)="navegar('/login')" class="flex justify-center text-purpura cursor-pointer">
             <i class='bx bx-user text-xl'></i>
-            <p class="pl-3 mt-1">Iniciar sesión</p>
+            <p class="pl-3 mt-1">{{'navegacion.loguearse' | translate}}</p><!-- Iniciar sesion -->
           </a>
           <a href='#hero'>
             <button [class]="menu?'animateBouce':''" type="button"
-              class="text-white transition-colors duration-150 delay-75 bg-purpura shadow-lg  rounded-full px-5 py-2.5 text-center lg:hover:bg-purpura lg:hover:text-white lg:bg-white lg:text-purpura lg:border-2 lg:border-purpura">Localizar
-              teléfono</button>
+              class="text-white transition-colors duration-150 delay-75 bg-purpura shadow-lg  rounded-full px-5 py-2.5 text-center lg:hover:bg-purpura lg:hover:text-white lg:bg-white lg:text-purpura lg:border-2 lg:border-purpura">{{'navegacion.localizar' | translate}}</button><!-- Localizar telefono -->
           </a>
         </div>
       </div>

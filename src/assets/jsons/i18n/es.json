@@ -1,0 +1,122 @@
+{
+    "navegacion": {
+      "funcion": "Como funciona?",
+      "preguntas": "Preguntas frecuentes",
+      "precios": "Precios",
+      "contacto": "Contacto",
+      "loguearse": "Iniciar sesión",
+      "localizar": "Localizar teléfono"
+    },
+    "portada": {
+      "titulo": "Localiza cualquier teléfono, en cualquier lugar, en cualquier momento ",
+      "inputTelefono": "Ingrese el número de teléfono",
+      "localizar": "Localizar teléfono",
+      "cards":[
+        {"titulo":"En cualquier lugar del planeta","parrafo":"Y también funciona con cualquier operador y teléfono móvil","png":"world.png"},
+        {"titulo":"Puedes permanecer anónimo","parrafo":"El destinatario nunca sabrá que proviene de ti","png":"confidential.png"},
+        {"titulo":"Tan preciso como el GPS","parrafo":"Te mostraremos la ubicación exacta en un mapa en línea","png":"accurate.png"}
+      ],
+      "screenLocalizar":{
+        "titulo":"Un lugar para localizarlos a todos",
+        "parrafo":"Una vez suscrito, puedes utilizar nuestra interfaz para ubicar la ubicación de tantos teléfonos como desees."
+      }
+    },
+    "testimonios": [
+        {"titulo":"¿Perdiste tu teléfono?","parrafo":"Habilita la ubicación exacta de tu teléfono con un solo toque", "nombre":"Marie","relato":"”Olvidé mi teléfono en el metro. Fullgeo permitió a la persona que lo encontró enviarme su ubicación sin desbloquearlo y pude recuperarlo de manera segura.”","png":"woman-smartphone.webp"},
+        {"titulo":"¿Buscas a un pariente?","parrafo":"Mostrar instantáneamente su posición precisa en un mapa", "nombre":"Darren y Julie","relato":"”Simple y práctico para localizar a nuestra hija de 12 años cuando sale con sus amigos. Todo lo que tiene que hacer es hacer clic en un enlace y podemos estar tranquilos.”","png":"daughter-demonstrating.webp"},
+        {"titulo":"¿Sospechoso de un comprador o vendedor en línea?","parrafo":"Pídeles que se localicen antes de proceder con la transacción", "nombre":"Mark","relato":"“Pude verificar el paradero de un vendedor después de pagar un depósito por un scooter. ¡Gracias a Fullgeo, nuestra reunión fue sin problemas y todo salió bien!”","png":"man-phone.webp"}
+    ],
+    "funciones": {
+        "titulo":"¿Como Funciona?",
+        "funcionalidad":[
+            {"titulo":"Realizar una búsqueda en un número","parrafo":"Nuestra tecnología comienza a localizar e identificar el teléfono asociado."},
+            {"titulo":"Solicitar una ubicación precisa","parrafo":"Enviamos un mensaje de texto al teléfono objetivo para localizarlo. Este mensaje es anónimo por defecto, pero puede ser personalizado para aumentar las posibilidades de éxito."},
+            {"titulo":"Obtén tus resultados","parrafo":"Serás informado automáticamente con la dirección tan pronto como el destinatario confirme su ubicación."}
+        ],
+        "titulo2":"Localiza cualquier teléfono hoy por solo 0.50€",
+        "prueba":{
+            "parrafo":"Prueba nuestra solución durante un período ilimitado de 24 horas por solo 0,50€. Al final de tu período de prueba, puedes elegir permanecer suscrito por €47.90 al mes.",
+            "ventajas":[
+                {"item":"Sin obligación"},
+                {"item":"Sin compromiso"},
+                {"item":"Acceso completo"},
+                {"item":"Búsquedas ilimitadas"}
+            ],
+            "textoBoton":"Comenzar Prueba"
+        }
+    },
+    "preguntas": {
+      "titulo":"FAQs",
+      "subtitulo":"¿Todavía tienes alguna pregunta?",
+      "parrafo":"Nuestro equipo está aquí para ayudar, pregúntanos cualquier cosa.",
+      "texto":"Ponte en contacto",
+      "acordeon1":[
+        {"titulo":"¿Es ilegal localizar a un tercero?","parrafo":"Fullgeo es completamente legal y cumple con las recomendaciones de la CNIL. Fullgeo no puede funcionar sin el consentimiento de terceros para la geolocalización."},
+        {"titulo":"¿Que tipo de telefonos son compatibles?","parrafo":"Fullgeo funciona en todos los teléfonos con conexión a internet."},
+        {"titulo":"¿Que precisión tiene Fullgeo?","parrafo":"Nuestro servicio le proporciona la ubicación exacta con una precisión de entre 1 y 6 metros."},
+        {"titulo":"¿Cuanto tiempo se tarda?","parrafo":"El tercero recibirá un mensaje de texto en 2 minutos, y usted recibirá una notificación inmediatamente después de que el tercero haya dado su consentimiento para ser geolocalizado."}
+      ],
+      "acordeon2":[
+        {"titulo":"¿Funciona Fullgeo si el telefono del tercero está apagado?","parrafo":"El teléfono del tercero debe estar encendido para que el rastreo funcione. Sin embargo, tan pronto como esté encendido, se recibirán los mensajes de geolocalización."},
+        {"titulo":"¿Cuanto cuesta la geolocalización de un teléfono móvil?","parrafo":"El teléfono del tercero debe estar encendido para que el rastreo funcione. Sin embargo, tan pronto como esté encendido, se recibirán los mensajes de geolocalización."},
+        {"titulo":"¿Mi información está segura?","parrafo":"Su anonimato es importante para nosotros. La ubicación geográfica del tercero se envía a través de un protocolo seguro TLS (Secure Sockets Layer) y no es visible para otras personas. Su información personal y su identidad no se comparten con nadie."},
+        {"titulo":"¿Como puedo cancelar mi suscripción?","parrafo":"La suscripción es sin compromiso y se puede cancelar en cualquier momento haciendo clic en el botón de abajo y siguiendo las instrucciones en pantalla."}
+      ]
+    },
+    "bannerLocalizar":{
+      "titulo": "Localiza cualquier teléfono ahora",
+      "inputTelefono": "Ingrese el número de teléfono",
+      "localizar": "Localizar teléfono"
+    },
+    "piePagina":{
+      "parrafo":"Localiza cualquier teléfono, en cualquier lugar, en cualquier momento.",
+      "titulo":"Enlaces rápidos",
+      "cuenta":{
+        "titulo":"Cuenta",
+        "texto":"Darse de baja"
+      },
+      "terminos":{
+          "legal":"Aviso legal",
+          "politicas":"Política de privacidad",
+          "condiciones":"Términos y condiciones generales",
+          "pagos":"Pagos seguros",
+          "derechos":"Todos los derechos reservados."
+      }
+    },
+    "rutas":{
+      "precios":{
+        "titulo":"Precios",
+        "texto":"Aprovecha nuestra oferta de prueba de 24 horas para descubrir nuestro servicio.",
+        "subtitulo":"Oferta de prueba",
+        "text2":"Luego €47.90 /mes",
+        "textoBoton":"Prueba ahora",
+        "cards":[
+          {"titulo":"Geolocalización ilimitada","png":"unlimited.png"},
+          {"titulo":"Todos los tipos de teléfonos","png":"phone.png"},
+          {"titulo":"Cobertura mundial","png":"world.png"},
+          {"titulo":"Todos las redes","png":"network.png"},
+          {"titulo":"Ubicación exacta","png":"location.png"},
+          {"titulo":"Mantén la confidencialidad","png":"confidential.png"}
+        ]
+      },
+      "contacto":{
+         "titulo":"Contacto",
+         "texto":"Póngase en contacto con nuestro equipo dedicado. Estaremos encantados de ayudarlo.",
+         "cards":[
+          {"titulo":"¡Chatea con nosotros!","texto":"Nuestro equipo está aquí para responder tus preguntas, abre la burbuja de chat en la parte inferior de esta página.","png":"unlimited.png"},
+          {"titulo":"contact@fullgeo.mobi","texto":"Estaremos encantados de ayudarte y generalmente respondemos en menos de 24 horas.","png":"chatbot.png"}
+         ]
+      },
+      "faqs":{
+        "titulo":"Preguntas frecuentes",
+        "texto":"Obtén rápidamente las respuestas que necesitas con nuestras preguntas frecuentes."
+      },
+      "loguearse":{
+        "titulo":"Iniciar sesión",
+        "label1":"Correo electrónico",
+        "placeholder1":"Ingresa tu correo electrónico",
+        "label2":"Contraseña",
+        "textoSpan":"¿Olvidaste tu contraseña?"
+      }
+  }
+}

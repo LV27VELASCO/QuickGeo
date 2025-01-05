@@ -2,41 +2,33 @@
     <article class='w-full rounded-[2.3rem] px-4 pt-4 bg-indigox imagenFondo lg:px-3 lg:grid xl:px-8 lg:grid-cols-2 lg:pb-14 xl:py-0'>
       <div class="text-center flex flex-col mt-10 lg:justify-start lg:relative lg:top-[16%]">
         <h1 class="text-[40px] md:text-6xl mb-10 leading-tight lg:text-6xl lg:text-start lg:mb-4">
-          Localiza cualquier teléfono, en cualquier lugar, en cualquier momento
+          {{'portada.titulo' | translate}}
         </h1>
         <div class="lg:mt-10">
           <app-select-country  />
         </div>
       </div>
       <div class="mt-32 lg:pl-7">
-        <img src="Telefono.webp" class="w-full" alt="">
+        <img src="assets/img/Telefono.webp" class="w-full" alt="imagen telefono">
       </div>
     </article>
-    <article class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-5 gap-7">
-      <div class="bg-indigox  flex flex-col items-center px-7 py-11 rounded-[2.3rem] gap-3 text-center">
-        <img src="world.png" class="h-20" alt="">
-        <h4 class="text-[34px] leading-tight">En cualquier lugar<br> del planeta</h4>
-        <p class="font-normal text-basex text-lg">Y también funciona con cualquier <br> operador y teléfono móvil</p>
-      </div>
-      <div class="bg-indigox  flex flex-col items-center px-7 py-11 rounded-[2.3rem] gap-3 text-center">
-        <img src="confidential.png" class="h-20" alt="">
-        <h4 class="text-[34px] leading-tight">Puedes permanecer  <br>anónimo</h4>
-        <p class="font-normal text-basex text-lg">El destinatario nunca sabrá que <br>proviene de ti</p>
-      </div>
-      <div class="bg-indigox  flex flex-col items-center px-7 py-11 rounded-[2.3rem] gap-3 text-center">
-        <img src="accurate.png" class="h-20" alt="">
-        <h4 class="text-[34px] leading-tight">Tan preciso como el GPS</h4>
-        <p class="font-normal text-basex text-lg">Te mostraremos la ubicación <br>exacta en un mapa en línea</p>
-      </div>
+    <article class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-5 gap-7"> 
+      @for (card of 'portada.cards' | translate ; track $index) {
+        <div class="bg-indigox  flex flex-col items-center px-7 py-11 rounded-[2.3rem] gap-3 text-center">
+          <img src="assets/icons/{{card.png}}" class="h-20" alt="icono mundo">
+          <h4 class="text-[34px] leading-tight">{{card.titulo}}</h4>
+          <p class="font-normal text-basex text-lg">{{card.parrafo}}</p>
+        </div>
+      }
     </article>
 
     <article class="bg-indigox flex flex-col items-center px-5 pt-9 pb-1 md:px-24 md:pb-10 md:pt-20 rounded-[2.3rem]">
       <div class="w-full text-center grid gap-5 pb-10">
-        <h3 class="text-[45px] leading-tight">Un lugar para localizarlos a todos</h3>
-        <p class="font-normal text-basex">Una vez suscrito, puedes utilizar nuestra interfaz para ubicar la ubicación de tantos teléfonos como desees.</p>
+        <h3 class="text-[45px] leading-tight">{{'portada.screenLocalizar.titulo' | translate}}</h3>
+        <p class="font-normal text-basex">{{'portada.screenLocalizar.parrafo' | translate}}</p>
       </div>
       <div class="w-full">
-        <img src="screens-map.webp" alt="">
+        <img src="assets/img/screens-map.webp" alt="imagen telefono screen">
       </div>
     </article>
   </section>

@@ -3,11 +3,12 @@ import { QuestionsComponent } from '../../components/questions/questions.compone
 import { LocateCardComponent } from '../../components/locate-card/locate-card.component';
 import { Country } from '../../../Interface/Country';
 import { FooterComponent } from '../../components/footer/footer.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-pricing',
   standalone: true,
-  imports: [QuestionsComponent,LocateCardComponent,FooterComponent],
+  imports: [QuestionsComponent,LocateCardComponent,FooterComponent,TranslateModule],
   templateUrl: './pricing.component.html'
 })
 export class PricingComponent {

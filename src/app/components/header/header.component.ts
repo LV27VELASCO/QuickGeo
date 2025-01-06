@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { RouterLink} from '@angular/router';
+import { RouterLink, RouterOutlet} from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { UtilitiesService } from '../../services/utilities.service';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports:[RouterLink,TranslateModule],
+  imports:[RouterOutlet,RouterLink,TranslateModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })

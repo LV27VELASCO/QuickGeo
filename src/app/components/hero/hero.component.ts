@@ -1,5 +1,5 @@
 import { Component} from '@angular/core';
-import { Country } from '../../../Interface/Country';
+import { Country } from '../../../Interface/models';
 import { SelectCountryComponent } from '../select-country/select-country.component';
 import { UtilitiesService } from '../../services/utilities.service';
 import { TranslateModule } from '@ngx-translate/core';

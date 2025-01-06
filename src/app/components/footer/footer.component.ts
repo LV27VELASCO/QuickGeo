@@ -7,7 +7,7 @@ import { LANGUAGES_OBJECT } from '../../config/languajes';
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [RouterLink,TranslateModule],
+  imports: [TranslateModule],
   templateUrl: './footer.component.html'
 })
 export class FooterComponent {

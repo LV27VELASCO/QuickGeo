@@ -1,4 +1,4 @@
-<header>
+<header class="px-4 max-w-screen-xl mx-auto">
     <nav class="mb-4 bg-white border-gray-200 lg:flex lg:justify-around lg:m-0 lg:p-4 m-auto">
       <div class="flex flex-wrap items-center justify-between py-4 lg:p-0 xl:flex-grow">
         <!-- Logo -->
@@ -7,7 +7,7 @@
         </div>
 
         <!-- localiza -->
-        <a href="#" [class]="menu?'hidden':'block'" class="text-purpura lg:hidden">{{'navegacion.localizar' | translate}}</a>
+        <a href='#hero' [class]="menu?'hidden':'block'" class="text-purpura lg:hidden">{{'navegacion.localizar' | translate}}</a>
 
         <!-- menu hamburguesa -->
         <button data-collapse-toggle="navbar-default" type="button" (click)="menuActivate()"
@@ -46,3 +46,4 @@
       </div>
     </nav>
   </header>
+  <router-outlet/> 

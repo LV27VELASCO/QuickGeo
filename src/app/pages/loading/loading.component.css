@@ -1,0 +1,32 @@
+.animateBouce {
+    animation: pulsex 3s infinite;
+    opacity: 0.5;
+}
+
+@keyframes pulsex {
+    0%{opacity: 0.5;}
+    50%{opacity: 1;}
+    100%{opacity: 0.5;}
+}
+
+/* Usamos esta clase en la barra de carga para activar la animación */
+.animate-fill {
+    animation: fillBar 11s ease-in-out forwards;
+  }
+
+@keyframes fillBar {
+    0% {
+        width: 0;
+    }
+    40% {
+        width: 30%;
+      }
+    80%{
+        width: 70%;
+      }
+    100% {
+        width: 100%;
+    }
+  }
+  
+  

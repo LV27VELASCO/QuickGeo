@@ -1,7 +1,7 @@
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { Country } from '../../Interface/Country';
+import { Country } from '../../Interface/models';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
@@ -50,7 +50,7 @@ import { isPlatformBrowser } from '@angular/common';
 
    translateText(lang:string){
     this.translate.use(lang)
-    localStorage.setItem('lang', lang);
+    this.setItemLocal('lang',lang)
    }
 
   getItem(item:string):any{
@@ -59,10 +59,18 @@ import { isPlatformBrowser } from '@angular/common';
      }
   }
 
+  setItemLocal(name:string, value:any){
+    localStorage.setItem(name,value);
+  }
 
   navigate(ruta:string){
     this.router.navigate([ruta])
   }
+
+  isNullOrEmpty(value: string | null | undefined): boolean {
+    return !value || value.trim() === '';
+  }
+
 
 
 }

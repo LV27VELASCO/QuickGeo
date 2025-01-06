@@ -1,17 +1,17 @@
 import { Component, Inject, PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { UtilitiesService } from './services/utilities.service';
-import { Country } from '../Interface/Country';
-import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './components/header/header.component';
+import { Country } from '../Interface/models';
+import { Router, RouterOutlet } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { ALLOWED_LANGUAGES } from './config/languajes';
+CommonModule
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,HeaderComponent,TranslateModule],
+  imports: [RouterOutlet,TranslateModule,CommonModule],
   templateUrl: './app.component.html'
 })
 export class AppComponent {
@@ -25,19 +25,9 @@ export class AppComponent {
     urlFlagBase="https://flagcdn.com/"; 
     flag:string="co";
     codePhone:string="+57";
-    showHeader = false;
 
 
     ngOnInit() {
-
-      this.router.events.subscribe(event => {
-        if (event instanceof NavigationEnd) {
-          // Verifica si la ruta es '404' o 'login'
-          const excludedRoutes = ['/404', '/login'];
-          this.showHeader = excludedRoutes.includes(event.urlAfterRedirects);
-        }
-      });
-
        if (isPlatformBrowser(this.platformId)) {
         // Escuchar cambios en la ruta y configurar el idioma
            let lang = localStorage.getItem('lang'); // Idioma por defecto

@@ -11,7 +11,7 @@
 
 /* Usamos esta clase en la barra de carga para activar la animación */
 .animate-fill {
-    animation: fillBar 11s ease-in-out forwards;
+    animation: fillBar 10s ease-in-out forwards;
   }
 
 @keyframes fillBar {

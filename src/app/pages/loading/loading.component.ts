@@ -16,11 +16,16 @@ export class LoadingComponent {
   isLoading2 = true
   isLoading3 = true
   isLoading4 = true
-  dataPhone!:resPhoneInfo;
+  dataPhone:resPhoneInfo={
+    country:"",
+    phoneText:"",
+    flag:"",
+    operator:""
+  };
   constructor(private utils:UtilitiesService) { }
 
-  ngOnInit(): void {
-    this.dataPhone = JSON.parse(this.utils.getItem("data"));
+  ngOnInit() {
+    this.dataPhone = JSON.parse(this.utils.getItem("data")) as resPhoneInfo;
     const time = timer(2000);
     const time2 = timer(4000);
     const time3 = timer(6000);
@@ -39,7 +44,7 @@ export class LoadingComponent {
       this.isLoading4=!this.isLoading4;
     })
     navegar.subscribe(m=>{
-      this.utils.navigate("/");
+      this.utils.navigate("/pre-checkout");
     })
   }
 }

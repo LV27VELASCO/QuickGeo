@@ -97,6 +97,7 @@ export class SelectCountryComponent {
             this.buttonLocation = true;
           },
           error: (err) => {
+            this.formPhone.reset();
             this.formPhone.controls['numberPhone'].setErrors({'fail': true})
             this.buttonLocation = true;
           }

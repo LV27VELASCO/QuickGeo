@@ -5,8 +5,6 @@ import { Country } from '../Interface/models';
 import { Router, RouterOutlet } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { ALLOWED_LANGUAGES } from './config/languajes';
-CommonModule
-
 
 @Component({
   selector: 'app-root',

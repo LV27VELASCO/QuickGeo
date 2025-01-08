@@ -14,7 +14,7 @@ export const routes: Routes = [
       { path: 'contact', loadComponent: () => import('./pages/contact/contact.component').then(mod => mod.ContactComponent) },
     ] 
   },
-  { path: 'pre-checkout', loadComponent: () => import('./pages/pre-check-out/pre-check-out.component').then(mod => mod.PreCheckOutComponent), canActivate:[AuthGuard] },
+  { path: 'pre-checkout', loadComponent: () => import('./pages/pre-check-out/pre-check-out.component').then(mod => mod.PreCheckOutComponent), canActivate:[AuthGuard]},
   { path: 'loading', loadComponent: () => import('./pages/loading/loading.component').then(mod => mod.LoadingComponent), canActivate:[AuthGuard] },
   { path: 'login', loadComponent: () => import('./pages/login/login.component').then(mod => mod.LoginComponent) },
   { path: '404', component: NotFountComponent }, 

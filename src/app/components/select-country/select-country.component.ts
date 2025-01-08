@@ -88,6 +88,7 @@ export class SelectCountryComponent {
             if(!this.utils.isNullOrEmpty(data.operator)){
               data.flag = this._flag;
               data.phoneText = `${reqData.code} ${reqData.phone_number}`;
+              data.date = this.utils.obtenerFechaFormateada();
               this.formPhone.reset();
               this.utils.setItemLocal("data",JSON.stringify(data));
               this.utils.navigate("loading");

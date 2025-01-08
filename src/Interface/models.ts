@@ -16,4 +16,5 @@ export interface resPhoneInfo {
     operator: string;
     flag:string;
     phoneText:string;
+    date:string;
 }

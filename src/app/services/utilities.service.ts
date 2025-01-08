@@ -28,6 +28,21 @@ import { isPlatformBrowser } from '@angular/common';
   flag$ = this.flagSource.asObservable();
   codePhone$ = this.codePhoneSource.asObservable();
 
+  obtenerFechaFormateada(): string {
+    const fecha = new Date();
+    const dia = this.padNumber(fecha.getDate());
+    const mes = this.padNumber(fecha.getMonth() + 1); // Los meses empiezan en 0
+    const anio = fecha.getFullYear();
+    const horas = this.padNumber(fecha.getHours());
+    const minutos = this.padNumber(fecha.getMinutes());
+
+    return `${dia}/${mes}/${anio} at ${horas}:${minutos}`;
+  }
+
+  padNumber(num: number): string {
+    return num < 10 ? '0' + num : num.toString();
+  }
+
   setCountries(countries: Country[]) {
     this.countriesSource.next(countries);
   }

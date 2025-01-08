@@ -17,10 +17,11 @@ export class LoadingComponent {
   isLoading3 = true
   isLoading4 = true
   dataPhone:resPhoneInfo={
-    country:"",
-    phoneText:"",
-    flag:"",
-    operator:""
+    country:'',
+    phoneText:'',
+    flag:'',
+    operator:'',
+    date:''
   };
   constructor(private utils:UtilitiesService) { }
 

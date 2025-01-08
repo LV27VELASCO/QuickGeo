@@ -13,10 +13,11 @@ import { UtilitiesService } from '../../services/utilities.service';
 export class PreCheckOutComponent {
 
   dataPhone:resPhoneInfo={
-    country:"",
-    phoneText:"",
-    flag:"",
-    operator:""
+    country:'',
+    phoneText:'',
+    flag:'',
+    operator:'',
+    date:''
   };
   constructor(private utils:UtilitiesService) { }
 

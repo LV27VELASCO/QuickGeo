@@ -5,7 +5,7 @@ import { provideClientHydration } from '@angular/platform-browser';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { isPlatformBrowser } from '@angular/common';
 import { APP_INITIALIZER } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { provideRouter, withViewTransitions } from '@angular/router';
 import { routes } from './app.routes';
 import { ALLOWED_LANGUAGES } from './config/languajes';
 
@@ -22,9 +22,6 @@ export function appInitializerFactory(translate: TranslateService , platformId: 
         }else{
           translate.use("es");  
         }
-      
-      
-      
     };
   }
 }

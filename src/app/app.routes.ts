@@ -1,12 +1,15 @@
 import {Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { NotFountComponent } from './components/not-fount/not-fount.component';
-import { HeaderComponent } from './components/header/header.component';
 import { AuthGuard } from './guard/auth.guard';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { AuthLoginGuard } from './guard/auth-login.guard';
+import { HeaderHomeComponent } from './components/headers/header-home/header-home.component';
+import { HeaderDashboardComponent } from './components/headers/header-dashboard/header-dashboard.component';
 
 export const routes: Routes = [
   { 
-    path: '', component:HeaderComponent,
+    path: '', component:HeaderHomeComponent,
     children: [
       { path: '', component: HomeComponent },
       { path: 'pricing', loadComponent: () => import('./pages/pricing/pricing.component').then(mod => mod.PricingComponent) },
@@ -14,6 +17,11 @@ export const routes: Routes = [
       { path: 'contact', loadComponent: () => import('./pages/contact/contact.component').then(mod => mod.ContactComponent) },
       { path: 'unsubscribe', loadComponent: () => import('./pages/unsubscribe/unsubscribe.component').then(mod => mod.UnsubscribeComponent) },
     ] 
+  },
+  { path: 'dashboard', component:HeaderDashboardComponent, canActivate:[AuthLoginGuard],
+    children:[
+      { path: '', component: DashboardComponent},
+    ]
   },
   { path: 'pre-checkout', loadComponent: () => import('./pages/pre-check-out/pre-check-out.component').then(mod => mod.PreCheckOutComponent), canActivate:[AuthGuard]},
   { path: 'loading', loadComponent: () => import('./pages/loading/loading.component').then(mod => mod.LoadingComponent) },

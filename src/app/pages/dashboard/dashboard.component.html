@@ -1,0 +1,89 @@
+<div class="px-5">
+    <section class="px-5 md:px-10 py-10 rounded-3xl max-w-screen-xl mx-auto imagenFondoDashboard  bg-opacity-20 flex flex-col-reverse md:grid md:grid-cols-8 gap-8">
+        <div class="px-5 py-3 md:col-span-3 w-full border rounded-xl">
+            <div class="border-b-2 px-3 pb-2 flex justify-between items-center [&>*]:text-basex">
+                <p>Localized Numbers</p>
+                <div class="flex gap-5 text-2xl [&>button]:py-1 [&>button]:px-2 [&>button]:rounded-xl [&>button]:border ">
+                    <button><i class='bx bx-list-ul'></i></button>
+                    <button><i class='bx bx-loader'></i></button>
+                </div>
+            </div>
+            <div class="w-full flex justify-between py-3 px-3 text-sm font-semibold text-gray-500">
+                <button>3 searches</button>
+                <button>sort by</button>
+            </div>
+            <section class="flex flex-col gap-3 max-h-96 overflow-y-scroll overflow-x-hidden p-3">
+                <div (click)="onHover()" (blur)="onLeave()" class="transition-all duration-150 hover:scale-105 hover:border-blue-700 py-2 px-3 border-2 border-gray-100 rounded-md flex flex-col gap-1">
+                    <div class="flex gap-2">
+                        <div class="h-6 w-6 rounded-full">
+                            <img class="object-cover object-center w-full h-full rounded-full" src="https://flagcdn.com/co.svg" alt=""/>
+                        </div>
+                        <p class="text-lg text-gray-800">+57 3146605344</p>
+                    </div>
+                    <div class="flex gap-5 [&>span]:flex [&>span]:items-center text-gray-700">
+                        <span>
+                            <i class='bx bx-calendar text-lg'></i>
+                            <p class="pl-1 text-xs font-normal">22/02/2023</p>
+                        </span>
+                        <span>
+                            <i class='bx bx-time-five text-lg'></i>
+                            <p class="pl-1 text-xs font-normal">15:11:15</p>
+                        </span>
+                    </div>
+                    <button class="w-full py-1 px-2 rounded-md bg-green-600/20 text-green-700">Located</button>
+                    <section [class]="hover?'block':'hidden'" class="w-full">
+                        <div class="w-full flex gap-1 items-start text-basex">
+                            <span class="inline-block text-lg"><i class='bx bxs-map' ></i></span>
+                            <p class="pt-1 text-xs font-semibold">44A Floral St, London WC2E 9DA, United Kingdom</p>
+                        </div>
+                        <button class="w-auto flex justify-center items-center gap-2 text-blue-700 p-2">
+                            <i class='bx bx-map-alt text-lg'></i><p class="text-sm">Open in Google Maps</p>
+                        </button>
+                    </section>
+                </div>
+                <div class="cursor-pointer transition-all duration-150 hover:scale-105 hover:border-blue-700 py-2 px-3 border-2 border-gray-100 rounded-md flex flex-col gap-1">
+                    <div class="flex gap-2">
+                        <div class="h-6 w-6 rounded-full">
+                            <img class="object-cover object-center w-full h-full rounded-full" src="https://flagcdn.com/es.svg" alt=""/>
+                        </div>
+                        <p class="text-lg text-gray-800">+34 6027634663</p>
+                    </div>
+                    <div class="flex gap-5 [&>span]:flex [&>span]:items-center text-gray-700">
+                        <span>
+                            <i class='bx bx-calendar text-lg'></i>
+                            <p class="pl-1 text-xs font-normal">22/02/2024</p>
+                        </span>
+                        <span>
+                            <i class='bx bx-time-five text-lg'></i>
+                            <p class="pl-1 text-xs font-normal">17:23:15</p>
+                        </span>
+                    </div>
+                    <button class="w-full py-1 px-2 rounded-md bg-gray-600/20 text-gray-600">Await</button>
+                </div>
+                <div class="cursor-pointer transition-all duration-150 hover:scale-105 hover:border-blue-700 py-2 px-3 border-2 border-gray-100 rounded-md flex flex-col gap-1">
+                    <div class="flex gap-2">
+                        <div class="h-6 w-6 rounded-full">
+                            <img class="object-cover object-center w-full h-full rounded-full" src="https://flagcdn.com/es.svg" alt=""/>
+                        </div>
+                        <p class="text-lg text-gray-800">+34 6027634663</p>
+                    </div>
+                    <div class="flex gap-5 [&>span]:flex [&>span]:items-center text-gray-700">
+                        <span>
+                            <i class='bx bx-calendar text-lg'></i>
+                            <p class="pl-1 text-xs font-normal">22/02/2024</p>
+                        </span>
+                        <span>
+                            <i class='bx bx-time-five text-lg'></i>
+                            <p class="pl-1 text-xs font-normal">17:23:15</p>
+                        </span>
+                    </div>
+                    <button class="w-full py-1 px-2 rounded-md bg-gray-600/20 text-gray-600">Await</button>
+                </div>
+            </section>
+        </div>
+        <div class="md:col-span-5">
+            <app-select-country/>
+        </div>
+        
+    </section>
+</div>

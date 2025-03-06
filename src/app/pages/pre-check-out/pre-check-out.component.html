@@ -75,7 +75,7 @@
                             </li>
                         </ol>
                     </div>
-                    <a href="#pay-now" class="w-full inline-block shadow-lg text-white bg-purpura hover:bg-indigo-500 rounded-full px-5 py-2.5 mt-2 lg:hidden">
+                    <a [href]="currentRoute + '#pay-now'" class="w-full inline-block shadow-lg text-white bg-purpura hover:bg-indigo-500 rounded-full px-5 py-2.5 mt-2 lg:hidden">
                         <div  role="status" class="text-center font-semibold flex items-center justify-center gap-1">
                           <p class="text-base">Pagar €0.50 ahora</p>
                           <div class="ml-2 flex justify-center items-center">
@@ -261,7 +261,7 @@
                             <span class="text-center font-bold text-gray-600">Solo</span>
                             <p class="text-4xl font-bold text-purpura">€0.50</p>
                         </div>
-                        <button type="submit"  class="w-full shadow-lg text-white bg-purpura hover:bg-indigo-500 rounded-full px-5 py-2.5">
+                        <button (click)="onCheckout()"  class="w-full shadow-lg text-white bg-purpura hover:bg-indigo-500 rounded-full px-5 py-2.5">
                             <div  role="status" class="text-center font-semibold flex items-center justify-center gap-1">
                               <div class="hidden">
                                 <svg aria-hidden="true" class="w-5 h-5 text-gray-200 animate-spin" viewBox="0 0 100 101"  xmlns="http://www.w3.org/2000/svg">

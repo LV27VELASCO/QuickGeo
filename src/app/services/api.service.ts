@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { PhoneInfo, resPhoneInfo } from '../../Interface/models';
+import { CreateUser, PhoneInfo, resCreateUser, resPhoneInfo } from '../../Interface/models';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -16,6 +16,11 @@ export class ApiService {
   GetOperador(data: PhoneInfo): Observable<resPhoneInfo> {
     const url = `${this.baseUrl}/phone-info`; // Construye la URL completa
     return this.http.post<resPhoneInfo>(url, data); // Realiza la solicitud POST
+  }
+
+  CreateUser(data: CreateUser): Observable<resCreateUser> {
+    const url = `${this.baseUrl}/create-user`; // Construye la URL completa
+    return this.http.post<resCreateUser>(url, data); // Realiza la solicitud POST
   }
 
 }

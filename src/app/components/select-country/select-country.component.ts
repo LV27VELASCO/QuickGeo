@@ -80,9 +80,7 @@ export class SelectCountryComponent {
     }
 
     onSubmit(){
-      console.log("ok si")
       if(this.formPhone.valid){
-        console.log("ok si")
         this.buttonLocation = false;
         const reqData: PhoneInfo = {code:this.formPhone.get("codePhone")?.value ,phone_number: this.formPhone.get("numberPhone")?.value, code_lang:`${this.formPhone.get("codeLang")?.value}`};
         this.api.GetOperador(reqData).subscribe({

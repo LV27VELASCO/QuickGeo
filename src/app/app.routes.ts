@@ -24,8 +24,10 @@ export const routes: Routes = [
     ]
   },
   { path: 'pre-checkout', loadComponent: () => import('./pages/pre-check-out/pre-check-out.component').then(mod => mod.PreCheckOutComponent), canActivate:[AuthGuard]},
+  { path: 'success', loadComponent: () => import('./pages/success-pay/success-pay.component').then(mod => mod.SuccessPayComponent)},
   { path: 'loading', loadComponent: () => import('./pages/loading/loading.component').then(mod => mod.LoadingComponent) },
   { path: 'login', loadComponent: () => import('./pages/login/login.component').then(mod => mod.LoginComponent) },
+  
   { path: '404', component: NotFountComponent }, 
   { path: '**', redirectTo:'404' }
 ];

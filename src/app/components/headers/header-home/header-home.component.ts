@@ -29,6 +29,12 @@ export class HeaderHomeComponent {
 
   constructor(private Utils:UtilitiesService){ }
 
+  ngOnInit(){
+    if (typeof window !== 'undefined' && window.localStorage) {
+       this.Utils.clearLocalStorage()
+    }
+  }
+
   menuActivate(){
     this.menu = !this.menu
   }

@@ -78,6 +78,10 @@ import { isPlatformBrowser } from '@angular/common';
     localStorage.setItem(name,value);
   }
 
+  clearLocalStorage(){
+    localStorage.clear();
+  }
+
   navigate(ruta:string){
     this.router.navigate([ruta])
   }

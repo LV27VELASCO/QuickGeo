@@ -18,3 +18,11 @@ export interface resPhoneInfo {
     phoneText:string;
     date:string;
 }
+
+export interface CreateUser {
+    session_id: string;
+}
+
+export interface resCreateUser {
+    status: boolean;
+}

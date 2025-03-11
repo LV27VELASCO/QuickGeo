@@ -4,6 +4,9 @@ import { LocateCardComponent } from '../../components/locate-card/locate-card.co
 import { Country } from '../../../Interface/models';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { environment } from '../../../environments/environment';
+import { loadStripe } from '@stripe/stripe-js';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-pricing',
@@ -12,8 +15,20 @@ import { TranslateModule } from '@ngx-translate/core';
   templateUrl: './pricing.component.html'
 })
 export class PricingComponent {
+
+    constructor(private http: HttpClient) {}
+
     @Input() _countries: Country[] = [];
     @Input() _urlFlagBase: string = '';
     @Input() _flag: string = '';
     @Input() _codePhone: string = '';
+
+
+     onCheckout() {
+        this.http.post(`${environment.apiUrl}/checkout`, { lookup_key: 'fullgeo_mensual' })
+          .subscribe(async (res:any)=>{
+            let stripe = await loadStripe(environment.pkStripe)
+            stripe?.redirectToCheckout({sessionId: res.id})
+          })
+        }
 }

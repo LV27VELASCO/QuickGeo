@@ -42,7 +42,7 @@ export class PreCheckOutComponent {
   onCheckout() {
     this.http.post(`${environment.apiUrl}/checkout`, { lookup_key: 'fullgeo_mensual' })
       .subscribe(async (res:any)=>{
-        let stripe = await loadStripe('pk_test_51QzMDa4FRnfxzUGPgvPVYmnNoqKVlM8pBrj9mrDRNeN6i6nS10KCd7fsj4TQ95TPHPzghDvUjbhSrAtQR8rxkPEN00XuQIwjFX')
+        let stripe = await loadStripe(environment.pkStripe)
         stripe?.redirectToCheckout({sessionId: res.id})
       })
     }

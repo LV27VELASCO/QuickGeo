@@ -30,6 +30,9 @@ export class PreCheckOutComponent {
     this.currentRoute = this.router.url;
   }
 
+  
+  buttonLocation:boolean=true;
+
   ngOnInit() {
     const data =this.utils.getItem("data");
     if(data){
@@ -40,11 +43,17 @@ export class PreCheckOutComponent {
   }
 
   onCheckout() {
+    this.buttonLocation=false;
     this.http.post(`${environment.apiUrl}/checkout`, { lookup_key: 'fullgeo_mensual' })
-      .subscribe(async (res:any)=>{
+    .subscribe({
+      next:  async (res:any)=>{
         let stripe = await loadStripe(environment.pkStripe)
-        stripe?.redirectToCheckout({sessionId: res.id})
-      })
+        stripe?.redirectToCheckout({sessionId: res.id}) 
+      },
+      error: (err) => {
+        this.buttonLocation = true;
+      }
+    })
     }
 
     onNavigate(id:string) {

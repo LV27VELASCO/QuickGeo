@@ -23,12 +23,19 @@ export class PricingComponent {
     @Input() _flag: string = '';
     @Input() _codePhone: string = '';
 
+    buttonLocation:boolean=true;
 
      onCheckout() {
+      this.buttonLocation =false;
         this.http.post(`${environment.apiUrl}/checkout`, { lookup_key: 'fullgeo_mensual' })
-          .subscribe(async (res:any)=>{
-            let stripe = await loadStripe(environment.pkStripe)
-            stripe?.redirectToCheckout({sessionId: res.id})
+          .subscribe({
+            next:  async (res:any)=>{
+              let stripe = await loadStripe(environment.pkStripe)
+              stripe?.redirectToCheckout({sessionId: res.id}) 
+            },
+            error: (err) => {
+              this.buttonLocation = true;
+            }
           })
         }
 }

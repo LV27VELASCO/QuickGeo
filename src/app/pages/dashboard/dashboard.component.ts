@@ -15,7 +15,7 @@ export class DashboardComponent {
   locationHistory:Detail[] | undefined;
 
   constructor(private utils:UtilitiesService,private api:ApiService){}
-
+  
   ngOnInit(){
     this.getHistoryLocations();
   }

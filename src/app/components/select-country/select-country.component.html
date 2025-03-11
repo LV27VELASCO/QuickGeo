@@ -70,7 +70,7 @@
         </span>
         <input formControlName="numberPhone" (input)="removeNonDigits($event)" type="text" class="h-16 w-full border-0 outline-none rounded-full text-xl font-normal lg:h-14 pr-3" placeholder="{{'portada.inputTelefono' | translate}}">
       </div>
-      <button type="submit" [class]="buttonLocation?'':'bg-indigo-400'" class="w-full min-w-[180px]  mt-5 shadow-lg text-white bg-purpura hover:bg-indigo-500 rounded-full px-5 py-2.5 lg:m-0 lg:w-60 lg:py-3 lg:px-3">
+      <button type="submit" [class]="buttonLocation?'bg-purpura':'bg-indigo-400'" class="w-full min-w-[180px]  mt-5 shadow-lg text-white  hover:bg-indigo-500 rounded-full px-5 py-2.5 lg:m-0 lg:w-60 lg:py-3 lg:px-3">
         <div  role="status" class="text-center font-semibold flex items-center justify-center gap-1">
           <div [class]="buttonLocation?'hidden':''">
             <svg aria-hidden="true" class="w-5 h-5 text-gray-200 animate-spin" viewBox="0 0 100 101"  xmlns="http://www.w3.org/2000/svg">

@@ -6,7 +6,7 @@ import { ApiService } from '../../services/api.service';
 import { CreateUser } from '../../../Interface/models';
 
 @Component({
-  selector: 'app-succes-pay',
+  selector: 'app-success-pay',
   standalone: true,
   imports: [ReactiveFormsModule,FormsModule],
   templateUrl: './success-pay.component.html',
@@ -44,17 +44,6 @@ export class SuccessPayComponent {
                   this.message ='Ocurrió un error al enviar tus credenciales, por favor contactarte con soporte';
                 }
               });
-  }
-
-  onSubmit(){
-    
-    if(this.formPassword.valid){
-      
-      
-      
-    }else{
-      this.formPassword.controls['password'].setErrors({'incorrect': true})
-    }
   }
 
 }

@@ -24,10 +24,8 @@
             <i class='bx bx-user text-xl'></i>
             <p class="pl-3 mt-1">Administar perfil</p><!-- Iniciar sesion -->
           </a>
-          <a href='#hero'>
-            <button [class]="menu?'animateBouce':''" type="button"
-              class="text-white transition-colors duration-150 delay-75 bg-purpura shadow-lg  rounded-full px-5 py-2.5 text-center lg:hover:bg-purpura lg:hover:text-white lg:bg-white lg:text-purpura lg:border-2 lg:border-purpura">Cerrar sesión</button><!-- Localizar telefono -->
-          </a>
+          <button [class]="menu?'animateBouce':''" type="button"
+            (click)="logOut()" class="text-white transition-colors duration-150 delay-75 bg-purpura shadow-lg  rounded-full px-5 py-2.5 text-center lg:hover:bg-purpura lg:hover:text-white lg:bg-white lg:text-purpura lg:border-2 lg:border-purpura">Cerrar sesión</button>
         </div>
       </div>
     </nav>

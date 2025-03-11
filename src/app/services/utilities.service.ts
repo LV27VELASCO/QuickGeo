@@ -5,16 +5,20 @@ import { Country } from '../../Interface/models';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
+import { CookieService } from 'ngx-cookie-service';
 
  @Injectable({
    providedIn: 'root'
  })
  export class UtilitiesService {
 
+  
+
   constructor(
     private http: HttpClient,
     private translate:TranslateService,
     private router: Router,
+    private cookieService: CookieService,
     @Inject(PLATFORM_ID) private platformId: Object) { }
 
   private countriesSource = new BehaviorSubject<Country[]>([]);
@@ -88,6 +92,24 @@ import { isPlatformBrowser } from '@angular/common';
 
   isNullOrEmpty(value: string | null | undefined): boolean {
     return !value || value.trim() === '';
+  }
+
+  saveCookie(name:string,value:any){
+    this.cookieService.set(name,value)
+  }
+
+  getCookie(name:string){
+    const cookie = this.cookieService.get(name);
+    return cookie;
+  }
+
+  removeCookie(name:string){
+    this.cookieService.delete(name)
+  }
+
+  isAuthenticated(): boolean {
+    const token = this.cookieService.get('access_token');
+    return !!token; // Retorna true si hay un token, false si no.
   }
 
 

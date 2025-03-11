@@ -6,8 +6,8 @@
             <img src="assets/img/logo.png" class="h-6" alt="Logo" />
           </a>
         </div>
-        <div [class]="password?'hidden':'block'" class="text-center">
-            <div class="py-10 px-5 flex flex-col gap-5 border-b-2 border-gray-50">
+        <div [class]="recoveryPassword?'hidden':'block'" class="text-center">
+            <form [formGroup]="formLogin" (ngSubmit)="onSubmit()" class="py-10 px-5 flex flex-col gap-5 border-b-2 border-gray-50">
                 <h2 class="text-center text-4xl mb-5">{{'rutas.loguearse.titulo'| translate }}</h2>
                 <div class="flex flex-col gap-2 text-start">
                     <span class="text-sm font-semibold pl-2">{{'rutas.loguearse.label1'| translate }}</span>
@@ -15,24 +15,35 @@
                         <div class="h-5 w-5">
                             <img src="assets/icons/input-email.png" class="w-full h-full" alt="">
                         </div>
-                        <input placeholder="{{'rutas.loguearse.placeholder1'| translate }}" class="w-full placeholder:font-normal outline-none font-semibold text-base" type="text">
+                        <input formControlName="email" type="text" placeholder="{{'rutas.loguearse.placeholder1'| translate }}" class="w-full placeholder:font-normal outline-none font-semibold text-base">
                     </div>
                 </div>
                 <div class="flex flex-col gap-2 text-start">
                     <span class="text-sm font-semibold pl-2">{{'rutas.loguearse.label2'| translate }}</span>
                     <div class="border-2 rounded-full hover:shadow-sm flex gap-2 items-center py-2 px-3">
-                        <input type="password" placeholder="{{'rutas.loguearse.label2'| translate }}" class="w-full placeholder:font-normal outline-none font-semibold text-base" type="password">
+                        <input formControlName="password" [type]="password?'text':'password'" placeholder="{{'rutas.loguearse.label2'| translate }}" class="w-full placeholder:font-normal outline-none font-semibold text-base" type="password">
+                        <button type="button" (click)="showPassword()"><i class='bx bx-low-vision'></i></button>
                     </div>
                 </div>
-                <button class="w-full mt-5 shadow-lg text-white bg-purpura hover:bg-indigo-700 rounded-full px-5 py-2.5 lg:m-0 lg:px-3">
-                    <div  role="status" class="text-center font-semibold flex items-center justify-center gap-1">
-                      <p class="text-base">{{'rutas.loguearse.titulo'| translate }}</p>
+                <button type="submit" class="w-full mt-5 shadow-lg text-white bg-purpura hover:bg-indigo-700 rounded-full px-5 py-2.5 lg:m-0 lg:px-3">
+                  <div  role="status" class="text-center font-semibold flex items-center justify-center gap-1">
+                    <p class="text-base">{{'rutas.loguearse.titulo'| translate }}</p>
+                  </div>
+                </button>
+                @if ((formLogin.get("email")?.hasError("incorrect")||(formLogin.get("email")?.touched && formLogin.get("email")?.hasError("required")))||
+                    (formLogin.get("email")?.hasError("incorrect")||(formLogin.get("password")?.touched && formLogin.get("password")?.hasError("required")))) {
+                    <div class="w-full flex flex-col flex-wrap items-center justify-center gap-2 mt-4 sm:flex-row">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="26" viewBox="0 0 16 17" fill="none">
+                        <path d="M8 6.82341V9.15674M8 2.15674L1.5 13.1567H14.5L8 2.15674Z" stroke="#F04438" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <ellipse cx="8.00001" cy="10.8234" rx="0.666667" ry="0.666667" fill="#F04438"></ellipse>
+                      </svg>
+                      <span class="inline-block text-center font-normal text-sm">Algunos campos son requeridos, por favor validar.</span>  
                     </div>
-                  </button>
-            </div> 
+                  }
+            </form>
             <button (click)="showPassword()" class="font-normal w-fit mt-5 text-sm underline text-center inline-block">{{'rutas.loguearse.textoSpan'| translate }}</button>
         </div>
-        <div [class]="password?'block':'hidden'" class="text-center">
+        <div [class]="recoveryPassword?'block':'hidden'" class="text-center">
           <div class="py-10 px-5 flex flex-col gap-5 border-b-2 border-gray-50">
               <h2 class="text-center text-4xl mb-5">Olvidé mi contraseña</h2>
               <div class="flex flex-col gap-2 text-start">

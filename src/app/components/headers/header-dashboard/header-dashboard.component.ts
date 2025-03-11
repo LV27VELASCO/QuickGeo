@@ -23,4 +23,9 @@ export class HeaderDashboardComponent {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       this.Utils.navigate(ruta)
     }
+
+    logOut(){
+      this.Utils.removeCookie('access_token')
+      this.Utils.navigate('login')
+    }
 }

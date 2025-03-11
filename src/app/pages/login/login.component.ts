@@ -1,17 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { Login } from '../../../Interface/models';
+import { ApiService } from '../../services/api.service';
+import { UtilitiesService } from '../../services/utilities.service';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [RouterLink,TranslateModule],
+  imports: [RouterLink,TranslateModule,ReactiveFormsModule,FormsModule],
   templateUrl: './login.component.html'
 })
 export class LoginComponent {
 
   testimonios =[true,false,false];
+  recoveryPassword = false;
   password = false;
+  fb = inject(FormBuilder);
+  api = inject(ApiService);
+  utils = inject(UtilitiesService);
+
+  formLogin:FormGroup=this.fb.group({
+      email:['', [Validators.required]],
+      password:['', [Validators.required]]
+    })
   
 
   prevCard(){
@@ -37,8 +50,30 @@ export class LoginComponent {
     }
   }
 
+  showRecoveryPassword(){
+    this.recoveryPassword = !this.recoveryPassword
+  }
+
   showPassword(){
     this.password = !this.password
+  }
+
+  onSubmit(){
+    if(this.formLogin.valid){
+      const reqData: Login = {email:this.formLogin.get("email")?.value, password:this.formLogin.get("password")?.value};
+      this.api.LoginUser(reqData).subscribe({
+                  next: (data) => {
+                   this.utils.saveCookie('access_token',data.token);
+                   this.utils.navigate('dashboard')
+                  },
+                  error: (err) => {
+                    console.log("no exito:",err)
+                  }
+                });
+    }else{
+      this.formLogin.controls['email'].setErrors({'incorrect': true});
+      this.formLogin.controls['password'].setErrors({'incorrect': true});
+    }
   }
 
 }

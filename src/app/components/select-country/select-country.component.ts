@@ -96,6 +96,7 @@ export class SelectCountryComponent {
               this.formPhone.controls['numberPhone'].setErrors({'incorrect': true});
             }
             this.buttonLocation = true;
+            this.formPhone.get("numberPhone")?.reset()
           },
           error: (err) => {
             this.formPhone.reset();

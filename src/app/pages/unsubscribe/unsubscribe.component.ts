@@ -9,5 +9,10 @@ import { FooterComponent } from '../../components/footer/footer.component';
   templateUrl: './unsubscribe.component.html'
 })
 export class UnsubscribeComponent {
+  ngOnInit() {
+    if (typeof window !== 'undefined'){
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
 
 }

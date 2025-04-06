@@ -83,8 +83,10 @@ export class SelecCountryDashboardComponent {
        if(this.formPhone.valid){
          this.buttonLocation = false;
          const reqData: SendSms = {code:this.formPhone.get("codePhone")?.value ,phone_number: this.formPhone.get("numberPhone")?.value, code_country:this.formPhone.get("codeLang")?.value};
+         console.log(reqData)
          this.api.SendSms(reqData).subscribe({
            next: (data) => {
+            this.formPhone.get("numberPhone")?.reset()
              this.formPhone.controls['numberPhone'].setErrors({'success': true});
              this.buttonLocation = true;
            },

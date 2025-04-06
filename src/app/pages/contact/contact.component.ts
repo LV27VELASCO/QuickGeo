@@ -10,5 +10,10 @@ import { TranslateModule } from '@ngx-translate/core';
   imports: [QuestionsComponent,LocateCardComponent,FooterComponent,TranslateModule],
   templateUrl: './contact.component.html'
 })
-export class ContactComponent { 
+export class ContactComponent {
+  ngOnInit() {
+    if (typeof window !== 'undefined'){
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
 }

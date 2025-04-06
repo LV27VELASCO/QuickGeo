@@ -5,7 +5,9 @@
                 <p>Localized Numbers</p>
                 <div class="flex gap-5 text-2xl [&>button]:py-1 [&>button]:px-2 [&>button]:rounded-xl [&>button]:border ">
                     <button><i class='bx bx-list-ul'></i></button>
-                    <button (click)="getHistoryLocations()"><i class='bx bx-loader'></i></button>
+                    <button (click)="getHistoryLocations()">
+                      <i [class]="load?'animatePulse':''" class='bx bx-loader'></i>
+                    </button>
                 </div>
             </div>
             <div class="w-full flex justify-between py-3 px-3 text-sm font-semibold text-gray-500">
@@ -70,6 +72,6 @@
         <div class="md:col-span-5">
             <app-select-country-dashboard/>
         </div>
-        
+
     </section>
 </div>

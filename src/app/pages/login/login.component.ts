@@ -20,6 +20,7 @@ export class LoginComponent {
   fb = inject(FormBuilder);
   api = inject(ApiService);
   utils = inject(UtilitiesService);
+  buttonLogin:boolean = true;
 
   formLogin:FormGroup=this.fb.group({
       email:['', [Validators.required]],
@@ -60,14 +61,19 @@ export class LoginComponent {
 
   onSubmit(){
     if(this.formLogin.valid){
+      this.buttonLogin = false;
       const reqData: Login = {email:this.formLogin.get("email")?.value, password:this.formLogin.get("password")?.value};
       this.api.LoginUser(reqData).subscribe({
                   next: (data) => {
                    this.utils.saveCookie('access_token',data.token);
                    this.utils.navigate('dashboard')
+                   this.buttonLogin = true;
                   },
                   error: (err) => {
-                    console.log("no exito:",err)
+                    this.formLogin.reset();
+                    this.formLogin.controls['email'].setErrors({'fail': true});
+                    this.formLogin.controls['password'].setErrors({'fail': true});
+                    this.buttonLogin = true;
                   }
                 });
     }else{

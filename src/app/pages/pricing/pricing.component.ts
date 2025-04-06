@@ -25,13 +25,19 @@ export class PricingComponent {
 
     buttonLocation:boolean=true;
 
+    ngOnInit() {
+      if (typeof window !== 'undefined'){
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
      onCheckout() {
       this.buttonLocation =false;
         this.http.post(`${environment.apiUrl}/checkout`, { lookup_key: 'fullgeo_mensual' })
           .subscribe({
             next:  async (res:any)=>{
               let stripe = await loadStripe(environment.pkStripe)
-              stripe?.redirectToCheckout({sessionId: res.id}) 
+              stripe?.redirectToCheckout({sessionId: res.id})
             },
             error: (err) => {
               this.buttonLocation = true;

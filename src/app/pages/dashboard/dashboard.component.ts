@@ -12,10 +12,12 @@ import { SelecCountryDashboardComponent } from '../../components/select-country-
 })
 export class DashboardComponent {
   hover:boolean=false;
+  load:boolean=false;
   locationHistory:Detail[] | undefined;
+  listUniqueValues:string[]=[];
 
   constructor(private utils:UtilitiesService,private api:ApiService){}
-  
+
   ngOnInit(){
     this.getHistoryLocations();
   }
@@ -25,8 +27,10 @@ export class DashboardComponent {
   }
 
   getHistoryLocations(){
+    this.load=true;
     this.api.GetHistoryLocations().subscribe({
       next: (data) => {
+        this.load=false;
         this.locationHistory = data.details
       },
       error: (err) => {
@@ -37,8 +41,16 @@ export class DashboardComponent {
         } else{
           console.error(err);
         }
+        this.load=false;
       }
     });
+    this.listFilterValues();
+  }
+
+  listFilterValues(){
+    this.listUniqueValues = [...new Set(
+      this.locationHistory?.map(p => p.codephone)
+    )]
   }
 
   obtenerFechaFormateada(fechaString: string): string {

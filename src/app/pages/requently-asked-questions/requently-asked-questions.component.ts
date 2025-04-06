@@ -16,4 +16,10 @@ export class RequentlyAskedQuestionsComponent {
     @Input() _urlFlagBase: string = '';
     @Input() _flag: string = '';
     @Input() _codePhone: string = '';
+
+    ngOnInit() {
+      if (typeof window !== 'undefined'){
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
 }

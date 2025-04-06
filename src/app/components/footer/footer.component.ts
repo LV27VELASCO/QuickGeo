@@ -7,7 +7,7 @@ import { LANGUAGES_OBJECT } from '../../config/languajes';
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [TranslateModule],
+  imports: [TranslateModule,RouterLink],
   templateUrl: './footer.component.html'
 })
 export class FooterComponent {
@@ -37,7 +37,6 @@ export class FooterComponent {
   }
 
   navegar(ruta:string){
-    window.scrollTo({ top: 0, behavior: 'smooth' });
     this.Utils.navigate(ruta)
   }
 

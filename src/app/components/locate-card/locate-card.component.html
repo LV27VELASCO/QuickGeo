@@ -1,11 +1,3 @@
-<!-- <article class="backGround flex gap-10 px-5 py-12 md:px-16 rounded-[2.3rem] flex-col md:flex-row items-center">
-    <div class="md:w-[60%] w-full text-center md:text-left">
-      <h4 class="text-2xl md:text-4xl text-white w-full">{{'bannerLocate.title'| translate }}</h4>
-    </div>
-    <div>
-      <app-select-country />
-    </div>
-</article> -->
 
 <div class="bg-gradient-to-b from-green500 to-gray-800 py-16 sm:py-24 lg:py-32">
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
@@ -20,11 +12,11 @@
       <dl class="grid gap-x-4 gap-y-10 grid-cols-2 lg:pt-2">
         <h3 class="text-3xl col-span-2 text-center bg-gradient-to-r from-white via-green-300 to-indigo-600 inline-block text-transparent bg-clip-text">{{'bannerLocate.proof.title' | translate}}</h3>
         @for (card of 'bannerLocate.proof.advantages' | translate; track $index) {
-          <div class="flex flex-col items-center">
+          <div class="flex flex-col items-center justify-center">
             <div class="rounded-md bg-white/5 p-1.5 ring-1 ring-white/10 size-10 ">
               <img src="assets/icons/{{card.icon}}" alt="">
             </div>
-            <dt class="mt-4 text-base font-semibold text-white">{{card.item}}</dt>
+            <dt class="mt-4 text-base font-semibold text-white text-center">{{card.item}}</dt>
           </div>
         }
       </dl>

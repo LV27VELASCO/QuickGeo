@@ -1,22 +1,35 @@
-<div class="px-4 max-w-screen-xl mx-auto">
-    <article class='w-full rounded-[2.3rem] px-6 py-20 gap-5 grid grid-cols-1 bg-indigox imagenFondo lg:px-3 xl:px-8 lg:grid-cols-2 lg:items-center'>
-        <div class="text-left lg:text-center px-4 md:px-12 flex flex-col lg:justify-start">
-          <h1 class="text-[40px] text-center md:text-6xl leading-tight lg:text-6xl lg:text-start lg:mb-4">
-            {{'rutas.contacto.titulo'| translate }}
-          </h1>
+<div class="max-w-screen-xl mx-auto">
+    <article class='w-full rounded-b-[2.3rem] px-6 py-20 gap-5 grid grid-cols-1 lg:px-3 xl:px-8 lg:grid-cols-2 lg:items-center bg-gradient-to-b from-green200 to-white relative overflow-hidden'>
+      <!-- Círculos decorativos grandes -->
+      <div class="absolute rounded-full w-[22rem] h-[22rem] top-36 -left-60 border border-green300 translate-x-1/2 -translate-y-1/2"></div>
+      <div class="absolute rounded-full w-[22rem] h-[22rem] top-0 right-24 border border-green300 translate-x-1/2 -translate-y-1/2"></div>
+
+      <!-- Círculos medianos -->
+      <div class="absolute rounded-full w-[14rem] h-[14rem] top-36 -left-28 border border-green300 translate-x-1/2 -translate-y-1/2"></div>
+      <div class="absolute rounded-full w-[14rem] h-[14rem] top-0 right-24 border border-green300 translate-x-1/2 -translate-y-1/2"></div>
+
+      <!-- Círculos pequeños -->
+      <div class="absolute rounded-full w-24 h-24 top-36 left-4 border border-green300 translate-x-1/2 -translate-y-1/2"></div>
+      <div class="absolute rounded-full w-24 h-24 top-0 right-24 border border-green300 translate-x-1/2 -translate-y-1/2"></div>
+
+
+       <div class="relative text-left lg:text-center px-4 md:px-12 flex flex-col lg:justify-start">
+          <h2 class="text-[40px] text-center md:text-6xl leading-tight lg:text-6xl lg:text-start lg:mb-4">
+            {{'routes.contact.title'| translate }}
+          </h2>
           <div class="text-center  mt-10 text-2xl w-full md:text-left ">
-            <p>{{'rutas.contacto.texto'| translate }}</p>
+            <p>{{'routes.contact.text'| translate }}</p>
           </div>
         </div>
-        <div class="py-5 px-10 bg-white rounded-3xl flex flex-col items-start  gap-10">
-          @for (card of 'rutas.contacto.cards' | translate ; track $index) {
+        <div class="relative py-5 px-10 bg-white rounded-3xl flex flex-col items-start  gap-10">
+          @for (card of 'routes.contact.cards' | translate ; track $index) {
             <div class="flex flex-col items-center md:flex-row gap-4">
               <div class="w-[72px] h-[72px]">
                 <img src="assets/icons/{{card.png}}" class="w-full h-full" alt="icono ilimitado">
               </div>
               <div class="flex text-center md:text-start flex-col w-full">
-                <h5 class="text-lg sm:text-2xl text-purpura">{{card.titulo}}</h5>
-                <p class="text-sm font-semibold">{{card.texto}}</p>
+                <h5 class="text-lg sm:text-2xl text-green600">{{card.title}}</h5>
+                <p class="text-sm font-semibold">{{card.text}}</p>
               </div>
              </div>
           }

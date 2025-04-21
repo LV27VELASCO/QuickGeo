@@ -1,92 +1,150 @@
-<section class="mt-5 flex flex-col gap-7">
-  @for (card of 'testimonios' | translate ; track $index) {
-  <article id="card{{$index + 1}}"
-    class="sticky top-1 bg-indigox flex flex-col items-center p-4 rounded-[1.8rem] border border-gray-200 shadow-lg shadow-slate-200 md:p-12">
-    <div class="rounded-2xl w-full px-5 md:px-10 py-6 bg-white mb-8 md:mb-10">
-      <h4 class="text-[30px] text-center leading-tight md:text-start lg:text-[42px]">{{card.titulo}}</h4>
-      <p class="text-basex  mt-2 md:mt-4  text-lg">{{card.parrafo}}</p>
+<div class="relative isolate bg-white pt-24 pb-32 sm:pt-32">
+  <svg class="absolute drop-shadow-sm inset-0 -z-10 size-full [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)] stroke-gray-200"  aria-hidden="true">
+    <defs>
+      <pattern id="83fd4e5a-9d52-42fc-97b6-718e5d7ee527" width="200" height="200" x="50%" y="-1" patternUnits="userSpaceOnUse">
+        <path d="M100 200V.5M.5 .5H200" fill="none" />
+      </pattern>
+    </defs>
+    <svg x="50%" y="-1" class="drop-shadow-xl  overflow-visible fill-green-100/80">
+      <path d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z" stroke-width="0" />
+    </svg>
+    <rect width="100%" height="100%" stroke-width="0" fill="url(#83fd4e5a-9d52-42fc-97b6-718e5d7ee527)" />
+  </svg>
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl text-center">
+      <h3 class="mt-2 text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl">{{'testimonials.title' | translate }}</h3>
     </div>
-    <div class="flex flex-col gap-6  md:gap-10 lg:flex-row">
-      <div class="flex flex-col gap-6  md:gap-10 w-full">
-        <div>
-          <img src="assets/icons/comilla.png" class="h-20" alt="icono comilla">
+    <div #cardsContainer class="mx-auto mt-16 grid max-w-2xl grid-cols-1 grid-rows-1 gap-8 text-sm/6 text-gray-900 sm:mt-20 sm:grid-cols-2 xl:mx-0 xl:max-w-none xl:grid-flow-col xl:grid-cols-4">
+      @for(card of 'testimonials.people' | translate ; track $index){
+        @if($index==0){
+          <figure [class]="animation?'scale-100 opacity-100':'scale-75 opacity-0'" class="transform transition-all duration-500 delay-200 ease-out rounded-2xl bg-white shadow-lg ring-1 ring-gray-900/5 sm:col-span-2 xl:col-start-2 xl:row-end-1">
+            <blockquote class="p-6 text-lg font-semibold tracking-tight text-gray-900 sm:p-12 sm:text-xl/8">
+              <p>“{{card.story}}”</p>
+            </blockquote>
+            <figcaption class="flex flex-wrap items-center gap-x-4 gap-y-4 border-t border-gray-900/10 px-6 py-4 sm:flex-nowrap">
+              <img class="size-10 flex-none rounded-full bg-gray-50" src='assets/img/{{card.png}}' alt="">
+              <div class="flex-auto">
+                <div class="font-semibold">{{card.name}}</div>
+                <div class="text-gray-600">{{card.span}}</div>
+              </div>
+              <img class="h-10 w-auto flex-none" src="https://tailwindcss.com/plus-assets/img/logos/savvycal-logo-gray-900.svg" alt="">
+            </figcaption>
+          </figure>
+        }
+      }
+
+      <div class="space-y-8 xl:contents xl:space-y-0">
+        <div class="space-y-8 xl:row-span-2">
+          @for(card of 'testimonials.people' | translate ; track $index){
+            @if($index==1){
+            <figure [class]="animation?'scale-100 opacity-100':'scale-75 opacity-0'" class="transform transition-all duration-500 delay-300 ease-out rounded-2xl bg-white p-6 shadow-lg ring-1 ring-gray-900/5">
+              <blockquote class="text-gray-900 font-semibold">
+                <p>“{{card.story}}”</p>
+              </blockquote>
+              <figcaption class="mt-6 flex items-center gap-x-4">
+                <img class="size-10 rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                <div>
+                  <div class="font-semibold">Leslie Alexander</div>
+                  <div class="text-gray-600">lesliealexander</div>
+                </div>
+              </figcaption>
+            </figure>
+            }
+          }
+
+          <!-- More testimonials... -->
         </div>
-        <h4 class="text-2xl text-basex">{{card.relato}}”</h4>
+        <div class="space-y-8 xl:row-start-1">
+          @for(card of 'testimonials.people' | translate ; track $index){
+            @if($index==2){
+              <figure [class]="animation?'scale-100 opacity-100':'scale-75 opacity-0'" class="transform transition-all duration-500 delay-[400ms] ease-out rounded-2xl bg-white p-6 shadow-lg ring-1 ring-gray-900/5">
+                <blockquote class="text-gray-900 font-semibold">
+                  <p>“{{card.story}}”</p>
+                </blockquote>
+                <figcaption class="mt-6 flex items-center gap-x-4">
+                  <img class="size-10 rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                  <div>
+                    <div class="font-semibold">Lindsay Walton</div>
+                    <div class="text-gray-600">lindsaywalton</div>
+                  </div>
+                </figcaption>
+              </figure>
+            }
+          }
+          <!-- More testimonials... -->
+        </div>
       </div>
-      <div class="card h-80 w-full rounded-2xl flex flex-col justify-end"
-        style="background-image: url('assets/img/{{card.png}}'); background-position: center; background-size: cover; background-repeat: no-repeat;">
-        <div class="text-white h-24 w-full border-t border-gray-200 backdrop-blur-sm rounded-b-2xl">
-          <div class="flex justify-between items-center px-5 pt-5">
-            <h4 class="text-2xl">{{card.nombre}}</h4>
-            <div class="flex gap-1">
-              <svg width="14" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_209_20)">
-                  <path
-                    d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z"
-                    fill="white"></path>
-                </g>
-                <defs>
-                  <clipPath id="clip0_209_20">
-                    <rect width="20" height="20" fill="white" transform="translate(0 0.150146)"></rect>
-                  </clipPath>
-                </defs>
-              </svg>
-              <svg width="14" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_209_20)">
-                  <path
-                    d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z"
-                    fill="white"></path>
-                </g>
-                <defs>
-                  <clipPath id="clip0_209_20">
-                    <rect width="20" height="20" fill="white" transform="translate(0 0.150146)"></rect>
-                  </clipPath>
-                </defs>
-              </svg>
-              <svg width="14" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_209_20)">
-                  <path
-                    d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z"
-                    fill="white"></path>
-                </g>
-                <defs>
-                  <clipPath id="clip0_209_20">
-                    <rect width="20" height="20" fill="white" transform="translate(0 0.150146)"></rect>
-                  </clipPath>
-                </defs>
-              </svg>
-              <svg width="14" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_209_20)">
-                  <path
-                    d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z"
-                    fill="white"></path>
-                </g>
-                <defs>
-                  <clipPath id="clip0_209_20">
-                    <rect width="20" height="20" fill="white" transform="translate(0 0.150146)"></rect>
-                  </clipPath>
-                </defs>
-              </svg>
-              <svg width="14" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_209_20)">
-                  <path
-                    d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z"
-                    fill="white"></path>
-                </g>
-                <defs>
-                  <clipPath id="clip0_209_20">
-                    <rect width="20" height="20" fill="white" transform="translate(0 0.150146)"></rect>
-                  </clipPath>
-                </defs>
-              </svg>
-            </div>
+      <div class="space-y-8 xl:contents xl:space-y-0">
+        <div class="space-y-8 xl:row-start-1">
+          @for(card of 'testimonials.people' | translate ; track $index){
+            @if($index==3){
+              <figure [class]="animation?'scale-100 opacity-100':'scale-75 opacity-0'" class="transform transition-all duration-500 delay-[500ms] ease-out rounded-2xl bg-white p-6 shadow-lg ring-1 ring-gray-900/5">
+                <blockquote class="text-gray-900 font-semibold">
+                  <p>“{{card.story}}”</p>
+                </blockquote>
+                <figcaption class="mt-6 flex items-center gap-x-4">
+                  <img class="size-10 rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                  <div>
+                    <div class="font-semibold">Tom Cook</div>
+                    <div class="text-gray-600">tomcook</div>
+                  </div>
+                </figcaption>
+              </figure>
+            }
+          }
+          <!-- More testimonials... -->
+        </div>
+        <div class="space-y-8 xl:row-span-2">
+          @for(card of 'testimonials.people' | translate ; track $index){
+            @if($index==4){
+              <figure [class]="animation?'scale-100 opacity-100':'scale-75 opacity-0'" class="transform transition-all duration-500 delay-[600ms] ease-out rounded-2xl bg-white p-6 shadow-lg ring-1 ring-gray-900/5">
+                <blockquote class="text-gray-900 font-semibold">
+                  <p>“{{card.story}}”</p>
+                </blockquote>
+                <figcaption class="mt-6 flex items-center gap-x-4">
+                  <img class="size-10 rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                  <div>
+                    <div class="font-semibold">Leonard Krasner</div>
+                    <div class="text-gray-600">leonardkrasner</div>
+                  </div>
+                </figcaption>
+              </figure>
+            }
+          }
+          <!-- More testimonials... -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bg-gradient-to-b from-white via-green-100 to-white py-24 sm:py-32">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl lg:max-w-none">
+        <div class="text-center">
+          <h2 class="text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl">Confianza y precisión a escala global</h2>
+          <p class="mt-4 text-lg/8 font-normal text-gray-600">Súmate hoy y lleva tu geolocalización al siguiente nivel</p>
+        </div>
+        <dl class="mt-16 grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-4">
+
+          <div class="flex flex-col bg-gray-400/5 p-8 backdrop-blur-lg">
+            <dt class="text-sm/6 font-semibold text-gray-600">Usuarios activos</dt>
+
+            <dd  class="order-first text-3xl font-semibold tracking-tight text-gray-900"><span [appCountUp]="8000">0</span>+</dd>
           </div>
-          <p class="px-5 text-sm font-normal">Usuario de Fullgeo</p>
-        </div>
+          <div class="flex flex-col bg-gray-400/5 p-8 backdrop-blur-lg">
+            <dt class="text-sm/6 font-semibold text-gray-600">Usuarios nuevos mensual</dt>
+            <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900"><span [appCountUp]="200">0</span>+</dd>
+          </div>
+          <div class="flex flex-col bg-gray-400/5 p-8 backdrop-blur-lg">
+            <dt class="text-sm/6 font-semibold text-gray-600">Efectividad en localizaciones</dt>
+            <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900"><span [appCountUp]="98">0</span>%</dd>
+          </div>
+          <div class="flex flex-col bg-gray-400/5 p-8 backdrop-blur-lg">
+            <dt class="text-sm/6 font-semibold text-gray-600">Dispositivos localizados</dt>
+            <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900"><span [appCountUp]="15000">0</span>+</dd>
+          </div>
+        </dl>
       </div>
     </div>
-    <div>
-    </div>
-  </article>
-  }
-</section>
+</div>

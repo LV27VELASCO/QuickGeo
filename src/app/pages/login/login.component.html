@@ -8,25 +8,25 @@
         </div>
         <div [class]="recoveryPassword?'hidden':'block'" class="text-center">
             <form [formGroup]="formLogin" (ngSubmit)="onSubmit()" class="py-10 px-5 flex flex-col gap-5 border-b-2 border-gray-50">
-                <h2 class="text-center text-4xl mb-5">{{'rutas.loguearse.titulo'| translate }}</h2>
+                <h2 class="text-center text-4xl mb-5">{{'routes.login.title'| translate }}</h2>
                 <div class="flex flex-col gap-2 text-start">
-                    <span class="text-sm font-semibold pl-2">{{'rutas.loguearse.label1'| translate }}</span>
+                    <span class="text-sm font-semibold pl-2">{{'routes.login.label'| translate }}</span>
                     <div class="border-2 rounded-full hover:shadow-sm flex gap-2 items-center py-2 px-3">
                         <div class="h-5 w-5">
                             <img src="assets/icons/input-email.png" class="w-full h-full" alt="">
                         </div>
-                        <input formControlName="email" type="text" placeholder="{{'rutas.loguearse.placeholder1'| translate }}" class="w-full placeholder:font-normal outline-none font-semibold text-base">
+                        <input formControlName="email" type="text" placeholder="{{'routes.login.placeholder'| translate }}" class="w-full placeholder:font-normal outline-none font-semibold text-base">
                     </div>
                 </div>
                 <div class="flex flex-col gap-2 text-start">
-                    <span class="text-sm font-semibold pl-2">{{'rutas.loguearse.label2'| translate }}</span>
+                    <span class="text-sm font-semibold pl-2">{{'routes.login.label2'| translate }}</span>
                     <div class="border-2 rounded-full hover:shadow-sm flex gap-2 items-center py-2 px-3">
-                        <input formControlName="password" [type]="password?'text':'password'" placeholder="{{'rutas.loguearse.label2'| translate }}" class="w-full placeholder:font-normal outline-none font-semibold text-base" type="password">
+                        <input formControlName="password" [type]="password?'text':'password'" placeholder="{{'routes.login.label2'| translate }}" class="w-full placeholder:font-normal outline-none font-semibold text-base" type="password">
                         <button type="button" (click)="showPassword()"><i class='bx bx-low-vision'></i></button>
                     </div>
                 </div>
-                <button type="submit" class="w-full mt-5 shadow-lg text-white bg-purpura hover:bg-indigo-700 rounded-full px-5 py-2.5 lg:m-0 lg:px-3">
-                  
+                <button type="submit" class="w-full mt-5 shadow-lg text-white bg-green600 hover:bg-indigo-700 rounded-full px-5 py-2.5 lg:m-0 lg:px-3">
+
                   <div  role="status" class="text-center font-semibold flex items-center justify-center gap-1">
                     <div [class]="buttonLogin?'hidden':''">
                       <svg aria-hidden="true" class="w-5 h-5 text-gray-200 animate-spin" viewBox="0 0 100 101"  xmlns="http://www.w3.org/2000/svg">
@@ -34,7 +34,7 @@
                           <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/>
                       </svg>
                     </div>
-                    <p class="text-base">{{'rutas.loguearse.titulo'| translate }}</p>
+                    <p class="text-base">{{'routes.login.title'| translate }}</p>
                   </div>
                 </button>
                 @if ((formLogin.get("email")?.hasError("incorrect")||(formLogin.get("email")?.touched && formLogin.get("email")?.hasError("required")))||
@@ -44,7 +44,7 @@
                         <path d="M8 6.82341V9.15674M8 2.15674L1.5 13.1567H14.5L8 2.15674Z" stroke="#F04438" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                         <ellipse cx="8.00001" cy="10.8234" rx="0.666667" ry="0.666667" fill="#F04438"></ellipse>
                       </svg>
-                      <span class="inline-block text-center font-normal text-sm">Algunos campos son requeridos, por favor validar.</span>  
+                      <span class="inline-block text-center font-normal text-sm">Algunos campos son requeridos, por favor validar.</span>
                     </div>
                   }@if(formLogin.get("email")?.hasError("fail") || formLogin.get("password")?.hasError("fail")){
                     <div class="w-full flex flex-col flex-wrap items-center justify-center gap-2 mt-4 sm:flex-row">
@@ -52,46 +52,46 @@
                         <path d="M8 6.82341V9.15674M8 2.15674L1.5 13.1567H14.5L8 2.15674Z" stroke="#F04438" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                         <ellipse cx="8.00001" cy="10.8234" rx="0.666667" ry="0.666667" fill="#F04438"></ellipse>
                       </svg>
-                      <span class="inline-block text-center font-normal text-sm">Ocurrió un error, contactar al administrador</span>  
+                      <span class="inline-block text-center font-normal text-sm">Ocurrió un error, contactar al administrador</span>
                     </div>
                   }
             </form>
-            <button (click)="showPassword()" class="font-normal w-fit mt-5 text-sm underline text-center inline-block">{{'rutas.loguearse.textoSpan'| translate }}</button>
+            <button (click)="showPassword()" class="font-normal w-fit mt-5 text-sm underline text-center inline-block">{{'routes.login.textSpan'| translate }}</button>
         </div>
         <div [class]="recoveryPassword?'block':'hidden'" class="text-center">
           <div class="py-10 px-5 flex flex-col gap-5 border-b-2 border-gray-50">
               <h2 class="text-center text-4xl mb-5">Olvidé mi contraseña</h2>
               <div class="flex flex-col gap-2 text-start">
-                  <span class="text-sm font-semibold pl-2">{{'rutas.loguearse.label1'| translate }}</span>
+                  <span class="text-sm font-semibold pl-2">{{'routes.login.label'| translate }}</span>
                   <div class="border-2 rounded-full hover:shadow-sm flex gap-2 items-center py-2 px-3">
                       <div class="h-5 w-5">
                           <img src="assets/icons/input-email.png" class="w-full h-full" alt="">
                       </div>
-                      <input placeholder="{{'rutas.loguearse.placeholder1'| translate }}" class="w-full placeholder:font-normal outline-none font-semibold text-base" type="text">
+                      <input placeholder="{{'routes.login.placeholder'| translate }}" class="w-full placeholder:font-normal outline-none font-semibold text-base" type="text">
                   </div>
               </div>
-              <button class="w-full mt-5 shadow-lg text-white bg-purpura hover:bg-indigo-700 rounded-full px-5 py-2.5 lg:m-0 lg:px-3">
+              <button class="w-full mt-5 shadow-lg text-white bg-green600 hover:bg-indigo-700 rounded-full px-5 py-2.5 lg:m-0 lg:px-3">
                   <div  role="status" class="text-center font-semibold flex items-center justify-center gap-1">
                     <p class="text-base">Enviar contraseña</p>
                   </div>
               </button>
-          </div> 
+          </div>
           <button (click)="showPassword()" class="font-normal w-fit mt-5 text-sm underline text-center inline-block">Iniciar Sesión</button>
       </div>
         <div class="w-full text-center pt-10">
-            <span class="text-sm font-normal">© 2024 Luis Velasco. {{'piePagina.terminos.derechos'| translate }}</span>
+            <span class="text-sm font-normal">© 2024 Luis Velasco. {{'footer.terms.rights'| translate }}</span>
         </div>
     </article>
-    <article class="bg-indigox w-full md:h-screen imagenFondo px-5 sm:px-16 py-8 flex justify-center items-center">
+    <article class="bg-green100 w-full md:h-screen imagenFondo px-5 sm:px-16 py-8 flex justify-center items-center">
         <div class="px-5 p-8 rounded-3xl bg-white w-full">
             <div class="flex justify-center">
                 <img src="assets/icons/comilla.png" alt="icono comilla">
             </div>
-            @for (card of 'testimonios' | translate ; track $index) {
+            @for (card of 'testimonials' | translate ; track $index) {
               <div  [class]="testimonios[$index]?'':'hidden'" id="content-carrousel">
                 <div class="w-full text-center my-6">
-                    <p class="text-2xl">{{card.relato}}</p>
-                    <div class="text-purpura flex justify-center mt-5">
+                    <p class="text-2xl">{{card.story}}</p>
+                    <div class="text-green600 flex justify-center mt-5">
                         <svg width="22" height="28" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_209_20)">
                               <path d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z" fill="currentColor"></path>
@@ -154,20 +154,20 @@
             }
             <div class="w-full flex justify-between px-10 mt-12">
                 <div class="w-14 h-14 flex justify-center items-center">
-                    <button (click)="prevCard()" class="rounded-full ease-in-out hover:scale-110 transition duration-150 hover:border-2 border-purpura p-3 bg-indigox text-purpura">
+                    <button (click)="prevCard()" class="rounded-full ease-in-out hover:scale-110 transition duration-150 hover:border-2 border-green600 p-3 bg-green100 text-green600">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M15 20L7 12L15 4" stroke="currentColor" stroke-width="2"></path>
                         </svg>
                     </button>
                 </div>
-                
+
                 <div class="flex gap-2 items-center">
-                    <span [class]="testimonios[0]?'bg-purpura':'bg-gray-400'" class="inline-block w-2 h-2 rounded-full"></span>
-                    <span [class]="testimonios[1]?'bg-purpura':'bg-gray-400'" class="inline-block w-2 h-2 rounded-full"></span>
-                    <span [class]="testimonios[2]?'bg-purpura':'bg-gray-400'" class="inline-block w-2 h-2 rounded-full"></span>
+                    <span [class]="testimonios[0]?'bg-green600':'bg-gray-400'" class="inline-block w-2 h-2 rounded-full"></span>
+                    <span [class]="testimonios[1]?'bg-green600':'bg-gray-400'" class="inline-block w-2 h-2 rounded-full"></span>
+                    <span [class]="testimonios[2]?'bg-green600':'bg-gray-400'" class="inline-block w-2 h-2 rounded-full"></span>
                 </div>
                 <div class="w-14 h-14 flex justify-center items-center">
-                  <button (click)="nextCard()" class="rounded-full ease-in-out hover:scale-110 transition duration-150 hover:border-2 border-purpura p-3 bg-indigox text-purpura">
+                  <button (click)="nextCard()" class="rounded-full ease-in-out hover:scale-110 transition duration-150 hover:border-2 border-green600 p-3 bg-green100 text-green600">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M9 4L17 12L9 20" stroke="currentColor" stroke-width="2"></path>
                       </svg>

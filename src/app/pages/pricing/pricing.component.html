@@ -1,24 +1,36 @@
-<div class="px-4 max-w-screen-xl mx-auto"> 
-    <article class='w-full rounded-[2.3rem] px-4 py-20 gap-10 grid grid-cols-1 bg-indigox imagenFondo lg:px-3 xl:px-8 lg:grid-cols-2 lg:items-center'>
-        <div class="text-left lg:text-center px-6 md:px-12 flex flex-col lg:justify-start">
-          <h1 class="text-[40px] text-center md:text-6xl leading-tight lg:text-6xl lg:text-start lg:mb-4">
-            {{'rutas.precios.titulo'| translate }}
-          </h1>
+<div class="max-w-screen-xl mx-auto">
+    <article class='w-full rounded-[2.3rem] px-4 py-20 gap-10 grid grid-cols-1 bg-gradient-to-b from-green200  to-white  lg:px-3 xl:px-8 lg:grid-cols-2 lg:items-center relative overflow-hidden'>
+         <!-- Círculos decorativos grandes -->
+      <div class="absolute rounded-full w-[22rem] h-[22rem] top-36 -left-60 border border-green300 translate-x-1/2 -translate-y-1/2"></div>
+      <div class="absolute rounded-full w-[22rem] h-[22rem] top-0 right-24 border border-green300 translate-x-1/2 -translate-y-1/2"></div>
+
+      <!-- Círculos medianos -->
+      <div class="absolute rounded-full w-[14rem] h-[14rem] top-36 -left-28 border border-green300 translate-x-1/2 -translate-y-1/2"></div>
+      <div class="absolute rounded-full w-[14rem] h-[14rem] top-0 right-24 border border-green300 translate-x-1/2 -translate-y-1/2"></div>
+
+      <!-- Círculos pequeños -->
+      <div class="absolute rounded-full w-24 h-24 top-36 left-4 border border-green300 translate-x-1/2 -translate-y-1/2"></div>
+      <div class="absolute rounded-full w-24 h-24 top-0 right-24 border border-green300 translate-x-1/2 -translate-y-1/2"></div>
+
+      <div class="relative text-left lg:text-center px-6 md:px-12 flex flex-col lg:justify-start">
+          <h2 class="text-[40px] text-center md:text-6xl leading-tight lg:text-6xl lg:text-start lg:mb-4">
+            {{'routes.prices.title'| translate }}
+          </h2>
           <div class="text-center  mt-10 text-2xl w-full md:text-left md:w-[70%]">
-            <p>{{'rutas.precios.texto'| translate }}</p>
+            <p>{{'routes.prices.text'| translate }}</p>
           </div>
-        </div>
-        <div>
+      </div>
+      <div class="relative">
           <div class="py-5 px-10 bg-white rounded-3xl flex flex-col items-center gap-5">
             <div class="text-center">
-              <h4 class="text-2xl md:text-3xl p-5 text-purpura">{{'rutas.precios.subtitulo'| translate }}</h4>
+              <h4 class="text-2xl md:text-3xl p-5 text-green600">{{'routes.prices.subtitle'| translate }}</h4>
               <div class="flex items-start justify-center">
                 <h3 class="text-6xl md:text-8xl text-gray-800">€0.50</h3>
                 <span class="text-lg text-gray-800">/24h</span>
               </div>
-              <span class="text-lg font-semibold mt-5 inline-block">{{'rutas.precios.text2'| translate }}</span>
+              <span class="text-lg font-semibold mt-5 inline-block">{{'routes.prices.text2'| translate }}</span>
             </div>
-            <button (click)="onCheckout()" [class]="buttonLocation?'bg-purpura':'bg-indigo-400'"  class="w-full mt-5 shadow-lg text-white hover:bg-indigo-700 rounded-full px-5 py-2.5 lg:m-0  lg:py-3 lg:px-3">
+            <button (click)="onCheckout()" [class]="buttonLocation?'bg-green600':'bg-green700'"  class="w-full mt-5 shadow-lg text-white hover:bg-indigo-700 rounded-full px-5 py-2.5 lg:m-0  lg:py-3 lg:px-3">
               <div  role="status" class="text-center font-semibold flex items-center justify-center gap-1">
                 <div [class]="buttonLocation?'hidden':''">
                   <svg aria-hidden="true" class="w-5 h-5 text-gray-200 animate-spin" viewBox="0 0 100 101"  xmlns="http://www.w3.org/2000/svg">
@@ -31,17 +43,17 @@
                     viewBox="0 0 10 6"> <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
                   </svg>
                 </div>
-                <p class="text-base">{{'rutas.precios.textoBoton'| translate }}</p>
+                <p class="text-base">{{'routes.prices.textButton'| translate }}</p>
               </div>
             </button>
           </div>
         </div>
     </article>
     <article class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-5 gap-7">
-      @for (card of 'rutas.precios.cards' | translate ; track $index) {
-        <div class="bg-indigox  flex flex-col items-center px-7 py-11 rounded-[2.3rem] gap-3 text-center">
+      @for (card of 'routes.prices.cards' | translate ; track $index) {
+        <div class="bg-green100  flex flex-col items-center px-7 py-11 rounded-[2.3rem] gap-3 text-center">
           <img src="assets/icons/{{card.png}}" class="h-20" alt="">
-          <h4 class="text-[34px] leading-tight">{{card.titulo}}</h4>
+          <h4 class="text-[34px] leading-tight">{{card.title}}</h4>
         </div>
       }
     </article>

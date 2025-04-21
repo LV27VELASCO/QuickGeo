@@ -1,19 +1,65 @@
 <div>
-<section class="mt-5">
-    <article class='w-full rounded-[2.3rem] pt-4 pb-1 bg-indigox imagenFondo lg:grid  lg:grid-cols-2 xl:py-0'>
+
+  <div class="bg-white py-8 sm:py-14">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl text-center">
+        <h2 class="text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl">{{'howItWork.title' | translate}}</h2>
+        <p class="text-lg/8 text-gray-600 font-normal my-6">{{'howItWork.subtitle' | translate}}</p>
+      </div>
+      <div class="w-full mt-16 flex flex-wrap gap-x-8 gap-y-20 lg:max-w-none md:grid md:grid-cols-3">
+
+        @for (funcion of 'howItWork.functions' | translate; track $index) {
+          <div class="max-w-[20rem] mx-auto">
+            <div [class]="currentIndex!=$index?'':'shadow-[#5cb239]/40'" class="relative  overflow-hidden rounded-3xl hover:shadow-[#5cb239]/40 hover:shadow-xl shadow-lg group h-96">
+              <!-- Imagen que recubre toda la card -->
+              <img
+                src="assets/img/{{funcion.icon}}"
+                alt="Imagen funcionalidad {{$index +1 }}"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                [class]="currentIndex!=$index?'':'scale-105'"
+              />
+
+              <!-- Degradado oscuro que aparece al hacer hover -->
+              <div [class]="currentIndex!=$index?'':'opacity-100'" class="absolute inset-0 bg-gradient-to-t from-black to-green-600/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+              <!-- Texto que aparece de abajo hacia arriba -->
+              <div [class]="currentIndex!=$index?'translate-y-full':'translate-y-0'" class="absolute bottom-0 left-0 right-0 p-6  group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
+                <h3 class="text-xl font-bold text-white mb-2">{{funcion.title}}</h3>
+                <p class="text-white/90 font-normal">
+                  {{funcion.paragraph}}
+                </p>
+              </div>
+            </div>
+          </div>
+        }
+        <!-- More posts... -->
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+
+
+
+
+<!-- <section class="mt-5">
+    <article class='w-full rounded-[2.3rem] pt-4 pb-1 bg-green100 lg:grid  lg:grid-cols-2 xl:py-0'>
+
       <div class="text-center flex flex-col mt-10 lg:justify-start">
         <h3 class="text-[40px] pl-7 leading-tight text-start">
-          {{'funciones.titulo' | translate}}
+          {{'howItWork.title' | translate}}
         </h3>
         <ul class="mt-10">
-          @for (item of 'funciones.funcionalidad'| translate; track $index) {
+          @for (item of 'howItWork.functions'| translate; track $index) {
             <li (click)="setCurrenIndex($index)" [class]="currentIndex!=$index?'border-0 opacity-55':'border-l-2'" class="cursor-pointer flex flex-col sm:grid sm:grid-cols-10 border-blue-600 pl-9 transition-all delay-75 duration-200 ease-in-out hover:border-l-2 hover:opacity-100">
               <div class="w-[4.5rem] mt-3 sm:col-span-1 lg:col-span-2">
                 <img src="assets/icons/number-{{$index+1}}.png" alt="">
               </div>
               <div class="text-left mt-2 sm:mt-0 px-3 lg:pl-0 col-span-8">
-                <h4 class="text-2xl">{{item.titulo}}</h4>
-                <p class="font-semibold text-basex">{{item.parrafo}}</p>
+                <h4 class="text-2xl">{{item.title}}</h4>
+                <p class="font-semibold text-colorSubtitle">{{item.paragraph}}</p>
               </div>
             </li>
           }
@@ -25,23 +71,35 @@
         <img [class]="currentIndex==2?'':'hidden'" src="assets/img/home_2.webp" class="w-full" alt="">
       </div>
     </article>
-</section>
-<section class="backGround rounded-[2.3rem] w-full mt-5 p-[5%] text-white lg:grid lg:grid-cols-12 lg:py-6 lg:px-[2%]">
-  <div class="max-w-96 w-full rounded-[1.5rem]  m-auto lg:col-span-5 lg:w-[390px] lg:h-[390px]">
-    <img class="w-full lg:w-full lg:h-full lg:object-cover rounded-[1.5rem]" src="assets/img/woman-phone.webp" alt="">
+</section> -->
+
+
+<!--
+<section class="bg-gradient-to-b from-green300/90 to-white rounded-[2.3rem] w-full mt-5 p-[5%] text-white lg:grid lg:grid-cols-12 lg:py-6 lg:px-[2%]">
+  <div class="max-w-80 w-full rounded-[1.5rem]  m-auto lg:col-span-5 lg:w-[390px] lg:h-[390px]">
+    <img class="w-full rounded-[1.5rem]" src="assets/icons/planet.svg" alt="">
   </div>
+
   <div class="lg:col-span-7 lg:px-5">
-    <div class="text-center my-7 flex flex-col gap-7 items-center lg:flex-row ">
-      <div>
-        <div class="w-full max-w-3xl m-auto lg:h-40 lg:w-40 lg:rounded-[1.2rem]">
-          <img class="object-cover object-center w-full h-full rounded-[1.5rem]" src="assets/img/locate-mobile.png" alt="">
-        </div>
-      </div>
-      <h3 class="text-4xl lg:text-5xl text-start lg:mt-2 ">{{'funciones.titulo2' | translate}}</h3>
+    <div class="text-gray-800 text-center my-7 flex flex-col gap-7 items-center lg:flex-row ">
+      <h3 class="text-4xl lg:text-5xl text-start lg:mt-2 ">{{'howItWork.title2' | translate}}</h3>
     </div>
-    <div class="bg-blueTurqui rounded-[1.6rem] p-4 lg:grid lg:grid-cols-2 lg:items-center">
-      <ul class="grid gap-2 [&>li]:flex [&>li]:items-center [&>li]:gap-2 [&>li>p]:font-semibold [&>li>p]:text-lg">
-        @for (ventajas of 'funciones.prueba.ventajas' | translate; track $index) {
+
+    <div class="rounded-[1.6rem] lg:grid lg:grid-cols-2 lg:gap-3 lg:items-start p-4 bg-gradient-to-b from-green-500/80 to-gray-100 relative overflow-hidden border border-green300">
+
+      <div class="absolute rounded-full w-[22rem] h-[22rem] top-[24rem] right-24 border border-green300 translate-x-1/2 -translate-y-1/2"></div>
+      <div class="absolute rounded-full w-[22rem] h-[22rem] top-0 right-24 border border-green300 translate-x-1/2 -translate-y-1/2"></div>
+
+
+      <div class="absolute rounded-full w-[14rem] h-[14rem] top-[24rem] right-24 border border-green300 translate-x-1/2 -translate-y-1/2"></div>
+      <div class="absolute rounded-full w-[14rem] h-[14rem] top-0 right-24 border border-green300 translate-x-1/2 -translate-y-1/2"></div>
+
+
+      <div class="absolute rounded-full w-24 h-24 top-[24rem] right-24 border border-green300 translate-x-1/2 -translate-y-1/2"></div>
+      <div class="absolute rounded-full w-24 h-24 top-0 right-24 border border-green300 translate-x-1/2 -translate-y-1/2"></div>
+
+      <ul class="relative grid gap-2 [&>li]:flex [&>li]:items-center [&>li]:gap-2 [&>li>p]:font-semibold [&>li>p]:text-lg">
+        @for (ventajas of 'howItWork.proof.advantages' | translate; track $index) {
           <li>
             <div class="h-8 w-8">
               <img class="w-full" src="assets/icons/check.png" alt="icono check">
@@ -50,13 +108,13 @@
           </li>
         }
       </ul>
-      <div>
-        <p class="text-lg font-normal mt-6 text-left lg:mt-0">{{'funciones.prueba.parrafo' | translate}}</p>
+
+      <div class="relative">
+        <p class="text-lg font-normal mt-6 text-left lg:mt-0">{{'howItWork.proof.paragraph' | translate}}</p>
         <div class="w-full mt-5">
-          <button type="button" class="text-white w-full bg-purpura shadow-lg hover:text-opacity-70 rounded-full px-5 py-2.5 text-center">{{'funciones.prueba.textoBoton' | translate}}</button>
+          <a href="/" class="text-white inline-block w-full bg-green600 hover:bg-green700 shadow-lg rounded-full px-5 py-2.5 text-center">{{'howItWork.proof.textButton' | translate}}</a>
         </div>
       </div>
     </div>
   </div>
-</section>
-</div>
+</section> -->

@@ -1,7 +1,7 @@
 <div class="px-5">
     <section class="px-5 md:px-10 py-10 min-h-[80vh] rounded-3xl max-w-screen-xl mx-auto imagenFondoDashboard  bg-opacity-20 flex flex-col-reverse md:grid md:grid-cols-8 gap-8">
         <div class="px-5 py-3 md:col-span-3 w-full h-fit rounded-xl">
-            <div class="border-b-2 px-3 pb-2 flex justify-between items-center [&>*]:text-basex">
+            <div class="border-b-2 px-3 pb-2 flex justify-between items-center [&>*]:text-colorSubtitle">
                 <p>Localized Numbers</p>
                 <div class="flex gap-5 text-2xl [&>button]:py-1 [&>button]:px-2 [&>button]:rounded-xl [&>button]:border ">
                     <button><i class='bx bx-list-ul'></i></button>
@@ -36,7 +36,7 @@
                             </div>
                             <button class="bg-green-600/20 text-green-700 w-full py-1 px-2 rounded-md">Localizado</button>
                             <section [class]="hover?'block':'hidden'" class="w-full">
-                                <div class="w-full flex gap-1 items-start text-basex">
+                                <div class="w-full flex gap-1 items-start text-colorSubtitle">
                                     <span class="inline-block text-lg"><i class='bx bxs-map' ></i></span>
                                     <p class="pt-1 text-xs font-semibold">{{item.locations[0].city}}</p>
                                 </div>

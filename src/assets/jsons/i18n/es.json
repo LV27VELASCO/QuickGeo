@@ -1,122 +1,131 @@
 {
-    "navegacion": {
-      "funcion": "Como funciona?",
-      "preguntas": "Preguntas frecuentes",
-      "precios": "Precios",
-      "contacto": "Contacto",
-      "loguearse": "Iniciar sesión",
-      "localizar": "Localizar teléfono"
+    "navbar": {
+      "howItWork": "Como funciona?",
+      "questions": "Preguntas frecuentes",
+      "prices": "Precios",
+      "contact": "Contacto",
+      "login": "Iniciar sesión",
+      "locate": "Localizar teléfono"
     },
-    "portada": {
-      "titulo": "Localiza cualquier teléfono, en cualquier lugar, en cualquier momento ",
-      "inputTelefono": "Ingrese el número de teléfono",
-      "localizar": "Localizar teléfono",
+    "hero": {
+      "title": "Encuentre su dispositivo sin importar dónde se encuentre.",
+      "input": "Ingrese el número de teléfono",
+      "locate": "Localizar teléfono",
+      "span":"basado en más de 10,000 reseñas",
+      "characteristics":"La solución de geolocalización más versátil del mercado",
+      "text":"Descubre por qué millones de usuarios confían en QuickGeo para sus necesidades de navegación",
       "cards":[
-        {"titulo":"En cualquier lugar del planeta","parrafo":"Y también funciona con cualquier operador y teléfono móvil","png":"world.png"},
-        {"titulo":"Puedes permanecer anónimo","parrafo":"El destinatario nunca sabrá que proviene de ti","png":"confidential.png"},
-        {"titulo":"Tan preciso como el GPS","parrafo":"Te mostraremos la ubicación exacta en un mapa en línea","png":"accurate.png"}
-      ],
-      "screenLocalizar":{
-        "titulo":"Un lugar para localizarlos a todos",
-        "parrafo":"Una vez suscrito, puedes utilizar nuestra interfaz para ubicar la ubicación de tantos teléfonos como desees."
+        {"title":"Soporte universal","paragraph":"Accede desde cualquier dispositivo sin importar la marca o el sistema que uses, la plataforma se adapta para ofrecerte la mejor experiencia.","icon":"globe.svg"},
+        {"title":"Localización precisa","paragraph":"Encuentra cualquier número con exactitud en segundos desde cualquier lugar. Funciona con todas las redes móviles sin importar la operadora.","icon":"location.svg"},
+        {"title":"No se requiere instalación","paragraph":"Usa el servicio al instante sin descargar nada ni configurar tu dispositivo. Solo ingresa el número y obtén la información al momento","icon":"x-circle.svg"},
+        {"title":"Privacidad garantizada","paragraph":"Tu seguridad es nuestra prioridad navegás de forma completamente anónima sin rastreos para que disfrutes del servicio con total confianza.","icon":"security.svg"}
+        ],
+      "screenImg":{
+        "title":"Tu centro de control para localización",
+        "paragraph":"Con tu suscripción activa, podrás ubicar múltiples dispositivos desde una sola interfaz fácil de usar."
       }
     },
-    "testimonios": [
-        {"titulo":"¿Perdiste tu teléfono?","parrafo":"Habilita la ubicación exacta de tu teléfono con un solo toque", "nombre":"Marie","relato":"”Olvidé mi teléfono en el metro. Fullgeo permitió a la persona que lo encontró enviarme su ubicación sin desbloquearlo y pude recuperarlo de manera segura.”","png":"woman-smartphone.webp"},
-        {"titulo":"¿Buscas a un pariente?","parrafo":"Mostrar instantáneamente su posición precisa en un mapa", "nombre":"Darren y Julie","relato":"”Simple y práctico para localizar a nuestra hija de 12 años cuando sale con sus amigos. Todo lo que tiene que hacer es hacer clic en un enlace y podemos estar tranquilos.”","png":"daughter-demonstrating.webp"},
-        {"titulo":"¿Sospechoso de un comprador o vendedor en línea?","parrafo":"Pídeles que se localicen antes de proceder con la transacción", "nombre":"Mark","relato":"“Pude verificar el paradero de un vendedor después de pagar un depósito por un scooter. ¡Gracias a Fullgeo, nuestra reunión fue sin problemas y todo salió bien!”","png":"man-phone.webp"}
-    ],
-    "funciones": {
-        "titulo":"¿Como Funciona?",
-        "funcionalidad":[
-            {"titulo":"Realizar una búsqueda en un número","parrafo":"Nuestra tecnología comienza a localizar e identificar el teléfono asociado."},
-            {"titulo":"Solicitar una ubicación precisa","parrafo":"Enviamos un mensaje de texto al teléfono objetivo para localizarlo. Este mensaje es anónimo por defecto, pero puede ser personalizado para aumentar las posibilidades de éxito."},
-            {"titulo":"Obtén tus resultados","parrafo":"Serás informado automáticamente con la dirección tan pronto como el destinatario confirme su ubicación."}
-        ],
-        "titulo2":"Localiza cualquier teléfono hoy por solo 0.50€",
-        "prueba":{
-            "parrafo":"Prueba nuestra solución durante un período ilimitado de 24 horas por solo 0,50€. Al final de tu período de prueba, puedes elegir permanecer suscrito por €47.90 al mes.",
-            "ventajas":[
-                {"item":"Sin obligación"},
-                {"item":"Sin compromiso"},
-                {"item":"Acceso completo"},
-                {"item":"Búsquedas ilimitadas"}
-            ],
-            "textoBoton":"Comenzar Prueba"
-        }
+    "testimonials": {
+      "title":"Hemos ayudado a miles de personas en todo el mundo",
+      "people":[
+        {"story":"Salí de una cafetería y olvidé mi teléfono. Gracias a la app, vi que seguía allí. Volví rápido y lo recuperé sin problema. Sin geolocalización, lo habría perdido para siempre.", "name":"Marguie","png":"woman-smartphone.webp","span":"usuario de QuickGeo", "delay":"100"},
+        {"story":"Mi hija se desvió del camino al colegio. Con un solo clic en la app vi dónde estaba y fui por ella. Saber su ubicación en tiempo real nos dio tranquilidad total.", "name":"Ryan","png":"daughter-demonstrating.webp","span":"usuario de QuickGeo","delay":"200"},
+        {"story":"Después de un evento, no recordaba dónde había aparcado. Usé la app y en segundos supe la ubicación exacta del coche. Fue una salvación.", "name":"Mark","png":"man-phone.webp","span":"usuario de QuickGeo","delay":"300"},
+        {"story":"Mi padre se lesionó haciendo senderismo. Como llevaba la app activa, pudimos saber dónde estaba y enviar ayuda rápidamente. Fue clave para que lo atendieran a tiempo.", "name":"Darren y Julie","png":"daughter-demonstrating.webp","span":"usuario de QuickGeo","delay":"500"},
+        {"story":"En mi negocio, ahora mis clientes ven en tiempo real dónde va su pedido. Todo es más claro, confiable y profesional gracias a la geolocalización.", "name":"Mark","png":"man-phone.webp","span":"usuario de QuickGeo","delay":"700"}
+    ]
     },
-    "preguntas": {
-      "titulo":"FAQs",
-      "subtitulo":"¿Todavía tienes alguna pregunta?",
-      "parrafo":"Nuestro equipo está aquí para ayudar, pregúntanos cualquier cosa.",
-      "texto":"Ponte en contacto",
-      "acordeon1":[
-        {"titulo":"¿Es ilegal localizar a un tercero?","parrafo":"Fullgeo es completamente legal y cumple con las recomendaciones de la CNIL. Fullgeo no puede funcionar sin el consentimiento de terceros para la geolocalización."},
-        {"titulo":"¿Que tipo de telefonos son compatibles?","parrafo":"Fullgeo funciona en todos los teléfonos con conexión a internet."},
-        {"titulo":"¿Que precisión tiene Fullgeo?","parrafo":"Nuestro servicio le proporciona la ubicación exacta con una precisión de entre 1 y 6 metros."},
-        {"titulo":"¿Cuanto tiempo se tarda?","parrafo":"El tercero recibirá un mensaje de texto en 2 minutos, y usted recibirá una notificación inmediatamente después de que el tercero haya dado su consentimiento para ser geolocalizado."}
+    "howItWork": {
+        "title":"¿Como Funciona?",
+        "subtitle":"Descubre cómo localizamos tu movil.",
+        "functions":[
+            {"title":"Realizar una búsqueda en un número","paragraph":"Nuestra tecnología comienza a localizar e identificar el teléfono asociado.","icon":"Card_One.svg"},
+            {"title":"Solicitar una ubicación precisa","paragraph":"Enviamos un mensaje de texto al teléfono objetivo para localizarlo. Este mensaje es anónimo por defecto, pero puede ser personalizado para aumentar las posibilidades de éxito.","icon":"Card_Two.svg"},
+            {"title":"Obtén tus resultados","paragraph":"Serás informado automáticamente con la dirección tan pronto como el destinatario confirme su ubicación.","icon":"Card_One.svg"}
+        ]
+    },
+    "questions": {
+      "title":"FAQs",
+      "subtitle":"¿Todavía tienes alguna pregunta?",
+      "paragraph":"Nuestro equipo está aquí para ayudar, pregúntanos cualquier cosa.",
+      "text":"Ponte en contacto",
+      "accordion":[
+        {"title":"¿Es ilegal localizar a un tercero?","paragraph":"QuickGeo es completamente legal y cumple con las recomendaciones de la CNIL. QuickGeo no puede funcionar sin el consentimiento de terceros para la geolocalización."},
+        {"title":"¿Que tipo de telefonos son compatibles?","paragraph":"QuickGeo funciona en todos los teléfonos con conexión a internet."},
+        {"title":"¿Que precisión tiene QuickGeo?","paragraph":"Nuestro servicio le proporciona la ubicación exacta con una precisión de entre 1 y 6 metros."},
+        {"title":"¿Cuanto tiempo se tarda?","paragraph":"El tercero recibirá un mensaje de texto en 2 minutos, y usted recibirá una notificación inmediatamente después de que el tercero haya dado su consentimiento para ser geolocalizado."}
       ],
-      "acordeon2":[
-        {"titulo":"¿Funciona Fullgeo si el telefono del tercero está apagado?","parrafo":"El teléfono del tercero debe estar encendido para que el rastreo funcione. Sin embargo, tan pronto como esté encendido, se recibirán los mensajes de geolocalización."},
-        {"titulo":"¿Cuanto cuesta la geolocalización de un teléfono móvil?","parrafo":"El teléfono del tercero debe estar encendido para que el rastreo funcione. Sin embargo, tan pronto como esté encendido, se recibirán los mensajes de geolocalización."},
-        {"titulo":"¿Mi información está segura?","parrafo":"Su anonimato es importante para nosotros. La ubicación geográfica del tercero se envía a través de un protocolo seguro TLS (Secure Sockets Layer) y no es visible para otras personas. Su información personal y su identidad no se comparten con nadie."},
-        {"titulo":"¿Como puedo cancelar mi suscripción?","parrafo":"La suscripción es sin compromiso y se puede cancelar en cualquier momento haciendo clic en el botón de abajo y siguiendo las instrucciones en pantalla."}
+      "accordion2":[
+        {"title":"¿Funciona QuickGeo si el telefono del tercero está apagado?","paragraph":"El teléfono del tercero debe estar encendido para que el rastreo funcione. Sin embargo, tan pronto como esté encendido, se recibirán los mensajes de geolocalización."},
+        {"title":"¿Cuanto cuesta la geolocalización de un teléfono móvil?","paragraph":"El teléfono del tercero debe estar encendido para que el rastreo funcione. Sin embargo, tan pronto como esté encendido, se recibirán los mensajes de geolocalización."},
+        {"title":"¿Mi información está segura?","paragraph":"Su anonimato es importante para nosotros. La ubicación geográfica del tercero se envía a través de un protocolo seguro TLS (Secure Sockets Layer) y no es visible para otras personas. Su información personal y su identidad no se comparten con nadie."},
+        {"title":"¿Como puedo cancelar mi suscripción?","paragraph":"La suscripción es sin compromiso y se puede cancelar en cualquier momento haciendo clic en el botón de abajo y siguiendo las instrucciones en pantalla."}
       ]
     },
-    "bannerLocalizar":{
-      "titulo": "Localiza cualquier teléfono ahora",
-      "inputTelefono": "Ingrese el número de teléfono",
-      "localizar": "Localizar teléfono"
+    "bannerLocate":{
+      "title": "Localiza cualquier teléfono ahora",
+      "subtitle":"Prueba nuestra solución durante un período ilimitado de 24 horas por solo 0,50€. Al final de tu período de prueba, puedes elegir permanecer suscrito por €47.90 al mes.",
+      "input": "Ingrese el número de teléfono",
+      "locate": "Localizar teléfono",
+      "proof":{
+            "title":"Comenzar Prueba",
+            "advantages":[
+                {"item":"Sin obligación","icon":"check.svg"},
+                {"item":"Sin compromiso","icon":"check.svg"},
+                {"item":"Acceso completo","icon":"rocket.svg"},
+                {"item":"Búsquedas ilimitadas","icon":"bolt.svg"}
+            ]
+        }
     },
-    "piePagina":{
-      "parrafo":"Localiza cualquier teléfono, en cualquier lugar, en cualquier momento.",
-      "titulo":"Enlaces rápidos",
-      "cuenta":{
-        "titulo":"Cuenta",
-        "texto":"Darse de baja"
+    "footer":{
+      "title":"Enlaces rápidos",
+      "paragraph":"Localice su dispositivo de forma precisa y confiable, sin importar el país o red.",
+      "account":{
+        "title":"Cuenta",
+        "text":"Darse de baja"
       },
-      "terminos":{
+      "terms":{
           "legal":"Aviso legal",
-          "politicas":"Política de privacidad",
-          "condiciones":"Términos y condiciones generales",
-          "pagos":"Pagos seguros",
-          "derechos":"Todos los derechos reservados."
+          "policies":"Política de privacidad",
+          "conditions":"Términos y condiciones generales",
+          "payments":"Pagos seguros",
+          "rights":"Todos los derechos reservados."
       }
     },
-    "rutas":{
-      "precios":{
-        "titulo":"Precios",
-        "texto":"Aprovecha nuestra oferta de prueba de 24 horas para descubrir nuestro servicio.",
-        "subtitulo":"Oferta de prueba",
+    "routes":{
+      "prices":{
+        "title":"Precios",
+        "text":"Aprovecha nuestra oferta de prueba de 24 horas para descubrir nuestro servicio.",
+        "subtitle":"Oferta de prueba",
         "text2":"Luego €47.90 /mes",
-        "textoBoton":"Prueba ahora",
+        "textButton":"Prueba ahora",
         "cards":[
-          {"titulo":"Geolocalización ilimitada","png":"unlimited.png"},
-          {"titulo":"Todos los tipos de teléfonos","png":"phone.png"},
-          {"titulo":"Cobertura mundial","png":"world.png"},
-          {"titulo":"Todos las redes","png":"network.png"},
-          {"titulo":"Ubicación exacta","png":"location.png"},
-          {"titulo":"Mantén la confidencialidad","png":"confidential.png"}
+          {"title":"Geolocalización ilimitada","png":"unlimited.png"},
+          {"title":"Todos los tipos de teléfonos","png":"phone.png"},
+          {"title":"Cobertura mundial","png":"world.png"},
+          {"title":"Todos las redes","png":"network.png"},
+          {"title":"Ubicación exacta","png":"location.png"},
+          {"title":"Mantén la confidencialidad","png":"confidential.png"}
         ]
       },
-      "contacto":{
-         "titulo":"Contacto",
-         "texto":"Póngase en contacto con nuestro equipo dedicado. Estaremos encantados de ayudarlo.",
+      "contact":{
+         "title":"Contacto",
+         "text":"Póngase en contacto con nuestro equipo dedicado. Estaremos encantados de ayudarlo.",
          "cards":[
-          {"titulo":"¡Chatea con nosotros!","texto":"Nuestro equipo está aquí para responder tus preguntas, abre la burbuja de chat en la parte inferior de esta página.","png":"unlimited.png"},
-          {"titulo":"contact@fullgeo.mobi","texto":"Estaremos encantados de ayudarte y generalmente respondemos en menos de 24 horas.","png":"chatbot.png"}
+          {"title":"¡Chatea con nosotros!","text":"Nuestro equipo está aquí para responder tus preguntas, abre la burbuja de chat en la parte inferior de esta página.","png":"unlimited.png"},
+          {"title":"contact@quickgeo.mobi","text":"Estaremos encantados de ayudarte y generalmente respondemos en menos de 24 horas.","png":"chatbot.png"}
          ]
       },
       "faqs":{
-        "titulo":"Preguntas frecuentes",
-        "texto":"Obtén rápidamente las respuestas que necesitas con nuestras preguntas frecuentes."
+        "title":"Preguntas frecuentes",
+        "text":"Obtén rápidamente las respuestas que necesitas con nuestras preguntas frecuentes."
       },
-      "loguearse":{
-        "titulo":"Iniciar sesión",
-        "label1":"Correo electrónico",
-        "placeholder1":"Ingresa tu correo electrónico",
+      "login":{
+        "title":"Iniciar sesión",
+        "label":"Correo electrónico",
+        "placeholder":"Ingresa tu correo electrónico",
         "label2":"Contraseña",
-        "textoSpan":"¿Olvidaste tu contraseña?"
+        "textSpan":"¿Olvidaste tu contraseña?"
       }
   }
 }

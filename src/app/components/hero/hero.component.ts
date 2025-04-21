@@ -24,5 +24,5 @@ export class HeroComponent {
     this.utils.flag$.subscribe((flag) => (this._flag = flag));
     this.utils.codePhone$.subscribe((code) => (this._codePhone = code));
   }
-  
+
 }

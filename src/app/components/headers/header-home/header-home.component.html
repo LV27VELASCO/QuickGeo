@@ -1,51 +1,56 @@
-<header class="px-4 max-w-screen-xl mx-auto">
-    <nav class="mb-4 bg-white border-gray-200 lg:flex lg:justify-around lg:m-0 lg:p-4 m-auto">
-      <div class="flex flex-wrap items-center justify-between py-4 lg:p-0 xl:flex-grow">
-        <!-- Logo -->
-        <div class="justify-between navbar-start lg:justify-start">
-          <a [routerLink]="['/']"><img src="assets/img/logo.png" class="h-6" alt="Logo" /></a>
-        </div>
-
-        <!-- localiza -->
-        <a href='#hero' [class]="menu?'hidden':'block'" class="text-purpura lg:hidden">{{'navegacion.localizar' | translate}}</a>
-
-        <!-- menu hamburguesa -->
-        <button data-collapse-toggle="navbar-default" type="button" (click)="menuActivate()"
-          class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg lg:hidden hover:bg-gray-100"
-          aria-controls="navbar-default" aria-expanded="false">
-          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M1 1h15M1 7h15M1 13h15" />
+<header class="absolute inset-x-0 top-0 z-50">
+  <nav class="flex items-center justify-between p-6 lg:px-8 " aria-label="Global">
+    <div class="flex lg:flex-1">
+      <a href="#" class="-m-1.5 p-1.5 flex">
+        <img class="h-8 w-auto" src="assets/icons/icon.svg" alt="">
+        <p class="pl-2 text-gray-700">Quick<span class="text-green-800">Geo</span></p>
+      </a>
+    </div>
+    <div class="flex lg:hidden">
+      <button (click)="menuActivate()" type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+        <span class="sr-only">Open main menu</span>
+        <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+    </div>
+    <div class="hidden lg:flex lg:gap-x-12 [&>a]:cursor-pointer [&>a]:py-2 [&>a]:px-4 hover:[&>a]:text-white hover:[&>a]:bg-green600/90 hover:[&>a]:scale-105 [&>a]:ease-out  [&>a]:transition-all [&>a]:duration-200 [&>a]:delay-75">
+      <a href="#how-does-it-work" class="text-sm/6 font-semibold text-gray-900">{{'navbar.howItWork' | translate}}</a><!-- Como funciona -->
+      <a (click)="navegar('/requentlyAskedQuestions')" class="text-sm/6 font-semibold text-gray-900">{{'navbar.questions' | translate}}</a><!-- preguntas frecuentes -->
+      <a (click)="navegar('/pricing')" class="text-sm/6 font-semibold text-gray-900">{{'navbar.prices' | translate}}</a><!-- Precios -->
+      <a (click)="navegar('/contact')" class="text-sm/6 font-semibold text-gray-900">{{'navbar.contact' | translate}}</a><!-- Contacto -->
+    </div>
+    <div class="hidden lg:flex lg:flex-1 lg:justify-end [&>a]:cursor-pointer [&>a]:py-2 [&>a]:px-4 hover:[&>a]:text-white hover:[&>a]:bg-green600/90 hover:[&>a]:scale-105 [&>a]:ease-out  [&>a]:transition-all [&>a]:duration-200 [&>a]:delay-75">
+      <a (click)="navegar('/login')" class="text-sm/6 font-semibold text-gray-900">{{'navbar.login' | translate}}<span aria-hidden="true">&rarr;</span></a><!-- Iniciar sesion -->
+    </div>
+  </nav>
+  <!-- Mobile menu, show/hide based on menu open state. -->
+  <div [class]="menu?'block':'hidden'" class="lg:hidden" role="dialog" aria-modal="true">
+    <!-- Background backdrop, show/hide based on slide-over state. -->
+    <div class="fixed inset-0 z-50"></div>
+    <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+      <div class="flex items-center justify-end">
+        <button (click)="menuActivate()" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+          <span class="sr-only">Close menu</span>
+          <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
           </svg>
         </button>
       </div>
-
-      <div [class]="menu?'block':'hidden'" class="px-7 py-2 flex lg:flex lg:items-center lg:p-0">
-        <div
-          class="flex flex-col p-5 text-center w-full [&>a]:cursor-pointer rounded-3xl text-basex font-medium bg-indigo-50 gap-6 xl:gap-7 xl:after:content-['|'] lg:flex-row lg:p-0 lg:bg-transparent">
-          <a href="#how-does-it-work">{{'navegacion.funcion' | translate}}</a><!-- Como funciona -->
-          <a (click)="navegar('/requentlyAskedQuestions')">{{'navegacion.preguntas' | translate}}</a><!-- preguntas frecuentes -->
-          <a (click)="navegar('/pricing')">{{'navegacion.precios' | translate}}</a><!-- Precios -->
-          <a (click)="navegar('/contact')">{{'navegacion.contacto' | translate}}</a><!-- Contacto -->
-        </div>
-
-      </div>
-
-      <div [class]="menu?'block':'hidden'" class="px-7 py-2 lg:p-0 xl:pl-5 lg:block">
-        <div
-          class="flex flex-col mt-3 p-5 text-center w-full rounded-3xl text-basex font-bold bg-indigo-50 gap-6 xl:gap-5 lg:mt-0 lg:flex-row lg:p-0 lg:items-center lg:bg-transparent">
-          <a (click)="navegar('/login')" class="flex justify-center text-purpura cursor-pointer">
-            <i class='bx bx-user text-xl'></i>
-            <p class="pl-3 mt-1">{{'navegacion.loguearse' | translate}}</p><!-- Iniciar sesion -->
-          </a>
-          <a href='#hero'>
-            <button [class]="menu?'animateBouce':''" type="button"
-              class="text-white transition-colors duration-150 delay-75 bg-purpura shadow-lg  rounded-full px-5 py-2.5 text-center lg:hover:bg-purpura lg:hover:text-white lg:bg-white lg:text-purpura lg:border-2 lg:border-purpura">{{'navegacion.localizar' | translate}}</button><!-- Localizar telefono -->
-          </a>
+      <div class="mt-6 flow-root">
+        <div class="-my-6 divide-y divide-gray-500/10">
+          <div class="space-y-2 py-6 [&>a]:cursor-pointer">
+            <a href="#how-does-it-work" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">{{'navbar.howItWork' | translate}}</a><!-- Como funciona -->
+            <a (click)="navegar('/requentlyAskedQuestions')" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">{{'navbar.questions' | translate}}</a><!-- preguntas frecuentes -->
+            <a (click)="navegar('/pricing')" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">{{'navbar.prices' | translate}}</a><!-- Precios -->
+            <a (click)="navegar('/contact')" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">{{'navbar.contact' | translate}}</a><!-- Contacto -->
+          </div>
+          <div class="py-6 [&>a]:cursor-pointer">
+            <a (click)="navegar('/login')" class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">{{'navbar.login' | translate}}</a><!-- Iniciar sesion -->
+          </div>
         </div>
       </div>
-    </nav>
+    </div>
+  </div>
 </header>
-<main>
-  <router-outlet/> 
-</main>
+<router-outlet/>

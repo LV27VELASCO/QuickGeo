@@ -1,11 +1,16 @@
-<footer class="bg-indigox flex flex-col px-5 py-5 mt-5 rounded-[2.3rem] md:flex-row">
+<footer class="bg-bgSecundary border border-y-gray-200 flex flex-col px-5 py-5 mt-5 rounded-[2.3rem] md:flex-row">
     <div class="p-2 w-full md:w-[80%] lg:flex">
       <div class="w-full md:w-fit flex flex-col gap-4">
         <div class="bg-white p-6 rounded-2xl flex flex-col text-center md:text-left max-w-60">
           <div class="m-auto md:m-0">
-            <img src="assets/img/logo.png" class="h-6" alt="logo fullgeo">
+            <div class="flex items-center">
+              <div class="p-2 rounded-full bg-green600">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe h-6 w-6"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+              </div>
+              <p class="text-green600 pl-2 text-xl">Quick<span class="text-black">Geo</span></p>
+            </div>
           </div>
-          <p class="font-semibold text-[16px] leading-normal pt-3">{{'piePagina.parrafo' | translate}}</p>
+          <p class="font-semibold text-[16px] leading-normal pt-3">{{'footer.paragraph' | translate}}</p>
         </div>
         <div class="relative bg-white px-4 py-2 rounded-full w-full">
             <button (click)="selectShow()" id="leaguage-button" class="text-base font-normal flex items-center justify-between w-full px-4 text-center outline-none lg:pl-1"
@@ -85,20 +90,20 @@
       </div>
       <div class="w-full md:w-fit">
         <ul class="p-6 flex flex-col gap-3 items-center [&>li]:font-normal [&>li>a]:cursor-pointer md:min-w-80 lg:py-0 lg:px-10 lg:items-start">
-          <h4 class="pb-2">{{'piePagina.titulo' | translate}}</h4>
-          <li><a [routerLink]="['/pricing']">{{'navegacion.precios' | translate}}</a></li>
-          <li><a href="#how-does-it-work">{{'navegacion.funcion' | translate}}</a></li>
-          <li><a [routerLink]="['/requentlyAskedQuestions']">{{'navegacion.preguntas' | translate}}</a></li>
-          <li><a [routerLink]="['/contact']">{{'navegacion.contacto' | translate}}</a></li>
+          <h4 class="pb-2">{{'footer.title' | translate}}</h4>
+          <li><a [routerLink]="['/pricing']">{{'navbar.prices' | translate}}</a></li>
+          <li><a href="#how-does-it-work">{{'navbar.howItWork' | translate}}</a></li>
+          <li><a [routerLink]="['/requentlyAskedQuestions']">{{'navbar.questions' | translate}}</a></li>
+          <li><a [routerLink]="['/contact']">{{'navbar.contact' | translate}}</a></li>
         </ul>
       </div>
     </div>
     <div class="py-2 w-full md:w-[20%] flex justify-center md:justify-end">
       <div class="px-5 rounded-2xl w-fit">
         <ol class="[&>li]:font-normal [&>li>a]:cursor-pointer [&>li>a]:text-base flex flex-col gap-3 text-center md:text-start">
-          <h4 class="md:mb-2 md:mr-7">{{'piePagina.cuenta.titulo' | translate}}</h4>
-          <li><a [routerLink]="['/login']">{{'navegacion.loguearse' | translate}}</a></li>
-          <li><a [routerLink]="['/unsubscribe']">{{'piePagina.cuenta.texto' | translate}}</a></li>
+          <h4 class="md:mb-2 md:mr-7">{{'footer.account.title' | translate}}</h4>
+          <li><a [routerLink]="['/login']">{{'navbar.login' | translate}}</a></li>
+          <li><a [routerLink]="['/unsubscribe']">{{'footer.account.text' | translate}}</a></li>
         </ol>
       </div>
     </div>
@@ -106,12 +111,12 @@
 <section class="text-base px-4 py-5 font-normal flex justify-center flex-wrap gap-5">
   <div class="px-4">
     <ul class="flex gap-5 flex-wrap justify-center items-center">
-      <li><a href="">{{'piePagina.terminos.legal' | translate}}</a></li>
-      <li><a href="">{{'piePagina.terminos.politicas' | translate}}</a></li>
-      <li><a href="">{{'piePagina.terminos.condiciones' | translate}}</a></li>
+      <li><a href="">{{'footer.terms.legal' | translate}}</a></li>
+      <li><a href="">{{'footer.terms.policies' | translate}}</a></li>
+      <li><a href="">{{'footer.terms.conditions' | translate}}</a></li>
       <li class="flex gap-3 items-center">
         <div>
-          {{'piePagina.terminos.pagos' | translate}}
+          {{'footer.terms.payments' | translate}}
         </div>
         <div class="flex gap-3">
           <!-- Visa -->
@@ -129,6 +134,6 @@
     </ul>
   </div>
   <div class="text-center">
-    <p>© 2024 Luis Velasco. {{'piePagina.terminos.derechos' | translate}}</p>
+    <p>© 2024 Luis Velasco. {{'footer.terms.rights' | translate}}</p>
   </div>
 </section>

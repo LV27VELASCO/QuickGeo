@@ -8,7 +8,7 @@ import { HeaderHomeComponent } from './components/headers/header-home/header-hom
 import { HeaderDashboardComponent } from './components/headers/header-dashboard/header-dashboard.component';
 
 export const routes: Routes = [
-  { 
+  {
     path: '', component:HeaderHomeComponent,
     children: [
       { path: '', component: HomeComponent },
@@ -16,7 +16,7 @@ export const routes: Routes = [
       { path: 'requentlyAskedQuestions', loadComponent: () => import('./pages/requently-asked-questions/requently-asked-questions.component').then(mod => mod.RequentlyAskedQuestionsComponent) },
       { path: 'contact', loadComponent: () => import('./pages/contact/contact.component').then(mod => mod.ContactComponent) },
       { path: 'unsubscribe', loadComponent: () => import('./pages/unsubscribe/unsubscribe.component').then(mod => mod.UnsubscribeComponent) },
-    ] 
+    ]
   },
   { path: 'dashboard', component:HeaderDashboardComponent, canActivate:[AuthLoginGuard],
     children:[
@@ -27,7 +27,7 @@ export const routes: Routes = [
   { path: 'success', loadComponent: () => import('./pages/success-pay/success-pay.component').then(mod => mod.SuccessPayComponent)},
   { path: 'loading', loadComponent: () => import('./pages/loading/loading.component').then(mod => mod.LoadingComponent) },
   { path: 'login', loadComponent: () => import('./pages/login/login.component').then(mod => mod.LoginComponent) },
-  
-  { path: '404', component: NotFountComponent }, 
+
+  { path: '404', component: NotFountComponent },
   { path: '**', redirectTo:'404' }
 ];

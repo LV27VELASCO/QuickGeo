@@ -8,12 +8,12 @@
               <div class="h-9 w-9 rounded-full">
                 <img [src]="_urlFlagBase + _flag + '.svg'" class="object-cover object-center w-full h-full rounded-full" alt="icono bandera">
               </div>
-              <p class="pl-2">{{_codePhone}}</p>   
+              <p class="pl-2">{{_codePhone}}</p>
               <svg [class]="select?'rotate-180':'rotate-0'" class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                 viewBox="0 0 10 6"> <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
               </svg>
             </button>
-  
+
             <div [class]="select?'block':'hidden'" class="z-10 absolute rounded-lg shadow top-[4.1rem] p-2 bg-white">
                 <div class="flex mb-2">
                     <div class="relative w-full flex">
@@ -22,7 +22,7 @@
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
                         </svg>
                       </button>
-                        <input  [(ngModel)]="searchCountry" [ngModelOptions]="{standalone: true}" (input)="filterItems()" type="search" id="search-dropdown" 
+                        <input  [(ngModel)]="searchCountry" [ngModelOptions]="{standalone: true}" (input)="filterItems()" type="search" id="search-dropdown"
                         autocomplete="off" class="outline-none h-5 py-[2px] block w-full font-medium text-sm text-gray-800 rounded-e-lg"/>
                     </div>
               </div>
@@ -44,7 +44,7 @@
                       </li>
                       } @empty {
                       <li></li>
-                      } 
+                      }
                   }@else {
                     @for (item of _countries; track item.code) {
                       <li (click)="elementSelect(item.dial_code,item.code.toLowerCase())">
@@ -61,16 +61,16 @@
                       </li>
                       } @empty {
                       <li></li>
-                      } 
+                      }
                   }
                 </ul>
               </div>
             </div>
             <!-- Select -->
           </span>
-          <input formControlName="numberPhone" (input)="removeNonDigits($event)" type="text" class="h-16 w-full border-0 outline-none rounded-full text-xl font-normal lg:h-14 pr-3" placeholder="{{'portada.inputTelefono' | translate}}">
+          <input formControlName="numberPhone" (input)="removeNonDigits($event)" type="text" class="h-16 w-full border-0 outline-none rounded-full text-xl font-normal lg:h-14 pr-3" placeholder="{{'hero.input' | translate}}">
         </div>
-        <button type="submit" [disabled]="buttonLocation?false:true" [class]="buttonLocation?'bg-purpura':'bg-indigo-400'" class="w-full min-w-[180px]  mt-5 shadow-lg text-white hover:bg-indigo-500 rounded-full px-5 py-2.5 lg:m-0 lg:w-60 lg:py-3 lg:px-3">
+        <button type="submit" [disabled]="buttonLocation?false:true" [class]="buttonLocation?'bg-green600':'bg-green700'" class="w-full min-w-[180px]  mt-5 shadow-lg text-white hover:bg-indigo-500 rounded-full px-5 py-2.5 lg:m-0 lg:w-60 lg:py-3 lg:px-3">
           <div  role="status" class="text-center font-semibold flex items-center justify-center gap-1">
             <div [class]="buttonLocation?'hidden':''">
               <svg aria-hidden="true" class="w-5 h-5 text-gray-200 animate-spin" viewBox="0 0 100 101"  xmlns="http://www.w3.org/2000/svg">
@@ -78,12 +78,12 @@
                   <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/>
               </svg>
             </div>
-            <p class="text-base">{{'portada.localizar' | translate}}</p>
+            <p class="text-base">{{'hero.locate' | translate}}</p>
           </div>
         </button>
     </form>
     <div class="w-full px-4 text-red-700">
-      
+
       @if (formPhone.get("numberPhone")?.invalid) {
         @if (formPhone.get("numberPhone")?.touched && formPhone.get("numberPhone")?.hasError("required")) {
           <div class="w-full flex flex-col items-center justify-center gap-2 mt-4 sm:flex-row">
@@ -100,12 +100,12 @@
               <path d="M8 6.82341V9.15674M8 2.15674L1.5 13.1567H14.5L8 2.15674Z" stroke="#F04438" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
               <ellipse cx="8.00001" cy="10.8234" rx="0.666667" ry="0.666667" fill="#F04438"></ellipse>
             </svg>
-            <span class="inline-block text-center sm:text-left font-normal text-sm">Ingresar un número válido</span>  
+            <span class="inline-block text-center sm:text-left font-normal text-sm">Ingresar un número válido</span>
           </div>
         }@if(formPhone.get("numberPhone")?.hasError("success")){
           <div class="w-full flex flex-col items-center justify-center gap-2 mt-4 sm:flex-row">
             <i class='bx bxs-badge-check text-3xl text-green-500'></i>
-            <span class="inline-block text-center text-basex sm:text-left font-normal text-sm">Mensaje de Geolocalizacion enviado con exito!</span>  
+            <span class="inline-block text-center text-colorSubtitle sm:text-left font-normal text-sm">Mensaje de Geolocalizacion enviado con exito!</span>
           </div>
         }@if(formPhone.get("numberPhone")?.hasError("fail")){
           <div class="w-full flex flex-col items-center justify-center gap-2 mt-4 sm:flex-row">
@@ -113,10 +113,9 @@
               <path d="M8 6.82341V9.15674M8 2.15674L1.5 13.1567H14.5L8 2.15674Z" stroke="#F04438" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
               <ellipse cx="8.00001" cy="10.8234" rx="0.666667" ry="0.666667" fill="#F04438"></ellipse>
             </svg>
-            <span class="inline-block text-center sm:text-left font-normal text-sm">No se pudo enviar mensaje</span>  
+            <span class="inline-block text-center sm:text-left font-normal text-sm">No se pudo enviar mensaje</span>
           </div>
         }
       }
     </div>
   </div>
-  

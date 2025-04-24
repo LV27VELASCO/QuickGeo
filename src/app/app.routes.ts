@@ -5,7 +5,6 @@ import { AuthGuard } from './guard/auth.guard';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { AuthLoginGuard } from './guard/auth-login.guard';
 import { HeaderHomeComponent } from './components/headers/header-home/header-home.component';
-import { HeaderDashboardComponent } from './components/headers/header-dashboard/header-dashboard.component';
 
 export const routes: Routes = [
   {
@@ -18,11 +17,7 @@ export const routes: Routes = [
       { path: 'unsubscribe', loadComponent: () => import('./pages/unsubscribe/unsubscribe.component').then(mod => mod.UnsubscribeComponent) },
     ]
   },
-  { path: 'dashboard', component:HeaderDashboardComponent, canActivate:[AuthLoginGuard],
-    children:[
-      { path: '', component: DashboardComponent},
-    ]
-  },
+  { path: 'dashboard', component:DashboardComponent, canActivate:[AuthLoginGuard], },
   { path: 'pre-checkout', loadComponent: () => import('./pages/pre-check-out/pre-check-out.component').then(mod => mod.PreCheckOutComponent), canActivate:[AuthGuard]},
   { path: 'success', loadComponent: () => import('./pages/success-pay/success-pay.component').then(mod => mod.SuccessPayComponent)},
   { path: 'loading', loadComponent: () => import('./pages/loading/loading.component').then(mod => mod.LoadingComponent) },

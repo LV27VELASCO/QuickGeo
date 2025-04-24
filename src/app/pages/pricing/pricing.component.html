@@ -1,27 +1,17 @@
 <div class="max-w-screen-xl mx-auto">
-    <article class='w-full rounded-[2.3rem] px-4 py-20 gap-10 grid grid-cols-1 bg-gradient-to-b from-green200  to-white  lg:px-3 xl:px-8 lg:grid-cols-2 lg:items-center relative overflow-hidden'>
-         <!-- Círculos decorativos grandes -->
-      <div class="absolute rounded-full w-[22rem] h-[22rem] top-36 -left-60 border border-green300 translate-x-1/2 -translate-y-1/2"></div>
-      <div class="absolute rounded-full w-[22rem] h-[22rem] top-0 right-24 border border-green300 translate-x-1/2 -translate-y-1/2"></div>
-
-      <!-- Círculos medianos -->
-      <div class="absolute rounded-full w-[14rem] h-[14rem] top-36 -left-28 border border-green300 translate-x-1/2 -translate-y-1/2"></div>
-      <div class="absolute rounded-full w-[14rem] h-[14rem] top-0 right-24 border border-green300 translate-x-1/2 -translate-y-1/2"></div>
-
-      <!-- Círculos pequeños -->
-      <div class="absolute rounded-full w-24 h-24 top-36 left-4 border border-green300 translate-x-1/2 -translate-y-1/2"></div>
-      <div class="absolute rounded-full w-24 h-24 top-0 right-24 border border-green300 translate-x-1/2 -translate-y-1/2"></div>
+    <article class='relative pt-36 w-full rounded-[2.3rem] px-4 py-20 gap-10 grid grid-cols-1 lg:px-3 xl:px-8 lg:grid-cols-2 lg:items-centeroverflow-hidden'>
+      <img src="assets/icons/Map.svg" class="absolute drop-shadow-sm inset-0 -z-10 size-full [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)] stroke-gray-200" alt="">
 
       <div class="relative text-left lg:text-center px-6 md:px-12 flex flex-col lg:justify-start">
           <h2 class="text-[40px] text-center md:text-6xl leading-tight lg:text-6xl lg:text-start lg:mb-4">
             {{'routes.prices.title'| translate }}
           </h2>
           <div class="text-center  mt-10 text-2xl w-full md:text-left md:w-[70%]">
-            <p>{{'routes.prices.text'| translate }}</p>
+            <p class="font-medium">{{'routes.prices.text'| translate }}</p>
           </div>
       </div>
       <div class="relative">
-          <div class="py-5 px-10 bg-white rounded-3xl flex flex-col items-center gap-5">
+          <div class="py-5 px-10 bg-transparent backdrop-blur-sm outline outline-1 outline-gray-300/50 rounded-3xl flex flex-col items-center gap-5">
             <div class="text-center">
               <h4 class="text-2xl md:text-3xl p-5 text-green600">{{'routes.prices.subtitle'| translate }}</h4>
               <div class="flex items-start justify-center">
@@ -49,14 +39,21 @@
           </div>
         </div>
     </article>
-    <article class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-5 gap-7">
-      @for (card of 'routes.prices.cards' | translate ; track $index) {
-        <div class="bg-green100  flex flex-col items-center px-7 py-11 rounded-[2.3rem] gap-3 text-center">
-          <img src="assets/icons/{{card.png}}" class="h-20" alt="">
-          <h4 class="text-[34px] leading-tight">{{card.title}}</h4>
-        </div>
-      }
-    </article>
+    <dl class="m-auto grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none sm:grid-cols-2 lg:grid-cols-4">
+         @for(card of 'hero.cards' | translate ; track $index){
+            <div class="flex flex-col">
+              <dt class="text-center md:text-start text-base/7 font-semibold text-gray-800">
+                <div class="mx-auto md:mx-0 mb-6 flex size-10 items-center p-1 justify-center rounded-lg bg-green-800">
+                  <img src="assets/icons/{{card.icon}}" alt="">
+                </div>
+                <p class="text-lg">{{card.title}}</p>
+              </dt>
+              <dd class="text-center md:text-start mt-1 font-normal flex flex-auto flex-col text-base/7 text-gray-500">
+                <p class="flex-auto">{{card.paragraph}}</p>
+              </dd>
+            </div>
+          }
+        </dl>
     <app-questions [_ishome]="false"/>
     <app-locate-card  />
     <app-footer/>

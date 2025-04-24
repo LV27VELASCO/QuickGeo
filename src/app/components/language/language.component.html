@@ -1,0 +1,76 @@
+<div class="relative bg-white px-4 py-2 rounded-full w-fit">
+  <button (click)="selectShow()" id="leaguage-button" class="text-base font-normal flex items-center justify-between w-full px-4 text-center outline-none lg:pl-1"
+    type="button">
+    <img src="assets/icons/lang.svg" class="h-5 w-5" alt="icon language">
+    <p class="pl-2">{{nombreLang}}</p>
+    <svg [class]="selectLang?'rotate-180':'rotate-0'" class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+      viewBox="0 0 10 6"> <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
+    </svg>
+  </button>
+  <div [class]="selectLang?'block':'hidden'" class="z-10 absolute rounded-2xl shadow left-0 top-11 p-2 bg-white">
+    <div id="dropdown-states" class="w-56 max-h-36 overflow-auto">
+      <ul class="text-sm" aria-labelledby="states-button">
+        <li>
+          <button type="button" (click)="cambioIdioma('es',0)" class="px-2 py-[6px] inline-flex w-full text-sm hover:bg-gray-100" >
+            <div class="inline-flex items-center">
+              <div>
+                <div  class="h-5 w-5 rounded-full">
+                  <img src="https://flagcdn.com/es.svg" loading="lazy"  class="object-cover object-center w-full h-full rounded-full" alt="icono bandera españa">
+                </div>
+              </div>
+              <p class="pl-2 font-medium text-xs text-start">ES</p>
+            </div>
+          </button>
+        </li>
+        <li>
+          <button type="button" (click)="cambioIdioma('en',1)" class="px-2 py-[6px] inline-flex w-full text-sm hover:bg-gray-100" >
+            <div class="inline-flex items-center">
+              <div>
+                <div  class="h-5 w-5 rounded-full">
+                  <img src="https://flagcdn.com/gb.svg" loading="lazy"  class="object-cover object-center w-full h-full rounded-full" alt="icono bandera inglaterra">
+                </div>
+              </div>
+              <p class="pl-2 font-medium text-xs text-start">EN</p>
+            </div>
+          </button>
+        </li>
+        <li class="hidden">
+          <button type="button" (click)="cambioIdioma('fr',3)" class="px-2 py-[6px] inline-flex w-full text-sm hover:bg-gray-100" >
+            <div class="inline-flex items-center">
+              <div>
+                <div  class="h-5 w-5 rounded-full">
+                  <img src="https://flagcdn.com/fr.svg" loading="lazy"  class="object-cover object-center w-full h-full rounded-full" alt="icono bandera francia">
+                </div>
+              </div>
+              <p class="pl-2 font-medium text-xs text-start">FR</p>
+            </div>
+          </button>
+        </li>
+        <li class="hidden">
+          <button type="button" (click)="cambioIdioma('it',4)" class="px-2 py-[6px] inline-flex  w-full text-sm hover:bg-gray-100" >
+            <div class="inline-flex items-center">
+              <div>
+                <div  class="h-5 w-5 rounded-full">
+                  <img src="https://flagcdn.com/it.svg" loading="lazy"  class="object-cover object-center w-full h-full rounded-full" alt="icono bandera italia">
+                </div>
+              </div>
+              <p class="pl-2 font-medium text-xs text-start">IT</p>
+            </div>
+          </button>
+        </li>
+        <li class="hidden">
+          <button type="button" (click)="cambioIdioma('pt',5)" class="px-2 py-[6px] inline-flex w-full text-sm hover:bg-gray-100" >
+            <div class="inline-flex items-center">
+              <div>
+                <div  class="h-5 w-5 rounded-full">
+                  <img src="https://flagcdn.com/pt.svg" loading="lazy"  class="object-cover object-center w-full h-full rounded-full" alt="icono bandera portugal">
+                </div>
+              </div>
+              <p class="pl-2 font-medium text-xs text-start">PT</p>
+            </div>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,5 @@
-<section class="my-5 w-full rounded-[2.3rem] p-10">
-    <h3 [class]="_ishome?'hidden':'block'" class="text-center text-5xl my-10">{{'questions.title' | translate}}</h3>
+<section class="relative my-5 w-full rounded-[2.3rem] p-10">
+  <h3 [class]="_ishome?'hidden':'block'" class="text-center text-5xl my-10">{{'questions.title' | translate}}</h3>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-10">
       <article class="flex flex-col gap-4">
         @for (item of 'questions.accordion' | translate; track $index){

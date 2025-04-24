@@ -12,7 +12,7 @@ import { CookieService } from 'ngx-cookie-service';
  })
  export class UtilitiesService {
 
-  
+
 
   constructor(
     private http: HttpClient,
@@ -105,6 +105,12 @@ import { CookieService } from 'ngx-cookie-service';
 
   removeCookie(name:string){
     this.cookieService.delete(name)
+  }
+
+  removeItemStore(name:string){
+    if (isPlatformBrowser(this.platformId)) {
+      return localStorage.removeItem(name)
+     }
   }
 
   isAuthenticated(): boolean {

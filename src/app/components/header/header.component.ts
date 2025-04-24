@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet} from '@angular/router';
+import { RouterOutlet} from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { animate, keyframes, style, transition, trigger } from '@angular/animations';
-import { UtilitiesService } from '../../../services/utilities.service';
+import { UtilitiesService } from '../../services/utilities.service';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports:[RouterOutlet,RouterLink,TranslateModule],
-  templateUrl: './header-home.component.html',
-  styleUrl: './header-home.component.css',
+  imports:[RouterOutlet,TranslateModule],
+  templateUrl: './header.component.html',
+  styleUrl: './header.component.css',
   animations: [
     trigger('routeAnimations', [
       transition('* <=> *', [
@@ -28,12 +28,6 @@ export class HeaderHomeComponent {
   menu:boolean = false;
 
   constructor(private Utils:UtilitiesService){ }
-
-  ngOnInit(){
-    if (typeof window !== 'undefined' && window.localStorage) {
-       this.Utils.clearLocalStorage()
-    }
-  }
 
   menuActivate(){
     this.menu = !this.menu

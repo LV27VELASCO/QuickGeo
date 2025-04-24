@@ -20,7 +20,7 @@ export class SuccessPayComponent {
   api = inject(ApiService);
   route = inject(ActivatedRoute);
   message=""
-  
+
   formPassword:FormGroup=this.fb.group({
     password:['', [Validators.required, Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-zd$@$!%*?&].{8,15}')]],
   })
@@ -38,7 +38,7 @@ export class SuccessPayComponent {
     const reqData: CreateUser = {session_id:sessionID};
     this.api.CreateUser(reqData).subscribe({
                 next: (data) => {
-                  this.message ='Te enviamos tus credenciales al correo proporcionado para el pago, disfruta FullGeo!';
+                  this.message ='Te enviamos tus credenciales al correo proporcionado para el pago, disfruta QuickGeo!';
                 },
                 error: (err) => {
                   this.message ='Ocurrió un error al enviar tus credenciales, por favor contactarte con soporte';

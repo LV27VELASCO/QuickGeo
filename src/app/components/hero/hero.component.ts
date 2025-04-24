@@ -19,6 +19,7 @@ export class HeroComponent {
   constructor(private utils: UtilitiesService) {}
 
   ngOnInit(): void {
+    this.utils.removeItemStore("data");
     this.utils.countries$.subscribe((countries) => (this._countries = countries));
     this.utils.urlFlagBase$.subscribe((url) => (this._urlFlagBase = url));
     this.utils.flag$.subscribe((flag) => (this._flag = flag));

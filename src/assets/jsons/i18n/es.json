@@ -32,8 +32,14 @@
         {"story":"Mi hija se desvió del camino al colegio. Con un solo clic en la app vi dónde estaba y fui por ella. Saber su ubicación en tiempo real nos dio tranquilidad total.", "name":"Ryan","png":"daughter-demonstrating.webp","span":"usuario de QuickGeo","delay":"200"},
         {"story":"Después de un evento, no recordaba dónde había aparcado. Usé la app y en segundos supe la ubicación exacta del coche. Fue una salvación.", "name":"Mark","png":"man-phone.webp","span":"usuario de QuickGeo","delay":"300"},
         {"story":"Mi padre se lesionó haciendo senderismo. Como llevaba la app activa, pudimos saber dónde estaba y enviar ayuda rápidamente. Fue clave para que lo atendieran a tiempo.", "name":"Darren y Julie","png":"daughter-demonstrating.webp","span":"usuario de QuickGeo","delay":"500"},
-        {"story":"En mi negocio, ahora mis clientes ven en tiempo real dónde va su pedido. Todo es más claro, confiable y profesional gracias a la geolocalización.", "name":"Mark","png":"man-phone.webp","span":"usuario de QuickGeo","delay":"700"}
-    ]
+        {"story":"En mi negocio, ahora mis clientes ven en tiempo real dónde va su pedido. Todo es más claro, confiable y profesional gracias a la geolocalización.", "name":"Brian","png":"man-phone.webp","span":"usuario de QuickGeo","delay":"700"}
+      ],
+      "title2":"Confianza y precisión a escala global",
+      "subtitle":"Súmate hoy y lleva tu geolocalización al siguiente nivel",
+      "usersActive":"Usuarios activos",
+      "monthlyUsers":"Usuarios nuevos mensual",
+      "efectivity":"Efectividad en localizaciones",
+      "devices":"Dispositivos localizados"
     },
     "howItWork": {
         "title":"¿Como Funciona?",
@@ -112,8 +118,8 @@
          "title":"Contacto",
          "text":"Póngase en contacto con nuestro equipo dedicado. Estaremos encantados de ayudarlo.",
          "cards":[
-          {"title":"¡Chatea con nosotros!","text":"Nuestro equipo está aquí para responder tus preguntas, abre la burbuja de chat en la parte inferior de esta página.","png":"unlimited.png"},
-          {"title":"contact@quickgeo.mobi","text":"Estaremos encantados de ayudarte y generalmente respondemos en menos de 24 horas.","png":"chatbot.png"}
+          {"title":"¡Chatea con nosotros!","text":"Nuestro equipo está aquí para responder tus preguntas, abre la burbuja de chat en la parte inferior de esta página.","svg":"chat.svg"},
+          {"title":"contact@quickgeo.mobi","text":"Estaremos encantados de ayudarte y generalmente respondemos en menos de 24 horas.","svg":"mail.svg"}
          ]
       },
       "faqs":{
@@ -121,11 +127,48 @@
         "text":"Obtén rápidamente las respuestas que necesitas con nuestras preguntas frecuentes."
       },
       "login":{
+        "titleHero":"¡Descubre la mejor forma de rastrear tus dispositivos ahora mismo!",
         "title":"Iniciar sesión",
         "label":"Correo electrónico",
         "placeholder":"Ingresa tu correo electrónico",
         "label2":"Contraseña",
         "textSpan":"¿Olvidaste tu contraseña?"
+      },
+      "recoverPassword":{
+        "title": "Recuperar contraseña",
+        "label": "Correo electrónico",
+        "placeholder": "Ingresa tu correo electrónico",
+        "textSpan": "Iniciar sesión",
+        "button":"Enviar contraseña"
+      },
+      "unsubscribe":{
+        "span":"Lamentamos verte partir",
+        "title":"Cancelar la suscripción",
+        "paragraph":"Para darte de baja de nuestros servicios solo tienes que introducir la dirección de correo electrónico de tu cuenta en el campo que aparece a continuación y hacer clic en el botón «Darse de baja».",
+        "label":"Correo electrónico",
+        "placeholder":"Ingresa tu correo electrónico",
+        "button":"Cancelar suscripción",
+        "text":"Si has olvidado el correo electrónico de tu cuenta, envíanos un mensaje a la dirección contact@quickgeo.mobi con los últimos 4 dígitos de tu tarjeta de crédito para darte de baja. Te responderemos en menos de 24 horas."
+      }
+  },
+  "dashboard":{
+    "title":"¡Hola!",
+    "subtitle":"Bienvenido a tu espacio en QuickGeo!",
+    "span":"Cerrar sesión",
+    "form":{
+      "label1":"Código de País",
+      "label2":"Numero Celular",
+      "placeholder2":"Escribir numero celular",
+      "label3":"Mensaje",
+      "span":"Personaliza tu mensaje aquí"
+    },
+    "panel": {
+        "title": "Tu Actividad",
+        "span": "Búsquedas",
+        "span2": "Ordenar",
+        "status":"Pendiente",
+        "status2":"Localizado",
+        "span3":"Abrir en Google Maps"
       }
   }
 }

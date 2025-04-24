@@ -1,24 +1,12 @@
 <div class="max-w-screen-xl mx-auto">
-    <article class='w-full rounded-b-[2.3rem] px-4 pt-20  gap-10 grid grid-cols-1 bg-gradient-to-b from-green200  to-white lg:px-3 xl:px-8 lg:grid-cols-2 lg:items-center relative overflow-hidden'>
-
-      <!-- Círculos decorativos grandes -->
-      <div class="absolute rounded-full w-[22rem] h-[22rem] top-36 -left-60 border border-green300 translate-x-1/2 -translate-y-1/2"></div>
-      <div class="absolute rounded-full w-[22rem] h-[22rem] top-0 right-24 border border-green300 translate-x-1/2 -translate-y-1/2"></div>
-
-      <!-- Círculos medianos -->
-      <div class="absolute rounded-full w-[14rem] h-[14rem] top-36 -left-28 border border-green300 translate-x-1/2 -translate-y-1/2"></div>
-      <div class="absolute rounded-full w-[14rem] h-[14rem] top-0 right-24 border border-green300 translate-x-1/2 -translate-y-1/2"></div>
-
-      <!-- Círculos pequeños -->
-      <div class="absolute rounded-full w-24 h-24 top-36 left-4 border border-green300 translate-x-1/2 -translate-y-1/2"></div>
-      <div class="absolute rounded-full w-24 h-24 top-0 right-24 border border-green300 translate-x-1/2 -translate-y-1/2"></div>
-
+    <article class='relative pt-36 w-full rounded-b-[2.3rem] px-4  gap-10 grid grid-cols-1 lg:px-3 xl:px-8 lg:grid-cols-2 lg:items-center overflow-hidden'>
+      <img src="assets/icons/Map.svg" class="absolute drop-shadow-sm inset-0 -z-10 size-full [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)] stroke-gray-200" alt="">
       <div class="relative text-left lg:text-center px-6 pb-8 md:px-12 flex flex-col lg:justify-start">
           <h2 class="text-[40px] text-center md:text-6xl leading-tight lg:text-6xl lg:text-start lg:mb-4">
             {{'routes.faqs.title'| translate }}
           </h2>
           <div class="text-center  mt-10 text-2xl w-full md:text-left md:w-[80%]">
-            <p>{{'routes.faqs.text'| translate }}</p>
+            <p class="font-medium">{{'routes.faqs.text'| translate }}</p>
           </div>
       </div>
       <div class="w-full h-full relative">

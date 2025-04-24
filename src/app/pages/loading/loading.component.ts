@@ -26,7 +26,13 @@ export class LoadingComponent {
   constructor(private utils:UtilitiesService) { }
 
   ngOnInit() {
-    this.dataPhone = JSON.parse(this.utils.getItem("data")) as resPhoneInfo;
+    const rawData = this.utils.getItem("data");
+
+    if (rawData) {
+      this.dataPhone = JSON.parse(rawData) as resPhoneInfo;
+    } else {
+      this.dataPhone = {} as resPhoneInfo; // o maneja el error según tu lógica
+    }
     const time = timer(2000);
     const time2 = timer(4000);
     const time3 = timer(6000);

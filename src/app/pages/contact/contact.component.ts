@@ -3,11 +3,12 @@ import { QuestionsComponent } from '../../components/questions/questions.compone
 import { LocateCardComponent } from '../../components/locate-card/locate-card.component';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { ChatBotComponent } from '../../components/chat-bot/chat-bot.component';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [QuestionsComponent,LocateCardComponent,FooterComponent,TranslateModule],
+  imports: [QuestionsComponent,LocateCardComponent,FooterComponent,TranslateModule,ChatBotComponent],
   templateUrl: './contact.component.html'
 })
 export class ContactComponent {

@@ -1,476 +1,105 @@
-<section class="max-w-screen-xl m-auto px-2">
+<section class="relative max-w-screen-xl m-auto px-2">
+  <img src="assets/icons/Map.svg" class="absolute object-cover drop-shadow-sm inset-0 -z-10 size-full [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)] stroke-gray-200" alt="">
     <header class="py-2 mx-auto hidden md:block">
-        <nav class=" bg-white border-gray-200 flex justify-start m-auto">
+        <nav class=" border-gray-200 flex justify-start m-auto">
           <div class="flex items-center justify-start py-4">
             <!-- Logo -->
-            <div>
-              <a [routerLink]="['/']"><img src="assets/img/logo.png" class="h-6" alt="Logo" /></a>
-            </div>
+            <a [routerLink]="['/']" class="-m-1.5 p-1.5 flex">
+              <img class="h-8 w-auto" src="assets/icons/icon.svg" alt="">
+              <p class="pl-2 text-gray-900">Quick<span class="text-green-700">Geo</span></p>
+            </a>
           </div>
         </nav>
     </header>
-    <article class="bg-green100 rounded-[1.4rem] p-5">
-        <header class="pb-2 mx-auto block md:hidden">
-            <nav class="flex justify-center m-auto">
-              <div class="flex items-center justify-start py-4">
-                <!-- Logo -->
-                <div>
-                  <a [routerLink]="['/']"><img src="assets/img/logo.png" class="h-6" alt="Logo" /></a>
+
+    <div class="pt-14 pb-5">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="mx-auto max-w-4xl sm:text-center">
+          <h2 class="text-5xl font-semibold tracking-tight text-pretty text-green-500 sm:text-6xl sm:text-balance">Ubicación encontrada</h2>
+          <p class="mx-auto mt-6 max-w-2xl text-lg font-normal text-pretty text-gray-500 sm:text-xl/8">Pudimos identificar el teléfono asociado con el número <b>{{dataPhone.phoneText}}</b>. Para iniciar la geolocalización exacta, suscríbete a nuestra oferta de prueba</p>
+        </div>
+        <div class="bg-white p-2 mx-auto  mt-6 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:max-w-none">
+          <div class="lg:flex w-full">
+            <div class="p-8 sm:p-10 lg:flex-auto">
+              <div class="flex flex-col sm:flex-row items-center text-green-700 sm:text-green-400">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-10">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
+                </svg>
+                <h3 class="text-center sm:text-start text-3xl pl-1 font-semibold tracking-tight bg-gradient-to-r from-green-300 via-green-600 to-indigo-600 inline-block text-transparent bg-clip-text">Oferta de prueba especial</h3>
+              </div>
+              <p class="mt-6 text-base/7 text-gray-600">Iniciar geolocalización precisa para <b>{{dataPhone.phoneText}}</b> <br>24 horas QuickGeo prueba ilimitada*</p>
+              <div class="mt-10 flex items-center gap-x-4">
+                <h4 class="flex-none text-sm/6 font-semibold text-green-700">Membresia incluye:</h4>
+                <div class="h-px flex-auto bg-gray-100"></div>
+              </div>
+              <ul role="list" class="mt-8 grid grid-cols-1 gap-4 text-sm/6 text-gray-600 sm:grid-cols-2 sm:gap-6">
+                <li class="flex gap-x-3">
+                  <svg class="h-6 w-5 flex-none text-green-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+                  </svg>
+                  Solicite la geolocalización exacta
+                </li>
+                <li class="flex gap-x-3">
+                  <svg class="h-6 w-5 flex-none text-green-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+                  </svg>
+                  Reciba notificaciones instantáneas con resultados
+                </li>
+                <li class="flex gap-x-3">
+                  <svg class="h-6 w-5 flex-none text-green-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+                  </svg>
+                  Acceda a todas nuestras funciones
+                </li>
+                <li class="flex gap-x-3">
+                  <svg class="h-6 w-5 flex-none text-green-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                    <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+                  </svg>
+                  Solicitudes ilimitadas
+                </li>
+              </ul>
+            </div>
+            <div class="-mt-2 pb-2 lg:mt-0 lg:w-full lg:max-w-md lg:shrink-0 flex items-center">
+              <div class="rounded-2xl w-full bg-gray-50 py-10 text-center ring-1 ring-gray-900/5 ring-inset lg:flex lg:flex-col lg:justify-center lg:py-16">
+                <div class="mx-auto max-w-xs px-8">
+                  <p class="text-base font-semibold text-gray-600">24 horas QuickGeo prueba ilimitada por solo:</p>
+                  <p class="mt-6 flex items-baseline justify-center gap-x-2">
+                    <span class="text-5xl font-semibold tracking-tight text-gray-900">€0.50</span>
+                    <span class="text-sm/6 font-semibold tracking-wide text-gray-600">EUR</span>
+                  </p>
+                  <button (click)="onCheckout()" type="button" [class]="buttonLocation?'bg-green600':'bg-green700'" class="mt-10 block w-full  bg-green600 rounded-full px-5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-green700 focus-visible:outline-2 focus-visible:outline-offset-2">Pagar ahora</button>
+                  <p class="mt-6 text-xs/5 text-gray-600">Al final de tu período de prueba, puedes elegir permanecer suscrito por €47.90 al mes.</p>
                 </div>
               </div>
-            </nav>
-        </header>
-        <div class="hidden  w-full p-8 bg-white rounded-3xl md:grid md:grid-cols-1 md:gap-3 lg:grid-cols-2">
-            <div class="flex items-center gap-3">
-                <div class="rounded-full p-4 flex justify-center items-center bg-gray-50 w-fit">
-                    <div class="rounded-full p-2 flex justify-center items-center bg-gray-100 w-fit">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-9" viewBox="0 0 49 48" fill="none">
-                            <path d="M29.5269 20C29.5269 22.7614 27.2883 25 24.5269 25C21.7654 25 19.5269 22.7614 19.5269 20C19.5269 17.2386 21.7654 15 24.5269 15C27.2883 15 29.5269 17.2386 29.5269 20Z" stroke="#454EFC" stroke-width="3" stroke-linejoin="round"/>
-                            <path d="M38.5312 20C38.5312 31.732 24.5312 42 24.5312 42C24.5312 42 10.5312 31.732 10.5312 20C10.5312 12.268 16.7993 6 24.5312 6C32.2632 6 38.5312 12.268 38.5312 20Z" stroke="#454EFC" stroke-width="3" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
+            </div>
+          </div>
+          <div class="p-5 border ring-1 ring-gray-900/5 ring-inset rounded-2xl">
+            <div class="flex items-center justify-center gap-2 font-medium text-gray-700">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M6 10H7C7 9.44772 6.55228 9 6 9V10ZM6 16.5V17.5C6.55228 17.5 7 17.0523 7 16.5H6ZM18.5 10V9C17.9477 9 17.5 9.44772 17.5 10H18.5ZM18.5 16.5H17.5C17.5 17.0523 17.9477 17.5 18.5 17.5V16.5ZM12 21H11C11 21.5523 11.4477 22 12 22V21ZM13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19H13ZM20.75 16.5C20.75 15.9477 20.3023 15.5 19.75 15.5C19.1977 15.5 18.75 15.9477 18.75 16.5H20.75ZM4.5 11H6V9H4.5V11ZM5 10V16.5H7V10H5ZM6 15.5H4.5V17.5H6V15.5ZM4 15V11.5H2V15H4ZM4.5 15.5C4.22386 15.5 4 15.2761 4 15H2C2 16.3807 3.11929 17.5 4.5 17.5V15.5ZM4.5 9C3.11929 9 2 10.1193 2 11.5H4C4 11.2239 4.22386 11 4.5 11V9ZM18.5 11H20V9H18.5V11ZM20.5 11.5V15H22.5V11.5H20.5ZM20 15.5H18.5V17.5H20V15.5ZM19.5 16.5V10H17.5V16.5H19.5ZM20.5 15C20.5 15.2761 20.2761 15.5 20 15.5V17.5C21.3807 17.5 22.5 16.3807 22.5 15H20.5ZM20 11C20.2761 11 20.5 11.2239 20.5 11.5H22.5C22.5 10.1193 21.3807 9 20 9V11ZM6 9.75C6 6.64046 8.72972 4 12.25 4V2C7.76215 2 4 5.40369 4 9.75H6ZM12.25 4C15.7703 4 18.5 6.64046 18.5 9.75H20.5C20.5 5.40369 16.7378 2 12.25 2V4ZM4 9.75V10H6V9.75H4ZM18.5 9.75V10H20.5V9.75H18.5ZM15.25 20H12V22H15.25V20ZM13 21V19H11V21H13ZM18.75 16.5C18.75 18.433 17.183 20 15.25 20V22C18.2876 22 20.75 19.5376 20.75 16.5H18.75Z" fill="#4D5084"></path>
+                </svg>
+                <p>¿Necesitas alguna ayuda?</p>
+            </div>
+            <div class="flex justify-evenly flex-wrap gap-4 my-4">
+                <div class="flex gap-2 items-center bg-gray-50 py-2 px-4 rounded-md text-sm font-normal text-green600">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
+                  </svg>
+
+                    <p>¡Chatea con nosotros!</p>
                 </div>
-                <h3 class="text-[2.6rem] leading-tight">Ubicación encontrada</h3>
+                <div class="flex gap-2 items-center bg-gray-50 py-2 px-4 rounded-md text-sm font-normal text-green600">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+                  </svg>
+                    <p>contact&#64;quickgeo.mobi</p>
+                </div>
             </div>
-            <div class="flex items-center">
-                <p class="font-normal text-lg text-justify">Pudimos identificar el teléfono asociado con el número <br class="hidden lg:block"> <b>{{dataPhone.phoneText}}</b>. Para iniciar la geolocalización exacta, suscríbete a nuestra oferta de prueba</p>
-            </div>
+            <p class="text-sm font-normal text-center">Contacta con nuestro equipo especializado. Estaremos encantados de asistirte. Nuestro horario de atención es de lunes a sábado, de 6 a.m. a 8 p.m. (atención disponible en francés e inglés únicamente). Normalmente respondemos en menos de 24 horas.</p>
         </div>
-        <div class="w-full  flex flex-col-reverse lg:grid lg:grid-cols-2 gap-8">
-            <div>
-                <h3 class="text-xl px-3 pb-3 pt-7">Información</h3>
-                <div class="w-full p-4 md:p-8 bg-white rounded-xl">
-                    <div class="flex  flex-col sm:flex-row items-center gap-2">
-                        <div class="p-3 rounded-full w-fit bg-gray-100">
-                            <div class="p-2 bg- rounded-full w-fit bg-gray-200">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 16 16" fill="none">
-                                    <path d="M6.66667 12.6666H9.33333M4 1.33325H12V14.6666H4V1.33325Z" stroke="#454EFC" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <div>
-                            <h4 class="text-2xl sm:text-3xl">{{dataPhone.phoneText}}</h4>
-                            <span class="text-colorSubtitle font-semibold sm:font-normal">Investigación sobre {{dataPhone.date}}</span>
-                        </div>
-                    </div>
-                    <div class="rounded-md my-5 lg:mt-4 lg:mb-0 bg-green100 p-8 mapBg">
-                        <ol class="grid gap-6 [&>li]:flex [&>li]:items-center [&>li]:gap-4 font-normal">
-                            <li>
-                                <div>
-                                    <img src="assets/icons/check.png" alt="check">
-                                </div>
-                                <p>Solicite la geolocalización exacta</p>
-                            </li>
-                            <li>
-                                <div>
-                                    <img src="assets/icons/check.png" alt="check">
-                                </div>
-                                <p>Reciba notificaciones instantáneas con resultados</p>
-                            </li>
-                            <li>
-                                <div>
-                                    <img src="assets/icons/check.png" alt="check">
-                                </div>
-                                <p>Acceda a todas nuestras funciones</p>
-                            </li>
-                        </ol>
-                    </div>
-                    <a [href]="currentRoute + '#pay-now'" class="w-full inline-block shadow-lg text-white bg-green600 hover:bg-indigo-500 rounded-full px-5 py-2.5 mt-2 lg:hidden">
-                        <div  role="status" class="text-center font-semibold flex items-center justify-center gap-1">
-                          <p class="text-base">Pagar €0.50 ahora</p>
-                          <div class="ml-2 flex justify-center items-center">
-                            <svg class="w-3 h-3 rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                              viewBox="0 0 10 6"> <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
-                            </svg>
-                          </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="hidden bg-white rounded-xl mt-7 md:block">
-                    <div class="flex flex-col gap-4 p-8 md:flex-row">
-                        <div>
-                            <div class="h-[4.5rem] w-[4.5rem] rounded-full">
-                                <img src="assets/img/woman-smartphone.webp" class="w-full h-full rounded-full object-cover" alt="">
-                            </div>
-                        </div>
-                        <div class="flex flex-col gap-3">
-                            <p class="text-colorSubtitle">“Olvidé mi teléfono en el metro. QuickGeo permitió a la persona que lo encontró enviarme su ubicación sin desbloquearlo y pude recuperarlo de manera segura.”</p>
-                            <div class="flex flex-col md:flex-row md::justify-between gap-2 md:justify-between">
-                                <div class="flex items-center gap-4">
-                                    <h4 class="font-semibold text-lg">Marie</h4>
-                                    <p class="text-base font-normal text-colorSubtitle md:ml-3">Usuario de QuickGeo</p>
-                                </div>
-                                <div class="text-green600 flex items-center gap-1">
-                                    <svg width="20" height="26" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip0_209_20)">
-                                          <path d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z" fill="currentColor"></path>
-                                        </g>
-                                        <defs>
-                                          <clipPath id="clip0_209_20">
-                                            <rect width="20" height="20" fill="white" transform="translate(0 0.150146)"></rect>
-                                          </clipPath>
-                                        </defs>
-                                      </svg>
-                                      <svg width="20" height="26" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip0_209_20)">
-                                          <path d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z" fill="currentColor"></path>
-                                        </g>
-                                        <defs>
-                                          <clipPath id="clip0_209_20">
-                                            <rect width="20" height="20" fill="white" transform="translate(0 0.150146)"></rect>
-                                          </clipPath>
-                                        </defs>
-                                      </svg>
-                                      <svg width="20" height="26" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip0_209_20)">
-                                          <path d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z" fill="currentColor"></path>
-                                        </g>
-                                        <defs>
-                                          <clipPath id="clip0_209_20">
-                                            <rect width="20" height="20" fill="white" transform="translate(0 0.150146)"></rect>
-                                          </clipPath>
-                                        </defs>
-                                      </svg>
-                                      <svg width="20" height="26" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip0_209_20)">
-                                          <path d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z" fill="currentColor"></path>
-                                        </g>
-                                        <defs>
-                                          <clipPath id="clip0_209_20">
-                                            <rect width="20" height="20" fill="white" transform="translate(0 0.150146)"></rect>
-                                          </clipPath>
-                                        </defs>
-                                      </svg>
-                                      <svg width="20" height="26" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip0_209_20)">
-                                          <path d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z" fill="currentColor"></path>
-                                        </g>
-                                        <defs>
-                                          <clipPath id="clip0_209_20">
-                                            <rect width="20" height="20" fill="white" transform="translate(0 0.150146)"></rect>
-                                          </clipPath>
-                                        </defs>
-                                      </svg>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex flex-col gap-4 p-8 md:flex-row">
-                        <div>
-                            <div class="h-[4.5rem] w-[4.5rem] rounded-full">
-                                <img src="assets/img/daughter-demonstrating.webp" class="w-full h-full rounded-full object-cover" alt="">
-                            </div>
-                        </div>
-                        <div class="flex flex-col gap-3">
-                            <p class="text-colorSubtitle">“Simple y práctico para localizar a nuestra hija de 12 años cuando sale con sus amigos. Todo lo que tiene que hacer es hacer clic en un enlace y podemos estar tranquilos.”</p>
-                            <div class="flex flex-col md:flex-row md::justify-between gap-2 md:justify-between">
-                                <div class="flex items-center gap-1">
-                                    <h4 class="font-semibold text-lg">Darren y Julie</h4>
-                                    <p class="text-base font-normal w-fit md:ml-3 text-colorSubtitle">Usuario de QuickGeo</p>
-                                </div>
-                                <div class="text-green600 flex items-center gap-1">
-                                    <svg width="20" height="26" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip0_209_20)">
-                                          <path d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z" fill="currentColor"></path>
-                                        </g>
-                                        <defs>
-                                          <clipPath id="clip0_209_20">
-                                            <rect width="20" height="20" fill="white" transform="translate(0 0.150146)"></rect>
-                                          </clipPath>
-                                        </defs>
-                                      </svg>
-                                      <svg width="20" height="26" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip0_209_20)">
-                                          <path d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z" fill="currentColor"></path>
-                                        </g>
-                                        <defs>
-                                          <clipPath id="clip0_209_20">
-                                            <rect width="20" height="20" fill="white" transform="translate(0 0.150146)"></rect>
-                                          </clipPath>
-                                        </defs>
-                                      </svg>
-                                      <svg width="20" height="26" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip0_209_20)">
-                                          <path d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z" fill="currentColor"></path>
-                                        </g>
-                                        <defs>
-                                          <clipPath id="clip0_209_20">
-                                            <rect width="20" height="20" fill="white" transform="translate(0 0.150146)"></rect>
-                                          </clipPath>
-                                        </defs>
-                                      </svg>
-                                      <svg width="20" height="26" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip0_209_20)">
-                                          <path d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z" fill="currentColor"></path>
-                                        </g>
-                                        <defs>
-                                          <clipPath id="clip0_209_20">
-                                            <rect width="20" height="20" fill="white" transform="translate(0 0.150146)"></rect>
-                                          </clipPath>
-                                        </defs>
-                                      </svg>
-                                      <svg width="20" height="26" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip0_209_20)">
-                                          <path d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z" fill="currentColor"></path>
-                                        </g>
-                                        <defs>
-                                          <clipPath id="clip0_209_20">
-                                            <rect width="20" height="20" fill="white" transform="translate(0 0.150146)"></rect>
-                                          </clipPath>
-                                        </defs>
-                                      </svg>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="pay-now">
-                <h3 class="text-xl px-3 pb-3 pt-7 hidden md:block">Oferta de prueba especial</h3>
-                <div class="w-full p-4 md:p-8 bg-white rounded-xl">
-                    <div class="w-ful bg-white rounded-3xl md:hidden">
-                        <div class="flex justify-start items-center gap-3">
-                            <div class="rounded-full flex justify-center items-center bg-gray-50 w-fit">
-                                <div class="rounded-full p-2 flex justify-center items-center bg-gray-100 w-fit">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 49 48" fill="none">
-                                        <path d="M29.5269 20C29.5269 22.7614 27.2883 25 24.5269 25C21.7654 25 19.5269 22.7614 19.5269 20C19.5269 17.2386 21.7654 15 24.5269 15C27.2883 15 29.5269 17.2386 29.5269 20Z" stroke="#454EFC" stroke-width="3" stroke-linejoin="round"/>
-                                        <path d="M38.5312 20C38.5312 31.732 24.5312 42 24.5312 42C24.5312 42 10.5312 31.732 10.5312 20C10.5312 12.268 16.7993 6 24.5312 6C32.2632 6 38.5312 12.268 38.5312 20Z" stroke="#454EFC" stroke-width="3" stroke-linejoin="round"/>
-                                    </svg>
-                                </div>
-                            </div>
-                            <h3 class="text-xl leading-tight">Ubicación encontrada</h3>
-                        </div>
-                        <div class="flex items-center py-3">
-                            <p class="font-normal text-base text-justify">Pudimos identificar el teléfono asociado con el número <br class="hidden lg:block"> <b>{{dataPhone.phoneText}}</b>. Para iniciar la geolocalización exacta, suscríbete a nuestra oferta de prueba</p>
-                        </div>
-                    </div>
-                    <div class="flex justify-between items-center text-gray-700 my-4 sm:hidden">
-                        <p class="font-normal text-base">Para ser pagado hoy</p>
-                        <p class="text-2xl">€0.50</p>
-                    </div>
-                    <div class="flex items-center text-[#DC97FD] py-2 md:p-0">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.75946 4.66516L12.531 1.47534L15.3025 4.66516L19.476 4.00311L19.5487 8.22815L23.1713 10.4037L20.5112 13.687L21.8879 17.6821L17.7397 18.4874L16.2263 22.4327L12.531 20.3832L8.83562 22.4327L7.32223 18.4874L3.17401 17.6821L4.55071 13.687L1.89062 10.4037L5.51325 8.22815L5.58598 4.00311L9.75946 4.66516ZM16.4452 10.4999L15.031 9.08569L11.5309 12.5857L10.0309 11.0857L8.61673 12.4999L11.5309 15.4141L16.4452 10.4999Z" fill="currentColor"/>
-                        </svg>
-                        <h3 class="text-xl">Oferta especial</h3>
-                    </div>
-                    <div class="border border-gray-200 p-4 rounded-md my-5 flex flex-col gap-2 text-base font-normal">
-                        <p class="text-start md:text-center">Iniciar geolocalización precisa para <b>{{dataPhone.phoneText}}</b></p>
-                        <p class="text-start md:text-center">24 horas QuickGeo prueba ilimitada*</p>
-                        <div class="rounded-md my-3 bg-green100 p-3 grid gap-1 justify-center">
-                            <span class="text-center font-bold text-gray-600">Solo</span>
-                            <p class="text-4xl font-bold text-green600">€0.50</p>
-                        </div>
-                        <button (click)="onCheckout()" [class]="buttonLocation?'bg-green600':'bg-green700'"   class="w-full shadow-lg text-white hover:bg-indigo-500 rounded-full px-5 py-2.5">
-                            <div  role="status" class="text-center font-semibold flex items-center justify-center gap-1">
-                              <div [class]="buttonLocation?'hidden':''">
-                                <svg aria-hidden="true" class="w-5 h-5 text-gray-200 animate-spin" viewBox="0 0 100 101"  xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
-                                    <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/>
-                                </svg>
-                              </div>
-                              <p class="text-base">Pagar ahora</p>
-                            </div>
-                        </button>
-                    </div>
-                    <div>
-                        <ol class="grid gap-3 [&>li]:flex [&>li]:items-center [&>li]:gap-3 [&>li]:text-sm text-[#4D5084] font-semibold pt-2 pb-5">
-                            <p class="text-lg mb-1 font-medium leading-7 text-left">La membresía de prueba te ofrece</p>
-                            <li>
-                                <svg class="mt-0.5 shrink-0" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M2 10.0001L6.19608 13.3334L14 2.66675" stroke="#454EFC" stroke-width="2" stroke-linecap="square"></path>
-                                </svg>
-                                <p>Informe completo sobre {{dataPhone.phoneText}}</p>
-                            </li>
-                            <li>
-                                <svg class="mt-0.5 shrink-0" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M2 10.0001L6.19608 13.3334L14 2.66675" stroke="#454EFC" stroke-width="2" stroke-linecap="square"></path>
-                                </svg>
-                                <p>Búsquedas ilimitadas de teléfonos</p>
-                            </li>
-                            <li>
-                                <svg class="mt-0.5 shrink-0" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M2 10.0001L6.19608 13.3334L14 2.66675" stroke="#454EFC" stroke-width="2" stroke-linecap="square"></path>
-                                </svg>
-                                <p>Acceso a muchos puntos de información para cualquier número de teléfono</p>
-                            </li>
-                        </ol>
-                        <div class="bg-green100 flex justify-center gap-2 p-2 rounded-md text-[#4D5084]">
-                            <svg class="-mt-0.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M2 20L1.00248 19.9297L0.927027 21H2V20ZM14 20V21H15.073L14.9975 19.9297L14 20ZM22.1457 19V20H23.2187L23.1432 18.9297L22.1457 19ZM10 7C10 8.10457 9.10457 9 8 9V11C10.2091 11 12 9.20914 12 7H10ZM8 9C6.89543 9 6 8.10457 6 7H4C4 9.20914 5.79086 11 8 11V9ZM6 7C6 5.89543 6.89543 5 8 5V3C5.79086 3 4 4.79086 4 7H6ZM8 5C9.10457 5 10 5.89543 10 7H12C12 4.79086 10.2091 3 8 3V5ZM18.5 7.5C18.5 8.32843 17.8284 9 17 9V11C18.933 11 20.5 9.433 20.5 7.5H18.5ZM17 9C16.1716 9 15.5 8.32843 15.5 7.5H13.5C13.5 9.433 15.067 11 17 11V9ZM15.5 7.5C15.5 6.67157 16.1716 6 17 6V4C15.067 4 13.5 5.567 13.5 7.5H15.5ZM17 6C17.8284 6 18.5 6.67157 18.5 7.5H20.5C20.5 5.567 18.933 4 17 4V6ZM2 21H14V19H2V21ZM2.99752 20.0703C3.29785 15.8098 5.79963 14 8 14C10.2004 14 12.7021 15.8098 13.0025 20.0703L14.9975 19.9297C14.6399 14.8568 11.4707 12 8 12C4.52933 12 1.36007 14.8568 1.00248 19.9297L2.99752 20.0703ZM15.4456 14.3698C16.5717 13.8094 17.8861 13.884 18.9682 14.6066C20.0432 15.3243 20.985 16.7551 21.1482 19.0703L23.1432 18.9297C22.9452 16.12 21.7623 14.0674 20.0788 12.9433C18.4026 11.8241 16.3248 11.6984 14.5546 12.5792L15.4456 14.3698ZM17.0001 20H22.1457V18H17.0001V20Z" fill="#4D5084"></path>
-                            </svg>
-                            <p class="text-sm font-normal"><b>476 personas </b>me enteré de un número desconocido hoy</p>
-                        </div>
-                        <div class="p-5 hidden border border-gray-200 mt-6 rounded-lg md:block">
-                            <div class="flex items-center gap-2 font-medium text-[#4D5084]">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M6 10H7C7 9.44772 6.55228 9 6 9V10ZM6 16.5V17.5C6.55228 17.5 7 17.0523 7 16.5H6ZM18.5 10V9C17.9477 9 17.5 9.44772 17.5 10H18.5ZM18.5 16.5H17.5C17.5 17.0523 17.9477 17.5 18.5 17.5V16.5ZM12 21H11C11 21.5523 11.4477 22 12 22V21ZM13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19H13ZM20.75 16.5C20.75 15.9477 20.3023 15.5 19.75 15.5C19.1977 15.5 18.75 15.9477 18.75 16.5H20.75ZM4.5 11H6V9H4.5V11ZM5 10V16.5H7V10H5ZM6 15.5H4.5V17.5H6V15.5ZM4 15V11.5H2V15H4ZM4.5 15.5C4.22386 15.5 4 15.2761 4 15H2C2 16.3807 3.11929 17.5 4.5 17.5V15.5ZM4.5 9C3.11929 9 2 10.1193 2 11.5H4C4 11.2239 4.22386 11 4.5 11V9ZM18.5 11H20V9H18.5V11ZM20.5 11.5V15H22.5V11.5H20.5ZM20 15.5H18.5V17.5H20V15.5ZM19.5 16.5V10H17.5V16.5H19.5ZM20.5 15C20.5 15.2761 20.2761 15.5 20 15.5V17.5C21.3807 17.5 22.5 16.3807 22.5 15H20.5ZM20 11C20.2761 11 20.5 11.2239 20.5 11.5H22.5C22.5 10.1193 21.3807 9 20 9V11ZM6 9.75C6 6.64046 8.72972 4 12.25 4V2C7.76215 2 4 5.40369 4 9.75H6ZM12.25 4C15.7703 4 18.5 6.64046 18.5 9.75H20.5C20.5 5.40369 16.7378 2 12.25 2V4ZM4 9.75V10H6V9.75H4ZM18.5 9.75V10H20.5V9.75H18.5ZM15.25 20H12V22H15.25V20ZM13 21V19H11V21H13ZM18.75 16.5C18.75 18.433 17.183 20 15.25 20V22C18.2876 22 20.75 19.5376 20.75 16.5H18.75Z" fill="#4D5084"></path>
-                                </svg>
-                                <p>¿Necesitas alguna ayuda?</p>
-                            </div>
-                            <div class="flex justify-evenly flex-wrap gap-4 my-4">
-                                <div class="flex gap-2 items-center bg-gray-50 py-2 px-4 rounded-md text-sm font-normal text-green600">
-                                    <div class="h-4 w-4">
-                                        <img class="w-full h-full" src="assets/icons/chatbot-nb.png" alt="">
-                                    </div>
-                                    <p>¡Chatea con nosotros!</p>
-                                </div>
-                                <div class="flex gap-2 items-center bg-gray-50 py-2 px-4 rounded-md text-sm font-normal text-green600">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                        <path d="M6.66667 12.6666H9.33333M4 1.33325H12V14.6666H4V1.33325Z" stroke="#454EFC" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                    <p>contact&#64;QuickGeo.mobi</p>
-                                </div>
-                            </div>
-                            <p class="text-sm font-normal">Ponte en contacto con nuestro equipo dedicado. Estamos más que felices de ayudarte. De lunes a sábado de 6 am a 8 pm - (solo francés e inglés). Estaremos encantados de ayudarte y generalmente respondemos en menos de 24 horas.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
-    </article>
-    <div class="bg-white w-full text-center md:p-6">
-        <div class="rounded-xl mt-7 md:hidden">
-            <div class="flex flex-col gap-4 p-8 md:flex-row">
-                <div>
-                    <div class="h-[4.5rem] w-[4.5rem] rounded-full">
-                        <img src="assets/img/woman-smartphone.webp" class="w-full h-full rounded-full object-cover" alt="">
-                    </div>
-                </div>
-                <div class="flex flex-col gap-3">
-                    <p class="text-colorSubtitle text-justify">“Olvidé mi teléfono en el metro. QuickGeo permitió a la persona que lo encontró enviarme su ubicación sin desbloquearlo y pude recuperarlo de manera segura.”</p>
-                    <div class="flex flex-col md:flex-row md::justify-between gap-2 md:justify-between">
-                        <div class="flex items-center gap-4">
-                            <h4 class="font-semibold text-lg">Marie</h4>
-                            <p class="text-base font-normal text-colorSubtitle md:ml-3">Usuario de QuickGeo</p>
-                        </div>
-                        <div class="text-green600 flex items-center gap-1">
-                            <svg width="20" height="26" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <g clip-path="url(#clip0_209_20)">
-                                  <path d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z" fill="currentColor"></path>
-                                </g>
-                                <defs>
-                                  <clipPath id="clip0_209_20">
-                                    <rect width="20" height="20" fill="white" transform="translate(0 0.150146)"></rect>
-                                  </clipPath>
-                                </defs>
-                              </svg>
-                              <svg width="20" height="26" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <g clip-path="url(#clip0_209_20)">
-                                  <path d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z" fill="currentColor"></path>
-                                </g>
-                                <defs>
-                                  <clipPath id="clip0_209_20">
-                                    <rect width="20" height="20" fill="white" transform="translate(0 0.150146)"></rect>
-                                  </clipPath>
-                                </defs>
-                              </svg>
-                              <svg width="20" height="26" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <g clip-path="url(#clip0_209_20)">
-                                  <path d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z" fill="currentColor"></path>
-                                </g>
-                                <defs>
-                                  <clipPath id="clip0_209_20">
-                                    <rect width="20" height="20" fill="white" transform="translate(0 0.150146)"></rect>
-                                  </clipPath>
-                                </defs>
-                              </svg>
-                              <svg width="20" height="26" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <g clip-path="url(#clip0_209_20)">
-                                  <path d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z" fill="currentColor"></path>
-                                </g>
-                                <defs>
-                                  <clipPath id="clip0_209_20">
-                                    <rect width="20" height="20" fill="white" transform="translate(0 0.150146)"></rect>
-                                  </clipPath>
-                                </defs>
-                              </svg>
-                              <svg width="20" height="26" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <g clip-path="url(#clip0_209_20)">
-                                  <path d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z" fill="currentColor"></path>
-                                </g>
-                                <defs>
-                                  <clipPath id="clip0_209_20">
-                                    <rect width="20" height="20" fill="white" transform="translate(0 0.150146)"></rect>
-                                  </clipPath>
-                                </defs>
-                              </svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="flex flex-col gap-4 p-8 md:flex-row">
-                <div>
-                    <div class="h-[4.5rem] w-[4.5rem] rounded-full">
-                        <img src="assets/img/daughter-demonstrating.webp" class="w-full h-full rounded-full object-cover" alt="">
-                    </div>
-                </div>
-                <div class="flex flex-col gap-3">
-                    <p class="text-colorSubtitle text-justify">“Simple y práctico para localizar a nuestra hija de 12 años cuando sale con sus amigos. Todo lo que tiene que hacer es hacer clic en un enlace y podemos estar tranquilos.”</p>
-                    <div class="flex flex-col md:flex-row md::justify-between gap-2 md:justify-between">
-                        <div class="flex items-center gap-1">
-                            <h4 class="font-semibold text-lg">Darren y Julie</h4>
-                            <p class="text-base font-normal w-fit md:ml-3 text-colorSubtitle">Usuario de QuickGeo</p>
-                        </div>
-                        <div class="text-green600 flex items-center gap-1">
-                            <svg width="20" height="26" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <g clip-path="url(#clip0_209_20)">
-                                  <path d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z" fill="currentColor"></path>
-                                </g>
-                                <defs>
-                                  <clipPath id="clip0_209_20">
-                                    <rect width="20" height="20" fill="white" transform="translate(0 0.150146)"></rect>
-                                  </clipPath>
-                                </defs>
-                              </svg>
-                              <svg width="20" height="26" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <g clip-path="url(#clip0_209_20)">
-                                  <path d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z" fill="currentColor"></path>
-                                </g>
-                                <defs>
-                                  <clipPath id="clip0_209_20">
-                                    <rect width="20" height="20" fill="white" transform="translate(0 0.150146)"></rect>
-                                  </clipPath>
-                                </defs>
-                              </svg>
-                              <svg width="20" height="26" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <g clip-path="url(#clip0_209_20)">
-                                  <path d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z" fill="currentColor"></path>
-                                </g>
-                                <defs>
-                                  <clipPath id="clip0_209_20">
-                                    <rect width="20" height="20" fill="white" transform="translate(0 0.150146)"></rect>
-                                  </clipPath>
-                                </defs>
-                              </svg>
-                              <svg width="20" height="26" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <g clip-path="url(#clip0_209_20)">
-                                  <path d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z" fill="currentColor"></path>
-                                </g>
-                                <defs>
-                                  <clipPath id="clip0_209_20">
-                                    <rect width="20" height="20" fill="white" transform="translate(0 0.150146)"></rect>
-                                  </clipPath>
-                                </defs>
-                              </svg>
-                              <svg width="20" height="26" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <g clip-path="url(#clip0_209_20)">
-                                  <path d="M10.7516 1.45679C10.613 1.16754 10.3208 0.98348 10 0.98348C9.6793 0.98348 9.38704 1.16754 9.24847 1.45679L7.04618 6.05416L1.97487 6.72006C1.65606 6.76192 1.38977 6.98348 1.29063 7.28936C1.19148 7.59524 1.27717 7.93087 1.51081 8.1518L5.21864 11.6579L4.28796 16.6645C4.22929 16.9801 4.35714 17.3014 4.61665 17.4904C4.87616 17.6794 5.22117 17.7026 5.50358 17.5499L10 15.1189L14.4965 17.5499C14.7789 17.7026 15.1239 17.6794 15.3834 17.4904C15.6429 17.3014 15.7708 16.9801 15.7121 16.6645L14.7814 11.6579L18.4892 8.1518C18.7229 7.93087 18.8086 7.59524 18.7094 7.28936C18.6103 6.98348 18.344 6.76192 18.0252 6.72006L12.9539 6.05416L10.7516 1.45679Z" fill="currentColor"></path>
-                                </g>
-                                <defs>
-                                  <clipPath id="clip0_209_20">
-                                    <rect width="20" height="20" fill="white" transform="translate(0 0.150146)"></rect>
-                                  </clipPath>
-                                </defs>
-                              </svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="p-5">
-            <p class="font-normal text-sm">© 2024 Luis Velasco. Todos los derechos reservados.</p>
-        </div>
+      </div>
+      <p class="font-normal text-sm pt-8 pb-3 text-center">© 2024 QuickGeo. Todos los derechos reservados.</p>
     </div>
 </section>
 

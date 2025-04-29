@@ -13,8 +13,8 @@
     [class]="showBot ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-4 scale-95 pointer-events-none'"
     class="transition-all opacity-0 duration-300 ease-out transform fixed z-50 bottom-0 sm:bottom-[calc(1rem+0.2rem)] right-0 sm:mr-4 bg-white shadow-md shadow-green-200/80 p-6 sm:rounded-lg border border-[#e5e7eb] w-screen h-screen sm:w-[420px] sm:h-[634px]">
     <!-- Heading -->
-    <div class="flex flex-col space-y-1.5 pb-6 relative">
-      <h2 class="font-semibold text-lg tracking-tight">Chatbot</h2>
+    <div class="flex flex-col h-[10%] space-y-1.5 pb-6 relative">
+      <h2 class="font-semibold text-lg tracking-tight">QuickGeo Assistant</h2>
       <p class="text-sm text-[#6b7280] leading-3">Powered by QuickGeo</p>
       <button (click)="showChat()" type="button" class="absolute text-gray-600 right-0 top-0 h-7 w-7 rounded-full  grid place-content-center hover:scale-105">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
@@ -28,11 +28,12 @@
 
 
     <!-- Chat Container -->
-    <div #scrollContainer class="pr-4 mb-2 h-[474px] overflow-y-scroll overflow-x-hidden scrollbar-none">
+    <div #scrollContainer class="pr-4 mb-2 h-[80%] overflow-y-scroll overflow-x-hidden scrollbar-none">
       @for (chats of chatMessages; track $index) {
         @if(chats.bot){
           <!-- Chat Message AI -->
-          <div class="flex gap-3 my-4 text-gray-600 text-sm flex-1"><span
+          <div class="flex gap-3 my-4 text-gray-600 text-sm flex-1">
+            <span
             class="relative flex shrink-0 overflow-hidden rounded-full w-8 h-8">
             <div class="rounded-full bg-gray-100 border p-1"><svg stroke="none" fill="black" stroke-width="1.5"
                 viewBox="0 0 24 24" aria-hidden="true" height="20" width="20" xmlns="http://www.w3.org/2000/svg">
@@ -40,8 +41,9 @@
                   d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z">
                 </path>
               </svg></div>
-          </span>
-          <p class="leading-relaxed"><span class="block font-bold text-gray-700">AI </span>{{chats.text}}
+            </span>
+          <p class="leading-relaxed">
+            <span class="block font-bold text-gray-700">AI </span>{{chats.text}}
           </p>
           </div>
         }@else {
@@ -61,22 +63,25 @@
       }
       @if(loadBot){
         <!-- Chat Message AI -->
-        <div class="flex gap-3 my-4 text-gray-600 text-sm flex-1"><span
-          class="relative flex shrink-0 overflow-hidden rounded-full w-8 h-8">
+        <div class="flex gap-3 my-4 text-gray-600 text-sm flex-1 w-full">
+          <span class="relative flex shrink-0 overflow-hidden rounded-full w-8 h-8">
           <div class="rounded-full bg-gray-100 border p-1"><svg stroke="none" fill="black" stroke-width="1.5"
               viewBox="0 0 24 24" aria-hidden="true" height="20" width="20" xmlns="http://www.w3.org/2000/svg">
               <path stroke-linecap="round" stroke-linejoin="round"
                 d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z">
               </path>
             </svg></div>
-        </span>
-        <p class="leading-relaxed"><span class="block font-bold text-gray-700">AI </span>Cargando...
-        </p>
+          </span>
+          <div class="w-full animate-pulse ease-in-out">
+            <div class="w-[35%] h-5 mt-1 mb-2 bg-gray-100 rounded-md"></div>
+            <div class="w-[70%] h-4 my-2 bg-gray-100 rounded-md"></div>
+          </div>
+
         </div>
       }
     </div>
     <!-- Input box  -->
-    <div class="flex items-center pt-0">
+    <div class="h-[8%] flex items-center pt-0">
       <form (submit)="sendMessage()" name="chatInput"
        class="flex items-center justify-center w-full space-x-2">
         <input  [(ngModel)]="message" [ngModelOptions]="{standalone: true}"

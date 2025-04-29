@@ -1,17 +1,58 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, inject, ViewChild } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { ApiService } from '../../services/api.service';
+import { ChatBot } from '../../../Interface/models';
 
 @Component({
   selector: 'app-chat-bot',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './chat-bot.component.html'
 })
 export class ChatBotComponent {
 
-  chatBot:boolean=false;
+  api = inject(ApiService);
+  showBot:boolean=false;
+  message = ''
+  ChatBotMessage:ChatBot= {message:''};
+  loadBot:boolean=false;
+
+  @ViewChild('scrollContainer') private scrollContainer!: ElementRef;
+
+  chatMessages = [
+    { bot: true, text: 'Hola, en que puedo ayudarte hoy?' }
+  ];
 
   showChat(){
-    this.chatBot = !this.chatBot
+    this.showBot = !this.showBot
   }
 
+  sendMessage() {
+    if (this.message.trim()) {
+        this.chatMessages.push({bot:false,text:this.message.trim()})
+        this.ChatBotMessage.message = this.message.trim();
+        this.message = '';
+        setTimeout(() => {
+          this.loadBot = !this.loadBot;
+        }, 300);
+        this.api.BotAsistant(this.ChatBotMessage).subscribe({
+          next: (data) => {
+            this.loadBot = !this.loadBot;
+            this.chatMessages.push({bot:true,text:data.response})
+          },
+          error: (err) => {
+            console.log("Ups")
+          }
+        });
+      }
+  }
+
+  ngAfterViewChecked() {
+    this.scrollAlFinal();
+  }
+
+  private scrollAlFinal() {
+    const container = this.scrollContainer.nativeElement;
+    container.scrollTop = container.scrollHeight;
+  }
 }

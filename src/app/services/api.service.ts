@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { CreateUser, Login, PhoneInfo, resCreateUser, resLogin, resPhoneInfo, responseData, resSendSms, SendSms } from '../../Interface/models';
+import { ChatBot, ChatBotOut, CreateUser, Login, PhoneInfo, resCreateUser, resLogin, resPhoneInfo, responseData, resSendSms, SendSms } from '../../Interface/models';
 import { Observable, retry } from 'rxjs';
 import { UtilitiesService } from './utilities.service';
 
@@ -47,6 +47,13 @@ export class ApiService {
     });
 
     return this.http.get<responseData>(url, { headers }).pipe(
+      retry(3) // Reintenta la solicitud hasta 3 veces en caso de error
+    );
+  }
+
+  BotAsistant(chat:ChatBot){
+    const url = `${this.baseUrl}/chat`;
+    return this.http.post<ChatBotOut>(url,chat).pipe(
       retry(3) // Reintenta la solicitud hasta 3 veces en caso de error
     );
   }

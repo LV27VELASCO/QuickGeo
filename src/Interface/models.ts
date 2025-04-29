@@ -77,3 +77,11 @@ export interface resSendSms {
     status:string
     description: string
 }
+
+export interface ChatBot {
+  message:string
+}
+
+export interface ChatBotOut {
+  response:string
+}

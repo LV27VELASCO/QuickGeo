@@ -37,9 +37,9 @@
 <section class="text-base px-4 py-5 font-normal flex justify-center flex-wrap gap-5">
   <div class="px-4">
     <ul class="flex gap-5 flex-wrap justify-center items-center">
-      <li><a href="">{{'footer.terms.legal' | translate}}</a></li>
-      <li><a href="">{{'footer.terms.policies' | translate}}</a></li>
-      <li><a href="">{{'footer.terms.conditions' | translate}}</a></li>
+      <li><a [routerLink]="['/legals']">{{'footer.terms.legal' | translate}}</a></li>
+      <li><a [routerLink]="['/confidentiality']">{{'footer.terms.policies' | translate}}</a></li>
+      <li><a [routerLink]="['/cgu']">{{'footer.terms.conditions' | translate}}</a></li>
       <li class="flex gap-3 items-center">
         <div>
           {{'footer.terms.payments' | translate}}
@@ -60,6 +60,6 @@
     </ul>
   </div>
   <div class="text-center">
-    <p>© 2024 Luis Velasco. {{'footer.terms.rights' | translate}}</p>
+    <p>© 2024 QuickGeo. {{'footer.terms.rights' | translate}}</p>
   </div>
 </section>

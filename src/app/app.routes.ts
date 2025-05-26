@@ -15,6 +15,9 @@ export const routes: Routes = [
       { path: 'requentlyAskedQuestions', loadComponent: () => import('./pages/requently-asked-questions/requently-asked-questions.component').then(mod => mod.RequentlyAskedQuestionsComponent) },
       { path: 'contact', loadComponent: () => import('./pages/contact/contact.component').then(mod => mod.ContactComponent) },
       { path: 'unsubscribe', loadComponent: () => import('./pages/unsubscribe/unsubscribe.component').then(mod => mod.UnsubscribeComponent) },
+      { path: 'legals', loadComponent: () => import('./pages/legals/legals.component').then(mod => mod.LegalsComponent) },
+      { path: 'confidentiality', loadComponent: () => import('./pages/confidentiality/confidentiality.component').then(mod => mod.ConfidentialityComponent) },
+      { path: 'cgu', loadComponent: () => import('./pages/cgu/cgu.component').then(mod => mod.CguComponent) }
     ]
   },
   { path: 'dashboard', component:DashboardComponent, canActivate:[AuthLoginGuard]},

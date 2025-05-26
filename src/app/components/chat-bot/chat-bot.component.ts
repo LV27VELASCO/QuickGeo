@@ -2,11 +2,12 @@ import { Component, ElementRef, inject, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ApiService } from '../../services/api.service';
 import { ChatBot } from '../../../Interface/models';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-chat-bot',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule,TranslateModule],
   templateUrl: './chat-bot.component.html'
 })
 export class ChatBotComponent {
@@ -19,9 +20,15 @@ export class ChatBotComponent {
 
   @ViewChild('scrollContainer') private scrollContainer!: ElementRef;
 
-  chatMessages = [
-    { bot: true, text: 'Hola, en que puedo ayudarte hoy?' }
-  ];
+  chatMessages: any[] = [];
+
+  constructor(private translate: TranslateService) {
+    const translatedText = this.translate.instant('routes.contact.bot.message');
+
+    this.chatMessages = [
+      { bot: true, text: translatedText }
+    ];
+  }
 
   showChat(){
     this.showBot = !this.showBot

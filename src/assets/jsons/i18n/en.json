@@ -41,42 +41,42 @@
       "paragraph": "With your active subscription, you can locate multiple devices from a single, easy-to-use interface."
       }
     },
-    "testimonials": {
+  "testimonials": {
     "title": "We have helped thousands of people around the world",
     "people": [
       {
         "story": "I left a coffee shop and forgot my phone. Thanks to the app, I saw it was still there. I went back quickly and recovered it without any problem. Without geolocation, I would have lost it forever.",
-        "name": "Marguie",
-        "png": "woman-smartphone.webp",
-        "span": "QuickGeo user",
+        "name":"Susan",
+        "png":"User4.jpg",
+        "span": "QuickGeo User",
         "delay": "100"
       },
       {
         "story": "My daughter strayed from the route to school. With just one click on the app, I saw where she was and went to get her. Knowing her real-time location gave us complete peace of mind.",
-        "name": "Ryan",
-        "png": "daughter-demonstrating.webp",
-        "span": "QuickGeo user",
+        "name": "Leslie",
+        "png": "User1.jpg",
+        "span": "QuickGeo User",
         "delay": "200"
       },
       {
         "story": "After an event, I couldn't remember where I had parked. I used the app and within seconds, I had the exact location of my car. It was a lifesaver.",
         "name": "Mark",
-        "png": "man-phone.webp",
-        "span": "QuickGeo user",
+        "png": "User2.jpg",
+        "span": "QuickGeo User",
         "delay": "300"
       },
       {
         "story": "My father got injured while hiking. Since he had the app active, we were able to find out where he was and send help quickly. It was crucial for getting him medical attention in time.",
-        "name": "Darren and Julie",
-        "png": "daughter-demonstrating.webp",
-        "span": "QuickGeo user",
+        "name":"Luis y Sophie",
+        "png":"User5.jpg",
+        "span": "QuickGeo User",
         "delay": "500"
       },
       {
         "story": "In my business, clients can now see where their delivery is in real time. Everything is clearer, more reliable, and more professional thanks to geolocation.",
         "name": "Brian",
-        "png": "man-phone.webp",
-        "span": "QuickGeo user",
+        "png": "User3.jpg",
+        "span": "QuickGeo User",
         "delay": "700"
       }
     ],
@@ -151,7 +151,7 @@
       }
     ]
   },
-   "bannerLocate": {
+  "bannerLocate": {
       "title": "Locate Any Phone Now",
       "subtitle": "Try our solution with unlimited access for 24 hours for just €0.50. After your trial period, you can choose to stay subscribed for €47.90 per month.",
       "input": "Enter phone number",
@@ -166,7 +166,7 @@
         ]
       }
     },
-    "footer": {
+  "footer": {
       "title": "Quick Links",
       "paragraph": "Locate your device accurately and reliably, no matter the country or network.",
       "account": {
@@ -181,7 +181,7 @@
         "rights": "All rights reserved."
       }
     },
-    "routes": {
+  "routes": {
       "prices": {
         "title": "Pricing",
         "text": "Take advantage of our 24-hour trial offer to discover our service.",
@@ -211,7 +211,15 @@
             "text": "We’ll be happy to assist you and usually respond within 24 hours.",
             "svg": "mail.svg"
           }
-        ]
+        ],
+        "bot":{
+          "title":"QuickGeo Assistant",
+          "subtitle":"Welcome",
+          "nameBot":"QuickBot",
+          "nameUser":"You",
+          "button":"Send",
+          "message":"Hello, how can I help you today?"
+        }
       },
       "faqs": {
         "title": "Frequently Asked Questions",
@@ -242,7 +250,7 @@
         "text": "If you've forgotten the email associated with your account, please send us a message at contact@quickgeo.mobi with the last 4 digits of your credit card, and we will process your cancellation. We usually respond within 24 hours."
       }
     },
-    "dashboard": {
+  "dashboard": {
       "title": "Hello!",
       "subtitle": "Welcome to your space on QuickGeo!",
       "span":"Log Out",

@@ -28,11 +28,11 @@
     "testimonials": {
       "title":"Hemos ayudado a miles de personas en todo el mundo",
       "people":[
-        {"story":"Salí de una cafetería y olvidé mi teléfono. Gracias a la app, vi que seguía allí. Volví rápido y lo recuperé sin problema. Sin geolocalización, lo habría perdido para siempre.", "name":"Marguie","png":"woman-smartphone.webp","span":"usuario de QuickGeo", "delay":"100"},
-        {"story":"Mi hija se desvió del camino al colegio. Con un solo clic en la app vi dónde estaba y fui por ella. Saber su ubicación en tiempo real nos dio tranquilidad total.", "name":"Ryan","png":"daughter-demonstrating.webp","span":"usuario de QuickGeo","delay":"200"},
-        {"story":"Después de un evento, no recordaba dónde había aparcado. Usé la app y en segundos supe la ubicación exacta del coche. Fue una salvación.", "name":"Mark","png":"man-phone.webp","span":"usuario de QuickGeo","delay":"300"},
-        {"story":"Mi padre se lesionó haciendo senderismo. Como llevaba la app activa, pudimos saber dónde estaba y enviar ayuda rápidamente. Fue clave para que lo atendieran a tiempo.", "name":"Darren y Julie","png":"daughter-demonstrating.webp","span":"usuario de QuickGeo","delay":"500"},
-        {"story":"En mi negocio, ahora mis clientes ven en tiempo real dónde va su pedido. Todo es más claro, confiable y profesional gracias a la geolocalización.", "name":"Brian","png":"man-phone.webp","span":"usuario de QuickGeo","delay":"700"}
+        {"story":"Salí de una cafetería y olvidé mi teléfono. Gracias a la app, vi que seguía allí. Volví rápido y lo recuperé sin problema. Sin geolocalización, lo habría perdido para siempre.", "name":"Susan","png":"User4.jpg","span":"Usuario de QuickGeo", "delay":"100"},
+        {"story":"Mi hija se desvió del camino al colegio. Con un solo clic en la app vi dónde estaba y fui por ella. Saber su ubicación en tiempo real nos dio tranquilidad total.", "name":"Leslie","png":"User1.jpg","span":"Usuario de QuickGeo","delay":"200"},
+        {"story":"Después de un evento, no recordaba dónde había aparcado. Usé la app y en segundos supe la ubicación exacta del coche. Fue una salvación.", "name":"Mark","png":"User2.jpg","span":"Usuario de QuickGeo","delay":"300"},
+        {"story":"Mi padre se lesionó haciendo senderismo. Como llevaba la app activa, pudimos saber dónde estaba y enviar ayuda rápidamente. Fue clave para que lo atendieran a tiempo.", "name":"Luis y Sophie","png":"User5.jpg","span":"Usuario de QuickGeo","delay":"500"},
+        {"story":"En mi negocio, ahora mis clientes ven en tiempo real dónde va su pedido. Todo es más claro, confiable y profesional gracias a la geolocalización.", "name":"Brian","png": "User3.jpg","span":"Usuario de QuickGeo","delay":"700"}
       ],
       "title2":"Confianza y precisión a escala global",
       "subtitle":"Súmate hoy y lleva tu geolocalización al siguiente nivel",
@@ -120,7 +120,15 @@
          "cards":[
           {"title":"¡Chatea con nosotros!","text":"Nuestro equipo está aquí para responder tus preguntas, abre la burbuja de chat en la parte inferior de esta página.","svg":"chat.svg"},
           {"title":"contact@quickgeo.mobi","text":"Estaremos encantados de ayudarte y generalmente respondemos en menos de 24 horas.","svg":"mail.svg"}
-         ]
+         ],
+         "bot":{
+          "title":"Asistente QuickGeo",
+          "subtitle":"Bienvenido!",
+          "nameBot":"QuickBot",
+          "nameUser":"Tú",
+          "button":"Enviar",
+          "message":"Hola, en que puedo ayudarte hoy?"
+        }
       },
       "faqs":{
         "title":"Preguntas frecuentes",

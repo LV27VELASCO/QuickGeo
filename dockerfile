@@ -1,36 +1,25 @@
-# Stage 1: Build Angular app
+# Stage 1: Build Angular app with SSR
 FROM node:20-alpine AS builder
 
 WORKDIR /app
 
-# Install pnpm globally
-RUN npm install -g pnpm
+COPY package.json package-lock.json ./
+RUN npm install
 
-# Copy package files first
-COPY package.json pnpm-lock.yaml ./
-
-# Install dependencies with cache mount
-RUN --mount=type=cache,target=/root/.local/share/pnpm/store \
-    pnpm install --frozen-lockfile
-
-# Copy rest of the application
 COPY . .
 
-# Build Angular app
-RUN pnpm run build
+# Build Angular app + SSR
+RUN npm run build:ssr
 
-# Stage 2: Serve with NGINX
-FROM nginx:1.25-alpine
+# Stage 2: Run SSR app
+FROM node:20-alpine
 
-# Copy built Angular app to NGINX HTML folder
-COPY --from=builder /app/dist/fungeo-clone/browser/ /usr/share/nginx/html
+WORKDIR /app
 
-# Remove default NGINX config
-RUN rm /etc/nginx/conf.d/default.conf
+COPY --from=builder /app/dist/fungeo-clone /app/dist/fungeo-clone
+COPY --from=builder /app/package.json /app/package.json
+COPY --from=builder /app/node_modules /app/node_modules
 
-# Add custom NGINX config for SPA routing
-COPY nginx.conf /etc/nginx/conf.d
+EXPOSE 3000
 
-EXPOSE 80
-
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["node", "dist/fungeo-clone/server/server.mjs"]

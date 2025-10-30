@@ -41,3 +41,10 @@ body{
   50%{opacity: 1;}
   100%{opacity: 0.5;}
 }
+
+.security-badge {
+            @apply flex items-center gap-2 text-sm text-gray-600;
+        }
+
+
+

@@ -22,6 +22,7 @@ export const routes: Routes = [
   },
   { path: 'dashboard', component:DashboardComponent, canActivate:[AuthLoginGuard]},
   { path: 'pre-checkout', loadComponent: () => import('./pages/pre-check-out/pre-check-out.component').then(mod => mod.PreCheckOutComponent), canActivate:[AuthGuard]},
+  { path: 'checkout', loadComponent: () => import('./pages/checkout/checkout.component').then(mod => mod.CheckoutComponent), canActivate:[AuthGuard]},
   { path: 'success', loadComponent: () => import('./pages/success-pay/success-pay.component').then(mod => mod.SuccessPayComponent)},
   { path: 'loading', loadComponent: () => import('./pages/loading/loading.component').then(mod => mod.LoadingComponent) },
   { path: 'login', loadComponent: () => import('./pages/login/login.component').then(mod => mod.LoginComponent) },

@@ -23,8 +23,8 @@ import { CookieService } from 'ngx-cookie-service';
 
   private countriesSource = new BehaviorSubject<Country[]>([]);
   private urlFlagBaseSource = new BehaviorSubject<string>('https://flagcdn.com/');
-  private flagSource = new BehaviorSubject<string>('co');
-  private codePhoneSource = new BehaviorSubject<string>('+57');
+  private flagSource = new BehaviorSubject<string>('es');
+  private codePhoneSource = new BehaviorSubject<string>('+34');
   private jsonUrl = 'assets/jsons/country.json'; // Ruta al archivo JSON local
 
   countries$ = this.countriesSource.asObservable();

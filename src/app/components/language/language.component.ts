@@ -18,7 +18,6 @@ export class LanguageComponent {
       const lang = this.Utils.getItem('lang');
       if(lang){
         const index= LANGUAGES_OBJECT.id.includes(lang)?LANGUAGES_OBJECT.id.indexOf(lang):0;
-        console.log(index);
         this.nombreLang = LANGUAGES_OBJECT.nombre[index];
       }
     }

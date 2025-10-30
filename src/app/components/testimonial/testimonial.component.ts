@@ -28,7 +28,6 @@ export class TestimonialComponent implements AfterViewInit {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting && !this.animation) {
-          console.log("llego");
           this.animation = true;
         }
       });

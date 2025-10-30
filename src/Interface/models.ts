@@ -39,16 +39,21 @@ export interface resLogin {
 
 
 export interface Location {
-    capturedat: string;
+    created_at: string;
     city: string;
     latitude: number;
     longitude: number;
 }
 
+export interface Reslocation {
+    credits: number;
+    history: Detail[];
+}
+
 export interface Detail {
     codecountry: string;
     country: string;
-    createdat: string;
+    created_at: string;
     locations: Location[];
     phonenumber: string;
     codephone:string;
@@ -57,11 +62,11 @@ export interface Detail {
 }
 
 export interface responseData {
-    details: Detail[];
+    details: Reslocation;
 }
 
 export interface Location {
-    capturedat: string;
+    created_at: string;
     city: string;
     latitude: number;
     longitude: number;
@@ -71,6 +76,8 @@ export interface SendSms {
     code:string
     phone_number: string
     code_country:string
+    message:string,
+    credits:number
 }
 
 export interface resSendSms {
@@ -84,4 +91,25 @@ export interface ChatBot {
 
 export interface ChatBotOut {
   response:string
+}
+
+export interface resUnsubscribe {
+  message:string
+}
+
+export interface Unsubscribe {
+  email:string
+}
+
+export interface Checkout {
+  email:string,
+  name:string
+}
+
+export interface ResetPsw {
+  email:string
+}
+
+export interface resResetPsw {
+  message:string,
 }

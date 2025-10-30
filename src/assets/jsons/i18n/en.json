@@ -265,7 +265,7 @@
         "title": "Your Activity",
         "span": "Searches",
         "span2": "Sort",
-        "status":"wait",
+        "status":"locating",
         "status2":"localized",
         "span3":"Open in Google Maps"
       }

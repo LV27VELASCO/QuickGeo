@@ -1,6 +1,39 @@
-.mapBg{
-    background-image: url("/assets/img/map-bg.webp");
-    background-size:cover;
-    background-position: center;
-    background-repeat: no-repeat;
+.mapBg {
+  background-image: url("/assets/img/map-bg.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.checkmark-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: #d1fae5;
+  border-radius: 50%;
+  color: #059669;
+  font-weight: bold;
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(16, 185, 129, 0.15);
+}
+
+.price-highlight {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+}
+
+.testimonial-card {
+  border-left: 4px solid #10b981;
+}
+
+.star-rating {
+  color: #fbbf24;
 }

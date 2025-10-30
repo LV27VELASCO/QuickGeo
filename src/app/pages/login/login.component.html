@@ -2,9 +2,10 @@
   <div class="h-full w-full flex flex-col mx-auto md:flex-row">
     <article class="bg-white w-full flex flex-col justify-between h-screen sm:px-16 py-8 px-5">
         <div class="justify-between navbar-start lg:justify-start">
+          <!-- Logo -->
           <a [routerLink]="['/']" class="-m-1.5 p-1.5 flex">
-            <img class="h-8 w-auto" src="assets/icons/icon.svg" alt="">
-            <p class="pl-2 text-gray-900">Quick<span class="text-green-800">Geo</span></p>
+              <img class="h-8 w-auto" src="assets/icons/icon.svg" alt="">
+              <h2 class="text-xl font-bold text-gray-700">Quick<span class="text-green-700">Geo</span></h2>
           </a>
         </div>
         <div [class]="recoveryPassword?'hidden':'block'" class="text-center">
@@ -59,7 +60,7 @@
             <button (click)="showRecoveryPassword()" class="font-normal w-fit mt-5 text-sm underline text-center inline-block">{{'routes.login.textSpan'| translate }}</button>
         </div>
         <div [class]="recoveryPassword?'block':'hidden'" class="text-center">
-          <div class="py-10 px-5 flex flex-col gap-5 border-b-2 border-gray-50">
+          <form  [formGroup]="formReset" (ngSubmit)="onResetPsw()" class="py-10 px-5 flex flex-col gap-5 border-b-2 border-gray-50">
               <h2 class="text-center text-4xl mb-5">{{'routes.recoverPassword.title'| translate }}</h2>
               <div class="flex flex-col gap-2 text-start">
                   <span class="text-sm font-semibold pl-2">{{'routes.recoverPassword.label'| translate }}</span>
@@ -67,15 +68,25 @@
                       <div class="h-5 w-5">
                           <img src="assets/icons/input-email.png" class="w-full h-full" alt="">
                       </div>
-                      <input placeholder="{{'routes.recoverPassword.placeholder'| translate }}" class="w-full placeholder:font-normal outline-none font-semibold text-base" type="text">
+                      <input formControlName="email" placeholder="{{'routes.recoverPassword.placeholder'| translate }}" class="w-full placeholder:font-normal outline-none font-semibold text-base" type="email">
                   </div>
               </div>
-              <button class="w-full mt-5 shadow-lg text-white bg-green600 hover:bg-indigo-700 rounded-full px-5 py-2.5 lg:m-0 lg:px-3">
+              @if (successMsg) {
+                      <p class="font-semibold text-center text-green-500 bg-green-100 border border-green-500 rounded-md py-1">
+                        {{ successMsg }}
+                      </p>
+                    }
+                     @if (errorMsg) {
+                      <p class="font-semibold text-center text-red-500 bg-red-100 border border-red-500 rounded-md py-1">
+                        {{ errorMsg }}
+                      </p>
+              }
+              <button type="submit" class="w-full mt-5 shadow-lg text-white bg-green600 hover:bg-indigo-700 rounded-full px-5 py-2.5 lg:m-0 lg:px-3">
                   <div  role="status" class="text-center font-semibold flex items-center justify-center gap-1">
                     <p class="text-base">{{'routes.recoverPassword.button'| translate }}</p>
                   </div>
               </button>
-          </div>
+          </form>
           <button (click)="showRecoveryPassword()" class="font-normal w-fit mt-5 text-sm underline text-center inline-block">{{'routes.recoverPassword.textSpan'| translate }}</button>
       </div>
         <div class="w-full text-center pt-10">

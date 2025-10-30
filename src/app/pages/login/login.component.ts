@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
-import { Login } from '../../../Interface/models';
+import { Login, ResetPsw } from '../../../Interface/models';
 import { ApiService } from '../../services/api.service';
 import { UtilitiesService } from '../../services/utilities.service';
 
@@ -17,16 +17,22 @@ export class LoginComponent {
   testimonios =[true,false,false];
   recoveryPassword = false;
   password = false;
+  load=false;
+  successMsg: string = '';
+  errorMsg: string = '';
   fb = inject(FormBuilder);
   api = inject(ApiService);
   utils = inject(UtilitiesService);
   buttonLogin:boolean = true;
 
   formLogin:FormGroup=this.fb.group({
-      email:['', [Validators.required]],
+      email:['', [Validators.email, Validators.required]],
       password:['', [Validators.required]]
     })
-  
+
+  formReset:FormGroup=this.fb.group({
+      email:['', [Validators.email, Validators.required]],
+    })
 
   prevCard(){
     let currentIndex = this.testimonios.indexOf(true); // Encuentra el índice del valor `true`
@@ -36,18 +42,18 @@ export class LoginComponent {
       let prevIndex = (currentIndex - 1 + this.testimonios.length) % this.testimonios.length; // Cicla al final si llega al inicio
       this.testimonios[prevIndex] = true;
     } else {
-      this.testimonios[this.testimonios.length - 1] = true; 
+      this.testimonios[this.testimonios.length - 1] = true;
     }
   }
 
   nextCard(){
-    let currentIndex = this.testimonios.indexOf(true); 
+    let currentIndex = this.testimonios.indexOf(true);
     if (currentIndex !== -1) {
       this.testimonios[currentIndex] = false;
       let nextIndex = (currentIndex + 1) % this.testimonios.length;
       this.testimonios[nextIndex] = true;
     } else {
-      this.testimonios[0] = true; 
+      this.testimonios[0] = true;
     }
   }
 
@@ -80,6 +86,41 @@ export class LoginComponent {
       this.formLogin.controls['email'].setErrors({'incorrect': true});
       this.formLogin.controls['password'].setErrors({'incorrect': true});
     }
+  }
+
+  onResetPsw(){
+    this.load=true;
+        if(this.formReset.valid){
+          const reqData: ResetPsw = {
+                  email:this.formReset.get("email")?.value
+                };
+          this.api.ResetPsw(reqData).subscribe({
+            next: (data) => {
+              //Exito
+              this.load = false;
+              this.successMsg = data.message;
+              this.formReset.reset();
+
+            // Ocultar el mensaje de éxito después de 3 segundos
+            setTimeout(() => this.successMsg = '', 3000);
+            },
+            error: (err) => {
+              //error
+              this.load = false;
+              if (err.status === 404) {
+                this.errorMsg = "Email no tiene una cuenta activa";
+              }else {
+                this.errorMsg = "Ocurrió un error. Intenta nuevamente.";
+              }
+              // Ocultar el mensaje de error después de 3 segundos
+              setTimeout(() => this.errorMsg = '', 3000);
+            }
+          });
+        } else {
+          this.load = false;
+          this.errorMsg = "Por favor, ingresa un correo válido.";
+          setTimeout(() => this.errorMsg = '', 3000);
+        }
   }
 
 }

@@ -14,7 +14,8 @@ import { LanguageComponent } from '../../components/language/language.component'
   selector: 'app-dashboard',
   standalone: true,
   imports: [LazyLoadImageModule,TranslateModule,ReactiveFormsModule,FormsModule,LanguageComponent],
-  templateUrl: './dashboard.component.html'
+  templateUrl: './dashboard.component.html',
+  styleUrl:'./dashboard.component.css'
 })
 export class DashboardComponent {
 
@@ -30,10 +31,12 @@ export class DashboardComponent {
   _urlFlagBase: string = '';
   _flag: string = '';
   _codePhone: string = '';
+  _credits:number=0;
   formPhone:FormGroup=this.fb.group({
    numberPhone:['', [Validators.required, Validators.pattern('^[0-9]{1,11}$')]],
    codePhone:[''],
-   codeLang:['']
+   codeCountry:[''],
+   textarea:''
   })
   countriesFilter: Country[] = [];
   select:boolean = false;
@@ -41,6 +44,8 @@ export class DashboardComponent {
   nombreLang="Español";
   buttonLocation:boolean = true;
   searchCountry: string = '';
+  orderByDateAsc: boolean = true;
+  message="";
 
   ngOnInit(): void {
     this.utils.countries$.subscribe((countries) => (this._countries = countries));
@@ -48,9 +53,9 @@ export class DashboardComponent {
     this.utils.flag$.subscribe((flag) => (this._flag = flag));
     this.utils.codePhone$.subscribe((code) => (this._codePhone = code));
     this.formPhone.get("codePhone")?.setValue(this._codePhone);
+    this.formPhone.get("codeCountry")?.setValue(this._flag);
     const lang = this.utils.getItem('lang');
     const LANGUAGE = LANGUAGES_OBJECT.id.includes(lang)?lang:LANGUAGES_OBJECT.id[0];
-    this.formPhone.get("codeLang")?.setValue(LANGUAGE);
 
     const token = this.utils.getCookie('access_token');
     if (token) {
@@ -72,6 +77,7 @@ export class DashboardComponent {
     this._flag = flagSelect;
     this.select = false;
     this.formPhone.get("codePhone")?.setValue(this._codePhone);
+    this.formPhone.get("codeCountry")?.setValue(this._flag);
   }
   removeNonDigits(event: any) {
     let inputValue = event.target.value;
@@ -85,15 +91,23 @@ export class DashboardComponent {
   onSubmit(){
     if(this.formPhone.valid){
       this.buttonLocation = false;
-      const reqData: SendSms = {code:this.formPhone.get("codePhone")?.value ,phone_number: this.formPhone.get("numberPhone")?.value, code_country:this.formPhone.get("codeLang")?.value};
+      const reqData: SendSms = {
+        code:this.formPhone.get("codePhone")?.value ,
+        phone_number: this.formPhone.get("numberPhone")?.value,
+        code_country:this.formPhone.get("codeCountry")?.value,
+        message:this.formPhone.get("textarea")?.value?this.formPhone.get("textarea")?.value:" ",
+        credits:this._credits
+      };
+
       this.api.SendSms(reqData).subscribe({
         next: (data) => {
-         this.formPhone.get("numberPhone")?.reset()
+          this.formPhone.get("numberPhone")?.reset()
+          this.formPhone.get("textarea")?.reset()
           this.formPhone.controls['numberPhone'].setErrors({'success': true});
+          this.getHistoryLocations();
           this.buttonLocation = true;
         },
         error: (err) => {
-          this.formPhone.controls['numberPhone'].setErrors({'fail': true})
           this.buttonLocation = true;
         }
       });
@@ -109,7 +123,8 @@ export class DashboardComponent {
     this.api.GetHistoryLocations().subscribe({
       next: (data) => {
         this.load=false;
-        this.locationHistory = data.details
+        this._credits = data.details.credits
+        this.locationHistory = data.details.history
       },
       error: (err) => {
         if (err.status === 401) {
@@ -121,13 +136,6 @@ export class DashboardComponent {
         this.load=false;
       }
     });
-    this.listFilterValues();
-  }
-
-  listFilterValues(){
-    this.listUniqueValues = [...new Set(
-      this.locationHistory?.map(p => p.codephone)
-    )]
   }
 
   obtenerFechaFormateada(fechaString: string): string {
@@ -154,6 +162,16 @@ export class DashboardComponent {
   logOut(){
     this.utils.removeCookie('access_token')
     this.utils.navigate('login')
+  }
+
+  sortByDate() {
+    this.locationHistory?.sort((a, b) => {
+      const comparison = new Date(a.created_at).getTime() - new Date(b.created_at).getTime();
+      return this.orderByDateAsc ? comparison : -comparison;
+    });
+
+    // Cambiar el estado para la próxima vez
+    this.orderByDateAsc = !this.orderByDateAsc;
   }
 
 }

@@ -37,6 +37,9 @@
                 <dl>
                   <dt class="rounded-md bg-green-50 px-2 py-1 w-fit text-sm font-medium text-green-600 ring-1 ring-green-600/20 ring-inset text-center">{{'dashboard.panel.title' | translate}}</dt>
                 </dl>
+                <dl>
+                  <dt class="rounded-md bg-blue-50 px-2 py-1 w-fit text-sm font-medium text-blue-600 ring-1 ring-green-600/20 ring-inset text-center">Credits: {{_credits}}</dt>
+                </dl>
                   <div class="flex gap-5 text-2xl [&>button]:py-1 [&>button]:px-2 [&>button]:rounded-xl [&>button]:border ">
                       <button><i class='bx bx-list-ul'></i></button>
                       <button (click)="getHistoryLocations()">
@@ -46,7 +49,14 @@
               </div>
               <div class="w-full flex justify-between py-3 px-3 text-sm font-semibold text-gray-500">
                   <span>{{locationHistory?.length}} {{'dashboard.panel.span' | translate}}</span>
-                  <button>{{'dashboard.panel.span2' | translate}}</button>
+                  <div>
+                    <button type="button" (click)="sortByDate()">{{'dashboard.panel.span2' | translate}}</button>
+                    @if(orderByDateAsc){
+                      <span>↑</span>
+                    }@else {
+                      <span >↓</span>
+                    }
+                  </div>
               </div>
               @if(load){
                 <div class="w-full p-2 flex justify-center" role="status">
@@ -70,14 +80,16 @@
                                 <div class="flex gap-5 [&>span]:flex [&>span]:items-center text-gray-700">
                                     <span>
                                         <i class='bx bx-calendar text-lg'></i>
-                                        <p class="pl-1 text-xs font-normal">{{obtenerFechaFormateada(item.createdat)}}</p>
+                                        <p class="pl-1 text-xs font-normal">{{obtenerFechaFormateada(item.created_at)}}</p>
                                     </span>
                                     <span>
                                         <i class='bx bx-time-five text-lg'></i>
-                                        <p class="pl-1 text-xs font-normal">{{obtenerHoraFormateada(item.createdat)}}</p>
+                                        <p class="pl-1 text-xs font-normal">{{obtenerHoraFormateada(item.created_at)}}</p>
                                     </span>
                                 </div>
-                                <button class="bg-green-600/20 font-medium text-green-700 w-full py-1 px-2 rounded-md">{{'dashboard.panel.status2' | translate}}</button>
+                                <button class="bg-green-600/20 font-medium text-green-700 w-full py-1 px-2 rounded-md">
+                                  {{'dashboard.panel.status2' | translate}}
+                                </button>
                                 <section [class]="hover?'block':'hidden'" class="w-full">
                                     <div class="w-full flex gap-1 items-start text-colorSubtitle">
                                         <span class="inline-block text-lg"><i class='bx bxs-map' ></i></span>
@@ -99,14 +111,25 @@
                                 <div class="flex gap-5 [&>span]:flex [&>span]:items-center text-gray-700">
                                     <span>
                                         <i class='bx bx-calendar text-lg'></i>
-                                        <p class="pl-1 text-xs font-normal">{{obtenerFechaFormateada(item.createdat)}}</p>
+                                        <p class="pl-1 text-xs font-normal">{{obtenerFechaFormateada(item.created_at)}}</p>
                                     </span>
                                     <span>
                                         <i class='bx bx-time-five text-lg'></i>
-                                        <p class="pl-1 text-xs font-normal">{{obtenerHoraFormateada(item.createdat)}}</p>
+                                        <p class="pl-1 text-xs font-normal">{{obtenerHoraFormateada(item.created_at)}}</p>
                                     </span>
                                 </div>
-                                <button class="w-full py-1 px-2 font-medium rounded-md bg-gray-600/20 text-gray-600">{{'dashboard.panel.status' | translate}}</button>
+                                <button class="localizando-badge w-full">
+                                     <div class="w-full bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg py-3 px-4 flex items-center justify-center gap-3 relative overflow-hidden border border-blue-200">
+                                      <!-- Ondas de fondo -->
+                                      <div class="pulse-ring animate-wave-1 w-12 h-12 text-blue-400"></div>
+                                      <div class="pulse-ring animate-wave-2 w-12 h-12 text-blue-300"></div>
+
+                                      <!-- Contenido -->
+                                      <div class="relative z-10 flex items-center gap-2 animate-pulse">
+                                          <span class="font-semibold text-blue-600">{{'dashboard.panel.status' | translate}}</span>
+                                      </div>
+                                  </div>
+                                </button>
                             </div>
                         }
                     }
@@ -119,7 +142,7 @@
 
       <!-- Invoice -->
       <div class="px-4 py-8 rounded shadow-xl shadow-gray-200/50 outline outline-2 outline-gray-200/45 bg-white/60 backdrop-blur-sm sm:mx-0 sm:rounded-lg sm:px-8 lg:col-span-2 lg:row-span-2 lg:row-end-2 xl:px-16 xl:p-14">
-        <form [formGroup]="formPhone" class="font-medium">
+        <form [formGroup]="formPhone" (ngSubmit)="onSubmit()" class="font-medium">
           <div>
               <div class="grid grid-cols-2 gap-x-6 gap-y-8">
                 <div class="w-full">
@@ -205,7 +228,9 @@
                 <div class="col-span-full">
                   <label for="about" class="block text-sm/6 font-medium text-gray-900">{{'dashboard.form.label3' | translate}}</label>
                   <div class="mt-2">
-                    <textarea name="about" id="about" rows="3" class="block  max-h-[100px] w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"></textarea>
+                    <textarea formControlName="textarea" name="about" id="about" rows="3" class="block  max-h-[100px] w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+
+                    </textarea>
                   </div>
                   <p class="mt-3 text-sm/6 font-normal text-gray-600">{{'dashboard.form.span' | translate}} &#x2191;.</p>
                 </div>
@@ -214,7 +239,7 @@
           </div>
 
           <div class="mt-6 flex items-center justify-center gap-x-6">
-            <button type="submit" [class]="buttonLocation?'bg-green600':'bg-green700'" class="w-full min-w-[180px]  mt-5 shadow-lg text-white  hover:bg-green700 rounded-full px-5 py-2.5 lg:m-0 lg:w-60 lg:py-3 lg:px-3">
+            <button type="submit" [disabled]="_credits<=0?true:false" [class]="buttonLocation?'bg-green600':'bg-green700'" class="w-full min-w-[180px]  mt-5 shadow-lg text-white  hover:bg-green700 rounded-full px-5 py-2.5 lg:m-0 lg:w-60 lg:py-3 lg:px-3">
               <div  role="status" class="text-center font-semibold flex items-center justify-center gap-1">
                 <div [class]="buttonLocation?'hidden':''">
                   <svg aria-hidden="true" class="w-5 h-5 text-gray-200 animate-spin" viewBox="0 0 100 101"  xmlns="http://www.w3.org/2000/svg">

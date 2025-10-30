@@ -1,99 +1,190 @@
-<section class="relative h-screen">
-    <img src="assets/icons/Map.svg" class="absolute object-cover drop-shadow-sm inset-0 -z-10 size-full [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)] stroke-gray-200" alt="">
+<section class=" min-h-dvh flex items-center justify-center p-4">
+  <img src="assets/icons/Map.svg"
+    class="absolute object-cover drop-shadow-sm inset-0 -z-10 size-full blur-sm [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)] stroke-gray-200"
+    alt="Background Map">
 
-    <div class="max-w-4xl flex flex-col gap-4 items-center m-auto px-4 relative top-[50%] translate-y-[-50%]">
-
-        <div class="rounded-[32px] flex flex-col items-center px-5 py-7 gap-6 max-w-lg bg-gradient-to-t from-emerald-800/30 via-emerald-300/30 to-emerald-800/30 backdrop-blur-sm">
-
-            <div class="animateBouce p-3 bg-opacity-20 backdrop-blur-sm rounded-full w-fit bg-green-300">
-                <div class="p-2 rounded-full bg-green-800 w-fit">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#97e194" class="size-10">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.348 14.652a3.75 3.75 0 0 1 0-5.304m5.304 0a3.75 3.75 0 0 1 0 5.304m-7.425 2.121a6.75 6.75 0 0 1 0-9.546m9.546 0a6.75 6.75 0 0 1 0 9.546M5.106 18.894c-3.808-3.807-3.808-9.98 0-13.788m13.788 0c3.808 3.807 3.808 9.98 0 13.788M12 12h.008v.008H12V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
-                  </svg>
-
-                </div>
-            </div>
-            <p class="text-center text-xl text-gray-50 font-semibold">Identificación inicial y intento de ubicación:</p>
-
-            <h3 class="text-3xl sm:text-5xl bg-gradient-to-b from-green-700 via-green-300 to-green-700 inline-block text-transparent bg-clip-text">{{dataPhone.phoneText}}</h3>
-
-            <div class="backdrop-blur-md bg-transparent w-full p-6 rounded-xl">
-                <ol class="w-full flex flex-col gap-3 [&>li]:w-full [&>li>p]:font-normal [&>li]:flex text-white [&>li]:justify-between [&>li]:items-center [&>li]:text-lg  [&>li]:font-semibold">
-                    <li>
-                            <p>País</p>
-                            <div class="flex items-center">
-                                    <div *ngIf="isLoading1; else content">
-                                        <svg aria-hidden="true" class="w-5 h-5 text-green-600 animate-spin" viewBox="0 0 100 101"  xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
-                                            <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="rgb(229, 230, 245,0.8)"/>
-                                        </svg>
-                                    </div>
-                                    <ng-template #content>
-                                        <div class="flex items-center gap-2">
-                                            <div class="h-5 w-5 rounded-full">
-                                                <img class="h-full w-full rounded-full" src="https://flagcdn.com/{{dataPhone.flag}}.svg" alt="">
-                                            </div>
-                                            <p class="font-bold">{{dataPhone.country}}</p>
-                                        </div>
-                                    </ng-template>
-                            </div>
-                    </li>
-                    <li>
-                        <p>Operador</p>
-                        <div class="flex items-center">
-                            <div *ngIf="isLoading2; else content2">
-                                <svg aria-hidden="true" class="w-5 h-5 text-green-600 animate-spin" viewBox="0 0 100 101"  xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
-                                    <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="rgb(229, 230, 245,0.8)"/>
-                                </svg>
-                            </div>
-                            <ng-template #content2>
-                                <div>
-                                    <p class="font-bold">{{dataPhone.operator}}</p>
-                                </div>
-                            </ng-template>
-                        </div>
-                    </li>
-                    <li>
-                        <p>Conectando a torres celulares</p>
-                        <div class="flex items-center">
-                            <div *ngIf="isLoading3; else content3">
-                                <svg aria-hidden="true" class="w-5 h-5 text-green-600 animate-spin" viewBox="0 0 100 101"  xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
-                                    <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="rgb(229, 230, 245,0.8)"/>
-                                </svg>
-                            </div>
-                            <ng-template #content3>
-                                <div class="h-6 w-6 rounded-full">
-                                    <img class="h-full w-full rounded-full" src="./assets/icons/check.svg" alt="">
-                                </div>
-                            </ng-template>
-                        </div>
-                    </li>
-                    <li>
-                        <p>Intentando triangular la IP: </p>
-                            <div class="flex items-center">
-                                <div *ngIf="isLoading4; else content4">
-                                    <svg aria-hidden="true" class="w-5 h-5 text-green-600 animate-spin" viewBox="0 0 100 101"  xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
-                                        <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="rgb(229, 230, 245,0.8)"/>
-                                    </svg>
-                                </div>
-                                <ng-template #content4>
-                                    <div class="h-6 w-6 rounded-full">
-                                        <img class="h-full w-full rounded-full" src="./assets/icons/check.svg" alt="">
-                                    </div>
-                                </ng-template>
-                            </div>
-                    </li>
-                </ol>
-            </div>
+  <div class="w-full max-w-md">
+    <!-- Header con icono animado -->
+    <div class="flex flex-col items-center mb-8">
+      <div class="relative mb-6">
+        <div class="absolute inset-0 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full blur-lg opacity-40 pulse-glow">
+        </div>
+        <div class="relative bg-gradient-to-br from-green-500 to-emerald-600 p-4 rounded-full">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="size-8 text-white animateBouce">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M9.348 14.652a3.75 3.75 0 0 1 0-5.304m5.304 0a3.75 3.75 0 0 1 0 5.304m-7.425 2.121a6.75 6.75 0 0 1 0-9.546m9.546 0a6.75 6.75 0 0 1 0 9.546M5.106 18.894c-3.808-3.807-3.808-9.98 0-13.788m13.788 0c3.808 3.807 3.808 9.98 0 13.788M12 12h.008v.008H12V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+          </svg>
 
         </div>
-        <div class="w-full p-3 rounded-full backdrop-blur-sm">
-            <div class="transition-all bg-gradient-to-r from-green-300 via-green-500 to-green-700 h-2 rounded-full animate-fill">
-
-            </div>
-        </div>
+      </div>
+      <h1 class="text-2xl font-bold text-gray-700 text-center mb-2">Identificación de ubicación</h1>
+      <p class="text-gray-500 text-sm text-center">Localizando tu posición...</p>
     </div>
-</section>
+
+    <!-- Card principal -->
+    <div class="bg-white rounded-2xl border border-gray-200 p-6 shadow-lg backdrop-blur-sm">
+      <!-- Steps -->
+      <div class="space-y-4 mb-8">
+        <!-- Step 1: Complete -->
+        <div class="flex items-center gap-4">
+          <div class="flex-shrink-0 mt-1">
+            <div class="w-6 h-6 rounded-full bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center">
+              <div *ngIf="isLoading1; else svg1">
+                <svg class="w-4 h-4 text-white animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                </svg>
+              </div>
+              <ng-template #svg1>
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                </svg>
+              </ng-template>
+            </div>
+          </div>
+          <div [class]="isLoading1?'':'flex justify-between items-center'" class="flex-1 min-w-0">
+            <p class="text-sm font-medium text-green-600">País</p>
+            <div class="flex items-center">
+              <div *ngIf="isLoading1; else content">
+                <div class="mt-2 flex gap-1">
+                  <div class="w-1 h-1 rounded-full bg-green-500 animate-bounce-custom"></div>
+                  <div class="w-1 h-1 rounded-full bg-green-500 animate-bounce-custom delay-100"></div>
+                  <div class="w-1 h-1 rounded-full bg-green-500 animate-bounce-custom delay-200"></div>
+                </div>
+              </div>
+              <ng-template #content>
+                <div class="flex items-center gap-1">
+                  <div class="h-5 w-5 rounded-full">
+                    <img class="h-full w-full rounded-full" src="https://flagcdn.com/{{dataPhone.flag}}.svg" alt="">
+                  </div>
+                  <p class="font-semibold text-sm text-gray-500">{{dataPhone.country}}</p>
+                </div>
+              </ng-template>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2: Complete -->
+        <div class="flex items-start gap-4">
+          <div class="flex-shrink-0 mt-1">
+            <div class="w-6 h-6 rounded-full bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center">
+              <div *ngIf="isLoading2; else svg2">
+                <svg class="w-4 h-4 text-white animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                </svg>
+              </div>
+              <ng-template #svg2>
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                </svg>
+              </ng-template>
+            </div>
+          </div>
+
+          <div [class]="isLoading2?'':'flex justify-between items-center'" class="flex-1 min-w-0">
+            <p class="text-sm font-medium text-green-600">Operador</p>
+            <div *ngIf="isLoading2; else content2">
+              <div class="mt-2 flex gap-1">
+                <div class="w-1 h-1 rounded-full bg-green-500 animate-bounce-custom"></div>
+                <div class="w-1 h-1 rounded-full bg-green-500 animate-bounce-custom delay-100"></div>
+                <div class="w-1 h-1 rounded-full bg-green-500 animate-bounce-custom delay-200"></div>
+              </div>
+            </div>
+            <ng-template #content2>
+              <div>
+                <p class="font-semibold text-sm text-gray-500">{{dataPhone.operator}}</p>
+              </div>
+            </ng-template>
+          </div>
+        </div>
+
+        <!-- Step 3: Loading -->
+        <div class="flex items-start gap-4">
+          <div class="flex-shrink-0 mt-1">
+            <div class="w-6 h-6 rounded-full bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center">
+              <div *ngIf="isLoading3; else svg3">
+                <svg class="w-4 h-4 text-white animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                </svg>
+              </div>
+              <ng-template #svg3>
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                </svg>
+              </ng-template>
+            </div>
+          </div>
+          <div [class]="isLoading3?'':'flex justify-between items-center'" class="flex-1 min-w-0">
+            <p class="text-sm font-medium text-green-600">Conectando a torres celulares</p>
+            <div *ngIf="isLoading3; else content3">
+              <div class="mt-2 flex gap-1">
+                <div class="w-1 h-1 rounded-full bg-green-500 animate-bounce-custom"></div>
+                <div class="w-1 h-1 rounded-full bg-green-500 animate-bounce-custom delay-100"></div>
+                <div class="w-1 h-1 rounded-full bg-green-500 animate-bounce-custom delay-200"></div>
+              </div>
+            </div>
+            <ng-template #content3>
+              <div class="h-6 w-6 rounded-full">
+                <img class="h-full w-full rounded-full" src="./assets/icons/check.svg" alt="check">
+              </div>
+            </ng-template>
+          </div>
+        </div>
+
+        <!-- Step 4: Pending -->
+        <div class="flex items-start gap-4">
+          <div class="flex-shrink-0 mt-1">
+            <div class="w-6 h-6 rounded-full bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center">
+              <div *ngIf="isLoading4; else svg4">
+                <svg class="w-4 h-4 text-white animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                </svg>
+              </div>
+              <ng-template #svg4>
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                </svg>
+              </ng-template>
+            </div>
+          </div>
+          <div [class]="isLoading4?'':'flex justify-between items-center'" class="flex-1 min-w-0">
+            <p class="text-sm font-medium text-green-600">Intentando triangular la IP</p>
+            <div *ngIf="isLoading4; else content4">
+              <div class="mt-2 flex gap-1">
+                <div class="w-1 h-1 rounded-full bg-green-500 animate-bounce-custom"></div>
+                <div class="w-1 h-1 rounded-full bg-green-500 animate-bounce-custom delay-100"></div>
+                <div class="w-1 h-1 rounded-full bg-green-500 animate-bounce-custom delay-200"></div>
+              </div>
+            </div>
+            <ng-template #content4>
+              <div class="h-6 w-6 rounded-full">
+                <img class="h-full w-full rounded-full" src="./assets/icons/check.svg" alt="check">
+              </div>
+            </ng-template>
+          </div>
+        </div>
+      </div>
+
+      <!-- Barra de progreso -->
+      <div class="space-y-2">
+        <div class="flex justify-between items-center">
+          <span class="text-xs font-medium text-gray-600">Progreso</span>
+        </div>
+        <div class="w-full rounded-full bg-gray-100 backdrop-blur-sm overflow-hidden">
+            <div class="transition-all bg-gradient-to-r from-green-500 via-esmerald-600 to-esmerald-700 h-2 rounded-full animate-fill">
+
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer info -->
+    <div class="mt-6 text-center">
+      <p class="text-xs text-gray-400">Este proceso es seguro y privado</p>
+    </div>
+  </div>
+  </section>

@@ -95,17 +95,17 @@
       {
         "title": "Search a phone number",
         "paragraph": "Our technology starts locating and identifying the associated phone.",
-        "icon": "Card_One.svg"
+        "icon": "Card_One.png"
       },
       {
         "title": "Request a precise location",
         "paragraph": "We send a text message to the target phone to locate it. This message is anonymous by default, but you can customize it to increase the chances of success.",
-        "icon": "Card_Two.svg"
+        "icon": "Card_Two.png"
       },
       {
         "title": "Get your results",
         "paragraph": "You will be automatically informed with the address as soon as the recipient confirms their location.",
-        "icon": "Card_Three.svg"
+        "icon": "Card_Three.png"
       }
     ]
   },

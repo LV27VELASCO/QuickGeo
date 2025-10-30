@@ -45,9 +45,9 @@
         "title":"¿Como Funciona?",
         "subtitle":"Descubre cómo localizamos tu movil.",
         "functions":[
-            {"title":"Realizar una búsqueda en un número","paragraph":"Nuestra tecnología comienza a localizar e identificar el teléfono asociado.","icon":"Card_One.svg"},
-            {"title":"Solicitar una ubicación precisa","paragraph":"Enviamos un mensaje de texto al teléfono objetivo para localizarlo. Este mensaje es anónimo por defecto, pero puede ser personalizado para aumentar las posibilidades de éxito.","icon":"Card_Two.svg"},
-            {"title":"Obtén tus resultados","paragraph":"Serás informado automáticamente con la dirección tan pronto como el destinatario confirme su ubicación.","icon":"Card_Three.svg"}
+            {"title":"Realizar una búsqueda en un número","paragraph":"Nuestra tecnología comienza a localizar e identificar el teléfono asociado.","icon":"Card_One.png"},
+            {"title":"Solicitar una ubicación precisa","paragraph":"Enviamos un mensaje de texto al teléfono objetivo para localizarlo. Este mensaje es anónimo por defecto, pero puede ser personalizado para aumentar las posibilidades de éxito.","icon":"Card_Two.png"},
+            {"title":"Obtén tus resultados","paragraph":"Serás informado automáticamente con la dirección tan pronto como el destinatario confirme su ubicación.","icon":"Card_Three.png"}
         ]
     },
     "questions": {

@@ -8,7 +8,7 @@
             <div class="h-9 w-9 rounded-full">
               <img [src]="_urlFlagBase + _flag + '.svg'" class="object-cover object-center w-full h-full rounded-full" alt="icono bandera">
             </div>
-            <p class="pl-2">{{_codePhone}}</p>
+            <p class="pl-2 text-gray-700">{{_codePhone}}</p>
             <svg [class]="select?'rotate-180':'rotate-0'" class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
               viewBox="0 0 10 6"> <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
             </svg>
@@ -23,7 +23,7 @@
                       </svg>
                     </button>
                       <input  [(ngModel)]="searchCountry" [ngModelOptions]="{standalone: true}" (input)="filterItems()" type="search" id="search-dropdown"
-                      autocomplete="off" class="outline-none h-5 py-[2px] block w-full font-medium text-sm text-gray-800 rounded-e-lg"/>
+                      autocomplete="off" class="outline-none h-5 py-[2px] block w-full font-medium text-sm text-gray-700 rounded-e-lg"/>
                   </div>
             </div>
             <div id="dropdown-states" class="w-60 max-h-44 overflow-auto">
@@ -68,7 +68,7 @@
           </div>
           <!-- Select -->
         </span>
-        <input formControlName="numberPhone" (input)="removeNonDigits($event)" type="text" class="h-16 w-full border-0 outline-none rounded-full text-xl font-bold lg:h-14 pr-3 placeholder:font-medium" placeholder="{{'hero.input' | translate}}">
+        <input formControlName="numberPhone" (input)="removeNonDigits($event)" type="text" class="h-16 w-full border-0 outline-none rounded-full text-xl font-bold lg:h-14 pr-3 placeholder:font-normal text-gray-700" placeholder="{{'hero.input' | translate}}">
       </div>
       <button type="submit" [class]="buttonLocation?'bg-green600':'bg-green700'" class="w-full min-w-[180px]  mt-5 shadow-lg text-white  hover:bg-green700 rounded-full px-5 py-2.5 lg:m-0 lg:w-60 lg:py-3 lg:px-3">
         <div  role="status" class="text-center font-semibold flex items-center justify-center gap-1">

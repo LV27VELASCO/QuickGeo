@@ -34,7 +34,7 @@ export class SelectCountryComponent {
     select:boolean = false;
     buttonLocation:boolean = true;
     searchCountry: string = '';
-    
+
       ngOnInit(): void {
         this.utils.countries$.subscribe((countries) => (this._countries = countries));
         this.utils.urlFlagBase$.subscribe((url) => (this._urlFlagBase = url));
@@ -46,22 +46,22 @@ export class SelectCountryComponent {
             const index =  LANGUAGES_OBJECT.id.indexOf(lang);
             this.formPhone.get("codeLang")?.setValue(LANGUAGES_OBJECT.id[index]);
         }else{
-            this.formPhone.get("codeLang")?.setValue(LANGUAGES_OBJECT.id[0]);
+            this.formPhone.get("codeLang")?.setValue(lang);
         }
-        
+
       }
-  
+
     selectShow(){
       this.select = !this.select;
       this.searchCountry ='';
     }
-  
+
     filterItems(): void {
       this.countriesFilter = this._countries.filter(item =>
         item.name.toLowerCase().includes(this.searchCountry.toLowerCase())
       );
     }
-  
+
     elementSelect(codePhoneSelect:string,flagSelect:string){
       this._codePhone = codePhoneSelect;
       this._flag = flagSelect;
@@ -82,7 +82,7 @@ export class SelectCountryComponent {
     onSubmit(){
       if(this.formPhone.valid){
         this.buttonLocation = false;
-        const reqData: PhoneInfo = {code:this.formPhone.get("codePhone")?.value ,phone_number: this.formPhone.get("numberPhone")?.value, code_lang:`${this.formPhone.get("codeLang")?.value}`};
+        const reqData: PhoneInfo = {code:this._codePhone , phone_number: this.formPhone.get("numberPhone")?.value, code_lang:`${this.formPhone.get("codeLang")?.value}`};
         this.api.GetOperador(reqData).subscribe({
           next: (data) => {
             if(!this.utils.isNullOrEmpty(data.operator)){

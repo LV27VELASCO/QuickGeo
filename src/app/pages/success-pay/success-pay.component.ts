@@ -10,9 +10,10 @@ import { RouterLink } from '@angular/router';
 })
 export class SuccessPayComponent {
 
-
-  ngOnInit(){
-
+  ngOnInit() {
+    if (typeof window !== 'undefined'){
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   }
 
 }

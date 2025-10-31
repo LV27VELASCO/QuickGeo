@@ -33,6 +33,9 @@ export class CheckoutComponent {
 
     ngOnInit() {
       const data =this.utils.getItem("data");
+      if (typeof window !== 'undefined'){
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
       if(data){
         this.dataPhone = JSON.parse(this.utils.getItem("data")) as resPhoneInfo;
       }else{

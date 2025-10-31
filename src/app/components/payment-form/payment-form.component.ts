@@ -79,7 +79,7 @@ export class PaymentFormComponent {
     if (!this.stripe || !this.elements) return;
 
     if (!this.checkoutForm.valid){
-      this.showAlert("🚨 Hay datos inválidos en el formulario")
+      this.showAlert("🚨 Por favor, completa todos los campos y acepta las políticas antes de continuar.")
       return
     }
 
@@ -121,7 +121,7 @@ export class PaymentFormComponent {
         this.showSuccess('✅ Pago realizado con éxito...');
         setTimeout(() => {
           this.router.navigate([`/success`]);
-        }, 3000);
+        }, 2500);
       }
     } catch (err: any) {
       console.error('Error llamando al backend:', err);

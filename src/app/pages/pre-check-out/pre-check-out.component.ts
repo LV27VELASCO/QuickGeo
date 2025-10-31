@@ -34,6 +34,9 @@ export class PreCheckOutComponent {
   buttonLocation:boolean=true;
 
   ngOnInit() {
+    if (typeof window !== 'undefined'){
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
     const data =this.utils.getItem("data");
     if(data){
       this.dataPhone = JSON.parse(this.utils.getItem("data")) as resPhoneInfo;

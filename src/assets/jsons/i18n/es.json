@@ -28,12 +28,43 @@
     "testimonials": {
       "title":"Hemos ayudado a miles de personas en todo el mundo",
       "people":[
-        {"story":"Salí de una cafetería y olvidé mi teléfono. Gracias a la app, vi que seguía allí. Volví rápido y lo recuperé sin problema. Sin geolocalización, lo habría perdido para siempre.", "name":"Susan","png":"User4.jpg","span":"Usuario de QuickGeo", "delay":"100"},
-        {"story":"Mi hija se desvió del camino al colegio. Con un solo clic en la app vi dónde estaba y fui por ella. Saber su ubicación en tiempo real nos dio tranquilidad total.", "name":"Leslie","png":"User1.jpg","span":"Usuario de QuickGeo","delay":"200"},
-        {"story":"Después de un evento, no recordaba dónde había aparcado. Usé la app y en segundos supe la ubicación exacta del coche. Fue una salvación.", "name":"Mark","png":"User2.jpg","span":"Usuario de QuickGeo","delay":"300"},
-        {"story":"Mi padre se lesionó haciendo senderismo. Como llevaba la app activa, pudimos saber dónde estaba y enviar ayuda rápidamente. Fue clave para que lo atendieran a tiempo.", "name":"Luis y Sophie","png":"User5.jpg","span":"Usuario de QuickGeo","delay":"500"},
-        {"story":"En mi negocio, ahora mis clientes ven en tiempo real dónde va su pedido. Todo es más claro, confiable y profesional gracias a la geolocalización.", "name":"Brian","png": "User3.jpg","span":"Usuario de QuickGeo","delay":"700"}
+        {
+          "story":"Salí de un café en Malasaña y, al darme cuenta, había dejado el móvil en la mesa. Abrí la app y vi que seguía allí: marqué la ruta, volví en 5 minutos y lo recuperé sin problema. Sin geolocalización habría sido mucho más complicado.",
+          "name":"Ana García",
+          "png":"User4.jpg",
+          "span":"Madrid - Madrid",
+          "delay":"100"
+        },
+        {
+          "story":"Mi hija cambió de acera mientras iba al colegio y yo no la veía. Con un solo clic en la aplicación supe exactamente por dónde iba y la esperé en la esquina; llegar a ella fue rapidísimo y ambos tranquilos enseguida.",
+          "name":"Javier Martínez",
+          "png":"User2.jpg",
+          "span":"Elche - Alicante",
+          "delay":"200"
+        },
+        {
+          "story":"Después de un concierto no recordaba en qué calle había dejado el coche. Desde la app localicé su posición exacta en menos de un minuto y lo encontré sin dar vueltas por todo el barrio, un alivio total.",
+          "name":"María López",
+          "png":"User6.jpg",
+          "span":"Bilbao - Bizkaia",
+          "delay":"300"
+        },
+        {
+          "story":"Mi padre se torció el tobillo mientras hacía senderismo en los Picos de Europa. Llevaba la app activa: localizamos su posición, compartimos las coordenadas con emergencias y les fue mucho más fácil llegar hasta él.",
+          "name":"Carlos y Sofía",
+          "png":"User5.jpg",
+          "span":"Picos de Europa - Asturias",
+          "delay":"500"
+        },
+        {
+          "story":"En mi restaurante los clientes pueden seguir en tiempo real dónde está su pedido. Ahora recibimos menos llamadas y las entregas llegan más coordinadas: mejora la confianza y la experiencia del cliente.",
+          "name":"Elena Rodríguez",
+          "png":"User3.jpg",
+          "span":"Sevilla - Andalucía",
+          "delay":"700"
+        }
       ],
+
       "title2":"Confianza y precisión a escala global",
       "subtitle":"Súmate hoy y lleva tu geolocalización al siguiente nivel",
       "usersActive":"Usuarios activos",

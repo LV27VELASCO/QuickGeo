@@ -148,6 +148,7 @@ export class PaymentFormComponent {
       const response: any = await this.api.OnCheckout({
           email,
           name,
+          locale:this.langActual
         }).toPromise();
 
       const clientSecret = response.clientSecret;

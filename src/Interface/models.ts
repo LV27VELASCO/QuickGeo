@@ -104,7 +104,8 @@ export interface Unsubscribe {
 
 export interface Checkout {
   email:string,
-  name:string
+  name:string,
+  locale:string,
 }
 
 export interface ResetPsw {

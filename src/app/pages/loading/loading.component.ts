@@ -3,11 +3,12 @@ import { timer } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { UtilitiesService } from '../../services/utilities.service';
 import { resPhoneInfo } from '../../../Interface/models';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-loading',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,TranslateModule],
   templateUrl: './loading.component.html',
   styleUrl:'./loading.component.css'
 })
@@ -19,6 +20,7 @@ export class LoadingComponent {
   dataPhone:resPhoneInfo={
     country:'',
     phoneText:'',
+    img:'',
     flag:'',
     operator:'',
     date:''

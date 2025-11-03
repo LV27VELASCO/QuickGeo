@@ -50,9 +50,9 @@ export class UnsubscribeComponent {
           //error
           this.load = false;
           if (err.status === 404) {
-            this.errorMsg = "Email no cuenta con subscripción activa";
+            this.errorMsg = "Email does not have an active subscription.";
           }else {
-            this.errorMsg = "Ocurrió un error al procesar la solicitud. Intenta nuevamente.";
+            this.errorMsg = "An error occurred while processing the request. Please try again.";
           }
           // Ocultar el mensaje de error después de 3 segundos
           setTimeout(() => this.errorMsg = '', 3000);
@@ -60,7 +60,7 @@ export class UnsubscribeComponent {
       });
     } else {
       this.load = false;
-      this.errorMsg = "Por favor, ingresa un correo válido.";
+      this.errorMsg = "Please enter a valid email address.";
       setTimeout(() => this.errorMsg = '', 3000);
     }
   }

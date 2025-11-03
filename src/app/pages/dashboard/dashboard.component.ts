@@ -9,6 +9,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LANGUAGES_OBJECT } from '../../config/languajes';
 import { LanguageComponent } from '../../components/language/language.component';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -27,6 +28,7 @@ export class DashboardComponent {
   fb = inject(FormBuilder);
   utils = inject(UtilitiesService);
   api = inject(ApiService);
+  route = inject(ActivatedRoute)
   _countries: Country[] = [];
   _urlFlagBase: string = '';
   _flag: string = '';
@@ -35,7 +37,7 @@ export class DashboardComponent {
   formPhone:FormGroup=this.fb.group({
    numberPhone:['', [Validators.required, Validators.pattern('^[0-9]{1,11}$')]],
    codePhone:[''],
-   codeCountry:[''],
+   codeLang:[''],
    textarea:''
   })
   countriesFilter: Country[] = [];
@@ -48,14 +50,18 @@ export class DashboardComponent {
   message="";
 
   ngOnInit(): void {
+    this.route.paramMap.subscribe(params => {
+          const lang = params.get('lang') || 'es';
+          const index =  LANGUAGES_OBJECT.id.indexOf(lang)
+          this._flag = LANGUAGES_OBJECT.flag[index];
+          this._codePhone = LANGUAGES_OBJECT.code[index];
+      });
     this.utils.countries$.subscribe((countries) => (this._countries = countries));
     this.utils.urlFlagBase$.subscribe((url) => (this._urlFlagBase = url));
-    this.utils.flag$.subscribe((flag) => (this._flag = flag));
-    this.utils.codePhone$.subscribe((code) => (this._codePhone = code));
+    this.utils.countries$.subscribe((countries) => (this._countries = countries));
+    this.utils.urlFlagBase$.subscribe((url) => (this._urlFlagBase = url));
+    this.formPhone.get("codeLang")?.setValue(this._flag);
     this.formPhone.get("codePhone")?.setValue(this._codePhone);
-    this.formPhone.get("codeCountry")?.setValue(this._flag);
-    const lang = this.utils.getItem('lang');
-    const LANGUAGE = LANGUAGES_OBJECT.id.includes(lang)?lang:LANGUAGES_OBJECT.id[0];
 
     const token = this.utils.getCookie('access_token');
     if (token) {
@@ -77,7 +83,7 @@ export class DashboardComponent {
     this._flag = flagSelect;
     this.select = false;
     this.formPhone.get("codePhone")?.setValue(this._codePhone);
-    this.formPhone.get("codeCountry")?.setValue(this._flag);
+    this.formPhone.get("codeLang")?.setValue(this._flag);
   }
   removeNonDigits(event: any) {
     let inputValue = event.target.value;
@@ -94,7 +100,7 @@ export class DashboardComponent {
       const reqData: SendSms = {
         code:this.formPhone.get("codePhone")?.value ,
         phone_number: this.formPhone.get("numberPhone")?.value,
-        code_country:this.formPhone.get("codeCountry")?.value,
+        code_country:this.formPhone.get("codeLang")?.value,
         message:this.formPhone.get("textarea")?.value?this.formPhone.get("textarea")?.value:" ",
         credits:this._credits
       };
@@ -161,7 +167,17 @@ export class DashboardComponent {
 
   logOut(){
     this.utils.removeCookie('access_token')
-    this.utils.navigate('login')
+    this.navegar('/login')
+  }
+
+  navegar(ruta: string): void {
+    // Llamamos a UtilsService para navegar
+    this.utils.navigate(ruta)
+      .then(() => {
+        // Scroll suave al inicio
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      })
+      .catch(err => console.error('Navigation error:', err));
   }
 
   sortByDate() {

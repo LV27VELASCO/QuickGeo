@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { resPhoneInfo } from '../../../Interface/models';
 import { UtilitiesService } from '../../services/utilities.service';
 import { HttpClient } from '@angular/common/http';
@@ -9,7 +8,7 @@ import { TranslateModule } from '@ngx-translate/core';
 @Component({
   selector: 'app-pre-check-out',
   standalone: true,
-  imports: [RouterLink,TranslateModule],
+  imports: [TranslateModule],
   templateUrl: './pre-check-out.component.html',
   styleUrl: './pre-check-out.component.css'
 })
@@ -20,6 +19,7 @@ export class PreCheckOutComponent {
   dataPhone:resPhoneInfo={
     country:'',
     phoneText:'',
+    img:'',
     flag:'',
     operator:'',
     date:''
@@ -42,6 +42,17 @@ export class PreCheckOutComponent {
     }else{
       this.utils.navigate("/")
     }
+  }
+
+  navegar(ruta: string): void {
+
+    // Llamamos a UtilsService para navegar
+    this.utils.navigate(ruta)
+      .then(() => {
+        // Scroll suave al inicio
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      })
+      .catch(err => console.error('Navigation error:', err));
   }
 
 }

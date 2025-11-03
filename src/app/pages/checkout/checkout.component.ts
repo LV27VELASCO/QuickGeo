@@ -20,6 +20,7 @@ export class CheckoutComponent {
     dataPhone:resPhoneInfo={
       country:'',
       phoneText:'',
+      img:'',
       flag:'',
       operator:'',
       date:''
@@ -52,5 +53,15 @@ export class CheckoutComponent {
         this.utils.navigate("/")
       }
     }
+
+    navegar(ruta: string): void {
+      // Llamamos a UtilsService para navegar
+      this.utils.navigate(ruta)
+        .then(() => {
+          // Scroll suave al inicio
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        })
+        .catch(err => console.error('Navigation error:', err));
+  }
 
 }

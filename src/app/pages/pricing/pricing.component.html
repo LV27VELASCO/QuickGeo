@@ -1,6 +1,6 @@
 <div class="max-w-screen-xl mx-auto">
     <article class='relative pt-36 w-full rounded-[2.3rem] px-4 py-20 gap-10 grid grid-cols-1 lg:px-3 xl:px-8 lg:grid-cols-2 lg:items-centeroverflow-hidden'>
-      <img src="assets/icons/Map.svg" class="absolute drop-shadow-sm inset-0 -z-10 size-full [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)] stroke-gray-200" alt="">
+      <img src="assets/icons/Map.svg" class="absolute drop-shadow-sm inset-0 -z-10 h-full w-full object-contain [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)] stroke-gray-200" alt="">
 
       <div class="relative text-left lg:text-center px-6 md:px-12 flex flex-col lg:justify-start">
           <h2 class="text-[40px] text-center md:text-6xl leading-tight lg:text-6xl lg:text-start lg:mb-4">
@@ -20,7 +20,7 @@
               </div>
               <span class="text-lg font-semibold mt-5 inline-block">{{'routes.prices.text2'| translate }}</span>
             </div>
-            <button (click)="onCheckout()" [class]="buttonLocation?'bg-green600':'bg-green700'"  class="w-full mt-5 shadow-lg text-white hover:bg-green-700 rounded-full px-5 py-2.5 lg:m-0  lg:py-3 lg:px-3">
+            <button (click)="navegar('/')" [class]="buttonLocation?'bg-green600':'bg-green700'"  class="w-full cursor-pointer mt-5 shadow-lg text-white hover:bg-green-700 rounded-full px-5 py-2.5 lg:m-0  lg:py-3 lg:px-3">
               <div  role="status" class="text-center font-semibold flex items-center justify-center gap-1">
                 <div [class]="buttonLocation?'hidden':''">
                   <svg aria-hidden="true" class="w-5 h-5 text-gray-200 animate-spin" viewBox="0 0 100 101"  xmlns="http://www.w3.org/2000/svg">

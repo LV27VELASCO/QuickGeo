@@ -16,8 +16,15 @@ export class FooterComponent {
 
   constructor(private Utils:UtilitiesService){ }
 
-  navegar(ruta:string){
+   navegar(ruta: string): void {
+
+    // Llamamos a UtilsService para navegar
     this.Utils.navigate(ruta)
+      .then(() => {
+        // Scroll suave al inicio
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      })
+      .catch(err => console.error('Navigation error:', err));
   }
 
 }

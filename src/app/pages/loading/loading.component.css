@@ -1,44 +1,67 @@
 .animateBouce {
-    animation: pulsex 3s infinite;
-    opacity: 0.5;
+  animation: pulsex 3s infinite;
+  opacity: 0.5;
 }
 
 @keyframes pulsex {
-    0%{opacity: 0.5;}
-    50%{opacity: 1;}
-    100%{opacity: 0.5;}
+  0% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.5;
+  }
 }
 
 /* Usamos esta clase en la barra de carga para activar la animación */
 .animate-fill {
-    animation: fillBar 10s ease-in-out forwards;
-  }
+  animation: fillBar 10s ease-in-out forwards;
+}
 
 @keyframes fillBar {
-    0% {
-        width: 0;
-    }
-    40% {
-        width: 30%;
-      }
-    80%{
-        width: 70%;
-      }
-    100% {
-        width: 100%;
-    }
+  0% {
+    width: 0;
   }
 
-  @keyframes bounce-custom {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-4px); }
-        }
-        .animate-bounce-custom {
-            animation: bounce-custom 1s infinite;
-        }
-        .delay-100 { animation-delay: 100ms; }
-        .delay-200 { animation-delay: 200ms; }
-        .pulse-glow {
-            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
+  40% {
+    width: 30%;
+  }
 
+  80% {
+    width: 70%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes bounce-custom {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.animate-bounce-custom {
+  animation: bounce-custom 1s infinite;
+}
+
+.delay-100 {
+  animation-delay: 100ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.pulse-glow {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}

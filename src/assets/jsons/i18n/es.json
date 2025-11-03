@@ -1,6 +1,6 @@
 {
     "navbar": {
-      "howItWork": "Como funciona?",
+      "home": "Inicio",
       "questions": "Preguntas frecuentes",
       "prices": "Precios",
       "contact": "Contacto",
@@ -11,6 +11,7 @@
       "title": "Encuentre su dispositivo sin importar dónde se encuentre.",
       "input": "Ingrese el número de teléfono",
       "locate": "Localizar teléfono",
+      "locate2": "Localizando",
       "span":"basado en más de 10,000 reseñas",
       "characteristics":"La solución de geolocalización más versátil del mercado",
       "text":"Descubre por qué millones de usuarios confían en QuickGeo para sus necesidades de navegación",
@@ -27,6 +28,7 @@
     },
     "testimonials": {
       "title":"Hemos ayudado a miles de personas en todo el mundo",
+      "title3":"Lo que dicen nuestros usuarios:",
       "people":[
         {
           "story":"Salí de un café en Malasaña y, al darme cuenta, había dejado el móvil en la mesa. Abrí la app y vi que seguía allí: marqué la ruta, volví en 5 minutos y lo recuperé sin problema. Sin geolocalización habría sido mucho más complicado.",
@@ -114,6 +116,78 @@
             ]
         }
     },
+    "loadInfo":{
+      "title":"Identificación de ubicación",
+      "subtitle":"Localizando tu posición...",
+      "country":"País",
+      "operator":"Operador",
+      "cellTowers":"Conectando a torres celulares",
+      "ip":"Conectando a torres celulares",
+      "progress":"Progreso",
+      "span":"Este proceso es seguro y privado"
+    },
+    "preCheckout":{
+      "title": "Ubicación encontrada",
+      "subtitle":"Pudimos identificar el teléfono asociado con el número",
+      "span": "Para iniciar la geolocalización exacta, suscríbete a nuestra oferta de prueba.",
+      "phoneCard":{
+            "title":"Información del dispositivo",
+            "subtitle":"Número de teléfono",
+            "span":"Investigación sobre"
+      },
+      "features":{
+            "title":"Membresía incluye:",
+            "p1":"Geolocalización exacta",
+            "t1":"Ubicación precisa en tiempo real",
+            "p2":"Notificaciones instantáneas",
+            "t2":"Recibe alertas con los resultados",
+            "p3":"Acceso a todas las funciones",
+            "t3":"Desbloquea herramientas premium"
+      },
+      "features2":{
+            "title":"Características incluidas:",
+            "p1":"Solicite la geolocalización exacta",
+            "p2":"Reciba notificaciones instantáneas con los resultados",
+            "p3":"Acceda a todas nuestras funciones"
+      },
+      "price":{
+            "badge":"Oferta especial",
+            "title":"Precio especial por 24 hora",
+            "span":"Acceso completo sin límites",
+            "button":"Pagar ahora",
+            "features":{
+              "title":"Incluye:",
+              "t1":"Geolocalización precisa",
+              "t2":"Notificaciones en tiempo real",
+              "t3":"Acceso 24 horas"
+            },
+            "span2":"Al final de tu período de prueba, puedes elegir permanecer suscrito por €47.90 al mes.",
+            "span3":"por 24 horas"
+      },
+      "help":{
+            "badge":"¿Necesitas ayuda?",
+            "title":"¡Chatea con nosotros!",
+            "span":"contact@quickgeo.mobi",
+            "text":"Contacta con nuestro equipo especializado. Estaremos encantados de asistirte. Nuestro horario de atención es de lunes a sábado, de 6 a.m. a 8 p.m. (atención disponible en francés e inglés únicamente). Normalmente respondemos en menos de 24 horas."
+      },
+      "payCard":{
+        "number":"Número de Tarjeta",
+        "caducate":"F. Caducidad",
+        "ccv":"CCV",
+        "name":"Nombre Titular",
+        "email":"Email",
+        "t1":"Acepto los",
+        "t2":"términos de servicio",
+        "t3":"y la",
+        "t4":"política de privacidad",
+        "button":"Pagar",
+        "span":"Pago seguro con"
+      },
+      "loader":{
+        "title":"Procesando...",
+        "subtitle":"Este proceso puede tardar algunos minutos, por favor no recargue ni cierre esta ventana."
+      }
+    },
     "footer":{
       "title":"Enlaces rápidos",
       "paragraph":"Localice su dispositivo de forma precisa y confiable, sin importar el país o red.",
@@ -127,6 +201,44 @@
           "conditions":"Términos y condiciones generales",
           "payments":"Pagos seguros",
           "rights":"Todos los derechos reservados."
+      }
+    },
+    "success":{
+      "title":"¡Pago Exitoso!",
+      "subtitle":"Tu transacción ha sido procesada correctamente. Estamos preparando tu cuenta con acceso inmediato a nuestros servicios de geolocalización.",
+      "confirmation":{
+        "title":"Confirmación por Correo",
+        "subtitle":"Hemos enviado un correo de confirmación a la dirección que proporcionaste. Revisa tu bandeja de entrada (y carpeta de spam) en los próximos minutos.",
+        "features":{
+          "title":"El correo incluye:",
+          "f1":"Tus credenciales de acceso (usuario y contraseña temporal)",
+          "f2":"Enlace directo para activar tu cuenta",
+          "f3":"Guía de inicio rápido para usar nuestros servicios"
+        }
+      },
+      "nextSteps":{
+        "title":"Próximos Pasos",
+        "items":[
+          {
+            "title":"Verifica tu correo",
+            "text":"Abre el correo de confirmación y haz clic en el enlace para activar tu cuenta."
+          },
+          {
+            "title":"Crea tu contraseña",
+            "text":"Establece una contraseña segura para proteger tu cuenta y acceso a los servicios."
+          },
+          {
+            "title":"Comienza a usar QuickGeo",
+            "text":"Accede a tu panel de control y comienza a geolocalizar teléfonos de inmediato."
+          }
+        ]
+      },
+      "button1":"Ir a Mi Cuenta",
+      "button2":"Volver al Inicio",
+      "help":{
+        "title":"¿Necesitas ayuda?",
+        "subtitle":"Nuestro equipo de soporte está disponible 24/7 para asistirte con cualquier pregunta.",
+        "span":"Contactar Soporte"
       }
     },
     "routes":{
@@ -189,25 +301,31 @@
         "button":"Cancelar suscripción",
         "text":"Si has olvidado el correo electrónico de tu cuenta, envíanos un mensaje a la dirección contact@quickgeo.mobi con los últimos 4 dígitos de tu tarjeta de crédito para darte de baja. Te responderemos en menos de 24 horas."
       }
-  },
-  "dashboard":{
-    "title":"¡Hola!",
-    "subtitle":"Bienvenido a tu espacio en QuickGeo!",
-    "span":"Cerrar sesión",
-    "form":{
-      "label1":"Código de País",
-      "label2":"Numero Celular",
-      "placeholder2":"Escribir numero celular",
-      "label3":"Mensaje",
-      "span":"Personaliza tu mensaje aquí"
     },
-    "panel": {
-        "title": "Tu Actividad",
-        "span": "Búsquedas",
-        "span2": "Ordenar",
-        "status":"Localizando",
-        "status2":"Localizado",
-        "span3":"Abrir en Google Maps"
-      }
+    "dashboard":{
+      "title":"¡Hola!",
+      "subtitle":"Bienvenido a tu espacio en QuickGeo!",
+      "span":"Cerrar sesión",
+      "form":{
+        "label1":"Código de País",
+        "label2":"Numero Celular",
+        "placeholder2":"Escribir numero celular",
+        "label3":"Mensaje",
+        "span":"Personaliza tu mensaje aquí"
+      },
+      "panel": {
+          "title": "Tu Actividad",
+          "span": "Búsquedas",
+          "span2": "Ordenar",
+          "status":"Localizando",
+          "status2":"Localizado",
+          "span3":"Abrir en Google Maps"
+        }
+    },
+    "errors": {
+    "required": "Por favor ingresar un número celular",
+    "pattern": "Ingresar un número válido",
+    "incorrect": "No pudimos identificar el número, por favor validar.",
+    "fail": "Ocurrió un error, contactar al administrador"
   }
 }

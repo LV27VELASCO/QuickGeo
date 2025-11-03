@@ -18,8 +18,8 @@
 
         </div>
       </div>
-      <h1 class="text-2xl font-bold text-gray-700 text-center mb-2">Identificación de ubicación</h1>
-      <p class="text-gray-500 text-sm text-center">Localizando tu posición...</p>
+      <h1 class="text-2xl font-bold text-gray-700 text-center mb-2">{{'loadInfo.title' | translate}}</h1>
+      <p class="text-gray-500 text-sm text-center">{{'loadInfo.subtitle' | translate}}</p>
     </div>
 
     <!-- Card principal -->
@@ -44,7 +44,7 @@
             </div>
           </div>
           <div [class]="isLoading1?'':'flex justify-between items-center'" class="flex-1 min-w-0">
-            <p class="text-sm font-medium text-green-600">País</p>
+            <p class="text-sm font-medium text-green-600">{{'loadInfo.country' | translate}}</p>
             <div class="flex items-center">
               <div *ngIf="isLoading1; else content">
                 <div class="mt-2 flex gap-1">
@@ -84,7 +84,7 @@
           </div>
 
           <div [class]="isLoading2?'':'flex justify-between items-center'" class="flex-1 min-w-0">
-            <p class="text-sm font-medium text-green-600">Operador</p>
+            <p class="text-sm font-medium text-green-600">{{'loadInfo.operator' | translate}}</p>
             <div *ngIf="isLoading2; else content2">
               <div class="mt-2 flex gap-1">
                 <div class="w-1 h-1 rounded-full bg-green-500 animate-bounce-custom"></div>
@@ -118,7 +118,7 @@
             </div>
           </div>
           <div [class]="isLoading3?'':'flex justify-between items-center'" class="flex-1 min-w-0">
-            <p class="text-sm font-medium text-green-600">Conectando a torres celulares</p>
+            <p class="text-sm font-medium text-green-600">{{'loadInfo.cellTowers' | translate}}</p>
             <div *ngIf="isLoading3; else content3">
               <div class="mt-2 flex gap-1">
                 <div class="w-1 h-1 rounded-full bg-green-500 animate-bounce-custom"></div>
@@ -152,7 +152,7 @@
             </div>
           </div>
           <div [class]="isLoading4?'':'flex justify-between items-center'" class="flex-1 min-w-0">
-            <p class="text-sm font-medium text-green-600">Intentando triangular la IP</p>
+            <p class="text-sm font-medium text-green-600">{{'loadInfo.ip' | translate}}</p>
             <div *ngIf="isLoading4; else content4">
               <div class="mt-2 flex gap-1">
                 <div class="w-1 h-1 rounded-full bg-green-500 animate-bounce-custom"></div>
@@ -172,7 +172,7 @@
       <!-- Barra de progreso -->
       <div class="space-y-2">
         <div class="flex justify-between items-center">
-          <span class="text-xs font-medium text-gray-600">Progreso</span>
+          <span class="text-xs font-medium text-gray-600">{{'loadInfo.progress' | translate}}</span>
         </div>
         <div class="w-full rounded-full bg-gray-100 backdrop-blur-sm overflow-hidden">
             <div class="transition-all bg-gradient-to-r from-green-500 via-esmerald-600 to-esmerald-700 h-2 rounded-full animate-fill">
@@ -184,7 +184,7 @@
 
     <!-- Footer info -->
     <div class="mt-6 text-center">
-      <p class="text-xs text-gray-400">Este proceso es seguro y privado</p>
+      <p class="text-xs text-gray-400">{{'loadInfo.span' | translate}}</p>
     </div>
   </div>
   </section>

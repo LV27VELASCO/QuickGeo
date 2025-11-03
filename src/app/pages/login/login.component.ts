@@ -1,6 +1,5 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { Login, ResetPsw } from '../../../Interface/models';
 import { ApiService } from '../../services/api.service';
@@ -9,7 +8,7 @@ import { UtilitiesService } from '../../services/utilities.service';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [RouterLink,TranslateModule,ReactiveFormsModule,FormsModule],
+  imports: [TranslateModule,ReactiveFormsModule,FormsModule],
   templateUrl: './login.component.html'
 })
 export class LoginComponent {
@@ -72,7 +71,7 @@ export class LoginComponent {
       this.api.LoginUser(reqData).subscribe({
                   next: (data) => {
                    this.utils.saveCookie('access_token',data.token);
-                   this.utils.navigate('dashboard')
+                   this.navegar('/dashboard')
                    this.buttonLogin = true;
                   },
                   error: (err) => {
@@ -108,9 +107,9 @@ export class LoginComponent {
               //error
               this.load = false;
               if (err.status === 404) {
-                this.errorMsg = "Email no tiene una cuenta activa";
+                this.errorMsg = "Incorrect email or password.";
               }else {
-                this.errorMsg = "Ocurrió un error. Intenta nuevamente.";
+                this.errorMsg = "An error occurred. Please try again.";
               }
               // Ocultar el mensaje de error después de 3 segundos
               setTimeout(() => this.errorMsg = '', 3000);
@@ -118,9 +117,21 @@ export class LoginComponent {
           });
         } else {
           this.load = false;
-          this.errorMsg = "Por favor, ingresa un correo válido.";
+          this.errorMsg = "Please enter a valid email address.";
           setTimeout(() => this.errorMsg = '', 3000);
         }
+  }
+
+  navegar(ruta: string): void {
+    // Cierra el menú si está abierto
+
+    // Llamamos a UtilsService para navegar
+    this.utils.navigate(ruta)
+      .then(() => {
+        // Scroll suave al inicio
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      })
+      .catch(err => console.error('Navigation error:', err));
   }
 
 }

@@ -1,0 +1,382 @@
+{
+  "navbar": {
+    "home": "Accueil",
+    "questions": "FAQ",
+    "prices": "Tarifs",
+    "contact": "Contact",
+    "login": "Connexion",
+    "locate": "Localiser un téléphone"
+  },
+  "hero": {
+    "title": "Retrouvez votre appareil, où que vous soyez.",
+    "input": "Saisissez le numéro de téléphone",
+    "locate": "Localiser le téléphone",
+    "locate2": "Localisation en cours",
+    "span":"Plus de 10 000 avis clients",
+    "characteristics":"La solution de géolocalisation la plus complète du marché",
+    "text":"Des millions d'utilisateurs font confiance à QuickGeo pour localiser leurs appareils facilement et en toute sécurité.",
+    "cards":[
+      {
+        "title":"Compatible avec tous les appareils",
+        "paragraph":"Peu importe votre appareil ou votre système, QuickGeo s'adapte pour vous offrir une expérience fluide et optimale.",
+        "icon":"globe.svg"
+      },
+      {
+        "title":"Localisation ultra-précise",
+        "paragraph":"Repérez n'importe quel numéro en quelques secondes, partout, sur tous les réseaux mobiles et opérateurs.",
+        "icon":"location.svg"
+      },
+      {
+        "title":"Aucune installation nécessaire",
+        "paragraph":"Accédez immédiatement au service sans téléchargement ni configuration. Entrez simplement le numéro et obtenez les informations instantanément.",
+        "icon":"x-circle.svg"
+      },
+      {
+        "title":"Confidentialité totale",
+        "paragraph":"Votre sécurité est notre priorité. Utilisez le service de manière anonyme et profitez de vos localisations en toute sérénité.",
+        "icon":"security.svg"
+      }
+    ],
+    "screenImg":{
+      "title":"Votre tableau de bord de localisation",
+      "paragraph":"Avec votre abonnement actif, suivez plusieurs appareils depuis une interface unique, simple et intuitive."
+    }
+  },
+  "testimonials": {
+    "title":"Des milliers de personnes satisfaites dans le monde entier",
+    "title3": "Ce que disent nos utilisateurs :",
+    "people":[
+      {
+        "story":"Je suis sortie d'un café à Montmartre et j'avais laissé mon téléphone sur la table. Avec QuickGeo, j'ai retrouvé sa position en quelques minutes et je l'ai récupéré sans souci.",
+        "name":"Sophie Dubois",
+        "png":"User4.jpg",
+        "span":"Paris - Île-de-France",
+        "delay":"100"
+      },
+      {
+        "story":"Ma fille a traversé la rue en allant à l'école et je ne la voyais pas. Grâce à l'application, j'ai pu suivre ses déplacements en temps réel et la rejoindre rapidement, rassurés tous les deux.",
+        "name":"Lucas Moreau",
+        "png":"User2.jpg",
+        "span":"Lyon - Auvergne-Rhône-Alpes",
+        "delay":"200"
+      },
+      {
+        "story":"Après un concert, je ne me souvenais plus où j'avais garé la voiture. QuickGeo m'a permis de localiser l'emplacement exact en moins d'une minute.",
+        "name":"Camille Lefèvre",
+        "png":"User6.jpg",
+        "span":"Marseille - Provence-Alpes-Côte d'Azur",
+        "delay":"300"
+      },
+      {
+        "story":"Mon père s'est foulé la cheville lors d'une randonnée dans les Alpes. Avec QuickGeo, nous avons pu partager sa localisation avec les secours pour une intervention rapide.",
+        "name":"Claire et Julien Martin",
+        "png":"User5.jpg",
+        "span":"Chamonix - Auvergne-Rhône-Alpes",
+        "delay":"500"
+      },
+      {
+        "story":"Dans mon restaurant, les clients suivent en temps réel l'avancée de leurs commandes. Résultat : moins d'appels, des livraisons plus efficaces et des clients plus satisfaits.",
+        "name":"Élodie Bernard",
+        "png":"User3.jpg",
+        "span":"Bordeaux - Nouvelle-Aquitaine",
+        "delay":"700"
+      }
+    ],
+    "title2":"Fiabilité et précision à l'échelle mondiale",
+    "subtitle":"Rejoignez-nous et simplifiez votre géolocalisation dès aujourd'hui",
+    "usersActive":"Utilisateurs actifs",
+    "monthlyUsers":"Nouveaux utilisateurs par mois",
+    "efectivity":"Efficacité des localisations",
+    "devices":"Appareils localisés"
+  },
+  "howItWork": {
+    "title":"Comment ça marche ?",
+    "subtitle":"Découvrez comment nous localisons votre téléphone.",
+    "functions":[
+      {
+        "title":"Lancer une recherche sur un numéro",
+        "paragraph":"Notre technologie commence à localiser et identifier le téléphone associé.",
+        "icon":"Card_One.png"
+      },
+      {
+        "title":"Demander une localisation précise",
+        "paragraph":"Nous envoyons un SMS au téléphone ciblé pour le localiser. Ce message est anonyme par défaut, mais peut être personnalisé pour maximiser les chances de succès.",
+        "icon":"Card_Two.png"
+      },
+      {
+        "title":"Recevoir vos résultats",
+        "paragraph":"Vous serez automatiquement informé de l’adresse dès que le destinataire aura confirmé sa position.",
+        "icon":"Card_Three.png"
+      }
+    ]
+  },
+  "questions": {
+    "title":"FAQ",
+    "subtitle":"Vous avez encore des questions ?",
+    "paragraph":"Notre équipe est là pour vous aider, n’hésitez pas à nous contacter.",
+    "text":"Contactez-nous",
+    "accordion":[
+      {
+        "title":"Est-il légal de localiser une tierce personne ?",
+        "paragraph":"QuickGeo est entièrement légal et respecte les recommandations de la CNIL. Le service ne fonctionne qu'avec le consentement de la personne localisée."
+      },
+      {
+        "title":"Quels types de téléphones sont compatibles ?",
+        "paragraph":"QuickGeo fonctionne sur tous les téléphones connectés à Internet."
+      },
+      {
+        "title":"Quelle est la précision de QuickGeo ?",
+        "paragraph":"Notre service fournit une localisation exacte avec une précision comprise entre 1 et 6 mètres."
+      },
+      {
+        "title":"Combien de temps cela prend-il ?",
+        "paragraph":"Le tiers reçoit un SMS sous 2 minutes, et vous êtes notifié immédiatement après son consentement pour la géolocalisation."
+      }
+    ],
+    "accordion2":[
+      {
+        "title":"QuickGeo fonctionne-t-il si le téléphone est éteint ?",
+        "paragraph":"Le téléphone doit être allumé pour que le suivi fonctionne. Dès qu’il est rallumé, les messages de géolocalisation sont automatiquement reçus."
+      },
+      {
+        "title":"Quel est le coût pour géolocaliser un téléphone ?",
+        "paragraph":"Le suivi nécessite que le téléphone soit allumé. Les messages de géolocalisation sont reçus dès que le téléphone est actif."
+      },
+      {
+        "title":"Mes informations sont-elles sécurisées ?",
+        "paragraph":"Votre anonymat est notre priorité. La position géographique est transmise via un protocole sécurisé TLS et n’est visible par personne d’autre. Vos informations personnelles ne sont jamais partagées."
+      },
+      {
+        "title":"Comment annuler mon abonnement ?",
+        "paragraph":"L’abonnement est sans engagement et peut être annulé à tout moment en cliquant sur le bouton ci-dessous et en suivant les instructions à l’écran."
+      }
+    ]
+  },
+  "loadInfo": {
+    "title": "Identification de la position",
+    "subtitle": "Localisation en cours...",
+    "country":"Pays",
+    "operator": "Opérateur",
+    "cellTowers": "Connexion aux antennes relais",
+    "ip": "Connexion au réseau IP",
+    "progress": "Progression",
+    "span": "Ce processus est sécurisé et confidentiel"
+  },
+  "bannerLocate":{
+    "title": "Localisez n'importe quel téléphone maintenant",
+    "subtitle":"Essayez notre solution pendant 24 heures illimitées pour seulement 0,50 €. À la fin de votre période d’essai, vous pouvez continuer pour 47,90 € par mois.",
+    "input": "Entrez le numéro de téléphone",
+    "locate": "Localiser le téléphone",
+    "proof":{
+      "title":"Commencer l'essai",
+      "advantages":[
+        {"item":"Sans obligation","icon":"check.svg"},
+        {"item":"Sans engagement","icon":"check.svg"},
+        {"item":"Accès complet","icon":"rocket.svg"},
+        {"item":"Recherches illimitées","icon":"bolt.svg"}
+      ]
+    }
+  },
+  "preCheckout":{
+    "title": "Localisation trouvée",
+    "subtitle":"Nous avons pu identifier le téléphone associé à ce numéro.",
+    "span": "Pour lancer la géolocalisation précise, abonnez-vous à notre offre d’essai.",
+    "phoneCard":{
+      "title":"Informations sur l’appareil",
+      "subtitle":"Numéro de téléphone",
+      "span":"Recherche sur"
+    },
+    "features":{
+      "title":"Votre abonnement comprend :",
+      "p1":"Géolocalisation exacte",
+      "t1":"Position précise en temps réel",
+      "p2":"Notifications instantanées",
+      "t2":"Recevez des alertes avec les résultats",
+      "p3":"Accès à toutes les fonctionnalités",
+      "t3":"Débloquez les outils premium"
+    },
+    "features2":{
+      "title":"Fonctionnalités incluses :",
+      "p1":"Demandez la géolocalisation exacte",
+      "p2":"Recevez des notifications instantanées avec les résultats",
+      "p3":"Accédez à toutes nos fonctionnalités"
+    },
+    "price":{
+      "badge":"Offre spéciale",
+      "title":"Tarif exclusif pour 24 heures",
+      "span":"Accès complet et illimité",
+      "button":"Payer maintenant",
+      "features":{
+        "title":"Comprend :",
+        "t1":"Géolocalisation précise",
+        "t2":"Notifications en temps réel",
+        "t3":"Accès 24 heures"
+      },
+      "span2":"À la fin de votre période d’essai, vous pouvez choisir de rester abonné pour 47,90 € par mois.",
+      "span3":"pour 24 heures"
+    },
+    "help":{
+      "badge":"Besoin d’aide ?",
+      "title":"Discutez avec nous !",
+      "span":"contact@quickgeo.mobi",
+      "text":"Contactez notre équipe spécialisée. Nous serons ravis de vous assister. Notre service client est disponible du lundi au samedi, de 6h00 à 20h00 (assistance en français et en anglais uniquement). Nous répondons généralement en moins de 24 heures."
+    },
+    "payCard": {
+    "number": "Numéro de carte",
+    "caducate": "Date d’expiration",
+    "ccv": "CCV",
+    "name": "Nom du titulaire",
+    "email": "E-mail",
+    "t1": "J’accepte les",
+    "t2": "conditions d’utilisation",
+    "t3": "et la",
+    "t4": "politique de confidentialité",
+    "button": "Payer",
+    "span": "Paiement sécurisé avec"
+  },
+  "loader": {
+    "title": "Traitement en cours...",
+    "subtitle": "Ce processus peut prendre quelques minutes, merci de ne pas actualiser ni fermer cette fenêtre."
+  }
+},
+  "footer":{
+    "title":"Liens rapides",
+    "paragraph":"Localisez votre appareil de manière précise et fiable, quel que soit le pays ou le réseau.",
+    "account":{
+      "title":"Compte",
+      "text":"Se désabonner"
+    },
+    "terms":{
+      "legal":"Mentions légales",
+      "policies":"Politique de confidentialité",
+      "conditions":"Conditions générales",
+      "payments":"Paiements sécurisés",
+      "rights":"Tous droits réservés."
+    }
+  },
+  "success": {
+    "title": "Paiement réussi !",
+    "subtitle": "Votre transaction a été traitée avec succès. Nous préparons votre compte pour vous donner un accès immédiat à nos services de géolocalisation.",
+    "confirmation": {
+      "title": "Confirmation par e-mail",
+      "subtitle": "Un e-mail de confirmation a été envoyé à l’adresse que vous avez fournie. Veuillez vérifier votre boîte de réception (et le dossier des spams) dans les prochaines minutes.",
+      "features": {
+        "title": "L’e-mail contient :",
+        "f1": "Vos identifiants de connexion (nom d’utilisateur et mot de passe temporaire)",
+        "f2": "Un lien direct pour activer votre compte",
+        "f3": "Un guide de démarrage rapide pour utiliser nos services"
+      }
+    },
+    "nextSteps": {
+      "title": "Étapes suivantes",
+      "items": [
+        {
+          "title": "Vérifiez votre e-mail",
+          "text": "Ouvrez l’e-mail de confirmation et cliquez sur le lien pour activer votre compte."
+        },
+        {
+          "title": "Créez votre mot de passe",
+          "text": "Définissez un mot de passe sécurisé pour protéger votre compte et accéder à nos services."
+        },
+        {
+          "title": "Commencez à utiliser QuickGeo",
+          "text": "Connectez-vous à votre tableau de bord et commencez à géolocaliser des téléphones immédiatement."
+        }
+      ]
+    },
+    "button1": "Aller à mon compte",
+    "button2": "Retour à l’accueil",
+    "help": {
+      "title": "Besoin d’aide ?",
+      "subtitle": "Notre équipe d’assistance est disponible 24h/24 et 7j/7 pour répondre à toutes vos questions.",
+      "span": "Contacter le support"
+    }
+  },
+  "routes":{
+    "prices":{
+      "title":"Tarifs",
+      "text":"Profitez de notre offre d'essai de 24 heures pour découvrir notre service.",
+      "subtitle":"Offre d'essai",
+      "text2":"Puis 47,90 €/mois",
+      "textButton":"Essayer maintenant",
+      "cards":[
+        {"title":"Géolocalisation illimitée","png":"unlimited.png"},
+        {"title":"Tous types de téléphones","png":"phone.png"},
+        {"title":"Couverture mondiale","png":"world.png"},
+        {"title":"Tous les réseaux","png":"network.png"},
+        {"title":"Localisation exacte","png":"location.png"},
+        {"title":"Confidentialité garantie","png":"confidential.png"}
+      ]
+    },
+    "contact":{
+      "title":"Contact",
+      "text":"Contactez notre équipe dédiée. Nous serons ravis de vous aider.",
+      "cards":[
+        {"title":"Chattez avec nous !","text":"Notre équipe est là pour répondre à vos questions. Ouvrez la bulle de chat en bas de cette page.","svg":"chat.svg"},
+        {"title":"contact@quickgeo.mobi","text":"Nous sommes heureux de vous aider et répondons généralement en moins de 24 heures.","svg":"mail.svg"}
+      ],
+      "bot":{
+        "title":"Assistant QuickGeo",
+        "subtitle":"Bienvenue !",
+        "nameBot":"QuickBot",
+        "nameUser":"Vous",
+        "button":"Envoyer",
+        "message":"Bonjour, comment puis-je vous aider aujourd'hui ?"
+      }
+    },
+    "faqs":{
+      "title":"FAQ",
+      "text":"Trouvez rapidement les réponses dont vous avez besoin grâce à notre section FAQ."
+    },
+    "login":{
+      "titleHero":"Découvrez la meilleure façon de suivre vos appareils dès maintenant !",
+      "title":"Connexion",
+      "label":"Adresse e-mail",
+      "placeholder":"Entrez votre adresse e-mail",
+      "label2":"Mot de passe",
+      "textSpan":"Mot de passe oublié ?"
+    },
+    "recoverPassword":{
+      "title": "Récupérer le mot de passe",
+      "label": "Adresse e-mail",
+      "placeholder": "Entrez votre adresse e-mail",
+      "textSpan": "Connexion",
+      "button":"Envoyer le mot de passe"
+    },
+    "unsubscribe":{
+      "span":"Nous sommes désolés de vous voir partir",
+      "title":"Annuler l'abonnement",
+      "paragraph":"Pour vous désabonner de nos services, saisissez simplement l’adresse e-mail de votre compte ci-dessous et cliquez sur le bouton « Se désabonner ». ",
+      "label":"Adresse e-mail",
+      "placeholder":"Entrez votre adresse e-mail",
+      "button":"Annuler l'abonnement",
+      "text":"Si vous avez oublié l’adresse e-mail de votre compte, envoyez-nous un message à contact@quickgeo.mobi avec les 4 derniers chiffres de votre carte bancaire pour vous désabonner. Nous vous répondrons sous 24 heures."
+    }
+  },
+  "dashboard":{
+    "title":"Bonjour !",
+    "subtitle":"Bienvenue dans votre espace QuickGeo !",
+    "span":"Déconnexion",
+    "form":{
+      "label1":"Indicatif du pays",
+      "label2":"Numéro de téléphone",
+      "placeholder2":"Entrez le numéro de téléphone",
+      "label3":"Message",
+      "span":"Personnalisez votre message ici"
+    },
+    "panel": {
+      "title": "Votre activité",
+      "span": "Recherches",
+      "span2": "Trier",
+      "status":"Localisation en cours",
+      "status2":"Localisé",
+      "span3":"Ouvrir sur Google Maps"
+    }
+  },
+  "errors": {
+    "required": "Veuillez entrer un numéro de téléphone portable",
+    "pattern": "Veuillez entrer un numéro valide",
+    "incorrect": "Nous n’avons pas pu identifier le numéro, veuillez vérifier.",
+    "fail": "Une erreur s’est produite, veuillez contacter l’administrateur"
+  }
+}

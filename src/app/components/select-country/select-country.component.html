@@ -52,7 +52,7 @@
                         <div class="inline-flex items-center">
                           <div>
                             <div  class="h-5 w-5 rounded-full">
-                              <img [lazyLoad]="_urlFlagBase + item.code.toLowerCase() + '.svg'" loading="lazy"  class="object-cover object-center w-full h-full rounded-full" alt="icono bandera">
+                              <img [lazyLoad]="_urlFlagBase + item.code.toLowerCase() + '.svg'" loading="lazy"  class="object-cover object-center w-full h-full rounded-full" alt="icon flag">
                             </div>
                           </div>
                           <p class="pl-2 font-medium text-xs text-start">{{item.dial_code + ' ' + item.name}}</p>
@@ -78,7 +78,7 @@
                 <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/>
             </svg>
           </div>
-          <p class="text-base ml-1">{{ buttonLocation ?('hero.locate' | translate):'Localizando telefono'}}</p>
+          <p class="text-base ml-1">{{ buttonLocation ?('hero.locate' | translate):('hero.locate2' | translate)}}</p>
         </div>
       </button>
   </form>
@@ -91,7 +91,7 @@
             <path d="M8 6.82341V9.15674M8 2.15674L1.5 13.1567H14.5L8 2.15674Z" stroke="#F04438" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
             <ellipse cx="8.00001" cy="10.8234" rx="0.666667" ry="0.666667" fill="#F04438"></ellipse>
           </svg>
-          <span class="inline-block text-center sm:text-left font-normal text-sm">Por favor ingresar un número celular</span>
+          <span class="inline-block text-center sm:text-left font-normal text-sm">{{'errors.required' | translate}}</span>
         </div>
       }
       @if(formPhone.get("numberPhone")?.hasError("pattern")){
@@ -100,7 +100,7 @@
             <path d="M8 6.82341V9.15674M8 2.15674L1.5 13.1567H14.5L8 2.15674Z" stroke="#F04438" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
             <ellipse cx="8.00001" cy="10.8234" rx="0.666667" ry="0.666667" fill="#F04438"></ellipse>
           </svg>
-          <span class="inline-block text-center sm:text-left font-normal text-sm">Ingresar un número válido</span>
+          <span class="inline-block text-center sm:text-left font-normal text-sm">{{'errors.pattern' | translate}}</span>
         </div>
       }@if(formPhone.get("numberPhone")?.hasError("incorrect")){
         <div class="w-full flex flex-col items-center justify-center gap-2 mt-4 sm:flex-row">
@@ -108,7 +108,7 @@
             <path d="M8 6.82341V9.15674M8 2.15674L1.5 13.1567H14.5L8 2.15674Z" stroke="#F04438" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
             <ellipse cx="8.00001" cy="10.8234" rx="0.666667" ry="0.666667" fill="#F04438"></ellipse>
           </svg>
-          <span class="inline-block text-center sm:text-left font-normal text-sm">No pudimos identificar el número, por favor validar.</span>
+          <span class="inline-block text-center sm:text-left font-normal text-sm">{{'errors.incorrect' | translate}}</span>
         </div>
       }@if(formPhone.get("numberPhone")?.hasError("fail")){
         <div class="w-full flex flex-col items-center justify-center gap-2 mt-4 sm:flex-row">
@@ -116,7 +116,7 @@
             <path d="M8 6.82341V9.15674M8 2.15674L1.5 13.1567H14.5L8 2.15674Z" stroke="#F04438" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
             <ellipse cx="8.00001" cy="10.8234" rx="0.666667" ry="0.666667" fill="#F04438"></ellipse>
           </svg>
-          <span class="inline-block text-center sm:text-left font-normal text-sm">Ocurrió un error, contactar al administador</span>
+          <span class="inline-block text-center sm:text-left font-normal text-sm">{{'errors.fail' | translate}}</span>
         </div>
       }
     }

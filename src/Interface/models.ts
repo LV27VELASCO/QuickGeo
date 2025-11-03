@@ -14,6 +14,7 @@ export interface PhoneInfo {
 export interface resPhoneInfo {
     country: string;
     operator: string;
+    img:string;
     flag:string;
     phoneText:string;
     date:string;

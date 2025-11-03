@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { UtilitiesService } from '../../services/utilities.service';
 import { LANGUAGES_OBJECT } from '../../config/languajes';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-language',
@@ -10,25 +10,43 @@ import { LANGUAGES_OBJECT } from '../../config/languajes';
 })
 export class LanguageComponent {
 
-  constructor(private Utils:UtilitiesService){ }
-    selectLang:boolean = false;
-    nombreLang="Español";
+  selectLang = false;
+  nombreLang = 'Español';
+  langActual = 'es';
 
-   ngOnInit() {
-      const lang = this.Utils.getItem('lang');
-      if(lang){
-        const index= LANGUAGES_OBJECT.id.includes(lang)?LANGUAGES_OBJECT.id.indexOf(lang):0;
-        this.nombreLang = LANGUAGES_OBJECT.nombre[index];
-      }
-    }
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
-    selectShow(){
-      this.selectLang = !this.selectLang;
-    }
+  ngOnInit() {
+    // Detecta idioma actual desde la URL
+    this.route.paramMap.subscribe(params => {
+      const lang = params.get('lang') || 'es';
+      this.langActual = lang;
+      const index = LANGUAGES_OBJECT.id.indexOf(lang);
+      this.nombreLang = index >= 0 ? LANGUAGES_OBJECT.nombre[index] : 'Español';
+    });
+  }
 
-    cambioIdioma(idioma:string, index:number){
-      this.selectLang = false;
-      this.nombreLang =LANGUAGES_OBJECT.nombre[index]
-      this.Utils.translateText(idioma);
-    }
+  selectShow() {
+    this.selectLang = !this.selectLang;
+  }
+
+  cambioIdioma(idioma: string, index: number) {
+    this.selectLang = false;
+    this.nombreLang = LANGUAGES_OBJECT.nombre[index];
+
+    // Obtiene la URL actual y reemplaza el idioma
+    const currentUrl = this.router.url;
+
+    // Detecta el idioma actual en la ruta (ej: /es/contact → es)
+    const firstSegment = currentUrl.split('/')[1];
+
+    // Reemplaza el idioma actual por el nuevo
+    const newUrl = currentUrl.replace(`/${firstSegment}`, `/${idioma}`);
+
+    // Navega sin recargar la página
+    this.router.navigateByUrl(newUrl);
+  }
 }

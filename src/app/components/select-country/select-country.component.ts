@@ -7,6 +7,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { ApiService } from '../../services/api.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LANGUAGES_OBJECT } from '../../config/languajes';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-select-country',
@@ -19,6 +20,7 @@ export class SelectCountryComponent {
    fb = inject(FormBuilder);
    utils = inject(UtilitiesService);
    api = inject(ApiService);
+   route = inject(ActivatedRoute)
    _countries: Country[] = [];
    _urlFlagBase: string = '';
    _flag: string = '';
@@ -36,19 +38,17 @@ export class SelectCountryComponent {
     searchCountry: string = '';
 
       ngOnInit(): void {
+        // Detecta idioma actual desde la URL
+        this.route.paramMap.subscribe(params => {
+          const lang = params.get('lang') || 'es';
+          const index =  LANGUAGES_OBJECT.id.indexOf(lang)
+          this.formPhone.get("codeLang")?.setValue(LANGUAGES_OBJECT.id[index]);
+          this._flag = LANGUAGES_OBJECT.flag[index];;
+          this._codePhone = LANGUAGES_OBJECT.code[index];
+        });
         this.utils.countries$.subscribe((countries) => (this._countries = countries));
         this.utils.urlFlagBase$.subscribe((url) => (this._urlFlagBase = url));
-        this.utils.flag$.subscribe((flag) => (this._flag = flag));
-        this.utils.codePhone$.subscribe((code) => (this._codePhone = code));
         this.formPhone.get("codePhone")?.setValue(this._codePhone);
-        const lang = this.utils.getItem('lang');
-        if(lang !=null && LANGUAGES_OBJECT.id.includes(lang)){
-            const index =  LANGUAGES_OBJECT.id.indexOf(lang);
-            this.formPhone.get("codeLang")?.setValue(LANGUAGES_OBJECT.id[index]);
-        }else{
-            this.formPhone.get("codeLang")?.setValue(lang);
-        }
-
       }
 
     selectShow(){

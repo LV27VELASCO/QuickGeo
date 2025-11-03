@@ -5,7 +5,6 @@
         <p class="pl-2 text-gray-900">Quick<span class="text-green-800">Geo</span></p>
     </div>
 
-    <app-language class="hidden"/>
     <button (click)="logOut()" type="button" class="py-2 px-4 text-green-700 hover:text-white hover:bg-green600/90 hover:scale-105 ease-out transition-all duration-200 delay-75">
       <span class="font-medium text-sm">{{'dashboard.span' | translate}}</span>
     </button>
@@ -41,7 +40,6 @@
                   <dt class="rounded-md bg-blue-50 px-2 py-1 w-fit text-sm font-medium text-blue-600 ring-1 ring-green-600/20 ring-inset text-center">Credits: {{_credits}}</dt>
                 </dl>
                   <div class="flex gap-5 text-2xl [&>button]:py-1 [&>button]:px-2 [&>button]:rounded-xl [&>button]:border ">
-                      <button><i class='bx bx-list-ul'></i></button>
                       <button (click)="getHistoryLocations()">
                         <i [class]="load?'animatePulse':''" class='bx bx-loader'></i>
                       </button>

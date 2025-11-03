@@ -1,7 +1,7 @@
 <header class="absolute inset-x-0 top-0 z-50">
   <nav class="flex items-center justify-between p-6 lg:px-8 " aria-label="Global">
     <div class="flex lg:flex-1">
-      <a href="/" class="-m-1.5 p-1.5 flex">
+      <a (click)="navegar('/')" class="-m-1.5 p-1.5 flex cursor-pointer">
           <img class="h-8 w-auto" src="assets/icons/icon.svg" alt="Icon QuickGeo">
           <h2 class="text-xl font-bold text-gray-700">Quick<span class="text-green-700">Geo</span></h2>
       </a>
@@ -15,8 +15,8 @@
       </button>
     </div>
     <div class="hidden lg:flex lg:gap-x-12 [&>a]:cursor-pointer [&>a]:py-2 [&>a]:px-4 hover:[&>a]:text-white hover:[&>a]:bg-green600/90 hover:[&>a]:scale-105 [&>a]:ease-out  [&>a]:transition-all [&>a]:duration-200 [&>a]:delay-75">
-      <a href="#how-does-it-work" class="text-sm/6 font-semibold text-gray-900">{{'navbar.howItWork' | translate}}</a><!-- Como funciona -->
-      <a (click)="navegar('/requentlyAskedQuestions')" class="text-sm/6 font-semibold text-gray-900">{{'navbar.questions' | translate}}</a><!-- preguntas frecuentes -->
+      <a (click)="navegar('')" class="text-sm/6 font-semibold text-gray-900">{{'navbar.home' | translate}}</a><!-- Inicio -->
+      <a (click)="navegar('/frequentlyAskedQuestions')" class="text-sm/6 font-semibold text-gray-900">{{'navbar.questions' | translate}}</a><!-- preguntas frecuentes -->
       <a (click)="navegar('/pricing')" class="text-sm/6 font-semibold text-gray-900">{{'navbar.prices' | translate}}</a><!-- Precios -->
       <a (click)="navegar('/contact')" class="text-sm/6 font-semibold text-gray-900">{{'navbar.contact' | translate}}</a><!-- Contacto -->
     </div>
@@ -40,8 +40,8 @@
       <div class="mt-6 flow-root">
         <div class="-my-6 divide-y divide-gray-500/10">
           <div class="space-y-2 py-6 [&>a]:cursor-pointer">
-            <a href="#how-does-it-work" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">{{'navbar.howItWork' | translate}}</a><!-- Como funciona -->
-            <a (click)="navegar('/requentlyAskedQuestions')" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">{{'navbar.questions' | translate}}</a><!-- preguntas frecuentes -->
+            <a (click)="navegar('/')" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">{{'navbar.home' | translate}}</a><!-- Como funciona -->
+            <a (click)="navegar('/frequentlyAskedQuestions')" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">{{'navbar.questions' | translate}}</a><!-- preguntas frecuentes -->
             <a (click)="navegar('/pricing')" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">{{'navbar.prices' | translate}}</a><!-- Precios -->
             <a (click)="navegar('/contact')" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">{{'navbar.contact' | translate}}</a><!-- Contacto -->
           </div>

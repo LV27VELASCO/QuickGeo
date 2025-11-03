@@ -1,20 +1,50 @@
 import { Component, inject } from '@angular/core';
-import { loadStripe, Stripe, StripeElements } from '@stripe/stripe-js';
+import { loadStripe, Stripe, StripeElementLocale, StripeElements } from '@stripe/stripe-js';
 import { environment } from '../../../environments/environment';
 import { ApiService } from '../../services/api.service';
 import { Validators, FormBuilder, FormGroup, ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { LANGUAGES_OBJECT } from '../../config/languajes';
+import { ActivatedRoute, Router } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
+import { UtilitiesService } from '../../services/utilities.service';
 
 @Component({
   selector: 'app-payment-form',
   standalone: true,
-  imports: [ReactiveFormsModule,FormsModule],
+  imports: [ReactiveFormsModule,FormsModule,TranslateModule],
   templateUrl: './payment-form.component.html',
   styleUrl: './payment-form.component.css'
 })
 export class PaymentFormComponent {
 
-  constructor(private api:ApiService, private router: Router){}
+  nombreLang = 'Español';
+  langActual: string = 'es';
+
+ TRANSLATIONS:any = {
+  es: {
+    fillFields: "🚨 Por favor, completa todos los campos y acepta las políticas antes de continuar.",
+    paymentMethodError: "❌ Error creando PaymentMethod:",
+    paymentError: "❌ Error en el pago:",
+    backendError: "🚨 Hubo un error al procesar el pago.",
+    paymentSuccess: "✅ Pago realizado con éxito..."
+  },
+  en: {
+    fillFields: "🚨 Please complete all fields and accept the policies before continuing.",
+    paymentMethodError: "❌ Error creating PaymentMethod:",
+    paymentError: "❌ Payment error:",
+    backendError: "🚨 There was an error processing the payment.",
+    paymentSuccess: "✅ Payment completed successfully..."
+  },
+  fr: {
+    fillFields: "🚨 Veuillez remplir tous les champs et accepter les politiques avant de continuer.",
+    paymentMethodError: "❌ Erreur lors de la création du PaymentMethod :",
+    paymentError: "❌ Erreur lors du paiement :",
+    backendError: "🚨 Une erreur est survenue lors du traitement du paiement.",
+    paymentSuccess: "✅ Paiement effectué avec succès..."
+  }
+};
+
+  constructor(private api:ApiService, private router: Router, private route: ActivatedRoute, private utils:UtilitiesService){}
 
   private stripe: Stripe | null = null;
   private elements: StripeElements | null = null;
@@ -27,7 +57,17 @@ export class PaymentFormComponent {
     email: ['', [Validators.required, Validators.email]],
     name: ['', Validators.required],
     terms: [false, Validators.requiredTrue]
-    });
+  });
+
+  ngOnInit() {
+      // Detecta idioma actual desde la URL
+      this.route.paramMap.subscribe(params => {
+        const lang = params.get('lang') || 'es';
+        this.langActual = lang;
+        const index = LANGUAGES_OBJECT.id.indexOf(lang);
+        this.nombreLang = index >= 0 ? LANGUAGES_OBJECT.nombre[index] : 'Español';
+      });
+    }
 
   async ngAfterViewInit() {
     this.stripe = await loadStripe(environment.pkStripe);
@@ -62,7 +102,7 @@ export class PaymentFormComponent {
 
     this.elements = this.stripe.elements({
       appearance:appearance,
-      locale: 'es', // puedes ponerlo dinámico
+      locale: this.langActual as StripeElementLocale, // puedes ponerlo dinámico
     });
 
     const cardNumber = this.elements.create('cardNumber');
@@ -78,8 +118,10 @@ export class PaymentFormComponent {
   async onSubmit() {
     if (!this.stripe || !this.elements) return;
 
+    const t = this.TRANSLATIONS[this.langActual || 'es'];
+
     if (!this.checkoutForm.valid){
-      this.showAlert("🚨 Por favor, completa todos los campos y acepta las políticas antes de continuar.")
+      this.showAlert(t.fillFields);
       return
     }
 
@@ -97,7 +139,7 @@ export class PaymentFormComponent {
       });
 
       if (pmError) {
-        console.error('❌ Error creando PaymentMethod:', pmError.message);
+        console.error(`${t.paymentMethodError} ${pmError.message}`);
         this.showAlert(`🚨 ${pmError.message}`);
         this.loader = false;
         return;
@@ -115,17 +157,17 @@ export class PaymentFormComponent {
       });
 
       if (error) {
-        console.error('❌ Error en el pago:', error.message);
+        console.error(`${t.paymentError} ${error.message}`);
         this.showAlert(`🚨 ${error.message}`);
       } else if (paymentIntent && paymentIntent.status === 'succeeded') {
-        this.showSuccess('✅ Pago realizado con éxito...');
+        this.showSuccess(t.paymentSuccess);
         setTimeout(() => {
-          this.router.navigate([`/success`]);
+          this.navegar("/success");
         }, 2500);
       }
     } catch (err: any) {
-      console.error('Error llamando al backend:', err);
-      this.showAlert('🚨 Hubo un error al procesar el pago.');
+      console.error('Backend error:', err);
+      this.showAlert(t.backendError);
     }
     this.loader = false;
   }
@@ -152,6 +194,17 @@ export class PaymentFormComponent {
         this.success = "";
         this.timeoutId = null; // opcional: limpia la referencia
       }, 3000);
+  }
+
+  navegar(ruta: string): void {
+
+    // Llamamos a UtilsService para navegar
+    this.utils.navigate(ruta)
+      .then(() => {
+        // Scroll suave al inicio
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      })
+      .catch(err => console.error('Navigation error:', err));
   }
 
 }

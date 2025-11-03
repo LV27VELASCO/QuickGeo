@@ -1,6 +1,6 @@
 {
   "navbar": {
-    "howItWork": "How it works?",
+    "home": "Home",
     "questions": "Frequently Asked Questions",
     "prices": "Pricing",
     "contact": "Contact",
@@ -11,6 +11,7 @@
     "title": "Find your device no matter where it is.",
     "input": "Enter phone number",
     "locate": "Locate Phone",
+    "locate2": "Locating",
     "span": "based on over 10,000 reviews",
     "characteristics": "The most versatile geolocation solution on the market",
     "text": "Discover why millions of users trust QuickGeo for their navigation needs",
@@ -43,40 +44,41 @@
     },
   "testimonials": {
     "title": "We have helped thousands of people around the world",
+    "title3": "What Our Users Say:",
     "people": [
       {
-        "story": "I left a coffee shop and forgot my phone. Thanks to the app, I saw it was still there. I went back quickly and recovered it without any problem. Without geolocation, I would have lost it forever.",
-        "name":"Susan",
-        "png":"User4.jpg",
-        "span": "QuickGeo User",
+        "story": "I left a café in Soho and realized I had forgotten my phone on the table. I opened the app and saw it was still there—set the route, went back in five minutes, and got it back with no problem. Without geolocation, it would have been much more complicated.",
+        "name": "Anna Green",
+        "png": "User4.jpg",
+        "span": "London - United Kingdom",
         "delay": "100"
       },
       {
-        "story": "My daughter strayed from the route to school. With just one click on the app, I saw where she was and went to get her. Knowing her real-time location gave us complete peace of mind.",
-        "name": "Leslie",
-        "png": "User1.jpg",
-        "span": "QuickGeo User",
+        "story": "My daughter crossed the street while walking to school, and I couldn’t see her. With just one tap on the app, I knew exactly where she was and waited for her at the corner—got to her quickly, and we both felt calm again.",
+        "name": "James Miller",
+        "png": "User2.jpg",
+        "span": "Austin - Texas, USA",
         "delay": "200"
       },
       {
-        "story": "After an event, I couldn't remember where I had parked. I used the app and within seconds, I had the exact location of my car. It was a lifesaver.",
-        "name": "Mark",
-        "png": "User2.jpg",
-        "span": "QuickGeo User",
+        "story": "After a concert, I couldn’t remember which street I had parked on. From the app, I found my car’s exact location in less than a minute and avoided walking around the entire neighbourhood—a total relief.",
+        "name": "Mary Lewis",
+        "png": "User6.jpg",
+        "span": "Toronto - Canada",
         "delay": "300"
       },
       {
-        "story": "My father got injured while hiking. Since he had the app active, we were able to find out where he was and send help quickly. It was crucial for getting him medical attention in time.",
-        "name":"Luis y Sophie",
-        "png":"User5.jpg",
-        "span": "QuickGeo User",
+        "story": "My dad twisted his ankle while hiking in the Lake District. He had the app running: we located his position, shared the coordinates with rescue services, and it made it much easier for them to reach him.",
+        "name": "Charles and Sophie",
+        "png": "User5.jpg",
+        "span": "Lake District - United Kingdom",
         "delay": "500"
       },
       {
-        "story": "In my business, clients can now see where their delivery is in real time. Everything is clearer, more reliable, and more professional thanks to geolocation.",
-        "name": "Brian",
+        "story": "At my restaurant, customers can track where their order is in real time. We now get fewer calls, and deliveries are better coordinated—it builds trust and improves the customer experience.",
+        "name": "Helen Roberts",
         "png": "User3.jpg",
-        "span": "QuickGeo User",
+        "span": "San Diego - California, USA",
         "delay": "700"
       }
     ],
@@ -151,6 +153,16 @@
       }
     ]
   },
+  "loadInfo": {
+    "title": "Location Identification",
+    "subtitle": "Locating your position...",
+    "country":"Country",
+    "operator": "Operator",
+    "cellTowers": "Connecting to cell towers",
+    "ip": "Connecting to IP network",
+    "progress": "Progress",
+    "span": "This process is secure and private"
+  },
   "bannerLocate": {
       "title": "Locate Any Phone Now",
       "subtitle": "Try our solution with unlimited access for 24 hours for just €0.50. After your trial period, you can choose to stay subscribed for €47.90 per month.",
@@ -165,7 +177,69 @@
           { "item": "Unlimited searches", "icon": "bolt.svg" }
         ]
       }
+  },
+  "preCheckout": {
+    "title": "Location Found",
+    "subtitle": "We successfully identified the phone associated with this number.",
+    "span": "To start the precise geolocation, please subscribe to our trial offer.",
+    "phoneCard": {
+      "title": "Device Information",
+      "subtitle": "Phone Number",
+      "span": "Search for"
     },
+    "features": {
+      "title": "Your Membership Includes:",
+      "p1": "Accurate Geolocation",
+      "t1": "Real-time precise positioning",
+      "p2": "Instant Notifications",
+      "t2": "Get alerts with live results",
+      "p3": "Full Access to All Features",
+      "t3": "Unlock premium tools and functions"
+    },
+    "features2": {
+      "title": "Included Features:",
+      "p1": "Request precise geolocation",
+      "p2": "Receive instant notifications with results",
+      "p3": "Access all our advanced features"
+    },
+    "price": {
+      "badge": "Special Offer",
+      "title": "Exclusive 24-Hour Price",
+      "span": "Unlimited full access",
+      "button": "Pay Now",
+      "features": {
+        "title": "Includes:",
+        "t1": "Accurate geolocation",
+        "t2": "Real-time notifications",
+        "t3": "24-hour access"
+      },
+      "span2": "At the end of your trial period, you may choose to stay subscribed for €47.90 per month.",
+      "span3": "for 24 hours"
+    },
+    "help": {
+      "badge": "Need Help?",
+      "title": "Chat with Us!",
+      "span": "contact@quickgeo.mobi",
+      "text": "Get in touch with our support team. We’re happy to assist you! Our service hours are Monday to Saturday, 6 a.m. to 8 p.m. (support available in English and French only). We typically respond within 24 hours."
+    },
+    "payCard": {
+    "number": "Card Number",
+    "caducate": "Expiration Date",
+    "ccv": "CCV",
+    "name": "Cardholder Name",
+    "email": "Email",
+    "t1": "I accept the",
+    "t2": "Terms of Service",
+    "t3": "and the",
+    "t4": "Privacy Policy",
+    "button": "Pay",
+    "span": "Secure payment with"
+  },
+  "loader": {
+    "title": "Processing...",
+    "subtitle": "This process may take a few minutes. Please do not refresh or close this window."
+  }
+  },
   "footer": {
       "title": "Quick Links",
       "paragraph": "Locate your device accurately and reliably, no matter the country or network.",
@@ -180,7 +254,45 @@
         "payments": "Secure Payments",
         "rights": "All rights reserved."
       }
+  },
+  "success": {
+    "title": "Payment Successful!",
+    "subtitle": "Your transaction has been processed successfully. We’re setting up your account with immediate access to our geolocation services.",
+    "confirmation": {
+      "title": "Email Confirmation",
+      "subtitle": "A confirmation email has been sent to the address you provided. Please check your inbox (and spam folder) within the next few minutes.",
+      "features": {
+        "title": "The email includes:",
+        "f1": "Your login credentials (username and temporary password)",
+        "f2": "A direct link to activate your account",
+        "f3": "A quick start guide to begin using our services"
+      }
     },
+    "nextSteps": {
+      "title": "Next Steps",
+      "items": [
+        {
+          "title": "Check Your Email",
+          "text": "Open the confirmation email and click the link to activate your account."
+        },
+        {
+          "title": "Create Your Password",
+          "text": "Set a secure password to protect your account and access your services safely."
+        },
+        {
+          "title": "Start Using QuickGeo",
+          "text": "Log in to your dashboard and start locating phones instantly."
+        }
+      ]
+    },
+    "button1": "Go to My Account",
+    "button2": "Return to Home",
+    "help": {
+      "title": "Need Help?",
+      "subtitle": "Our support team is available 24/7 to assist you with any questions.",
+      "span": "Contact Support"
+    }
+  },
   "routes": {
       "prices": {
         "title": "Pricing",
@@ -269,5 +381,11 @@
         "status2":"localized",
         "span3":"Open in Google Maps"
       }
-    }
+    },
+    "errors": {
+    "required": "Please enter a phone number",
+    "pattern": "Enter a valid number",
+    "incorrect": "We couldn’t identify the number, please verify.",
+    "fail": "An error occurred, contact the administrator"
+  }
 }

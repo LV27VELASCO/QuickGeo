@@ -12,8 +12,6 @@ import { CookieService } from 'ngx-cookie-service';
  })
  export class UtilitiesService {
 
-
-
   constructor(
     private http: HttpClient,
     private translate:TranslateService,
@@ -23,14 +21,10 @@ import { CookieService } from 'ngx-cookie-service';
 
   private countriesSource = new BehaviorSubject<Country[]>([]);
   private urlFlagBaseSource = new BehaviorSubject<string>('https://flagcdn.com/');
-  private flagSource = new BehaviorSubject<string>('es');
-  private codePhoneSource = new BehaviorSubject<string>('+34');
   private jsonUrl = 'assets/jsons/country.json'; // Ruta al archivo JSON local
 
   countries$ = this.countriesSource.asObservable();
   urlFlagBase$ = this.urlFlagBaseSource.asObservable();
-  flag$ = this.flagSource.asObservable();
-  codePhone$ = this.codePhoneSource.asObservable();
 
   obtenerFechaFormateada(): string {
     const fecha = new Date();
@@ -55,22 +49,9 @@ import { CookieService } from 'ngx-cookie-service';
     this.urlFlagBaseSource.next(urlFlagBase);
   }
 
-  setFlag(flag: string) {
-    this.flagSource.next(flag);
-  }
-
-  setCodePhone(codePhone: string) {
-    this.codePhoneSource.next(codePhone);
-  }
-
    getCountries(): Observable<any> {
      return this.http.get<any>(this.jsonUrl);
-   }
-
-   translateText(lang:string){
-    this.translate.use(lang)
-    this.setItemLocal('lang',lang)
-   }
+  }
 
   getItem(item:string):any{
      if (isPlatformBrowser(this.platformId)) {
@@ -86,8 +67,18 @@ import { CookieService } from 'ngx-cookie-service';
     localStorage.clear();
   }
 
-  navigate(ruta:string){
-    this.router.navigate([ruta])
+  navigate(ruta: string): Promise<boolean> {
+    // Obtiene el idioma actual de ngx-translate
+    const lang = this.translate.currentLang || 'en';
+
+    // Normaliza la ruta: evita doble slash
+    const rutaNormalizada = ruta.startsWith('/') ? ruta.substring(1) : ruta;
+
+    // Construye la ruta completa con prefijo de idioma
+    const rutaCompleta = `/${lang}/${rutaNormalizada}`;
+
+    // Navega usando Angular Router y devuelve la promesa
+    return this.router.navigate([rutaCompleta]);
   }
 
   isNullOrEmpty(value: string | null | undefined): boolean {
@@ -117,7 +108,5 @@ import { CookieService } from 'ngx-cookie-service';
     const token = this.cookieService.get('access_token');
     return !!token; // Retorna true si hay un token, false si no.
   }
-
-
 
 }

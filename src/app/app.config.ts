@@ -7,27 +7,21 @@ import { isPlatformBrowser } from '@angular/common';
 import { APP_INITIALIZER } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
-import { ALLOWED_LANGUAGES } from './config/languajes';
 
 export function HttpLoaderFactory(http: HttpClient):TranslateHttpLoader{
   return new TranslateHttpLoader(http, './assets/jsons/i18n/', '.json');
 }
 
-export function appInitializerFactory(translate: TranslateService , platformId: Object) {
+export function appInitializerFactory(translate: TranslateService) {
   return () => {
-      if (isPlatformBrowser(platformId)) {
-        let lang = localStorage.getItem('lang'); // Idioma por defecto
-        if(lang && ALLOWED_LANGUAGES.includes(lang)){
-          translate.setDefaultLang(lang);
-        }else{
-          translate.use("es");  
-        }
-    };
-  }
+    translate.setDefaultLang('es'); // fallback
+  };
 }
 
+
+
 export const appConfig: ApplicationConfig = {
-  providers: [provideZoneChangeDetection({ eventCoalescing: true }), 
+  providers: [provideZoneChangeDetection({ eventCoalescing: true }),
     importProvidersFrom(TranslateModule.forRoot({ loader: { provide: TranslateLoader, useFactory: HttpLoaderFactory, deps: [HttpClient]},defaultLanguage:'es'})
     ),
     {

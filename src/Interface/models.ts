@@ -109,7 +109,8 @@ export interface Checkout {
 }
 
 export interface ResetPsw {
-  email:string
+  email:string,
+  locale:string
 }
 
 export interface resResetPsw {

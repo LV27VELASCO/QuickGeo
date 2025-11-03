@@ -4,6 +4,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { Login, ResetPsw } from '../../../Interface/models';
 import { ApiService } from '../../services/api.service';
 import { UtilitiesService } from '../../services/utilities.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -21,8 +22,10 @@ export class LoginComponent {
   errorMsg: string = '';
   fb = inject(FormBuilder);
   api = inject(ApiService);
+  route = inject(ActivatedRoute);
   utils = inject(UtilitiesService);
   buttonLogin:boolean = true;
+  langActual:string = '';
 
   formLogin:FormGroup=this.fb.group({
       email:['', [Validators.email, Validators.required]],
@@ -32,6 +35,14 @@ export class LoginComponent {
   formReset:FormGroup=this.fb.group({
       email:['', [Validators.email, Validators.required]],
     })
+
+  ngOnInit() {
+        // Detecta idioma actual desde la URL
+        this.route.paramMap.subscribe(params => {
+          const lang = params.get('lang') || 'es';
+          this.langActual = lang;
+        });
+  }
 
   prevCard(){
     let currentIndex = this.testimonios.indexOf(true); // Encuentra el índice del valor `true`
@@ -67,7 +78,10 @@ export class LoginComponent {
   onSubmit(){
     if(this.formLogin.valid){
       this.buttonLogin = false;
-      const reqData: Login = {email:this.formLogin.get("email")?.value, password:this.formLogin.get("password")?.value};
+      const reqData: Login = {
+        email:this.formLogin.get("email")?.value,
+        password:this.formLogin.get("password")?.value
+      };
       this.api.LoginUser(reqData).subscribe({
                   next: (data) => {
                    this.utils.saveCookie('access_token',data.token);
@@ -91,7 +105,8 @@ export class LoginComponent {
     this.load=true;
         if(this.formReset.valid){
           const reqData: ResetPsw = {
-                  email:this.formReset.get("email")?.value
+                  email:this.formReset.get("email")?.value,
+                  locale:this.langActual
                 };
           this.api.ResetPsw(reqData).subscribe({
             next: (data) => {

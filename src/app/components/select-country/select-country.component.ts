@@ -58,7 +58,7 @@ export class SelectCountryComponent {
 
     filterItems(): void {
       this.countriesFilter = this._countries.filter(item =>
-        item.name.toLowerCase().includes(this.searchCountry.toLowerCase())
+        item.dial_code.toLowerCase().includes(this.searchCountry.toLowerCase())
       );
     }
 
